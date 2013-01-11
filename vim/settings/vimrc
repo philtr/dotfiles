@@ -1,39 +1,46 @@
+" Pathogen '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 execute pathogen#infect()
 
+" Basics '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 syntax on
 filetype plugin indent on
-
-colorscheme solarized
-set background=dark
-
-set colorcolumn=80
-" set cursorline
 set mouse=a
-
 set noswapfile
 set nobackup
 set nowb
-
 set visualbell
+set laststatus=2
+set number
+
+" Load key mappings
+source "~/.dotfiles/vim/settings/keys"
+
+" Colors '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+colorscheme solarized
+set background=dark
+set colorcolumn=80
 
 " Set vertical fillchar to "en space"
 set fillchars+=vert: 
 
+" Powerline ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+let g:Powerline_symbols = 'fancy'
+
+" CtrlP ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:ctrlp_custom_ignore = {
   \ 'dir': 'vendor/bundle'
   \ }
 
-let g:gist_clip_command = 'pbcopy'
-let g:gist_open_browser_after_post = 1
-
+" BufferGator ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:buffergator_viewport_split_policy="T"
 let g:buffergator_viewport_sort_regime="mru"
 let g:buffergator_split_size=20
 
+" NERDTree '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let NERDTreeQuitOnOpen=1
-let NERDTreeShewHidden=1
+let NERDTreeShowHidden=1
 
-
+" File types '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " associate *.brs (BrightScript) with vb filetype
 au BufRead,BufNewFile *.brs setfiletype vb
 
