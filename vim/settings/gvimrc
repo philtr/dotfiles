@@ -11,3 +11,7 @@ set background=dark
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 set antialias
 
+" Cmd Key Mappings '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+nmap <D-N> :NERDTreeToggle<CR>
+nmap <D-T> :tabnew
+nmap <D-t> <C-p>

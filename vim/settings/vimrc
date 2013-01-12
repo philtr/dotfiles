@@ -11,9 +11,20 @@ set nowb
 set visualbell
 set laststatus=2
 set number
+et dir=~/.vim/swap//,/var/tmp//,/tmp//,.
 
-" Load key mappings
-source "~/.dotfiles/vim/settings/keys"
+" Tabs
+set softtabstop=2
+set shiftwidth=2
+set tabstop=2
+set expandtab
+
+" Keys '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+let mapleader = ','
+
+nmap <Leader>n :NERDTreeToggle<CR>
+nmap <Leader>t <C-p>
+
 
 " Colors '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 colorscheme solarized
@@ -32,13 +43,13 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 " BufferGator ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-let g:buffergator_viewport_split_policy="T"
-let g:buffergator_viewport_sort_regime="mru"
-let g:buffergator_split_size=20
+let g:buffergator_viewport_split_policy = "T"
+let g:buffergator_viewport_sort_regime = "mru"
+let g:buffergator_split_size = 20
 
 " NERDTree '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeShowHidden = 1
 
 " File types '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " associate *.brs (BrightScript) with vb filetype
