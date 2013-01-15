@@ -1,17 +1,16 @@
-" GUI Options ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-set guioptions-=r
-set guioptions-=L
+"═ GUI Options ════════════════════════════════════════════════════════════════════════════════════
 
-" Colors '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-colorscheme solarized
-set background=dark
+  set guioptions-=T      " disable toolbar
+  set guioptions-=r      " disable right scrollbar
+  set guioptions-=L      " disable left scrollbar
 
+"═ Colors ═════════════════════════════════════════════════════════════════════════════════════════
 
-" Font '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-set guifont=Source\ Code\ Pro\ for\ Powerline:h12
-set antialias
+  colorscheme solarized  " use solarized in case vimrc says otherwise
+  set background=dark
 
-" Cmd Key Mappings '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-nmap <D-N> :NERDTreeToggle<CR>
-nmap <D-T> :tabnew
-nmap <D-t> <C-p>
+"═ Font ═══════════════════════════════════════════════════════════════════════════════════════════
+
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+  set antialias
+

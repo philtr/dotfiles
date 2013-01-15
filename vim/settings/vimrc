@@ -9,55 +9,54 @@
 
 "═ Basics ═════════════════════════════════════════════════════════════════════════════════════════
 
-  syntax on
+  syntax on                    " turn on syntax highilghting
 
-  set number                    " display line numbers
-  set laststatus=2              " show status bar
-  set mouse=a                   " allow mouse usage
-  set noswapfile                " don't create swap files
-  set nobackup                  " don't create backup files
-  set undodir=~/.vim/undo//     " put undo files in ~/.vim/undo/path%to$file.ext
-  set nowb                      " don't wub wub wub
-  set visualbell                " use vilsual bell
+  set number                   " display line numbers
+  set laststatus=2             " show status bar
+  set mouse=a                  " allow mouse usage
+  set noswapfile               " don't create swap files
+  set nobackup                 " don't create backup files
+  set undodir=~/.vim/undo//    " put undo files in ~/.vim/undo/path%to$file.ext
+  set nowb                     " don't wub wub wub
+  set visualbell               " use vilsual bell
 
-  filetype plugin on
-  filetype indent on
+  filetype plugin on           " enable loading plugins for filetypes
+  filetype indent on           " enable loading 'indent files' for filetypes
 
-  " Tabs & Indentation
-  set autoindent
-  set smartindent
-  set smarttab
-  set softtabstop=2
-  set shiftwidth=2
-  set tabstop=2
+  set autoindent               " indent next line to same level as current line
+  set smartindent              "   ↑ but do it smartly
+  set smarttab                 " <Tab> in front of a line inserts blanks according to 'shiftwidth'
+  set shiftwidth=2             "   ↑ use 2 blanks for above
+  set tabstop=2                " display a <Tab> as 2 spaces
+  set softtabstop=2            " use 2 spaces for a <Tab>
   set expandtab
 
-  " Line Wrapping
-  set nowrap
-  set linebreak
+  set formatoptions-=t          " don't automatically hardwrap text (use 'gq' to reflow text)
+  set textwidth=100             " wrap at column 100
+  set wrapmargin=0              " don't wrap based on terminal size
 
-  " Auto View Scrolling
-  set scrolloff=8       " start scrolling 8 lines from bottom
-  set sidescrolloff=15  " start scrolling 15 lines from right
+  set scrolloff=8               " start scrolling 8 lines from bottom
+  set sidescrolloff=15          " start scrolling 15 lines from right
 
 "═ Keys ═══════════════════════════════════════════════════════════════════════════════════════════
 
   let mapleader = ','
 
+  nmap <Leader>l :tabnext<CR>
+  nmap <Leader>h :tabprevious<CR>
+
   nmap <Leader>n :NERDTreeToggle<CR>
   nmap <Leader>p <C-p>
 
-
 "═ Theme ══════════════════════════════════════════════════════════════════════════════════════════
 
-  colorscheme solarized
-  set background=dark
-  set colorcolumn=100
+  colorscheme solarized                   " Solarized, by Ethan Schoonover
+  set background=dark                     " https://github.com/altercation/solarized
+  set colorcolumn=100                     " visual indicator at column 100
+  set list listchars=tab:██,trail:∙       " Use "██" for tabs and "∙" for trailing spaces
 
-  set fillchars+=vert:                    " Set vertical fillchar to "en space"
-
-  set list listchars=tab:\ \ ,trail:•     " Use "\ \ " for tabs and "•" for
-                                          " trailing spaces
+  set fillchars+=vert:                    " set vertical fillchar to "en space" (it's there, trust
+                                          " me) for tab splits
 
 "═ CtrlP ══════════════════════════════════════════════════════════════════════════════════════════
 
@@ -67,17 +66,15 @@
 
 "═ BufferGator ════════════════════════════════════════════════════════════════════════════════════
 
-  let g:buffergator_viewport_split_policy = "T"    " split to top
   let g:buffergator_viewport_sort_regime = "mru"   " sort by 'most recently used'
-  let g:buffergator_split_size = 10
+  let g:buffergator_viewport_split_policy = "R"    " split vertically to the right
 
 "═ NERDTree ═══════════════════════════════════════════════════════════════════════════════════════
-" NERDTree '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
   let NERDTreeShowHidden = 0  " Don't show hidden files
 
 "═ File Types ═════════════════════════════════════════════════════════════════════════════════════
 
-  au BufRead,BufNewFile *.brs setfiletype vb  " BrightScript
+  au BufRead,BufNewFile *.brs setfiletype vb  " BrightScript as VBScript
 
