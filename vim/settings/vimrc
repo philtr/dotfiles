@@ -73,6 +73,12 @@
     \ 'dir': 'vendor/bundle'
     \ }
 
+"═ Indent Guides ══════════════════════════════════════════════════════════════════════════════════
+
+  let g:indent_guides_color_change_percent = 3      " ultra-low-contrast guides
+  let g:indent_guides_guide_size = 1                " between 0 and 'shiftwidth'
+  let g:indent_guides_start_level = 3               " don't show guides until the third indent
+
 "═ NERDTree ═══════════════════════════════════════════════════════════════════════════════════════
 
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
