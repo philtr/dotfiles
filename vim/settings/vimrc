@@ -58,23 +58,23 @@
   set fillchars+=vert:                    " set vertical fillchar to "en space" (it's there, trust
                                           " me) for tab splits
 
-"═ CtrlP ══════════════════════════════════════════════════════════════════════════════════════════
+"═ File Types ═════════════════════════════════════════════════════════════════════════════════════
 
-  let g:ctrlp_custom_ignore = {
-    \ 'dir': 'vendor/bundle'
-    \ }
+  au BufRead,BufNewFile *.brs setfiletype vb  " BrightScript as VBScript
 
 "═ BufferGator ════════════════════════════════════════════════════════════════════════════════════
 
   let g:buffergator_viewport_sort_regime = "mru"   " sort by 'most recently used'
   let g:buffergator_viewport_split_policy = "R"    " split vertically to the right
 
+"═ CtrlP ══════════════════════════════════════════════════════════════════════════════════════════
+
+  let g:ctrlp_custom_ignore = {
+    \ 'dir': 'vendor/bundle'
+    \ }
+
 "═ NERDTree ═══════════════════════════════════════════════════════════════════════════════════════
 
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
   let NERDTreeShowHidden = 0  " Don't show hidden files
-
-"═ File Types ═════════════════════════════════════════════════════════════════════════════════════
-
-  au BufRead,BufNewFile *.brs setfiletype vb  " BrightScript as VBScript
 
