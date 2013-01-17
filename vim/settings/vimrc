@@ -31,12 +31,13 @@
   set softtabstop=2            " use 2 spaces for a <Tab>
   set expandtab
 
-  set formatoptions-=t          " don't automatically hardwrap text (use 'gq' to reflow text)
-  set textwidth=100             " wrap at column 100
-  set wrapmargin=0              " don't wrap based on terminal size
+  set nowrap                   " don't softwrap text
+  set formatoptions-=t         " don't automatically hardwrap text (use 'gq' to reflow text)
+  set textwidth=100            " wrap at column 100
+  set wrapmargin=0             " don't wrap based on terminal size
 
-  set scrolloff=8               " start scrolling 8 lines from bottom
-  set sidescrolloff=15          " start scrolling 15 lines from right
+  set scrolloff=8              " start scrolling 8 lines from bottom
+  set sidescrolloff=15         " start scrolling 15 lines from right
 
 "═ Keys ═══════════════════════════════════════════════════════════════════════════════════════════
 
