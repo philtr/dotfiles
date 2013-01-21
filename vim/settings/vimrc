@@ -66,7 +66,8 @@
 "═ BufferGator ════════════════════════════════════════════════════════════════════════════════════
 
   let g:buffergator_viewport_sort_regime = "mru"   " sort by 'most recently used'
-  let g:buffergator_viewport_split_policy = "R"    " split vertically to the right
+  let g:buffergator_viewport_split_policy = "B"    " split horizontally to the bottom
+  let g:buffergator_split_size = 10                " show 10 lines in buffergator split
 
 "═ CtrlP ══════════════════════════════════════════════════════════════════════════════════════════
 
