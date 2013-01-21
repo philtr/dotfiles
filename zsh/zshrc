@@ -1,0 +1,42 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Phillip Ridlen <p@rdln.net>
+#
+
+#
+# Source Prezto.
+#
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+#
+# Luigi
+#
+#tart bake $HOME/luigi.tart
+
+#
+# AutoJump
+#
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+#
+# Aliases
+#
+alias b='bundle exec'
+
+alias migrate="rake db:migrate"
+alias rollback="rake db:rollback"
+
+alias git="nocorrect git"
+alias gglg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+alias gst="git status -sb"
+alias gcb="git rev-parse --abbrev-ref HEAD"
+alias ggpush="git push origin \`gcb\`"
+
+alias s='subl'
+
+
