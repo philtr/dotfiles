@@ -16,3 +16,6 @@
 [submodule "vim/bundle/vim-indent-guides"]
 	path = vim/bundle/vim-indent-guides
 	url = git@github.com:nathanaelkane/vim-indent-guides.git
+[submodule "vim/bundle/NrrwRgn"]
+	path = vim/bundle/NrrwRgn
+	url = git@github.com:chrisbra/NrrwRgn.git
