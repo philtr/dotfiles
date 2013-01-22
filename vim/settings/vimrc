@@ -45,10 +45,6 @@
   set textwidth=100            " wrap at column 100
   set wrapmargin=0             " don't wrap based on terminal size
 
-"═ Folding ════════════════════════════════════════════════════════════════════════════════════════
-
-  set foldmethod=syntax        " Syntax highlighting items specify folds
-
 "═ Keys ═══════════════════════════════════════════════════════════════════════════════════════════
 
   let mapleader = ','
