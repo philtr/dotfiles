@@ -1,32 +1,51 @@
-"═ Mac OS X ═══════════════════════════════════════════════════════════════════════════════════════
+#═ Mac OS X ═══════════════════════════════════════════════════════════════════════════════════════
 
-.DS_Store              # Mac OS X metadata
+# Mac OS X metadata
+.DS_Store
 
-"═ Development ════════════════════════════════════════════════════════════════════════════════════
+#═ Development ════════════════════════════════════════════════════════════════════════════════════
 
-tags                   # Generated CTags
-/public/system/*       # I have no idea
-**.orig                # Again, not really sure
-rerun.txt              # See above
-pickle-email-*.html    # What the heck?
+# CTags
+tag
 
-"═ Ruby/Rails ═════════════════════════════════════════════════════════════════════════════════════
+# I have no idea whath these are
+/public/system/*
+**.orig
+rerun.txt
+pickle-email-*.html
 
-*.rbc                  # Compiled Ruby from Rubinius
-*.sassc                # Sass cache file
-.sass-cache            # Sass cache directory
-capybara-*.html        # Capybara output file
-.rspec                 # RSpec configuration
-/.bundle               # Bundler configuration
-/vendor/bundle         # Bundled gems
-/log/*                 # Log files
-/tmp/*                 # Temporary files
-/db/*.sqlite3          # Rails SQLite database
-/coverage/             # Coverage output files
-/spec/tmp/*            # Rspec temporary files
-config/database.yml    # Rails database configuration
-.powrc                 # Pow configuration file
-.rvmrc                 # RVM configuration file
-.powenv                # Pow environment file
-.powder                # Configuration for 'powder' gem
+#═ Ruby/Rails ═════════════════════════════════════════════════════════════════════════════════════
+
+# Rubinius
+*.rbc
+
+# Sass
+*.sassc
+.sass-cache
+
+# Testing
+capybara-*.html
+.rspec
+/spec/tmp/*
+/coverage/
+
+# Bundler
+/.bundle
+/vendor/bundle
+
+# Temporary/Log files
+/log/*
+/tmp/*
+
+# Databases
+/db/*.sqlite3
+config/database.yml
+
+# Pow
+.powrc
+.powenv
+.powder
+
+# RVM
+.rvmrc
 
