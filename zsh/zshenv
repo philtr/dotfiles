@@ -78,6 +78,8 @@ unset path_file
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  ./vendor/bundle/bin
+  $HOME/.rbenv/bin
   $HOME/bin
   /usr/local/{bin,sbin}
   /usr/{bin,sbin}
@@ -112,5 +114,5 @@ fi
 # RBEnv
 #
 eval "$(rbenv init --no-rehash -)"
-rbenv rehash > /dev/null 2<&1 &!
+(rbenv rehash &) 2> /dev/null
 
