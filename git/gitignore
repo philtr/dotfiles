@@ -1,23 +1,32 @@
-*.rbc
-*.sassc
-.sass-cache
-capybara-*.html
-.rspec
-/.bundle
-/vendor/bundle
-/log/*
-/tmp/*
-/db/*.sqlite3
-/public/system/*
-/coverage/
-/spec/tmp/*
-**.orig
-rerun.txt
-pickle-email-*.html
-config/database.yml
-tags
-.powrc
-.DS_Store
-.rvmrc
-.powenv
-.powder
+"═ Mac OS X ═══════════════════════════════════════════════════════════════════════════════════════
+
+.DS_Store              # Mac OS X metadata
+
+"═ Development ════════════════════════════════════════════════════════════════════════════════════
+
+tags                   # Generated CTags
+/public/system/*       # I have no idea
+**.orig                # Again, not really sure
+rerun.txt              # See above
+pickle-email-*.html    # What the heck?
+
+"═ Ruby/Rails ═════════════════════════════════════════════════════════════════════════════════════
+
+*.rbc                  # Compiled Ruby from Rubinius
+*.sassc                # Sass cache file
+.sass-cache            # Sass cache directory
+capybara-*.html        # Capybara output file
+.rspec                 # RSpec configuration
+/.bundle               # Bundler configuration
+/vendor/bundle         # Bundled gems
+/log/*                 # Log files
+/tmp/*                 # Temporary files
+/db/*.sqlite3          # Rails SQLite database
+/coverage/             # Coverage output files
+/spec/tmp/*            # Rspec temporary files
+config/database.yml    # Rails database configuration
+.powrc                 # Pow configuration file
+.rvmrc                 # RVM configuration file
+.powenv                # Pow environment file
+.powder                # Configuration for 'powder' gem
+
