@@ -36,7 +36,7 @@ alias gglg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 alias gst="git status -sb"
 alias gcb="git rev-parse --abbrev-ref HEAD"
 alias ggpush="git push origin \`gcb\`"
+alias gd="git difftool"
 
 alias s='subl'
-
 
