@@ -31,6 +31,8 @@ alias b='bundle exec'
 alias migrate="rake db:migrate"
 alias rollback="rake db:rollback"
 
+alias cuke="cucumber"
+
 alias git="nocorrect git"
 alias gglg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gst="git status -sb"
