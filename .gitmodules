@@ -19,3 +19,6 @@
 [submodule "vim/bundle/NrrwRgn"]
 	path = vim/bundle/NrrwRgn
 	url = git@github.com:chrisbra/NrrwRgn.git
+[submodule "vim/bundle/vim-cucumber"]
+	path = vim/bundle/vim-cucumber
+	url = git@github.com:tpope/vim-cucumber.git
