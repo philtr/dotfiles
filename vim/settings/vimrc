@@ -16,8 +16,8 @@
   set mouse=a                  " allow mouse usage
   set noswapfile               " don't create swap files
   set nobackup                 " don't create backup files
-  set undodir=~/.vim/undo//    " put undo files in ~/.vim/undo/path%to$file.ext
   set nowb                     " don't wub wub wub
+  set undodir=~/.vim/undo//    " put undo files in ~/.vim/undo/path%to$file.ext
   set visualbell               " use vilsual bell
 
   set scrolloff=8              " start scrolling 8 lines from bottom
@@ -60,6 +60,7 @@
   colorscheme solarized                   " Solarized, by Ethan Schoonover
   set background=dark                     " https://github.com/altercation/solarized
   set colorcolumn=100                     " visual indicator at column 100
+  set linespace=5                         " give the code some breathing room
   set list listchars=tab:██,trail:∙       " Use "██" for tabs and "∙" for trailing spaces
 
   set fillchars+=vert:                    " set vertical fillchar to "en space" (it's there, trust
