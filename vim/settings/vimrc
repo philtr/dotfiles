@@ -20,8 +20,8 @@
   set undodir=~/.vim/undo//    " put undo files in ~/.vim/undo/path%to$file.ext
   set visualbell               " use vilsual bell
 
-  set scrolloff=8              " start scrolling 8 lines from bottom
-  set sidescrolloff=15         " start scrolling 15 lines from right
+  set scrolloff=3              " start scrolling 3 lines from bottom
+  set sidescrolloff=6          " start scrolling 6 lines from right
 
 "═ Filetype ═══════════════════════════════════════════════════════════════════════════════════════
 
