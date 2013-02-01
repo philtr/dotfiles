@@ -82,6 +82,8 @@ path=(
   $HOME/.rbenv/bin
   $HOME/bin
   /usr/local/{bin,sbin}
+  /usr/local/share/npm/bin
+  /usr/local/share/python
   /usr/{bin,sbin}
   /{bin,sbin}
   $path
@@ -106,7 +108,6 @@ fi
 #
 # Load Python virtualenv
 #
-# export path=/usr/local/share/python:$path
 # source /usr/local/share/python/virtualenvwrapper.sh
 
 
