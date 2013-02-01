@@ -1,4 +1,4 @@
-"═ Initial setup ══════════════════════════════════════════════════════════════════════════════════
+" ≡ Initial setup ≡ ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   " use Vim settings, rather than Vi settings
   set nocompatible
@@ -7,7 +7,7 @@
   execute pathogen#infect()
   execute pathogen#helptags()
 
-"═ Interface ══════════════════════════════════════════════════════════════════════════════════════
+" ≡ Interface ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   syntax on                    " turn on syntax highilghting
 
@@ -18,17 +18,17 @@
   set nobackup                 " don't create backup files
   set nowb                     " don't wub wub wub
   set undodir=~/.vim/undo//    " put undo files in ~/.vim/undo/path%to$file.ext
-  set visualbell               " use vilsual bell
+  set visualbell               " use visual bell
 
   set scrolloff=3              " start scrolling 3 lines from bottom
   set sidescrolloff=6          " start scrolling 6 lines from right
 
-"═ Filetype ═══════════════════════════════════════════════════════════════════════════════════════
+" ≡ Filetype ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   filetype plugin on           " enable loading plugins for filetypes
   filetype indent on           " enable loading 'indent files' for filetypes
 
-"═ Indentation ════════════════════════════════════════════════════════════════════════════════════
+" ≡ Indentation ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   set autoindent               " indent next line to same level as current line
   set smartindent              "   ↑ but do it smartly
@@ -38,14 +38,14 @@
   set softtabstop=2            " use 2 spaces for a <Tab>
   set expandtab
 
-"═ Wrapping ═══════════════════════════════════════════════════════════════════════════════════════
+" ≡ Wrapping ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   set nowrap                   " don't softwrap text
   set formatoptions-=t         " don't automatically hardwrap text (use 'gq' to reflow text)
   set textwidth=100            " wrap at column 100
   set wrapmargin=0             " don't wrap based on terminal size
 
-"═ Keys ═══════════════════════════════════════════════════════════════════════════════════════════
+" ≡ Keys ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   let mapleader = ','
 
@@ -55,7 +55,7 @@
   nmap <Leader>n :NERDTreeToggle<CR>
   nmap <Leader>p <C-p>
 
-"═ Theme ══════════════════════════════════════════════════════════════════════════════════════════
+" ≡ Theme ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   colorscheme solarized                   " Solarized, by Ethan Schoonover
   set background=dark                     " https://github.com/altercation/solarized
@@ -68,29 +68,29 @@
   set fillchars+=vert:                    " set vertical fillchar to "en space" (it's there, trust
                                           " me) for tab splits
 
-"═ File Types ═════════════════════════════════════════════════════════════════════════════════════
+" ≡ File Types ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   au BufRead,BufNewFile *.brs setfiletype vb  " BrightScript as VBScript
 
-"═ BufferGator ════════════════════════════════════════════════════════════════════════════════════
+" ≡ BufferGator ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
-  let g:buffergator_sort_regime = "mru"   " sort by 'most recently used'
+  let g:buffergator_sort_regime = "mru"            " sort by 'most recently used'
   let g:buffergator_viewport_split_policy = "B"    " split horizontally to the bottom
   let g:buffergator_split_size = 10                " show 10 lines in buffergator split
 
-"═ CtrlP ══════════════════════════════════════════════════════════════════════════════════════════
+" ≡ CtrlP ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   let g:ctrlp_custom_ignore = {
     \ 'dir': 'vendor/bundle'
     \ }
 
-"═ Indent Guides ══════════════════════════════════════════════════════════════════════════════════
+" ≡ Indent Guides ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   let g:indent_guides_color_change_percent = 3      " ultra-low-contrast guides
   let g:indent_guides_guide_size = 1                " between 0 and 'shiftwidth'
   let g:indent_guides_start_level = 3               " don't show guides until the third indent
 
-"═ NERDTree ═══════════════════════════════════════════════════════════════════════════════════════
+" ≡ NERDTree ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
   let NERDTreeShowHidden = 0  " Don't show hidden files

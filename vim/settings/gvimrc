@@ -1,15 +1,15 @@
-"═ GUI Options ════════════════════════════════════════════════════════════════════════════════════
+"≡ GUI Options ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   set guioptions-=T      " disable toolbar
   set guioptions-=r      " disable right scrollbar
   set guioptions-=L      " disable left scrollbar
 
-"═ Colors ═════════════════════════════════════════════════════════════════════════════════════════
+"≡ Colors ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   colorscheme solarized  " use solarized in case vimrc says otherwise
   set background=dark
 
-"═ Font ═══════════════════════════════════════════════════════════════════════════════════════════
+"≡ Font ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
   set guifont=Source\ Code\ Pro\ for\ Powerline:h12
   set antialias
