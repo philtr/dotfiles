@@ -41,3 +41,6 @@
   path = vim/bundle/vim-ruby
   url = git@github.com:vim-ruby/vim-ruby.git
 
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = git@github.com:Valloric/YouCompleteMe.git
