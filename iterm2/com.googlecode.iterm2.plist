@@ -8079,15 +8079,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>412 225 445 270 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>486 281 924 485 0 0 1440 878 </string>
+	<string>486 821 924 485 0 0 2560 1418 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>1088 981 384 129 0 0 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 294 592 584 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 138 570 656 0 0 1440 878 </string>
+	<string>2560 100 1440 900 2560 100 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>272 217 570 656 0 0 1440 878 </string>
+	<string>2921 403 570 446 2560 100 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>699 129 570 446 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -11010,6 +11010,8 @@
 			<string>/Users/philtr</string>
 		</dict>
 	</array>
+	<key>NoSyncNeverRemindPrefsChangesCopy</key>
+	<true/>
 	<key>NotFirstRun</key>
 	<true/>
 	<key>OnlyWhenMoreTabs</key>
@@ -11076,7 +11078,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-02-02T18:14:48Z</date>
+	<date>2013-02-06T21:03:17Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
