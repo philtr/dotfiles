@@ -50,3 +50,6 @@
 [submodule "vim/bundle/vim-ruby-conque"]
 	path = vim/bundle/vim-ruby-conque
 	url = git@github.com:skwp/vim-ruby-conque.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = git@github.com:scrooloose/syntastic.git
