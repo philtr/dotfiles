@@ -40,10 +40,6 @@
 [submodule "vim/bundle/vim-ruby"]
   path = vim/bundle/vim-ruby
   url = git@github.com:vim-ruby/vim-ruby.git
-
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = git@github.com:Valloric/YouCompleteMe.git
 [submodule "vim/bundle/Conque-Shell"]
 	path = vim/bundle/Conque-Shell
 	url = git@github.com:vim-scripts/Conque-Shell.git
