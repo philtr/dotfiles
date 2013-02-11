@@ -41,11 +41,12 @@
   path = vim/bundle/vim-ruby
   url = git@github.com:vim-ruby/vim-ruby.git
 [submodule "vim/bundle/Conque-Shell"]
-	path = vim/bundle/Conque-Shell
-	url = git@github.com:vim-scripts/Conque-Shell.git
+  path = vim/bundle/Conque-Shell
+  url = git@github.com:vim-scripts/Conque-Shell.git
 [submodule "vim/bundle/vim-ruby-conque"]
-	path = vim/bundle/vim-ruby-conque
-	url = git@github.com:skwp/vim-ruby-conque.git
+  path = vim/bundle/vim-ruby-conque
+  url = git@github.com:skwp/vim-ruby-conque.git
 [submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = git@github.com:scrooloose/syntastic.git
+  path = vim/bundle/syntastic
+  url = git@github.com:scrooloose/syntastic.git
+
