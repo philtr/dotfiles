@@ -31,6 +31,10 @@ alias b='bundle exec'
 alias migrate="rake db:migrate"
 alias rollback="rake db:rollback"
 
+alias frails="foreman run bundle exec rails"
+alias frake="foreman run bundle exec rake"
+alias fresq="foreman run bundle exec rake jobs:work"
+
 alias cuke="cucumber"
 
 alias git="nocorrect git"
@@ -42,3 +46,6 @@ alias gd="git difftool"
 
 alias s='subl'
 
+# Quick way to rebuild the Launch Services database and get rid
+# of duplicates in the Open With submenu.
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'

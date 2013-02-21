@@ -49,11 +49,18 @@
 
   let mapleader = ','
 
+  " Tabs
   nmap <Leader>l :tabnext<CR>
   nmap <Leader>h :tabprevious<CR>
 
+  " NERDTRee
   nmap <Leader>n :NERDTreeToggle<CR>
+
+  " CtrlP
   nmap <Leader>p <C-p>
+
+  " Taglist
+  nnoremap <Leader>T :TlistToggle<CR>
 
 " ≡ Theme ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
@@ -95,4 +102,11 @@
 
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
   let NERDTreeShowHidden = 0  " Don't show hidden files
+
+" ≡ NERDTree ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+
+  let Tlist_Compact_Format = 1            " Hide extra information and linebreaks
+  let Tlist_GainFocus_On_ToggleOpen = 1   " Focus Taglist when opening it
+  let Tlist_Use_Right_Window = 1          " Show Taglist on the right
+  let Tlist_WinWidth = 40                 " Wider list of tags
 
