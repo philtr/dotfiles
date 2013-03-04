@@ -21,7 +21,7 @@ fi
 #
 # AutoJump
 #
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+type brew &> /dev/null && [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 #
 # Aliases
