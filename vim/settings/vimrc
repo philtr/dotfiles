@@ -47,7 +47,8 @@
 
 " ≡ Keys ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
-  let mapleader = ','
+  let mapleader = ','                     " Fearless leader!
+  set backspace=indent,eol,start          " Make backspace behave as expected
 
   " Tabs
   nmap <Leader>l :tabnext<CR>
