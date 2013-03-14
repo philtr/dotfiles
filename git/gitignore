@@ -32,6 +32,7 @@ capybara-*.html
 # Bundler
 /.bundle
 /vendor/bundle
+/_vendor/bundle
 
 # Temporary/Log files
 /log/*
