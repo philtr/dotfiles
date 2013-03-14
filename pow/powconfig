@@ -1,3 +1,3 @@
 export NEWRELIC_DISPATCHER=pow
 export POW_WORKRS=1
-export PATH="$(rbenv prefix)/bin:$PATH"
+export PATH="$(rbenv prefix)/shims:$(rbenv prefix)/bin:$PATH"
