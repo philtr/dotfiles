@@ -22,6 +22,7 @@
 
   set scrolloff=3              " start scrolling 3 lines from bottom
   set sidescrolloff=6          " start scrolling 6 lines from right
+  let loaded_match_paren = 1   " don't highlight matching parens (it confuses me)
 
 " ≡ Filetype ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
