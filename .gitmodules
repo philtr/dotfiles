@@ -19,9 +19,6 @@
 [submodule "vim/bundle/NrrwRgn"]
   path = vim/bundle/NrrwRgn
   url = git@github.com:chrisbra/NrrwRgn.git
-[submodule "vim/bundle/vim-cucumber"]
-  path = vim/bundle/vim-cucumber
-  url = git@github.com:tpope/vim-cucumber.git
 [submodule "vim/bundle/vim-tomorrow-theme"]
   path = vim/bundle/vim-tomorrow-theme
   url = git@github.com:chriskempson/vim-tomorrow-theme.git
@@ -31,27 +28,14 @@
 [submodule "vim/bundle/vim-coffee-script"]
   path = vim/bundle/vim-coffee-script
   url = git@github.com:kchmck/vim-coffee-script.git
-[submodule "vim/bundle/vim-surround"]
-  path = vim/bundle/vim-surround
-  url = git@github.com:tpope/vim-surround.git
 [submodule "vim/bundle/vim-rails"]
   path = vim/bundle/vim-rails
   url = git@github.com:tpope/vim-rails.git
 [submodule "vim/bundle/vim-ruby"]
   path = vim/bundle/vim-ruby
   url = git@github.com:vim-ruby/vim-ruby.git
-[submodule "vim/bundle/Conque-Shell"]
-  path = vim/bundle/Conque-Shell
-  url = git@github.com:vim-scripts/Conque-Shell.git
-[submodule "vim/bundle/vim-ruby-conque"]
-  path = vim/bundle/vim-ruby-conque
-  url = git@github.com:skwp/vim-ruby-conque.git
 [submodule "vim/bundle/syntastic"]
   path = vim/bundle/syntastic
-  url = git@github.com:scrooloose/syntastic.git
-[submodule "vim/bundle/taglist"]
-  path = vim/bundle/taglist
-  url = git@github.com:vim-scripts/taglist.vim.git
 [submodule "middleman/html5-haml"]
   path = middleman/html5-haml
   url = git@github.com:dannyprose/Middleman-HTML5BP-HAML.git
