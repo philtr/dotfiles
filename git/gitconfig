@@ -24,3 +24,5 @@
 
 [merge]
 	tool = Kaleidoscope
+[github]
+	user = philtr
