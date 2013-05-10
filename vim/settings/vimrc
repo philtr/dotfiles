@@ -11,6 +11,10 @@
 
   syntax on                    " turn on syntax highilghting
 
+  set ttyfast
+  set ttyscroll=3
+  set lazyredraw
+
   set number                   " display line numbers
   set laststatus=2             " show status bar
   set mouse=a                  " allow mouse usage
