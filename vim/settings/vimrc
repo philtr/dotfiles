@@ -11,6 +11,7 @@
 
   syntax on                    " turn on syntax highilghting
 
+  set synmaxcol=200            " no syntax highlighting for lines longer than 200 cols
   set ttyfast
   set ttyscroll=3
   set lazyredraw
