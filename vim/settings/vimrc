@@ -71,8 +71,8 @@
 
 "= Theme ==========================================================================================
 
-  colorscheme solarized                   " Solarized, by Ethan Schoonover
-  set background=dark                     " https://github.com/altercation/solarized
+  colorscheme tomorrow-night-eighties
+  set background=dark
 
   set hlsearch                            " highlight all search matches
   set colorcolumn=100                     " visual indicator at column 100
