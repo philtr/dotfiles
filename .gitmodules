@@ -36,22 +36,19 @@
   url = git@github.com:vim-ruby/vim-ruby.git
 [submodule "vim/bundle/syntastic"]
   path = vim/bundle/syntastic
-[submodule "middleman/html5-haml"]
-  path = middleman/html5-haml
-  url = git@github.com:dannyprose/Middleman-HTML5BP-HAML.git
-
+  url = git@github.com:scrooloose/syntastic.git
 [submodule "vim/bundle/vim-css-color"]
-	path = vim/bundle/vim-css-color
-	url = git://github.com/skammer/vim-css-color.git
+  path = vim/bundle/vim-css-color
+  url = git://github.com/skammer/vim-css-color.git
 [submodule "vim/bundle/vim-unimpaired"]
-	path = vim/bundle/vim-unimpaired
-	url = git://github.com/tpope/vim-unimpaired.git
+  path = vim/bundle/vim-unimpaired
+  url = git://github.com/tpope/vim-unimpaired.git
 [submodule "vim/bundle/vim-dispatch"]
-	path = vim/bundle/vim-dispatch
-	url = git://github.com/tpope/vim-dispatch.git
+  path = vim/bundle/vim-dispatch
+  url = git://github.com/tpope/vim-dispatch.git
 [submodule "vim/bundle/vim-slim"]
-	path = vim/bundle/vim-slim
-	url = git@github.com:slim-template/vim-slim.git
+  path = vim/bundle/vim-slim
+  url = git@github.com:slim-template/vim-slim.git
 [submodule "vim/bundle/puppet"]
-	path = vim/bundle/puppet
-	url = https://github.com/rodjek/vim-puppet.git
+  path = vim/bundle/puppet
+  url = https://github.com/rodjek/vim-puppet.git
