@@ -32,6 +32,14 @@ then
   echo "Cloning dotfiles.."
   mkdir -p $DOTS
   git clone --recursive git@bitbucket.org:philtr/dotfiles.git "$DOTS"
+else
+  cd $DOTS
+  git add -u .
+  git stash
+  git pull --rebase origin master
+  git push origin master
+  git stash pop
+  cd $HOMEDIR
 fi
 
 
@@ -40,10 +48,22 @@ if [[ ! -d $HOMEDIR/.zprezto ]]
 then
   echo "Installing Prezto (https://github.com/sorin-ionescu/prezto)..."
   git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOMEDIR/.zprezto"
+else
+  cd $HOMEDIR/.zprezto
+  git reset --hard
+  git pull origin master -f
+  cd $HOMEDIR
 fi
 
 # Link zsh configuration files
 echo "Linking ZSH configuration files..."
+rm  $HOMEDIR/.zlogin    \
+    $HOMEDIR/.zlogout   \
+    $HOMEDIR/.zpreztorc \
+    $HOMEDIR/.zprofile  \
+    $HOMEDIR/.zshenv    \
+    $HOMEDIR/.zshrc
+
 ln -s $DOTS/zsh/zlogin            $HOMEDIR/.zlogin
 ln -s $DOTS/zsh/zlogout           $HOMEDIR/.zlogout
 ln -s $DOTS/zsh/zpreztorc         $HOMEDIR/.zpreztorc
@@ -53,12 +73,21 @@ ln -s $DOTS/zsh/zshrc             $HOMEDIR/.zshrc
 
 # Link git configuration files
 echo "Linking Git configuration files..."
+rm  $HOMEDIR/.gitconfig \
+    $HOMEDIR/.gitignore
+
 ln -s $DOTS/git/gitconfig         $HOMEDIR/.gitconfig
 ln -s $DOTS/git/gitignore         $HOMEDIR/.gitignore
 
 # Link ruby configuration
 echo "Linking Ruby-related configurations..."
-mkdir -p $HOMEDIR/.bundle
+mkdir -p  $HOMEDIR/.bundle
+rm  -rf   $HOMEDIR/.bundle/config \
+          $HOMEDIR/.gemrc         \
+          $HOMEDIR/.pryrc         \
+          $HOMEDIR/.powrc         \
+          $HOMEDIR/.middleman
+
 ln -s $DOTS/ruby/bundler          $HOMEDIR/.bundle/config
 ln -s $DOTS/ruby/gemrc            $HOMEDIR/.gemrc
 ln -s $DOTS/ruby/pryrc            $HOMEDIR/.pryrc
@@ -67,6 +96,10 @@ ln -s $DOTS/middleman             $HOMEDIR/.middleman
 
 # Link vim configuration
 echo "Linking vim configuration files"
+rm  -rf $HOMEDIR/.vim     \
+        $HOMEDIR/.vimrc   \
+        $HOMEDIR/.gvimrc
+
 ln -s $DOTS/vim                   $HOMEDIR/.vim
 ln -s $DOTS/vim/settings/vimrc    $HOMEDIR/.vimrc
 ln -s $DOTS/vim/setting/gvimrc    $HOMEDIR/.gvimrc
