@@ -101,7 +101,7 @@ rm  -rf $HOMEDIR/.vim     \
 
 ln -s $DOTS/vim                   $HOMEDIR/.vim
 ln -s $DOTS/vim/settings/vimrc    $HOMEDIR/.vimrc
-ln -s $DOTS/vim/setting/gvimrc    $HOMEDIR/.gvimrc
+ln -s $DOTS/vim/settings/gvimrc    $HOMEDIR/.gvimrc
 
 # Print Manual Instructions
 echo "\n\nATTENTION! Further Instructions:\n"
