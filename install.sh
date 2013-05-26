@@ -36,7 +36,7 @@ else
   cd $DOTS
   git add -u .
   git stash
-  git pull --rebase origin master
+  git pull --recurse-submodules --rebase origin master
   git push origin master
   git stash pop
   cd $HOMEDIR
