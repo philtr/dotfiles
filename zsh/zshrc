@@ -14,6 +14,15 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 #
+# Source Boxen
+#
+if [[ -d /opt/boxen ]]
+then
+  source /opt/boxen/env.sh
+fi
+
+
+#
 # Luigi
 #
 #tart bake $HOME/luigi.tart

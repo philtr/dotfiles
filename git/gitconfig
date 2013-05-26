@@ -3,7 +3,7 @@
 	email = phillip@ovenbits.com
 
 [core]
-	excludesfile = /Users/philtr/.gitignore
+	excludesfile = /opt/boxen/config/git/gitignore
 	editor = mvim -f
 
 [difftool "Kaleidoscope"]
@@ -26,3 +26,9 @@
 	tool = Kaleidoscope
 [github]
 	user = philtr
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[hub]
+protocol = https
