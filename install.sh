@@ -92,7 +92,6 @@ ln -s $DOTS/ruby/bundler          $HOMEDIR/.bundle/config
 ln -s $DOTS/ruby/gemrc            $HOMEDIR/.gemrc
 ln -s $DOTS/ruby/pryrc            $HOMEDIR/.pryrc
 ln -s $DOTS/pow/powconfig         $HOMEDIR/.powrc
-ln -s $DOTS/middleman             $HOMEDIR/.middleman
 
 # Link vim configuration
 echo "Linking vim configuration files"
