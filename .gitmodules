@@ -12,7 +12,7 @@
   url = git@github.com:jeetsukumaran/vim-buffergator.git
 [submodule "vim/bundle/tComment"]
   path = vim/bundle/tComment
-  url = git@github.com:vim-scripts/tComment.git
+  url = git@bitbucket.org:philtr/tcomment.git
 [submodule "vim/bundle/vim-indent-guides"]
   path = vim/bundle/vim-indent-guides
   url = git@github.com:nathanaelkane/vim-indent-guides.git
