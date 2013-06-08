@@ -110,10 +110,20 @@ fi
 #
 # source /usr/local/share/python/virtualenvwrapper.sh
 
+#
+# Boxen
+#
+if [[ -d /opt/boxen ]]
+then
+  source /opt/boxen/env.sh
+fi
+
 
 #
 # RBEnv
 #
 eval "$(rbenv init --no-rehash -)"
 (rbenv rehash &) 2> /dev/null
+
+
 

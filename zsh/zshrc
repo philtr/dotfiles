@@ -14,15 +14,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 #
-# Source Boxen
-#
-if [[ -d /opt/boxen ]]
-then
-  source /opt/boxen/env.sh
-fi
-
-
-#
 # Luigi
 #
 #tart bake $HOME/luigi.tart
@@ -40,6 +31,9 @@ alias b='bundle exec'
 alias migrate="rake db:migrate"
 alias rollback="rake db:rollback"
 
+alias f="foreman"
+alias fbx="foreman run bundle exec"
+alias ftest="foreman run bundle exec turn -I'lib:test'"
 alias frails="foreman run bundle exec rails"
 alias frake="foreman run bundle exec rake"
 alias fresq="foreman run bundle exec rake jobs:work"
