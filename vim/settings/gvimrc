@@ -6,8 +6,8 @@
 
 "= Colors =========================================================================================
 
-  colorscheme solarized  " use solarized in case vimrc says otherwise
   set background=dark
+  colorscheme solarized  " use solarized in case vimrc says otherwise
 
 "= Font ===========================================================================================
 

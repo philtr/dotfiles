@@ -71,8 +71,8 @@
 
 "= Theme ==========================================================================================
 
-  colorscheme tomorrow-night-eighties
   set background=dark
+  colorscheme solarized
 
   set hlsearch                            " highlight all search matches
   set colorcolumn=100                     " visual indicator at column 100
