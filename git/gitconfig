@@ -32,3 +32,5 @@ helper = /opt/boxen/bin/boxen-git-credential
 
 [hub]
 protocol = https
+[alias]
+	conflicts = !git ls-files -u | cut -f 2 | sort -u
