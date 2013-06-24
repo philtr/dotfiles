@@ -8485,11 +8485,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1196 41 445 270 0 0 1680 1028 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>225 881 924 485 0 0 2560 1418 </string>
+	<string>104 528 924 485 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2560 420 668 1012 2560 390 1680 1050 </string>
+	<string>149 468 570 446 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>6 1039 1095 530 0 0 2560 1578 </string>
+	<string>1044 414 857 845 0 0 2560 1578 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>1 30 1678 494 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -8700,7 +8700,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/zsh</string>
+			<string>/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -8722,7 +8722,7 @@
 			<key>Cursor Type</key>
 			<integer>2</integer>
 			<key>Custom Command</key>
-			<string>No</string>
+			<string>Yes</string>
 			<key>Custom Directory</key>
 			<string>Advanced</string>
 			<key>Default Bookmark</key>
@@ -9267,29 +9267,29 @@
 			<key>Ansi 10 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.10265054553747177</real>
+				<real>0.38298487663269043</real>
 				<key>Green Component</key>
-				<real>0.66176670789718628</real>
+				<real>0.35665956139564514</real>
 				<key>Red Component</key>
-				<real>0.5533980131149292</real>
+				<real>0.27671992778778076</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.094313502311706543</real>
+				<real>0.43850564956665039</real>
 				<key>Green Component</key>
-				<real>0.48428881168365479</real>
+				<real>0.40717673301696777</real>
 				<key>Red Component</key>
-				<real>0.67337697744369507</real>
+				<real>0.32436618208885193</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.81654930114746094</real>
+				<real>0.51685798168182373</real>
 				<key>Green Component</key>
-				<real>0.49598008394241333</real>
+				<real>0.50962930917739868</real>
 				<key>Red Component</key>
-				<real>0.15678021311759949</real>
+				<real>0.44058024883270264</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
@@ -9384,11 +9384,11 @@
 			<key>Ansi 9 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.073280826210975647</real>
+				<real>0.073530435562133789</real>
 				<key>Green Component</key>
-				<real>0.16162540018558502</real>
+				<real>0.21325300633907318</real>
 				<key>Red Component</key>
-				<real>0.81090348958969116</real>
+				<real>0.74176257848739624</real>
 			</dict>
 			<key>Automatically Log</key>
 			<false/>
@@ -12213,7 +12213,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-06-06T12:24:03Z</date>
+	<date>2013-06-21T17:07:31Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
