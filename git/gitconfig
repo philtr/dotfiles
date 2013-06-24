@@ -3,7 +3,7 @@
 	email = phillip@ovenbits.com
 
 [core]
-	excludesfile = /opt/boxen/config/git/gitignore
+	excludesfile = /Users/philtr/.gitignore
 	editor = mvim -f
 
 [difftool "Kaleidoscope"]
@@ -28,9 +28,10 @@
 	user = philtr
 
 [credential]
-helper = /opt/boxen/bin/boxen-git-credential
 
 [hub]
 protocol = https
 [alias]
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
+[heroku]
+	account = oven
