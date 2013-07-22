@@ -42,7 +42,9 @@ alias gcb="git rev-parse --abbrev-ref HEAD"
 alias ggpush="git push origin \`gcb\`"
 alias gd="git difftool"
 
-alias s='subl'
+alias e="mvim"
+
+alias jsc="node"
 
 # Quick way to rebuild the Launch Services database and get rid
 # of duplicates in the Open With submenu.
