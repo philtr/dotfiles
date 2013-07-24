@@ -95,6 +95,16 @@ done
 unset path_file
 
 #
+# Function Paths
+#
+export ZSH_HOME="$HOME/.dotfiles/zsh"
+fpath=(
+  $ZSH_HOME/themes
+  $ZSH_HOME/functions
+  $fpath
+)
+
+#
 # Temporary Files
 #
 
@@ -115,6 +125,5 @@ fi
 #
 eval "$(rbenv init --no-rehash -)"
 (rbenv rehash &) 2> /dev/null
-
 
 
