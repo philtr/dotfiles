@@ -10,21 +10,25 @@
   " Vundle core
   Bundle 'gmarik/vundle'
 
+  " Vim-Scripts
   Bundle 'tComment'
 
-  Bundle 'chrisbra/NrrwRgn'
-  Bundle 'kien/ctrlp.vim'
-  Bundle 'othree/html5.vim'
-  Bundle 'scrooloose/nerdtree'
+  " GitHub
   Bundle 'altercation/vim-colors-solarized'
-  Bundle 'scrooloose/syntastic'
+  Bundle 'chrisbra/NrrwRgn'
   Bundle 'jeetsukumaran/vim-buffergator'
   Bundle 'kchmck/vim-coffee-script'
-  Bundle 'skammer/vim-css-color'
-  Bundle 'vim-ruby/vim-ruby'
-  Bundle 'tpope/vim-rails'
+  Bundle 'kien/ctrlp.vim'
+  Bundle 'lilydjwg/colorizer'
   Bundle 'nathanaelkane/vim-indent-guides'
+  Bundle 'othree/html5.vim'
+  Bundle 'scrooloose/nerdtree'
+  Bundle 'scrooloose/syntastic'
+  Bundle 'tpope/vim-bundler'
+  Bundle 'tpope/vim-rails'
+  Bundle 'tpope/vim-rbenv'
   Bundle 'tpope/vim-unimpaired'
+  Bundle 'vim-ruby/vim-ruby'
 
 
 "= Interface ======================================================================================
@@ -47,7 +51,7 @@
 
   set scrolloff=3              " start scrolling 3 lines from bottom
   set sidescrolloff=6          " start scrolling 6 lines from right
-  let loaded_match_paren = 1   " don't highlight matching parens (it confuses me)
+  let loaded_match_paren = 1   " highlight matching parens
 
 "= Filetype =======================================================================================
 
@@ -79,6 +83,9 @@
   " Tabs
   nmap <Leader>l :tabnext<CR>
   nmap <Leader>h :tabprevious<CR>
+
+  " Folding
+  nmap <Leader>F :set foldmethod=syntax<CR>
 
   " NERDTRee
   nmap <Leader>n :NERDTreeToggle<CR>

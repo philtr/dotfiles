@@ -11,6 +11,6 @@
 
 "= Font ===========================================================================================
 
-  set guifont=Source\ Code\ Pro:h12
+  set guifont=Anonymous\ Pro:h11
   set antialias
 
