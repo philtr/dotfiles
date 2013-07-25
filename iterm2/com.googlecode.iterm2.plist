@@ -8485,9 +8485,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>2048 67 445 270 0 0 2560 1418 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>756 390 924 485 0 0 1680 1028 </string>
+	<string>543 301 924 485 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>645 481 490 366 0 0 1680 1028 </string>
+	<string>0 42 1431 986 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>772 431 490 366 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -9075,11 +9075,11 @@
 			<key>Name</key>
 			<string>Solarized</string>
 			<key>Non Ascii Font</key>
-			<string>AnonymousPro 11</string>
+			<string>SourceCodePro-Regular 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>AnonymousPro 11</string>
+			<string>SourceCodePro-Regular 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
