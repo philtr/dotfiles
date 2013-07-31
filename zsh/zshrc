@@ -26,15 +26,16 @@ type brew &> /dev/null && [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --
 #
 # Aliases
 #
-alias b='bundle exec'
 
+# Rails
+alias b='bundle exec'
 alias c="cane --abc-glob '{app,lib,test}/**/*.rb' --abc-max 15 --style-glob '{app,lib}/**/*.rb' --style-measure 100 --no-doc"
 alias migrate="rake db:migrate"
 alias rollback="rake db:rollback"
-
 alias t="turn -I'lib:test'"
 
 
+# Git
 alias git="nocorrect git"
 alias gglg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gst="git status -sb"
@@ -42,8 +43,8 @@ alias gcb="git rev-parse --abbrev-ref HEAD"
 alias ggpush="git push origin \`gcb\`"
 alias gd="git difftool"
 
+# Misc
 alias e="mvim"
-
 alias jsc="node"
 
 # Quick way to rebuild the Launch Services database and get rid
