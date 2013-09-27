@@ -7,10 +7,10 @@
 "= Colors =========================================================================================
 
   set background=dark
-  colorscheme solarized  " use solarized in case vimrc says otherwise
+  colorscheme solarized        " use tree theme in case vimrc says otherwise
 
 "= Font ===========================================================================================
 
-  set guifont=Source\ Code\ Pro:h12
+  set guifont=Source\ Code\ Pro:h14
   set antialias
 
