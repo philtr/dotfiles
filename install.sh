@@ -57,12 +57,12 @@ fi
 
 # Link zsh configuration files
 echo "Linking ZSH configuration files..."
-rm  $HOMEDIR/.zlogin    \
-    $HOMEDIR/.zlogout   \
-    $HOMEDIR/.zpreztorc \
-    $HOMEDIR/.zprofile  \
-    $HOMEDIR/.zshenv    \
-    $HOMEDIR/.zshrc
+rm -f $HOMEDIR/.zlogin    \
+      $HOMEDIR/.zlogout   \
+      $HOMEDIR/.zpreztorc \
+      $HOMEDIR/.zprofile  \
+      $HOMEDIR/.zshenv    \
+      $HOMEDIR/.zshrc
 
 ln -s $DOTS/zsh/zlogin            $HOMEDIR/.zlogin
 ln -s $DOTS/zsh/zlogout           $HOMEDIR/.zlogout
