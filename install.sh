@@ -31,7 +31,7 @@ if [[ ! -d $DOTS ]]
 then
   echo "Cloning dotfiles.."
   mkdir -p $DOTS
-  git clone --recursive git@bitbucket.org:philtr/dotfiles.git "$DOTS"
+  git clone --recursive https://github.com/philtr/dotfiles.git "$DOTS"
 else
   cd $DOTS
   git add -u .
