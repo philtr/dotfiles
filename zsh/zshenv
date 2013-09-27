@@ -83,7 +83,6 @@ path=(
   $HOME/bin
   /usr/local/{bin,sbin}
   /usr/local/share/npm/bin
-  /usr/local/share/python
   /usr/{bin,sbin}
   /{bin,sbin}
   /usr/local/texlive/2013/bin/x86_64-darwin
