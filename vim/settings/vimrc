@@ -1,4 +1,4 @@
-"= Initial setup =================================================================================
+"= Initial setup ==================================================================================
 
   " use Vim settings, rather than Vi settings
   set nocompatible
@@ -7,76 +7,112 @@
   set rtp+=~/.vim/bundle/vundle
   call vundle#rc()
 
-"= Vundle ========================================================================================
+"= Vundle =========================================================================================
 
-  " Vundle core
+  " Vundle is short for 'Vim bundle' and is a Vim plugin manager.
+  " See https://github.com/gmarik/vundle for more information
+  "
   Bundle 'gmarik/vundle'
 
-  " Vim-Scripts
-  Bundle 'tComment'
-
-  " GitHub
+  " Solarized color scheme
   Bundle 'altercation/vim-colors-solarized'
+
+  " Create a new buffer with text in current visual block
   Bundle 'chrisbra/NrrwRgn'
+
+  " Switch between buffers and list tab windows
   Bundle 'jeetsukumaran/vim-buffergator'
+
+  " CoffeeScript syntax highlighting
   Bundle 'kchmck/vim-coffee-script'
+
+  " Fuzzy file search within current directory
   Bundle 'kien/ctrlp.vim'
+
+  " Colorize color strings
+  " #abc123 | rgb(252, 34, 43) | hsl(100, 70, 77)
   Bundle 'lilydjwg/colorizer'
+
+  " Indent guides to keep your code aligned
   Bundle 'nathanaelkane/vim-indent-guides'
+
+  " HTML 5 syntax highlighting
   Bundle 'othree/html5.vim'
+
+  " Tree color scheme
   Bundle 'philtr/The-Tree'
+
+  " Handy folder tree
   Bundle 'scrooloose/nerdtree'
+
+  " Check buffer for syntax errors when saving
   Bundle 'scrooloose/syntastic'
+
+  " Bundler goodies and syntax highlighting
   Bundle 'tpope/vim-bundler'
+
+  " Rails goodies and syntax highlighting
   Bundle 'tpope/vim-rails'
+
+  " Wrap rbenv with tab completion
   Bundle 'tpope/vim-rbenv'
-  Bundle 'tpope/vim-unimpaired'
+
+  " Ruby syntax highlighting and more
   Bundle 'vim-ruby/vim-ruby'
 
+  " Easily comment blocks of code
+  Bundle 'tComment'
 
 "= Interface ======================================================================================
 
-  syntax on                    " turn on syntax highilghting
+  "- Appearance -----------------------------------------------------------------------------------
 
-  set synmaxcol=200            " no syntax highlighting for lines longer than 200 cols
+    syntax on                    " turn on syntax highilghting
 
-  set ttyfast                  " improve screen refresh for terminal vim
-  set lazyredraw               " don't redraw while executing macros. postpone update window title
+    filetype plugin on           " enable loading plugins for filetypes
+    filetype indent on           " enable loading 'indent files' for filetypes
 
-  set number                   " display line numbers
-  set laststatus=2             " show status bar
-  set mouse=a                  " allow mouse usage
+    set synmaxcol=200            " no syntax highlighting for lines longer than 200 cols
+
+    set laststatus=2             " show status bar
+
+    set number                   " display line numbers
+    set visualbell               " use visual bell
+
+  "- Interaction ----------------------------------------------------------------------------------
+
+    set ttyfast                  " improve screen refresh for terminal vim
+    set lazyredraw               " don't redraw while executing macros. async window title update
+
+    set scrolloff=3              " start scrolling 3 lines from bottom
+    set sidescrolloff=6          " start scrolling 6 lines from right
+    let loaded_match_paren = 1   " highlight matching parens
+
+    set mouse=a                  " allow mouse usage
+
+  "- Wrapping -------------------------------------------------------------------------------------
+
+    set nowrap                   " don't softwrap text
+    set formatoptions-=t         " don't automatically hardwrap text (use 'gq' to reflow text)
+    set textwidth=100            " wrap at column 100
+    set wrapmargin=0             " don't wrap based on terminal size
+
+  "- Indentation ----------------------------------------------------------------------------------
+
+    set autoindent               " indent next line to same level as current line
+    set smartindent              "   ↑ but do it smartly
+    set smarttab                 " <Tab> in front of a line inserts 'shiftwidth' blanks
+    set shiftwidth=2             "   ↑ use 2 blanks for above
+    set tabstop=2                " display a <Tab> as 2 spaces
+    set softtabstop=2            " use 2 spaces for a <Tab>
+    set expandtab
+
+"= Utilities ======================================================================================
+
   set noswapfile               " don't create swap files
   set nobackup                 " don't create backup files
-  set nowb                     " don't wub wub wub
+  set nowb                     " don't make a backup before overwriting a file
   set undodir=~/.vim/undo//    " put undo files in ~/.vim/undo/path%to$file.ext
-  set visualbell               " use visual bell
-
-  set scrolloff=3              " start scrolling 3 lines from bottom
-  set sidescrolloff=6          " start scrolling 6 lines from right
-  let loaded_match_paren = 1   " highlight matching parens
-
-"= Filetype =======================================================================================
-
-  filetype plugin on           " enable loading plugins for filetypes
-  filetype indent on           " enable loading 'indent files' for filetypes
-
-" = Indentation ====================================================================================
-
-  set autoindent               " indent next line to same level as current line
-  set smartindent              "   ↑ but do it smartly
-  set smarttab                 " <Tab> in front of a line inserts blanks according to 'shiftwidth'
-  set shiftwidth=2             "   ↑ use 2 blanks for above
-  set tabstop=2                " display a <Tab> as 2 spaces
-  set softtabstop=2            " use 2 spaces for a <Tab>
-  set expandtab
-
-"= Wrapping =======================================================================================
-
-  set nowrap                   " don't softwrap text
-  set formatoptions-=t         " don't automatically hardwrap text (use 'gq' to reflow text)
-  set textwidth=100            " wrap at column 100
-  set wrapmargin=0             " don't wrap based on terminal size
 
 "= Keys ===========================================================================================
 
@@ -107,15 +143,15 @@
   set hlsearch                            " highlight all search matches
   set colorcolumn=100                     " visual indicator at column 100
   set linespace=5                         " give the code some breathing room
-  set list listchars=tab:██,trail:∙       " Use "██" for tabs and "∙" for trailing spaces
 
+  set list listchars=tab:██,trail:∙       " Use "██" for tabs and "∙" for trailing spaces
   set fillchars+=vert:                    " set vertical fillchar to "en space" (it's there, trust
                                           " me) for tab splits
 
 "= File Types =====================================================================================
 
   au BufRead,BufNewFile *.brs setf vb        " BrightScript as VBScript
-  au BufRead,BufNewFile *.md  setf markdown  " Use .md for Markdown
+  au BufRead,BufNewFile *.md  setf markdown  " Use Markdown for .md
 
 "= BufferGator ====================================================================================
 
