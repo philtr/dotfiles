@@ -1,4 +1,4 @@
-"= Initial setup = ===============================================================================
+"= Initial setup =================================================================================
 
   " use Vim settings, rather than Vi settings
   set nocompatible
@@ -6,6 +6,8 @@
   " initialize pathogen and rebuild helptags
   set rtp+=~/.vim/bundle/vundle
   call vundle#rc()
+
+"= Vundle ========================================================================================
 
   " Vundle core
   Bundle 'gmarik/vundle'
@@ -37,9 +39,9 @@
   syntax on                    " turn on syntax highilghting
 
   set synmaxcol=200            " no syntax highlighting for lines longer than 200 cols
-  set ttyfast
-  set ttyscroll=3
-  set lazyredraw
+
+  set ttyfast                  " improve screen refresh for terminal vim
+  set lazyredraw               " don't redraw while executing macros. postpone update window title
 
   set number                   " display line numbers
   set laststatus=2             " show status bar
