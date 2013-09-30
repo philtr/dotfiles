@@ -9,11 +9,10 @@ echo '
                  |\  P H I L T R
                  |/
 
-Setting up dotfiles. If the ~/.dotfiles folder does not exist,
-it will be cloned down from http://git.spt.la/dotfiles. These
-dotfiles use ZShell and the Prezto framework, so if either of
-those are not yet set up properly, they will be configured
-at this time.
+Setting up dotfiles. If the ~/.dotfiles folder does not exist, it will be cloned
+down from https://github.com/philtr/dotfiles. These dotfiles use ZShell and the
+Prezto framework, so if either of those are not yet set up properly, they will
+be configured at this time.
 '
 
 # Setup
