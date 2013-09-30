@@ -124,7 +124,9 @@ fi
 #
 # RBEnv
 #
-eval "$(rbenv init --no-rehash -)"
-(rbenv rehash &) 2> /dev/null
+if (( $+commands[rbenv] )) ; then
+  eval "$(rbenv init --no-rehash -)"
+  (rbenv rehash &) 2> /dev/null
+fi
 
 
