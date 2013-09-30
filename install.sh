@@ -28,7 +28,7 @@ fi
 
 if [[ ! -d $DOTS ]]
 then
-  echo "Cloning dotfiles.."
+  echo "Cloning dotfiles..."
   mkdir -p $DOTS
   git clone --recursive https://github.com/philtr/dotfiles.git "$DOTS"
 else
@@ -93,7 +93,7 @@ ln -s $DOTS/ruby/pryrc            $HOMEDIR/.pryrc
 ln -s $DOTS/pow/powconfig         $HOMEDIR/.powrc
 
 # Link vim configuration
-echo "Linking vim configuration files"
+echo "Linking vim configuration files..."
 rm  -rf $HOMEDIR/.vim     \
         $HOMEDIR/.vimrc   \
         $HOMEDIR/.gvimrc
