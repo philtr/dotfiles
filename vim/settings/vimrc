@@ -38,23 +38,14 @@
   " HTML 5 syntax highlighting
   Bundle 'othree/html5.vim'
 
-  " Tree color scheme
-  Bundle 'philtr/The-Tree'
-
   " Handy folder tree
   Bundle 'scrooloose/nerdtree'
 
   " Check buffer for syntax errors when saving
   Bundle 'scrooloose/syntastic'
 
-  " Bundler goodies and syntax highlighting
-  Bundle 'tpope/vim-bundler'
-
   " Rails goodies and syntax highlighting
   Bundle 'tpope/vim-rails'
-
-  " Wrap rbenv with tab completion
-  Bundle 'tpope/vim-rbenv'
 
   " Ruby syntax highlighting and more
   Bundle 'vim-ruby/vim-ruby'
