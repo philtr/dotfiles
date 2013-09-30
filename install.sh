@@ -72,8 +72,8 @@ ln -s $DOTS/zsh/zshrc             $HOMEDIR/.zshrc
 
 # Link git configuration files
 echo "Linking Git configuration files..."
-rm  $HOMEDIR/.gitconfig \
-    $HOMEDIR/.gitignore
+rm -f $HOMEDIR/.gitconfig \
+      $HOMEDIR/.gitignore
 
 ln -s $DOTS/git/gitconfig         $HOMEDIR/.gitconfig
 ln -s $DOTS/git/gitignore         $HOMEDIR/.gitignore
