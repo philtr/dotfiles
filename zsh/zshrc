@@ -16,7 +16,7 @@ fi
 #
 # Luigi
 #
-#tart bake $HOME/luigi.tart
+# tart bake $HOME/luigi.tart
 
 #
 # AutoENV
@@ -24,11 +24,6 @@ fi
 if [[ -f "$HOME/.autoenv/activate.sh" ]]; then
   source "$HOME/.autoenv/activate.sh"
 fi
-
-#
-# AutoJump
-#
-type brew &> /dev/null && [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 #
 # Aliases
