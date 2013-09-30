@@ -7,7 +7,7 @@
 "= Colors =========================================================================================
 
   set background=dark
-  colorscheme solarized        " use tree theme in case vimrc says otherwise
+  colorscheme solarized
 
 "= Font ===========================================================================================
 
