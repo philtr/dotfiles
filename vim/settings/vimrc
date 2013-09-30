@@ -11,7 +11,7 @@
 
   " Vundle is short for 'Vim bundle' and is a Vim plugin manager.
   " See https://github.com/gmarik/vundle for more information
-  "
+
   Bundle 'gmarik/vundle'
 
   " Solarized color scheme
@@ -29,8 +29,7 @@
   " Fuzzy file search within current directory
   Bundle 'kien/ctrlp.vim'
 
-  " Colorize color strings
-  " #abc123 | rgb(252, 34, 43) | hsl(100, 70, 77)
+  " Colorize color strings, e.g. #abc123 or rgb(250, 64, 64)
   Bundle 'lilydjwg/colorizer'
 
   " Indent guides to keep your code aligned
