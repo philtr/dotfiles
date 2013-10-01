@@ -19,6 +19,13 @@ fi
 # tart bake $HOME/luigi.tart
 
 #
+# Fasd
+#
+if (( $+commands[fasd] )) ; then
+  eval "$(fasd --init auto)"
+fi
+
+#
 # AutoENV
 #
 if [[ -f "$HOME/.autoenv/activate.sh" ]]; then
