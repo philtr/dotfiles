@@ -3,6 +3,6 @@
 To install:
 
 ```sh
-curl http://git.spt.la/dotfiles/raw/master/install.sh | /bin/zsh
+curl https://raw.github.com/philtr/dotfiles/master/install.sh | /bin/zsh
 ```
 
