@@ -102,6 +102,11 @@ ln -s $DOTS/vim                   $HOMEDIR/.vim
 ln -s $DOTS/vim/settings/vimrc    $HOMEDIR/.vimrc
 ln -s $DOTS/vim/settings/gvimrc    $HOMEDIR/.gvimrc
 
+# Link tmux configuration
+echo "Linking tmux configuration files..."
+rm -rf $HOMEDIR/.tmux.conf
+ln -s  $DOTS/tmux/tmux.conf $HOMEDIR/.tmux.conf
+
 # Print Manual Instructions
 echo "\n\nATTENTION! Further Instructions:\n"
 
