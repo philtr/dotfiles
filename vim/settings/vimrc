@@ -70,6 +70,7 @@
 
     set ttyfast                  " improve screen refresh for terminal vim
     set lazyredraw               " don't redraw while executing macros. async window title update
+    set ttyscroll=3              " something about scrolling buffer size
 
     set scrolloff=3              " start scrolling 3 lines from bottom
     set sidescrolloff=6          " start scrolling 6 lines from right
