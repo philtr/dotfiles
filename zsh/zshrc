@@ -59,3 +59,21 @@ alias jsc="node"
 # Quick way to rebuild the Launch Services database and get rid
 # of duplicates in the Open With submenu.
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
+
+if [[ -z "$TMUX" ]]; then
+
+  tmux_session='samovar'
+
+  if ! tmux has-session -t "$tmux_session" 2> /dev/null; then
+    # Ensure that tmux server is started.
+    tmux start-server
+
+    # Create a new session.
+    tmux new-session -d -s "$tmux_session"
+  fi
+
+  exec tmux new-session -t "$tmux_session"
+
+fi
+
