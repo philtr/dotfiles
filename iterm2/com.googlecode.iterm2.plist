@@ -8695,19 +8695,23 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1235 47 445 270 0 0 1680 1028 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>-1804 522 924 485 -2560 -390 2560 1418 </string>
+	<string>-1802 525 924 485 -2560 -390 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>79 386 650 566 0 0 1680 1028 </string>
+	<string>-2260 -228 1586 998 -2560 -390 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>10 272 493 746 0 0 1680 1028 </string>
+	<string>-2410 126 650 566 -2560 -390 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>597 176 952 706 0 0 1680 1028 </string>
+	<string>-2234 -24 1474 1052 -2560 -390 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>85 535 490 366 0 0 1680 1028 </string>
+	<string>-1541 71 650 566 -2560 -390 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>566 12 490 366 0 0 1680 1028 </string>
+	<string>-1803 89 650 566 -2560 -390 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>608 551 490 366 0 0 1680 1028 </string>
+	<string>-2551 354 890 674 -2560 -390 2560 1418 </string>
+	<key>NSWindow Frame iTerm Window 6</key>
+	<string>-2320 -252 954 566 -2560 -390 2560 1418 </string>
+	<key>NSWindow Frame iTerm Window 7</key>
+	<string>-2174 -171 650 566 -2560 -390 2560 1418 </string>
 	<key>NeverWarnAboutShortLivedSessions_18CE576F-113C-405D-BE56-55C3359395A8</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -8728,7 +8732,7 @@
 			<key>AWDS Window Option</key>
 			<string>No</string>
 			<key>Allow Title Reporting</key>
-			<false/>
+			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -8752,29 +8756,29 @@
 			<key>Ansi 10 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.10265054553747177</real>
+				<real>0.38298487663269043</real>
 				<key>Green Component</key>
-				<real>0.66176670789718628</real>
+				<real>0.35665956139564514</real>
 				<key>Red Component</key>
-				<real>0.5533980131149292</real>
+				<real>0.27671992778778076</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.094313502311706543</real>
+				<real>0.43850564956665039</real>
 				<key>Green Component</key>
-				<real>0.48428881168365479</real>
+				<real>0.40717673301696777</real>
 				<key>Red Component</key>
-				<real>0.67337697744369507</real>
+				<real>0.32436618208885193</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.81654930114746094</real>
+				<real>0.51685798168182373</real>
 				<key>Green Component</key>
-				<real>0.49598008394241333</real>
+				<real>0.50962930917739868</real>
 				<key>Red Component</key>
-				<real>0.15678021311759949</real>
+				<real>0.44058024883270264</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
@@ -8869,11 +8873,11 @@
 			<key>Ansi 9 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.073280826210975647</real>
+				<real>0.073530435562133789</real>
 				<key>Green Component</key>
-				<real>0.16162540018558502</real>
+				<real>0.21325300633907318</real>
 				<key>Red Component</key>
-				<real>0.81090348958969116</real>
+				<real>0.74176257848739624</real>
 			</dict>
 			<key>Automatically Log</key>
 			<false/>
@@ -8916,7 +8920,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>80</integer>
+			<integer>110</integer>
 			<key>Command</key>
 			<string>login -fqpl philtr</string>
 			<key>Cursor Color</key>
@@ -9281,7 +9285,7 @@
 			<key>Minimum Contrast</key>
 			<real>0.0</real>
 			<key>Mouse Reporting</key>
-			<false/>
+			<true/>
 			<key>Name</key>
 			<string>Solarized</string>
 			<key>Non Ascii Font</key>
@@ -9297,7 +9301,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>20</integer>
+			<integer>24</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -12459,7 +12463,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-09-20T15:29:08Z</date>
+	<date>2013-10-02T12:44:25Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
