@@ -38,9 +38,6 @@
   " HTML 5 syntax highlighting
   Bundle 'othree/html5.vim'
 
-  " Handy folder tree
-  Bundle 'scrooloose/nerdtree'
-
   " Check buffer for syntax errors when saving
   Bundle 'scrooloose/syntastic'
 
