@@ -129,4 +129,12 @@ if (( $+commands[rbenv] )) ; then
   (rbenv rehash &) 2> /dev/null
 fi
 
+#
+# Privates
+#
+
+if [[ -f "$HOME/.zprivate" ]] ; then
+  source "$HOME/.zprivate"
+fi
+
 
