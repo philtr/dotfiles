@@ -4,7 +4,7 @@
 
 [core]
 	excludesfile = /Users/philtr/.gitignore
-	editor = mvim -f
+	editor = vim -f
 
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
@@ -35,3 +35,4 @@ protocol = https
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
 [heroku]
 	account = oven
+
