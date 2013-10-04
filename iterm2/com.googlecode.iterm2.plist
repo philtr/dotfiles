@@ -8665,6 +8665,8 @@
 	<string>3</string>
 	<key>NSColorPickerSlidersDefaults</key>
 	<string>3</string>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.dotfiles/iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -8695,17 +8697,17 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1235 47 445 270 0 0 1680 1028 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>-1802 525 924 485 -2560 -390 2560 1418 </string>
+	<string>225 259 924 485 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-2260 -228 1586 998 -2560 -390 2560 1418 </string>
+	<string>760 418 890 554 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-2410 126 650 566 -2560 -390 2560 1418 </string>
+	<string>317 373 780 530 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>-2234 -24 1474 1052 -2560 -390 2560 1418 </string>
+	<string>603 257 890 674 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>-1541 71 650 566 -2560 -390 2560 1418 </string>
+	<string>482 168 890 674 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>-1803 89 650 566 -2560 -390 2560 1418 </string>
+	<string>241 -93 890 674 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
 	<string>-2551 354 890 674 -2560 -390 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
@@ -9289,11 +9291,11 @@
 			<key>Name</key>
 			<string>Solarized</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-Regular 14</string>
+			<string>Consolas 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Regular 14</string>
+			<string>Consolas 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -9459,7 +9461,7 @@
 			<key>Use Italic Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.4586808681488037</real>
+			<real>1.2893131971359253</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -9661,7 +9663,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string></string>
+			<string>/bin/zsh -f -d</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -9683,7 +9685,7 @@
 			<key>Cursor Type</key>
 			<integer>2</integer>
 			<key>Custom Command</key>
-			<string>No</string>
+			<string>Yes</string>
 			<key>Custom Directory</key>
 			<string>No</string>
 			<key>Default Bookmark</key>
@@ -9714,7 +9716,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>mosh softcheese.net</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -12463,7 +12465,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-10-02T12:44:25Z</date>
+	<date>2013-10-03T18:57:45Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
