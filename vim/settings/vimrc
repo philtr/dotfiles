@@ -44,14 +44,18 @@
   " Check buffer for syntax errors when saving
   Bundle 'scrooloose/syntastic'
 
-  " Rails goodies and syntax highlighting
+  " Tim Pope's goodies
+  Bundle 'tpope/vim-bundler'
+  Bundle 'tpope/vim-commentary'
+  Bundle 'tpope/vim-haml'
+  Bundle 'tpope/vim-liquid'
+  Bundle 'tpope/vim-markdown'
   Bundle 'tpope/vim-rails'
+  Bundle 'tpope/vim-rake'
+  Bundle 'tpope/vim-surround'
 
   " Ruby syntax highlighting and more
   Bundle 'vim-ruby/vim-ruby'
-
-  " Easily comment blocks of code
-  Bundle 'tComment'
 
 "= Interface ======================================================================================
 
