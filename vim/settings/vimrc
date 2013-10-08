@@ -152,6 +152,9 @@
 
 "= CtrlP ==========================================================================================
 
+  " Don't use caching
+  let g:ctrlp_use_caching = 0
+
   " Ignore specific files and folders
   let g:ctrlp_custom_ignore = {
     \ 'dir': 'vendor/bundle'
