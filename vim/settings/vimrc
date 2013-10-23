@@ -3,7 +3,7 @@
   " use Vim settings, rather than Vi settings
   set nocompatible
 
-  " initialize pathogen and rebuild helptags
+  " initialize Vundle
   set rtp+=~/.vim/bundle/vundle
   call vundle#rc()
 
@@ -47,6 +47,7 @@
   " Tim Pope's goodies
   Bundle 'tpope/vim-bundler'
   Bundle 'tpope/vim-commentary'
+  Bundle 'tpope/vim-endwise'
   Bundle 'tpope/vim-haml'
   Bundle 'tpope/vim-liquid'
   Bundle 'tpope/vim-markdown'
