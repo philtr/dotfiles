@@ -135,6 +135,9 @@
   set background=dark
   colorscheme solarized
 
+  " use italic font for code comments
+  highlight Comment cterm=italic
+
   set hlsearch                            " highlight all search matches
   set colorcolumn=100                     " visual indicator at column 100
   set linespace=5                         " give the code some breathing room
