@@ -68,7 +68,7 @@ alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/
 
 if [[ -z "$TMUX" ]]; then
 
-  tmux_session='samovar'
+  tmux_session='#root'
 
   if ! tmux has-session -t "$tmux_session" 2> /dev/null; then
     # Ensure that tmux server is started.
