@@ -57,6 +57,9 @@
   " Ruby syntax highlighting and more
   Bundle 'vim-ruby/vim-ruby'
 
+  " Taglist provides an overview of the structure of source code files
+  Bundle "taglist.vim"
+
 "= Interface ======================================================================================
 
   "- Appearance -----------------------------------------------------------------------------------
@@ -128,7 +131,7 @@
   nmap <Leader>p <C-p>
 
   " Taglist
-  nnoremap <Leader>T :TlistToggle<CR>
+  nnoremap <Leader>y :TlistToggle<CR>
 
 "= Theme ==========================================================================================
 
@@ -178,7 +181,7 @@
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
   let NERDTreeShowHidden = 0  " Don't show hidden files
 
-"= NERDTree =======================================================================================
+"= Taglist ========================================================================================
 
   let Tlist_Compact_Format = 1            " Hide extra information and linebreaks
   let Tlist_GainFocus_On_ToggleOpen = 1   " Focus Taglist when opening it
