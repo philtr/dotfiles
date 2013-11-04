@@ -8699,11 +8699,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>862 109 445 270 0 0 1440 900 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>-1686 -59 924 485 -2560 -540 2560 1418 </string>
+	<string>733 206 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>298 141 890 650 0 0 1680 1050 </string>
+	<string>21 109 1410 754 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>141 326 1418 676 0 0 1680 1028 </string>
+	<string>339 126 890 650 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
 	<string>460 278 890 482 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 11</key>
@@ -8721,7 +8721,7 @@
 	<key>NSWindow Frame iTerm Window 17</key>
 	<string>607 117 890 482 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>603 442 890 482 0 0 1680 1028 </string>
+	<string>420 142 890 650 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>482 358 890 482 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -9470,7 +9470,7 @@
 				<string>dark</string>
 			</array>
 			<key>Terminal Type</key>
-			<string>xterm-256color</string>
+			<string>xterm-256color-italic</string>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -10314,7 +10314,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-10-23T19:13:13Z</date>
+	<date>2013-10-24T19:13:11Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -10373,6 +10373,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20130624</string>
+	<string>1.0.0.20130811</string>
 </dict>
 </plist>
