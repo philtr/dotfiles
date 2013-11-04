@@ -1,86 +1,15 @@
-#
 # Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#   Phillip Ridlen <p@rdln.net>
-#
 
-#
-# Source Prezto.
-#
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
-#
-# Vi Mode
-#
-bindkey -v
-
-#
-# Luigi
-#
-# tart bake $HOME/luigi.tart
-
-#
-# Fasd
-#
-if (( $+commands[fasd] )) ; then
-  eval "$(fasd --init auto)"
-fi
-
-#
-# AutoENV
-#
-if [[ -f "$HOME/.autoenv/activate.sh" ]]; then
-  source "$HOME/.autoenv/activate.sh"
-fi
-
-#
-# Aliases
-#
-
-# Rails
-alias b='bundle exec'
-alias c="cane --abc-glob '{app,lib,test}/**/*.rb' --abc-max 15 --style-glob '{app,lib}/**/*.rb' --style-measure 100 --no-doc"
-alias migrate="rake db:migrate"
-alias rollback="rake db:rollback"
-alias t="turn -I\"lib:test\""
-
-# Rake
-alias k="rake"
-
-# Git
-alias git="nocorrect git"
-alias gglg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
-alias gst="git status -sb"
-alias gcb="git rev-parse --abbrev-ref HEAD"
-alias ggpush="git push origin \`gcb\`"
-alias gd="git difftool"
+source "$HOME/.zsh/components/zshrc/prezto.zsh"
+source "$HOME/.zsh/components/zshrc/vi-mode.zsh"
+# source "$HOME/.zsh/components/zshrc/motd.zsh"
+source "$HOME/.zsh/components/zshrc/fasd.zsh"
+source "$HOME/.zsh/components/zshrc/autoenv.zsh"
+source "$HOME/.zsh/components/zshrc/ruby.zsh"
+source "$HOME/.zsh/components/zshrc/git.zsh"
+source "$HOME/.zsh/components/zshrc/tmux.zsh"
 
 # Misc
 alias e="mvim"
 alias jsc="node"
-
-# Quick way to rebuild the Launch Services database and get rid
-# of duplicates in the Open With submenu.
-alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-
-
-if [[ -z "$TMUX" ]]; then
-
-  tmux_session='#root'
-
-  if ! tmux has-session -t "$tmux_session" 2> /dev/null; then
-    # Ensure that tmux server is started.
-    tmux start-server
-
-    # Create a new session.
-    tmux new-session -d -s "$tmux_session"
-  fi
-
-  exec tmux new-session -t "$tmux_session"
-
-fi
 
