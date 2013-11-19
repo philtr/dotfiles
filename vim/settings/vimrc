@@ -128,8 +128,11 @@
   " CtrlP
   nmap <Leader>p <C-p>
 
+  " Buffergator
+  nmap <Leader>b :BuffergatorToggle<CR>
+
   " Taglist
-  nnoremap <Leader>y :TlistToggle<CR>
+  nnoremap <Leader>t :TlistToggle<CR>
 
 "= Theme ==========================================================================================
 
@@ -157,6 +160,7 @@
   let g:buffergator_sort_regime = "mru"            " sort by 'most recently used'
   let g:buffergator_viewport_split_policy = "B"    " split horizontally to the bottom
   let g:buffergator_split_size = 10                " show 10 lines in buffergator split
+  let g:buffergator_suppress_keymaps = 1           " Don't map keys by default
 
 "= CtrlP ==========================================================================================
 
