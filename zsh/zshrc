@@ -7,7 +7,7 @@ source "$HOME/.zsh/components/zshrc/fasd.zsh"
 source "$HOME/.zsh/components/zshrc/autoenv.zsh"
 source "$HOME/.zsh/components/zshrc/ruby.zsh"
 source "$HOME/.zsh/components/zshrc/git.zsh"
-source "$HOME/.zsh/components/zshrc/tmux.zsh"
+# source "$HOME/.zsh/components/zshrc/tmux.zsh"
 
 # Misc
 alias e="mvim"
