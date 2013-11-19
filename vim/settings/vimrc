@@ -58,9 +58,6 @@
   " Ruby syntax highlighting and more
   Bundle 'vim-ruby/vim-ruby'
 
-  " Taglist provides an overview of the structure of source code files
-  Bundle "taglist.vim"
-
 "= Interface ======================================================================================
 
   "- Appearance -----------------------------------------------------------------------------------
