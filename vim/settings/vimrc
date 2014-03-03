@@ -14,11 +14,17 @@
 
   Bundle 'gmarik/vundle'
 
+  " Show git status in the gutter
+  Bundle 'airblade/vim-gitgutter'
+
   " Solarized color scheme
   Bundle 'altercation/vim-colors-solarized'
 
   " Create a new buffer with text in current visual block
   Bundle 'chrisbra/NrrwRgn'
+
+  " Display CSV files in a table
+  Bundle 'chrisbra/csv.vim'
 
   " Switch between buffers and list tab windows
   Bundle 'jeetsukumaran/vim-buffergator'
@@ -37,6 +43,9 @@
 
   " HTML 5 syntax highlighting
   Bundle 'othree/html5.vim'
+
+  " Pencil color scheme
+  Bundle 'reedes/vim-colors-pencil'
 
   " Handy folder tree
   Bundle 'scrooloose/nerdtree'
@@ -122,6 +131,9 @@
   " Folding
   nmap <Leader>F :set foldmethod=syntax<CR>
 
+  " GitGutter
+  nmap <Leader>g :GitGutterToggle<CR>
+
   " NERDTRee
   nmap <Leader>n :NERDTreeToggle<CR>
 
@@ -140,7 +152,7 @@
   colorscheme solarized
 
   " use italic font for code comments
-  highlight Comment cterm=italic
+  " highlight Comment cterm=italic
 
   set hlsearch                            " highlight all search matches
   set colorcolumn=100                     " visual indicator at column 100
@@ -171,6 +183,10 @@
   let g:ctrlp_custom_ignore = {
     \ 'dir': 'vendor/bundle'
     \ }
+
+"= GitGutter ======================================================================================
+
+  let g:gitgutter_enabled = 0  " disable gitgutter by default
 
 "= Indent Guides ==================================================================================
 
