@@ -4,12 +4,18 @@ source "$HOME/.zsh/components/zshrc/prezto.zsh"
 source "$HOME/.zsh/components/zshrc/vi-mode.zsh"
 # source "$HOME/.zsh/components/zshrc/motd.zsh"
 source "$HOME/.zsh/components/zshrc/fasd.zsh"
-source "$HOME/.zsh/components/zshrc/autoenv.zsh"
+# source "$HOME/.zsh/components/zshrc/autoenv.zsh"
 source "$HOME/.zsh/components/zshrc/ruby.zsh"
 source "$HOME/.zsh/components/zshrc/git.zsh"
 # source "$HOME/.zsh/components/zshrc/tmux.zsh"
+source "$HOME/.zsh/components/zshrc/travis.zsh"
 
 # Misc
 alias e="mvim"
 alias jsc="node"
+
+alias tv="terminal_velocity"
+
+alias scotty_joke_funny="ruby -e 'puts [true,false].sample'"
+
 
