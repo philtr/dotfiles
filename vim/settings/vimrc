@@ -26,6 +26,9 @@
   " Display CSV files in a table
   Bundle 'chrisbra/csv.vim'
 
+  " Work with TaskPaper files
+  Bundle 'davidoc/taskpaper.vim'
+
   " Switch between buffers and list tab windows
   Bundle 'jeetsukumaran/vim-buffergator'
 
