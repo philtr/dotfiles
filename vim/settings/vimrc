@@ -88,6 +88,8 @@
 
   "- Interaction ----------------------------------------------------------------------------------
 
+    set autoread                 " automatically reload unmodified buffers when edited externally
+
     set ttyfast                  " improve screen refresh for terminal vim
     set lazyredraw               " don't redraw while executing macros. async window title update
     set ttyscroll=3              " something about scrolling buffer size
