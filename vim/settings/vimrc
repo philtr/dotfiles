@@ -20,11 +20,17 @@
   " Solarized color scheme
   Bundle 'altercation/vim-colors-solarized'
 
+  " Show a nice statusline
+  Bundle 'bling/vim-airline'
+
   " Create a new buffer with text in current visual block
   Bundle 'chrisbra/NrrwRgn'
 
   " Display CSV files in a table
   Bundle 'chrisbra/csv.vim'
+
+  " Navigate seamlessly between vim and tmux splits
+  Bundle 'christoomey/vim-tmux-navigator'
 
   " Work with TaskPaper files
   Bundle 'davidoc/taskpaper.vim'
@@ -130,8 +136,8 @@
   set backspace=indent,eol,start          " Make backspace behave as expected
 
   " Tabs
-  nmap <Leader>l :tabnext<CR>
-  nmap <Leader>h :tabprevious<CR>
+  nmap <Leader>l :BuffergatorMruCycleNext<CR>
+  nmap <Leader>h :BuffergatorMruCyclePrev<CR>
 
   " Folding
   nmap <Leader>F :set foldmethod=syntax<CR>
@@ -172,6 +178,10 @@
   au BufRead,BufNewFile *.brs setf vb        " BrightScript as VBScript
   au BufRead,BufNewFile *.md  setf markdown  " Use Markdown for .md
 
+"= Airline ========================================================================================
+
+  let g:airline_powerline_fonts = 1
+
 "= BufferGator ====================================================================================
 
   let g:buffergator_sort_regime = "mru"            " sort by 'most recently used'
@@ -210,4 +220,3 @@
   let Tlist_GainFocus_On_ToggleOpen = 1   " Focus Taglist when opening it
   let Tlist_Use_Right_Window = 1          " Show Taglist on the right
   let Tlist_WinWidth = 40                 " Wider list of tags
-

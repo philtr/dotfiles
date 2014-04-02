@@ -8,7 +8,10 @@ source "$HOME/.zsh/components/zshrc/fasd.zsh"
 source "$HOME/.zsh/components/zshrc/ruby.zsh"
 source "$HOME/.zsh/components/zshrc/git.zsh"
 # source "$HOME/.zsh/components/zshrc/tmux.zsh"
-source "$HOME/.zsh/components/zshrc/travis.zsh"
+# source "$HOME/.zsh/components/zshrc/travis.zsh"
+
+# Keybindings
+bindkey -M vicmd '/' history-incremental-search-backward
 
 # Misc
 alias e="mvim"
@@ -16,6 +19,6 @@ alias jsc="node"
 
 alias tv="terminal_velocity"
 
-alias scotty_joke_funny="ruby -e 'puts [true,false].sample'"
+alias scotty_joke_funny="ruby -e 'puts %(#scottyjoke is #{ [true,false].sample ? nil : %(not ) }funny.)'"
 
 
