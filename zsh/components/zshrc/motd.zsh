@@ -1,6 +1,6 @@
 #
 # Luigi
 #
-tart bake $HOME/luigi.tart
+tart bake $HOME/.zsh/components/zshrc/motd/luigi.tart
 
 
