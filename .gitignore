@@ -1,4 +1,5 @@
 vim/bundle/*
 *.un~
 tags
+*.swp
 
