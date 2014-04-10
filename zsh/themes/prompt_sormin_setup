@@ -4,9 +4,6 @@
 # Authors:
 #   Sorin Ionescu <sormin.ionescu@gmail.com>
 #
-# Screenshots:
-#   http://i.imgur.com/nBEEZ.png
-#
 
 # Load dependencies.
 pmodload 'helper'
@@ -48,7 +45,7 @@ function prompt_sormin_setup {
 
   # Set editor-info parameters.
   zstyle ':prezto:module:editor:info:completing' format '%F{red}...%f%b'
-  zstyle ':prezto:module:editor:info:keymap:primary' format ' %F{24}%%%f'
+  zstyle ':prezto:module:editor:info:keymap:primary' format ' %F{blue}$%f'
   zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format ' %F{red}♺%f'
   zstyle ':prezto:module:editor:info:keymap:alternate' format ' %F{green}❮%F{yellow}❮%F{red}❮%f%b'
 
