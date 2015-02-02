@@ -65,7 +65,7 @@ function prompt_sormin_setup {
   zstyle ':prezto:module:git:info:unmerged' format ' %%F{yellow}═%f%%b'
   zstyle ':prezto:module:git:info:untracked' format ' %%F{white}◎%f%%b'
   zstyle ':prezto:module:git:info:keys' format \
-    'prompt' '%F{blue}%f$(coalesce "%b" "%p" "%c")%s' \
+    'prompt' '%F{bright_magenta}%f$(coalesce "%b" "%p" "%c")%s' \
     'rprompt' '%A%B%S%a%d%m%r%U%u'
 
   # Define prompts.

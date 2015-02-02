@@ -54,3 +54,7 @@ config/database.yml
 # RVM
 .rvmrc
 
+# metric_fu
+.metrics
+
+

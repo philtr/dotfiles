@@ -6,6 +6,10 @@
 
 "= Font ===========================================================================================
 
-  set guifont=Source\ Code\ Pro:h12
+  set guifont=Powerline\ Consolas:h11
   set antialias
+
+  colorscheme made-of-code
+
+  set linespace=1                         " give the code some breathing room
 

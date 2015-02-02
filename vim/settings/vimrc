@@ -15,11 +15,17 @@
   Plugin 'gmarik/vundle'
 
   Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
-  Plugin 'bling/vim-airline'                " Show a nice statusline
+  Plugin 'benmills/vimux'                   " Send commands to other tmux panes
+  " Plugin 'bling/vim-airline'                " Show a nice statusline
   Plugin 'chrisbra/NrrwRgn'                 " Create a new buffer with text in current visual block
+  Plugin 'chrisbra/csv.vim'                 " View CSV files like a table
   Plugin 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
+  Plugin 'dagwieers/asciidoc-vim'           " AsciiDoc syntax highlighting
   Plugin 'davidoc/taskpaper.vim'            " Work with TaskPaper files
+  Plugin 'fatih/vim-go'                     " Golang support
+  Plugin 'jasonlong/lavalamp'               " Theme w/ diff colors for each language
   Plugin 'jeetsukumaran/vim-buffergator'    " Switch between buffers and list tab windows
+  Plugin 'jgdavey/vim-turbux'               " Run the most relevant test in another pane using vimux
   Plugin 'johnallen3d/made-of-code.vim'     " Made of Code color theme for Vim
   Plugin 'kchmck/vim-coffee-script'         " CoffeeScript syntax highlighting
   Plugin 'kien/ctrlp.vim'                   " Fuzzy file search within current directory
@@ -30,18 +36,18 @@
   Plugin 'rking/ag.vim'                     " Superfast code searching
   Plugin 'scrooloose/nerdtree'              " Handy folder tree
   Plugin 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
-  Plugin 'tpope/vim-bundler'
-  Plugin 'tpope/vim-commentary'
-  Plugin 'tpope/vim-endwise'
-  Plugin 'tpope/vim-haml'
-  Plugin 'tpope/vim-liquid'
-  Plugin 'tpope/vim-markdown'
-  Plugin 'tpope/vim-rails'
-  Plugin 'tpope/vim-rake'
-  Plugin 'tpope/vim-surround'
+  Plugin 'tpope/vim-bundler'                " Bundler highlighting and utilities
+  Plugin 'tpope/vim-commentary'             " Easy code commenting
+  Plugin 'tpope/vim-endwise'                " Add 'end's automatically
+  Plugin 'tpope/vim-haml'                   " HAML syntax and utilities
+  Plugin 'tpope/vim-liquid'                 " Liquid syntax highlighting
+  Plugin 'tpope/vim-markdown'               " Markdown syntax highlighting
+  Plugin 'tpope/vim-rails'                  " Rails syntax & utilities
+  Plugin 'tpope/vim-rake'                   " Rake syntax & utilities
+  Plugin 'tpope/vim-surround'               " Surround selection with character
   Plugin 'vim-ruby/vim-ruby'                " Ruby syntax highlighting and more
-
-
+  Plugin 'vim-scripts/SyntaxRange'          " Use different syntax in different regions
+  Plugin 'xsbeats/vim-blade'                " Syntax for blade templates (Laravel)
 "= Interface ======================================================================================
 
   " Appearance ------------------------------------------------------------------------------------
@@ -70,6 +76,8 @@
     let loaded_match_paren = 1   " highlight matching parens
 
     set mouse=a                  " allow mouse usage
+
+    set clipboard=unnamed        " use the system clipboard
 
   " Wrapping --------------------------------------------------------------------------------------
 
@@ -101,27 +109,38 @@
   set backspace=indent,eol,start          " Make backspace behave as expected
 
   " Split Navigation
-  nmap <Leader>l :wincmd l<CR>
-  nmap <Leader>h :wincmd h<CR>
-  nmap <Leader>j :wincmd j<CR>
-  nmap <Leader>k :wincmd k<CR>
-  nmap <C-w>h :tabprevious<CR>
-  nmap <C-w>l :tabnext<CR>
+  nmap <Leader>l :tabnext<CR>
+  nmap <Leader>h :tabprevious<CR>
 
   " Folding
   nmap <Leader>F :set foldmethod=syntax<CR>
+
+  " Transpose
+  nmap <Leader>k ddp
+  nmap <Leader>K ddkP
+  nmap <Leader>x xp
+  nmap <Leader>X xhP
 
   " NERDTRee
   nmap <Leader>n :NERDTreeToggle<CR>
 
   " CtrlP
   nmap <Leader>p <C-p>
+  nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
 
   " Buffergator
   nmap <Leader>b :BuffergatorToggle<CR>
 
-  " Taglist
-  nnoremap <Leader>t :TlistToggle<CR>
+  " Turbux
+  map <Leader>cs <Plug>SendTestToTmux
+  map <Leader>ns <Plug>SendFocusedTestToTmux
+  map <Leader>bs :call VimuxRunCommand("bundle exec rspec spec")<CR>
+  map <Leader>as :call VimuxRunCommand("spring rspec spec")<CR>
+
+"= Commands =======================================================================================
+
+  command! Breathe set colorcolumn=0 laststatus=0 nonumber | hi NonText guifg=bg
+  command! NoBreathe set colorcolumn=100 laststatus=2 number | hi NonText guifg=fg
 
 "= Theme ==========================================================================================
 
@@ -130,11 +149,9 @@
 
   set hlsearch                            " highlight all search matches
   set colorcolumn=100                     " visual indicator at column 100
-  set linespace=5                         " give the code some breathing room
 
   set list listchars=tab:██,trail:∙       " Use "██" for tabs and "∙" for trailing spaces
   set fillchars+=vert:                    " set vertical fillchar to "en space" (it's there, trust
-                                          " me) for tab splits
 
 "= File Types =====================================================================================
 
@@ -173,3 +190,9 @@
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
   let NERDTreeShowHidden = 0  " Don't show hidden files
 
+"= Turbux =========================================================================================
+
+  let g:turbux_command_prefix = "bundle exec"
+  let g:no_turbux_mappings = 1
+
+  let g:turbux_command_test_unit = 'rake test'
