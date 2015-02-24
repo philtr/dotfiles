@@ -46,7 +46,7 @@ fi
 if [[ ! -d $HOMEDIR/.zprezto ]]
 then
   echo "Installing Prezto (https://github.com/sorin-ionescu/prezto)..."
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOMEDIR/.zprezto"
+  git clone --recursive git@github.com:sorin-ionescu/prezto.git "$HOMEDIR/.zprezto"
 else
   cd $HOMEDIR/.zprezto
   git reset --hard
@@ -93,6 +93,11 @@ ln -s $DOTS/ruby/bundler          $HOMEDIR/.bundle/config
 ln -s $DOTS/ruby/gemrc            $HOMEDIR/.gemrc
 ln -s $DOTS/ruby/pryrc            $HOMEDIR/.pryrc
 ln -s $DOTS/pow/powconfig         $HOMEDIR/.powrc
+
+# Install Vundle
+rm -rf $DOTS/vim/bundle/vundle
+git clone git@github.com:gmarik/Vundle.vim.git $DOTS/vim/bundle/Vundle.vim
+
 
 # Link vim configuration
 echo "Linking vim configuration files..."
