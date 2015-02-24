@@ -16,7 +16,7 @@
 
   Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
   Plugin 'benmills/vimux'                   " Send commands to other tmux panes
-  " Plugin 'bling/vim-airline'                " Show a nice statusline
+  Plugin 'bling/vim-airline'                " Show a nice statusline
   Plugin 'chrisbra/NrrwRgn'                 " Create a new buffer with text in current visual block
   Plugin 'chrisbra/csv.vim'                 " View CSV files like a table
   Plugin 'chriskempson/base16-vim'          " Base16 color scheme for vim
