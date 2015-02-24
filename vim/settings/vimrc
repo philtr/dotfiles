@@ -10,9 +10,9 @@
 "= Vundle =========================================================================================
 
   " Vundle is short for 'Vim bundle' and is a Vim plugin manager.
-  " See https://github.com/gmarik/vundle for more information
+  " See https://github.com/gmarik/Vundle.vim for more information
 
-  Plugin 'gmarik/vundle'
+  Plugin 'gmarik/Vundle.vim'
 
   Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
   Plugin 'benmills/vimux'                   " Send commands to other tmux panes
