@@ -3,14 +3,15 @@
   " use Vim settings, rather than Vi settings
   set nocompatible
 
-  " initialize Vundle
-  set rtp+=~/.vim/bundle/vundle
-  call vundle#rc()
-
 "= Vundle =========================================================================================
 
   " Vundle is short for 'Vim bundle' and is a Vim plugin manager.
   " See https://github.com/gmarik/Vundle.vim for more information
+
+  " initialize Vundle
+  filetype off
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
 
   Plugin 'gmarik/Vundle.vim'
 
@@ -49,6 +50,9 @@
   Plugin 'vim-ruby/vim-ruby'                " Ruby syntax highlighting and more
   Plugin 'vim-scripts/SyntaxRange'          " Use different syntax in different regions
   Plugin 'xsbeats/vim-blade'                " Syntax for blade templates (Laravel)
+
+  call vundle#end()
+
 "= Interface ======================================================================================
 
   " Appearance ------------------------------------------------------------------------------------
