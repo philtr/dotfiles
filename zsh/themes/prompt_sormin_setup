@@ -45,7 +45,7 @@ function prompt_sormin_setup {
 
   # Set editor-info parameters.
   zstyle ':prezto:module:editor:info:completing' format '%F{red}...%f%b'
-  zstyle ':prezto:module:editor:info:keymap:primary' format ' %F{red}⠗%f'
+  zstyle ':prezto:module:editor:info:keymap:primary' format ' %F{red}%%%f'
   zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format ' %F{red}♺%f'
   zstyle ':prezto:module:editor:info:keymap:alternate' format ' %F{green}❮%F{yellow}❮%F{red}❮%f%b'
 
