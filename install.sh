@@ -61,7 +61,8 @@ rm -f $HOMEDIR/.zlogin    \
       $HOMEDIR/.zpreztorc \
       $HOMEDIR/.zprofile  \
       $HOMEDIR/.zshenv    \
-      $HOMEDIR/.zshrc
+      $HOMEDIR/.zshrc     \
+      $HOMEDIR/.zsh
 
 ln -s $DOTS/zsh/zlogin            $HOMEDIR/.zlogin
 ln -s $DOTS/zsh/zlogout           $HOMEDIR/.zlogout
@@ -69,6 +70,7 @@ ln -s $DOTS/zsh/zpreztorc         $HOMEDIR/.zpreztorc
 ln -s $DOTS/zsh/zprofile          $HOMEDIR/.zprofile
 ln -s $DOTS/zsh/zshenv            $HOMEDIR/.zshenv
 ln -s $DOTS/zsh/zshrc             $HOMEDIR/.zshrc
+ln -s $DOTS/zsh                   $HOMEDIR/.zsh
 
 # Link git configuration files
 echo "Linking Git configuration files..."
