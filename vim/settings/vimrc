@@ -19,6 +19,7 @@
   " Plugin 'bling/vim-airline'                " Show a nice statusline
   Plugin 'chrisbra/NrrwRgn'                 " Create a new buffer with text in current visual block
   Plugin 'chrisbra/csv.vim'                 " View CSV files like a table
+  Plugin 'chriskempson/base16-vim'          " Base16 color scheme for vim
   Plugin 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
   Plugin 'dagwieers/asciidoc-vim'           " AsciiDoc syntax highlighting
   Plugin 'davidoc/taskpaper.vim'            " Work with TaskPaper files
@@ -136,6 +137,7 @@
   map <Leader>ns <Plug>SendFocusedTestToTmux
   map <Leader>bs :call VimuxRunCommand("bundle exec rspec spec")<CR>
   map <Leader>as :call VimuxRunCommand("spring rspec spec")<CR>
+
 
 "= Commands =======================================================================================
 
