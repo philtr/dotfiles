@@ -15,7 +15,7 @@ function prompt_sormin_pwd {
     _prompt_sormin_pwd="$MATCH"
     unset MATCH
   else
-    _prompt_sormin_pwd="${pwd:t}"
+    _prompt_sormin_pwd="%b%F{white}${pwd:t}%f"
   fi
 }
 
@@ -45,7 +45,7 @@ function prompt_sormin_setup {
 
   # Set editor-info parameters.
   zstyle ':prezto:module:editor:info:completing' format '%F{red}...%f%b'
-  zstyle ':prezto:module:editor:info:keymap:primary' format ' %F{blue}$%f'
+  zstyle ':prezto:module:editor:info:keymap:primary' format ' %F{red}⠗%f'
   zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format ' %F{red}♺%f'
   zstyle ':prezto:module:editor:info:keymap:alternate' format ' %F{green}❮%F{yellow}❮%F{red}❮%f%b'
 
@@ -69,7 +69,7 @@ function prompt_sormin_setup {
     'rprompt' '%A%B%S%a%d%m%r%U%u'
 
   # Define prompts.
-  PROMPT='%F{cyan}${_prompt_sormin_pwd}%f${git_info:+${(e)git_info[prompt]}}%(!. %F{red}#%f%b.)${editor_info[keymap]} '
+  PROMPT='%b%F{white}${_prompt_sormin_pwd}%f${git_info:+${(e)git_info[prompt]}}%(!. %F{red}#%f%b.)${editor_info[keymap]} '
   RPROMPT='${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %F{green}V%f%b"}${git_info[rprompt]}'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
