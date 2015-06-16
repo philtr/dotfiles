@@ -24,6 +24,7 @@
   Plugin 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
   Plugin 'dagwieers/asciidoc-vim'           " AsciiDoc syntax highlighting
   Plugin 'davidoc/taskpaper.vim'            " Work with TaskPaper files
+  Plugin 'elixir-lang/vim-elixir'           " Elixir support
   Plugin 'fatih/vim-go'                     " Golang support
   Plugin 'jasonlong/lavalamp'               " Theme w/ diff colors for each language
   Plugin 'jeetsukumaran/vim-buffergator'    " Switch between buffers and list tab windows
@@ -38,6 +39,8 @@
   Plugin 'rking/ag.vim'                     " Superfast code searching
   Plugin 'scrooloose/nerdtree'              " Handy folder tree
   Plugin 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
+  Plugin 'slim-template/vim-slim'           " Slim syntax support
+  Plugin 'terryma/vim-multiple-cursors'     " Sublime Text's multiple selection feature for Vim
   Plugin 'tpope/vim-bundler'                " Bundler highlighting and utilities
   Plugin 'tpope/vim-commentary'             " Easy code commenting
   Plugin 'tpope/vim-endwise'                " Add 'end's automatically
@@ -47,6 +50,7 @@
   Plugin 'tpope/vim-rails'                  " Rails syntax & utilities
   Plugin 'tpope/vim-rake'                   " Rake syntax & utilities
   Plugin 'tpope/vim-surround'               " Surround selection with character
+  Plugin 'Valloric/YouCompleteMe'           " Fancy autocomplete stuff
   Plugin 'vim-ruby/vim-ruby'                " Ruby syntax highlighting and more
   Plugin 'vim-scripts/SyntaxRange'          " Use different syntax in different regions
   Plugin 'xsbeats/vim-blade'                " Syntax for blade templates (Laravel)
@@ -140,7 +144,7 @@
   map <Leader>cs <Plug>SendTestToTmux
   map <Leader>ns <Plug>SendFocusedTestToTmux
   map <Leader>bs :call VimuxRunCommand("bundle exec rspec spec")<CR>
-  map <Leader>as :call VimuxRunCommand("spring rspec spec")<CR>
+  map <Leader>as :call VimuxRunCommand("rspec spec")<CR>
 
 
 "= Commands =======================================================================================
@@ -151,7 +155,8 @@
 "= Theme ==========================================================================================
 
   set background=dark
-  colorscheme solarized
+  colorscheme base16-atelierlakeside
+  " colorscheme solarized
 
   set hlsearch                            " highlight all search matches
   set colorcolumn=100                     " visual indicator at column 100
@@ -161,8 +166,9 @@
 
 "= File Types =====================================================================================
 
-  au BufRead,BufNewFile *.brs setf vb        " BrightScript as VBScript
-  au BufRead,BufNewFile *.md  setf markdown  " Use Markdown for .md
+  au BufRead,BufNewFile *.brs setf vb           " Use VBScript for BrightScript files
+  au BufRead,BufNewFile *.md  setf markdown     " Use Markdown for .md files
+  au BufRead,BufNewFile *.jbuilder setf ruby    " Use Ruby for .jbuilder files
 
 "= Airline ========================================================================================
 
@@ -182,14 +188,19 @@
 
   " Ignore specific files and folders
   let g:ctrlp_custom_ignore = {
-    \ 'dir': 'vendor/bundle'
+    \ 'dir': '(vendor/bundle|tmp)'
     \ }
 
 "= Indent Guides ==================================================================================
 
   let g:indent_guides_color_change_percent = 3      " ultra-low-contrast guides
-  let g:indent_guides_guide_size = 2                " between 0 and 'shiftwidth'
+  let g:indent_guides_guide_size = 1                " between 0 and 'shiftwidth'
   let g:indent_guides_start_level = 1               " don't show guides until the third indent
+  let g:indent_guides_auto_color = 0
+
+  highlight IndentGuidesEven ctermbg=yellow
+  highlight IndentGuidesOdd ctermbg=green
+
 
 "= NERDTree =======================================================================================
 
@@ -198,7 +209,7 @@
 
 "= Turbux =========================================================================================
 
-  let g:turbux_command_prefix = "bundle exec"
+  let g:turbux_command_prefix = ""
   let g:no_turbux_mappings = 1
 
   let g:turbux_command_test_unit = 'rake test'
