@@ -28,6 +28,7 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'osx' \
+  'tmux' \
   'rails' \
   'syntax-highlighting' \
   'history-substring-search' \
@@ -73,4 +74,7 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 # Auto set the tab and window titles.
 zstyle ':prezto:module:terminal' auto-title 'yes'
 
+
+# Auto-start TMUX session
+zstyle ':prezto:module:tmux:auto-start' local 'yes'
 

@@ -86,6 +86,7 @@ path=(
   ./vendor/bundle/bin
   $HOME/.rbenv/bin
   $HOME/bin
+  $HOME/.bin
   $GOBIN
   /usr/local/{bin,sbin}
   /usr/local/share/npm/bin

@@ -1,5 +1,5 @@
 # Start TMUX for all sessions
-if [[ -z "$TMUX" ]]; then
+if [[ -z "$TMUX" && -z "$EMACS" && -z "$VIM" ]]; then
 
   tmux_session='#root'
 
