@@ -124,7 +124,8 @@ fi
 #
 # Load Python virtualenv
 #
-# source /usr/local/share/python/virtualenvwrapper.sh
+# export WORKON_HOME=~/src/python
+# source /usr/local/bin/virtualenvwrapper.sh
 
 #
 # RBEnv
