@@ -101,6 +101,9 @@
   let mapleader = ','                     " Fearless leader!
   set backspace=indent,eol,start          " Make backspace behave as expected
 
+  " Use <Space> to enter ex-mode from normal mode
+  nmap <Space> :
+
   " Split Navigation
   nmap <Leader>l :tabnext<CR>
   nmap <Leader>h :tabprevious<CR>
