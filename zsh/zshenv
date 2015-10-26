@@ -135,6 +135,12 @@ if (( $+commands[rbenv] )) ; then
 fi
 
 #
+# NVM - Node Version Manager
+#
+export NVM_DIR="/Users/philtr/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+#
 # Privates
 #
 
