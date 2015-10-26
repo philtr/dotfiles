@@ -15,32 +15,18 @@
 
   Plugin 'gmarik/Vundle.vim'
 
-  Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
-  Plugin 'benmills/vimux'                   " Send commands to other tmux panes
   Plugin 'bling/vim-airline'                " Show a nice statusline
   Plugin 'chrisbra/NrrwRgn'                 " Create a new buffer with text in current visual block
-  Plugin 'chrisbra/csv.vim'                 " View CSV files like a table
   Plugin 'chriskempson/base16-vim'          " Base16 color scheme for vim
   Plugin 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
-  Plugin 'dagwieers/asciidoc-vim'           " AsciiDoc syntax highlighting
-  Plugin 'davidoc/taskpaper.vim'            " Work with TaskPaper files
-  Plugin 'elixir-lang/vim-elixir'           " Elixir support
-  Plugin 'fatih/vim-go'                     " Golang support
-  Plugin 'jasonlong/lavalamp'               " Theme w/ diff colors for each language
   Plugin 'jeetsukumaran/vim-buffergator'    " Switch between buffers and list tab windows
-  Plugin 'jgdavey/vim-turbux'               " Run the most relevant test in another pane using vimux
-  Plugin 'johnallen3d/made-of-code.vim'     " Made of Code color theme for Vim
-  Plugin 'kchmck/vim-coffee-script'         " CoffeeScript syntax highlighting
   Plugin 'kien/ctrlp.vim'                   " Fuzzy file search within current directory
   Plugin 'lilydjwg/colorizer'               " Colorize color strings, e.g. #abc
-  Plugin 'nathanaelkane/vim-indent-guides'  " Indent guides to keep your code aligned
   Plugin 'othree/html5.vim'                 " HTML 5 syntax highlighting
-  Plugin 'reedes/vim-colors-pencil'         " Pencil color scheme
   Plugin 'rking/ag.vim'                     " Superfast code searching
   Plugin 'scrooloose/nerdtree'              " Handy folder tree
   Plugin 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
   Plugin 'slim-template/vim-slim'           " Slim syntax support
-  Plugin 'terryma/vim-multiple-cursors'     " Sublime Text's multiple selection feature for Vim
   Plugin 'tpope/vim-bundler'                " Bundler highlighting and utilities
   Plugin 'tpope/vim-commentary'             " Easy code commenting
   Plugin 'tpope/vim-endwise'                " Add 'end's automatically
@@ -50,10 +36,8 @@
   Plugin 'tpope/vim-rails'                  " Rails syntax & utilities
   Plugin 'tpope/vim-rake'                   " Rake syntax & utilities
   Plugin 'tpope/vim-surround'               " Surround selection with character
-  Plugin 'Valloric/YouCompleteMe'           " Fancy autocomplete stuff
   Plugin 'vim-ruby/vim-ruby'                " Ruby syntax highlighting and more
   Plugin 'vim-scripts/SyntaxRange'          " Use different syntax in different regions
-  Plugin 'xsbeats/vim-blade'                " Syntax for blade templates (Laravel)
 
   call vundle#end()
 
@@ -140,13 +124,6 @@
   " Buffergator
   nmap <Leader>b :BuffergatorToggle<CR>
 
-  " Turbux
-  map <Leader>cs <Plug>SendTestToTmux
-  map <Leader>ns <Plug>SendFocusedTestToTmux
-  map <Leader>bs :call VimuxRunCommand("bundle exec rspec spec")<CR>
-  map <Leader>as :call VimuxRunCommand("rspec spec")<CR>
-
-
 "= Commands =======================================================================================
 
   command! Breathe set colorcolumn=0 laststatus=0 nonumber | hi NonText guifg=bg
@@ -191,25 +168,8 @@
     \ 'dir': '(vendor/bundle|tmp)'
     \ }
 
-"= Indent Guides ==================================================================================
-
-  let g:indent_guides_color_change_percent = 3      " ultra-low-contrast guides
-  let g:indent_guides_guide_size = 1                " between 0 and 'shiftwidth'
-  let g:indent_guides_start_level = 1               " don't show guides until the third indent
-  let g:indent_guides_auto_color = 0
-
-  highlight IndentGuidesEven ctermbg=yellow
-  highlight IndentGuidesOdd ctermbg=green
-
-
 "= NERDTree =======================================================================================
 
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
   let NERDTreeShowHidden = 0  " Don't show hidden files
 
-"= Turbux =========================================================================================
-
-  let g:turbux_command_prefix = ""
-  let g:no_turbux_mappings = 1
-
-  let g:turbux_command_test_unit = 'rake test'
