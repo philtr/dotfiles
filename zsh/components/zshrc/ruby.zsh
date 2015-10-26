@@ -5,7 +5,3 @@ alias migrate="rake db:migrate db:test:prepare"
 alias rollback="rake db:rollback"
 alias t="turn -I\"lib:test\""
 
-# Rake
-alias k="rake"
-
-

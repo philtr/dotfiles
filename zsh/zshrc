@@ -12,6 +12,7 @@ source "$HOME/.zsh/components/zshrc/git.zsh"
 
 # Betty
 alias betty="$HOME/.betty/main.rb"
+source "$HOME/.zsh/components/zshrc/k.zsh"
 
 # Keybindings
 bindkey -M vicmd '/' history-incremental-search-backward
