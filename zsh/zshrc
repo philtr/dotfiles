@@ -9,9 +9,6 @@ source "$HOME/.zsh/components/zshrc/ruby.zsh"
 source "$HOME/.zsh/components/zshrc/git.zsh"
 # source "$HOME/.zsh/components/zshrc/tmux.zsh"
 # source "$HOME/.zsh/components/zshrc/travis.zsh"
-
-# Betty
-alias betty="$HOME/.betty/main.rb"
 source "$HOME/.zsh/components/zshrc/k.zsh"
 
 # Keybindings
