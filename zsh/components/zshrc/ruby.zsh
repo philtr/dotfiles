@@ -4,4 +4,5 @@ alias c="cane --abc-glob '{app,lib,test}/**/*.rb' --abc-max 15 --style-glob '{ap
 alias migrate="rake db:migrate db:test:prepare"
 alias rollback="rake db:rollback"
 alias t="turn -I\"lib:test\""
+alias rais=rails
 
