@@ -6,3 +6,5 @@ alias rollback="rake db:rollback"
 alias t="turn -I\"lib:test\""
 alias rais=rails
 
+alias timestamp="ruby -e 'puts Time.now.to_i'"
+alias migration_timestamp="ruby -e 'puts Time.now.strftime(%(%Y%m%d%H%M%S))'"
