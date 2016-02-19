@@ -135,8 +135,7 @@
 "= Theme ==========================================================================================
 
   set background=dark
-  colorscheme base16-atelierlakeside
-  " colorscheme solarized
+  colorscheme base16-default
 
   set hlsearch                            " highlight all search matches
   set colorcolumn=80                      " visual indicator at column 80
