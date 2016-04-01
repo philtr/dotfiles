@@ -33,6 +33,7 @@
   Plugin 'tpope/vim-bundler'                " Bundler highlighting and utilities
   Plugin 'tpope/vim-commentary'             " Easy code commenting
   Plugin 'tpope/vim-endwise'                " Add 'end's automatically
+  Plugin 'tpope/vim-fugitive'               " Fancy git wrapper for vim
   Plugin 'tpope/vim-haml'                   " HAML syntax and utilities
   Plugin 'tpope/vim-liquid'                 " Liquid syntax highlighting
   Plugin 'tpope/vim-markdown'               " Markdown syntax highlighting
@@ -43,6 +44,9 @@
   Plugin 'vim-airline/vim-airline-themes'   " Themes for airline
   Plugin 'vim-ruby/vim-ruby'                " Ruby syntax highlighting and more
   Plugin 'vim-scripts/SyntaxRange'          " Use different syntax in different regions
+
+  " this plugin looks for other plugins, load it last
+  Plugin 'ryanoasis/vim-devicons'           " Filetype icons in NERDTree
 
   call vundle#end()
 
