@@ -1,7 +1,9 @@
 "= Initial setup ==================================================================================
-
   " use Vim settings, rather than Vi settings
   set nocompatible
+
+  " use UTF-8 encoding for the win
+  set encoding=utf8
 
 "= Vundle =========================================================================================
 
