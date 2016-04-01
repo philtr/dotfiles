@@ -21,8 +21,8 @@
   Plugin 'chrisbra/NrrwRgn'                 " Create a new buffer with text in current visual block
   Plugin 'chriskempson/base16-vim'          " Base16 color scheme for vim
   Plugin 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
+  Plugin 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
   Plugin 'jeetsukumaran/vim-buffergator'    " Switch between buffers and list tab windows
-  Plugin 'kien/ctrlp.vim'                   " Fuzzy file search within current directory
   Plugin 'lilydjwg/colorizer'               " Colorize color strings, e.g. #abc
   Plugin 'mrtazz/simplenote.vim'            " Simplenote integration
   Plugin 'othree/html5.vim'                 " HTML 5 syntax highlighting
