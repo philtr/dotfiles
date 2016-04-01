@@ -12,43 +12,41 @@
 
   " initialize Vundle
   filetype off
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
 
-  Plugin 'gmarik/Vundle.vim'
+  call plug#begin()
 
-  Plugin 'airblade/vim-gitgutter'           " More fancy git stuff
-  Plugin 'chrisbra/NrrwRgn'                 " Create a new buffer with text in current visual block
-  Plugin 'chriskempson/base16-vim'          " Base16 color scheme for vim
-  Plugin 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
-  Plugin 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
-  Plugin 'jeetsukumaran/vim-buffergator'    " Switch between buffers and list tab windows
-  Plugin 'lilydjwg/colorizer'               " Colorize color strings, e.g. #abc
-  Plugin 'mrtazz/simplenote.vim'            " Simplenote integration
-  Plugin 'othree/html5.vim'                 " HTML 5 syntax highlighting
-  Plugin 'rking/ag.vim'                     " Superfast code searching
-  Plugin 'scrooloose/nerdtree'              " Handy folder tree
-  Plugin 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
-  Plugin 'slim-template/vim-slim'           " Slim syntax support
-  Plugin 'tpope/vim-bundler'                " Bundler highlighting and utilities
-  Plugin 'tpope/vim-commentary'             " Easy code commenting
-  Plugin 'tpope/vim-endwise'                " Add 'end's automatically
-  Plugin 'tpope/vim-fugitive'               " Fancy git wrapper for vim
-  Plugin 'tpope/vim-haml'                   " HAML syntax and utilities
-  Plugin 'tpope/vim-liquid'                 " Liquid syntax highlighting
-  Plugin 'tpope/vim-markdown'               " Markdown syntax highlighting
-  Plugin 'tpope/vim-rails'                  " Rails syntax & utilities
-  Plugin 'tpope/vim-rake'                   " Rake syntax & utilities
-  Plugin 'tpope/vim-surround'               " Surround selection with character
-  Plugin 'vim-airline/vim-airline'          " Show a nice statusline
-  Plugin 'vim-airline/vim-airline-themes'   " Themes for airline
-  Plugin 'vim-ruby/vim-ruby'                " Ruby syntax highlighting and more
-  Plugin 'vim-scripts/SyntaxRange'          " Use different syntax in different regions
+  Plug 'airblade/vim-gitgutter'           " More fancy git stuff
+  Plug 'chrisbra/NrrwRgn'                 " Create a new buffer with text in current visual block
+  Plug 'chriskempson/base16-vim'          " Base16 color scheme for vim
+  Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
+  Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
+  Plug 'jeetsukumaran/vim-buffergator'    " Switch between buffers and list tab windows
+  Plug 'lilydjwg/colorizer'               " Colorize color strings, e.g. #abc
+  Plug 'mrtazz/simplenote.vim'            " Simplenote integration
+  Plug 'othree/html5.vim'                 " HTML 5 syntax highlighting
+  Plug 'rking/ag.vim'                     " Superfast code searching
+  Plug 'scrooloose/nerdtree'              " Handy folder tree
+  Plug 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
+  Plug 'slim-template/vim-slim'           " Slim syntax support
+  Plug 'tpope/vim-bundler'                " Bundler highlighting and utilities
+  Plug 'tpope/vim-commentary'             " Easy code commenting
+  Plug 'tpope/vim-endwise'                " Add 'end's automatically
+  Plug 'tpope/vim-fugitive'               " Fancy git wrapper for vim
+  Plug 'tpope/vim-haml'                   " HAML syntax and utilities
+  Plug 'tpope/vim-liquid'                 " Liquid syntax highlighting
+  Plug 'tpope/vim-markdown'               " Markdown syntax highlighting
+  Plug 'tpope/vim-rails'                  " Rails syntax & utilities
+  Plug 'tpope/vim-rake'                   " Rake syntax & utilities
+  Plug 'tpope/vim-surround'               " Surround selection with character
+  Plug 'vim-airline/vim-airline'          " Show a nice statusline
+  Plug 'vim-airline/vim-airline-themes'   " Themes for airline
+  Plug 'vim-ruby/vim-ruby'                " Ruby syntax highlighting and more
+  Plug 'vim-scripts/SyntaxRange'          " Use different syntax in different regions
 
   " this plugin looks for other plugins, load it last
-  Plugin 'ryanoasis/vim-devicons'           " Filetype icons in NERDTree
+  Plug 'ryanoasis/vim-devicons'           " Filetype icons in NERDTree
 
-  call vundle#end()
+  call plug#end()
 
 "= Interface ======================================================================================
 
