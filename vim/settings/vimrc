@@ -17,7 +17,7 @@
 
   Plugin 'gmarik/Vundle.vim'
 
-  Plugin 'bling/vim-airline'                " Show a nice statusline
+  Plugin 'airblade/vim-gitgutter'           " More fancy git stuff
   Plugin 'chrisbra/NrrwRgn'                 " Create a new buffer with text in current visual block
   Plugin 'chriskempson/base16-vim'          " Base16 color scheme for vim
   Plugin 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
@@ -38,6 +38,8 @@
   Plugin 'tpope/vim-rails'                  " Rails syntax & utilities
   Plugin 'tpope/vim-rake'                   " Rake syntax & utilities
   Plugin 'tpope/vim-surround'               " Surround selection with character
+  Plugin 'vim-airline/vim-airline'          " Show a nice statusline
+  Plugin 'vim-airline/vim-airline-themes'   " Themes for airline
   Plugin 'vim-ruby/vim-ruby'                " Ruby syntax highlighting and more
   Plugin 'vim-scripts/SyntaxRange'          " Use different syntax in different regions
 
@@ -152,8 +154,8 @@
 
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = '|'
+  let g:airline_theme='base16'
+
 
 "= BufferGator ====================================================================================
 
