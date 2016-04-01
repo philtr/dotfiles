@@ -137,7 +137,7 @@
   colorscheme base16-default
 
   set hlsearch                            " highlight all search matches
-  set colorcolumn=80                      " visual indicator at column 80
+  set colorcolumn=80,100                  " visual indicator at column 80
 
   set list listchars=tab:██,trail:∙       " Use "██" for tabs and "∙" for trailing spaces
   set fillchars+=vert:                    " set vertical fillchar to "en space" (it's there, trust
