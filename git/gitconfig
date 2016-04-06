@@ -1,6 +1,7 @@
 [user]
 	name = Phillip Ridlen
-	email = phillip@ovenbits.com
+	email = p@rdln.net
+	signingkey = 5BF03898
 
 [core]
 	excludesfile = /Users/philtr/.gitignore
