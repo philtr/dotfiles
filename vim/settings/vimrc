@@ -22,7 +22,6 @@
   Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
   Plug 'jeetsukumaran/vim-buffergator'    " Switch between buffers and list tab windows
   Plug 'lilydjwg/colorizer'               " Colorize color strings, e.g. #abc
-  Plug 'mrtazz/simplenote.vim'            " Simplenote integration
   Plug 'othree/html5.vim'                 " HTML 5 syntax highlighting
   Plug 'rking/ag.vim'                     " Superfast code searching
   Plug 'scrooloose/nerdtree'              " Handy folder tree
@@ -190,9 +189,4 @@
 
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
   let NERDTreeShowHidden = 0  " Don't show hidden files
-
-"= SimpleNote =====================================================================================
-
-  let g:SimplenoteUsername = "p@rdln.net"
-  let g:SimplenotePassword = "?7zY$MQnVN%gXt9"
 
