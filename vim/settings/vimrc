@@ -5,14 +5,12 @@
   " use UTF-8 encoding for the win
   set encoding=utf8
 
-"= Vundle =========================================================================================
+"= Plug.vim =======================================================================================
 
-  " Vundle is short for 'Vim bundle' and is a Vim plugin manager.
-  " See https://github.com/gmarik/Vundle.vim for more information
+  " A minimalist Vim plugin manager.
+  " See https://github.com/junegunn/vim-plug for more information
 
-  " initialize Vundle
-  filetype off
-
+  " initialize Plug
   call plug#begin()
 
   Plug 'airblade/vim-gitgutter'           " More fancy git stuff
