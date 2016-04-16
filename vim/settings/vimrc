@@ -213,5 +213,5 @@
 "= NERDTree =======================================================================================
 
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
-  let NERDTreeShowHidden = 0  " Don't show hidden files
+  let NERDTreeShowHidden = 1  " Show hidden files
 
