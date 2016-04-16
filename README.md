@@ -1,5 +1,15 @@
 # Dotfiles
 
+```
+                  _      _
+      |          | | o  | |
+    __|   __ _|_ | |    | |  _   ,
+   /  |  /  \_|  |/  |  |/  |/  / \_
+   \_/|_/\__/ |_/|__/|_/|__/|__/ \/
+                 |\  P H I L T R
+                 |/
+```
+
 ## Before installing Dotfiles
 
 ### Required Prerequisites
