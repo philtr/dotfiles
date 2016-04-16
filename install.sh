@@ -86,13 +86,11 @@ mkdir -p  $HOMEDIR/.bundle
 rm  -rf   $HOMEDIR/.bundle/config \
           $HOMEDIR/.gemrc         \
           $HOMEDIR/.pryrc         \
-          $HOMEDIR/.powrc         \
           $HOMEDIR/.middleman
 
 ln -s $DOTS/ruby/bundler          $HOMEDIR/.bundle/config
 ln -s $DOTS/ruby/gemrc            $HOMEDIR/.gemrc
 ln -s $DOTS/ruby/pryrc            $HOMEDIR/.pryrc
-ln -s $DOTS/pow/powconfig         $HOMEDIR/.powrc
 
 # Install Vundle
 rm -rf $DOTS/vim/bundle/vundle
