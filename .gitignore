@@ -4,4 +4,5 @@ vim/autoload/plug.vim.old
 *.un~
 tags
 *.swp
+*.swo
 
