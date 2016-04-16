@@ -10,9 +10,8 @@ echo '
                  |/
 
 Setting up dotfiles. If the ~/.dotfiles folder does not exist, it will be cloned
-down from https://github.com/philtr/dotfiles. These dotfiles use ZShell and the
-Prezto framework, so if either of those are not yet set up properly, they will
-be configured at this time.
+down from https://github.com/philtr/dotfiles. The ZShell configuration uses the
+Prezto framework, which will be installed or updated at this time.
 '
 
 # Setup
@@ -30,7 +29,7 @@ if [[ ! -d $DOTS ]]
 then
   echo "Cloning dotfiles..."
   mkdir -p $DOTS
-  git clone --recursive git@github.com:philtr/dotfiles.git "$DOTS"
+  git clone --recursive git://github.com/philtr/dotfiles.git "$DOTS"
 else
   cd $DOTS
   git add -u .
@@ -46,7 +45,7 @@ fi
 if [[ ! -d $HOMEDIR/.zprezto ]]
 then
   echo "Installing Prezto (https://github.com/sorin-ionescu/prezto)..."
-  git clone --recursive git@github.com:sorin-ionescu/prezto.git "$HOMEDIR/.zprezto"
+  git clone --recursive git://github.com/sorin-ionescu/prezto.git "$HOMEDIR/.zprezto"
 else
   cd $HOMEDIR/.zprezto
   git reset --hard
@@ -85,17 +84,11 @@ echo "Linking Ruby-related configurations..."
 mkdir -p  $HOMEDIR/.bundle
 rm  -rf   $HOMEDIR/.bundle/config \
           $HOMEDIR/.gemrc         \
-          $HOMEDIR/.pryrc         \
-          $HOMEDIR/.middleman
+          $HOMEDIR/.pryrc
 
 ln -s $DOTS/ruby/bundler          $HOMEDIR/.bundle/config
 ln -s $DOTS/ruby/gemrc            $HOMEDIR/.gemrc
 ln -s $DOTS/ruby/pryrc            $HOMEDIR/.pryrc
-
-# Install Vundle
-rm -rf $DOTS/vim/bundle/vundle
-git clone git@github.com:gmarik/Vundle.vim.git $DOTS/vim/bundle/Vundle.vim
-
 
 # Link vim configuration
 echo "Linking vim configuration files..."
@@ -105,7 +98,7 @@ rm  -rf $HOMEDIR/.vim     \
 
 ln -s $DOTS/vim                   $HOMEDIR/.vim
 ln -s $DOTS/vim/settings/vimrc    $HOMEDIR/.vimrc
-ln -s $DOTS/vim/settings/gvimrc    $HOMEDIR/.gvimrc
+ln -s $DOTS/vim/settings/gvimrc   $HOMEDIR/.gvimrc
 
 # Link tmux configuration
 echo "Linking tmux configuration files..."
