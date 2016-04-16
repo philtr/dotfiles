@@ -20,7 +20,6 @@
   Plug 'chriskempson/base16-vim'          " Base16 color scheme for vim
   Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
   Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
-  Plug 'jeetsukumaran/vim-buffergator'    " Switch between buffers and list tab windows
   Plug 'lilydjwg/colorizer'               " Colorize color strings, e.g. #abc
   Plug 'othree/html5.vim'                 " HTML 5 syntax highlighting
   Plug 'rking/ag.vim'                     " Superfast code searching
@@ -126,9 +125,7 @@
   " CtrlP
   nmap <Leader>p <C-p>
   nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
-
-  " Buffergator
-  nmap <Leader>b :BuffergatorToggle<CR>
+  nmap <Leader>b :CtrlPBuffer<CR>
 
 "= Commands =======================================================================================
 
@@ -157,14 +154,6 @@
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   let g:airline_theme='base16'
-
-
-"= BufferGator ====================================================================================
-
-  let g:buffergator_sort_regime = "mru"            " sort by 'most recently used'
-  let g:buffergator_viewport_split_policy = "B"    " split horizontally to the bottom
-  let g:buffergator_split_size = 10                " show 10 lines in buffergator split
-  let g:buffergator_suppress_keymaps = 1           " Don't map keys by default
 
 "= CtrlP ==========================================================================================
 
