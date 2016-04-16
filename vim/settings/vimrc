@@ -215,3 +215,13 @@
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
   let NERDTreeShowHidden = 1  " Show hidden files
 
+"= Syntastic ======================================================================================
+
+  " Pop up the location list when there is a syntax error
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+
+  " Don't check syntax when quitting
+  let g:syntastic_check_on_wq = 0
+
+"==================================================================================================
