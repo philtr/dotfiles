@@ -57,4 +57,5 @@ config/database.yml
 # metric_fu
 .metrics
 
-
+# CBRA - Component-based Rails Applications
+components/*/vendor/bundle/
