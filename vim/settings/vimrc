@@ -176,8 +176,13 @@
 
 "= Airline ========================================================================================
 
+  " Use powerline fonts for fancy icons
   let g:airline_powerline_fonts = 1
+
+  " Use the tabline extension
   let g:airline#extensions#tabline#enabled = 1
+
+  " Use the base16 theme using terminal colors
   let g:airline_theme='base16'
 
 "= CtrlP ==========================================================================================
