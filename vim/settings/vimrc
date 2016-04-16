@@ -25,6 +25,7 @@
     Plug 'tpope/vim-endwise'                " Add 'end's automatically
     Plug 'tpope/vim-fugitive'               " Fancy git wrapper for vim
     Plug 'tpope/vim-liquid'                 " Liquid syntax highlighting
+    Plug 'tpope/vim-rhubarb'                " If fugitive.vim is the Git, rhubarb.vim is the Hub.
     Plug 'tpope/vim-surround'               " Surround selection with character
     Plug 'vim-airline/vim-airline'          " Show a nice statusline
     Plug 'vim-airline/vim-airline-themes'   " Themes for airline
