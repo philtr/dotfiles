@@ -108,6 +108,11 @@ ln -s  $DOTS/tmux/tmux.conf $HOMEDIR/.tmux.conf
 # Print Manual Instructions
 echo "\n\nATTENTION! Further Instructions:\n"
 
+echo "  * Set ZShell as your login shell"
+echo "    - run \`chsh\`"
+echo "    - enter your password"
+echo "    - type '/bin/zsh' at the prompt"
+
 # iTerm2
 echo "  * Set iTerm configuration to load config"
 echo "    - Open iTerm preferences"
