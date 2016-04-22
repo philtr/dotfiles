@@ -22,16 +22,10 @@
     Plug 'othree/html5.vim'                 " HTML 5 syntax highlighting
     Plug 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
     Plug 'tpope/vim-commentary'             " Easy code commenting
-    Plug 'tpope/vim-endwise'                " Add 'end's automatically
-    Plug 'tpope/vim-fugitive'               " Fancy git wrapper for vim
-    Plug 'tpope/vim-liquid'                 " Liquid syntax highlighting
-    Plug 'tpope/vim-rhubarb'                " If fugitive.vim is the Git, rhubarb.vim is the Hub.
-    Plug 'tpope/vim-surround'               " Surround selection with character
     Plug 'vim-airline/vim-airline'          " Show a nice statusline
     Plug 'vim-airline/vim-airline-themes'   " Themes for airline
-    Plug 'vim-scripts/SyntaxRange'          " Use different syntax in different regions
 
-  " Plugins used less often that can be lazy-loaded -----------------------------------------------
+  " Plugins that can be lazy-loaded ---------------------------------------------------------------
 
     " Create a new buffer with text in current visual block
     Plug 'chrisbra/NrrwRgn', { 'on': 'NarrowRegion' }
