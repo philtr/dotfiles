@@ -4,7 +4,7 @@
 	signingkey = 5BF03898
 
 [core]
-	excludesfile = /Users/philtr/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim -f
 
 [difftool "Kaleidoscope"]
