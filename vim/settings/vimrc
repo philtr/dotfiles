@@ -19,7 +19,6 @@
     Plug 'chriskempson/base16-vim'          " Base16 color scheme for vim
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
     Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
-    Plug 'othree/html5.vim'                 " HTML 5 syntax highlighting
     Plug 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
     Plug 'tpope/vim-commentary'             " Easy code commenting
     Plug 'vim-airline/vim-airline'          " Show a nice statusline
@@ -36,6 +35,9 @@
 
     " Superfast code searching
     Plug 'rking/ag.vim', { 'on': 'Ag' }
+
+    " HTML5 syntax highlighting
+    Plug 'othree/html5.vim', { 'for': ['html', 'erb', 'mustache'] }
 
     " Handy folder tree
     Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
