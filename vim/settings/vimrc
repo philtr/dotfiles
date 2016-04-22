@@ -207,6 +207,16 @@
     \ 'fallback': 'find %s -type f'
     \ }
 
+"= GitGutter ======================================================================================
+
+  let g:gitgutter_enabled = 0
+  let g:gitgutter_map_keys = 0
+  let g:gitgutter_highlight_lines = 1
+
+  " Keymappings -----------------------------------------------------------------------------------
+
+  nmap <Leader>gg :GitGutterToggle<CR>
+
 "= NERDTree =======================================================================================
 
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
