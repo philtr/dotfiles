@@ -63,6 +63,8 @@
     " Ruby syntax highlighting and more
     Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }
 
+  " Plugins that depend on other plugins being present (load last) --------------------------------
+
     " Nerdy icons everywhere!
     Plug 'ryanoasis/vim-devicons'
 
@@ -141,14 +143,6 @@
   nmap <Leader>x xp
   nmap <Leader>X xhP
 
-  " NERDTRee
-  nmap <Leader>n :NERDTreeToggle<CR>
-
-  " CtrlP
-  nmap <Leader>p <C-p>
-  nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
-  nmap <Leader>b :CtrlPBuffer<CR>
-
 "= Commands =======================================================================================
 
   command! Breathe set colorcolumn=0 laststatus=0 nonumber | hi NonText guifg=bg
@@ -178,6 +172,7 @@
 
   " Use the tabline extension
   let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#show_buffers = 0
 
   " Use the base16 theme using terminal colors
   let g:airline_theme='base16'
@@ -207,6 +202,12 @@
     \ 'fallback': 'find %s -type f'
     \ }
 
+  " Keymappings -----------------------------------------------------------------------------------
+
+    nmap <Leader>p <C-p>
+    nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
+    nmap <Leader>b :CtrlPBuffer<CR>
+
 "= GitGutter ======================================================================================
 
   let g:gitgutter_enabled = 0
@@ -221,6 +222,10 @@
 
   let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
   let NERDTreeShowHidden = 1  " Show hidden files
+
+  " Keymappings -----------------------------------------------------------------------------------
+
+  nmap <Leader>n :NERDTreeToggle<CR>
 
 "= Syntastic ======================================================================================
 
