@@ -143,11 +143,6 @@
   nmap <Leader>x xp
   nmap <Leader>X xhP
 
-"= Commands =======================================================================================
-
-  command! Breathe set colorcolumn=0 laststatus=0 nonumber | hi NonText guifg=bg
-  command! NoBreathe set colorcolumn=80 laststatus=2 number | hi NonText guifg=fg
-
 "= Theme ==========================================================================================
 
   set background=dark
