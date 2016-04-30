@@ -137,10 +137,13 @@
   " Folding
   nmap <Leader>F :set foldmethod=syntax<CR>
 
-  " Transpose
+  " Transpose the line(s) under the cursor one line down
   nmap <Leader>k ddp
+  " Transpose the line(s) under the cursor one line up
   nmap <Leader>K ddkP
+  " Transpose character(s) under the cursor one position to the right
   nmap <Leader>x xp
+  " Transpose character(s) under the cursor one position to the left
   nmap <Leader>X xhP
 
 "= Theme ==========================================================================================
