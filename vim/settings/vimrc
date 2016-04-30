@@ -16,7 +16,8 @@
   " General purpose plugins that should always be loaded ------------------------------------------
 
     Plug 'airblade/vim-gitgutter'           " More fancy git stuff
-    Plug 'chriskempson/base16-vim'          " Base16 color scheme for vim
+    " Plug 'chriskempson/base16-vim'          " Base16 color scheme for vim
+    Plug 'snooc/base16-vim'                 " Fork of the above with updated themes
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
     Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
     Plug 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
