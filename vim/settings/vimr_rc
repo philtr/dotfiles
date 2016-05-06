@@ -1,1 +1,1 @@
-open.quickly.ignore_patterns = */vendor/bundle/*, */.git
+open.quickly.ignore.patterns = */vendor/bundle, */.git
