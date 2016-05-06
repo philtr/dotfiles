@@ -3,6 +3,9 @@
   name = Phillip Ridlen
   email = phillip@ovenbits.com
 
+  ; @thewiltr
+  ; name = Phillip Ridlen & Nathaniel Watts
+  ; email = phillip+nathaniel@ovenbits.com
 
   ; GPG Signiing Key ID
   signingkey = 5BF03898
