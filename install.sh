@@ -79,6 +79,13 @@ rm -f $HOMEDIR/.gitconfig \
 ln -s $DOTS/git/gitconfig         $HOMEDIR/.gitconfig
 ln -s $DOTS/git/gitignore         $HOMEDIR/.gitignore
 
+# Link Silver Searcher (Ag) configuration files
+echo "Linking Git configuration files..."
+rm -f $HOMEDIR/.agignore
+
+ln -s $DOTS/ag/agignore           $HOMEDIR/.agignore
+
+
 # Link ruby configuration
 echo "Linking Ruby-related configurations..."
 mkdir -p  $HOMEDIR/.bundle
