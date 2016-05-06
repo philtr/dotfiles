@@ -80,6 +80,7 @@
     filetype plugin on           " enable loading plugins for filetypes
     filetype indent on           " enable loading 'indent files' for filetypes
 
+    set cursorline               " highlight line under cursor
     set synmaxcol=200            " no syntax highlighting for lines longer than 100 cols
 
     set laststatus=2             " show status bar
