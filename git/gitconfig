@@ -1,55 +1,34 @@
 [user]
-	name = Phillip Ridlen
-	email = p@rdln.net
-	signingkey = 5BF03898
+  ; @philtr
+  name = Phillip Ridlen
+  email = phillip@ovenbits.com
+
+
+  ; GPG Signiing Key ID
+  signingkey = 5BF03898
 
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim -f
+  excludesfile = ~/.gitignore
+  editor = vim -f
 
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-
-[difftool]
-	prompt = false
-
-[diff]
-	tool = Kaleidoscope
-
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
-
-[mergetool]
-	prompt = false
-
-[merge]
-	tool = Kaleidoscope
 [github]
-	user = philtr
-
-[credential]
+  user = philtr
 
 [hub]
-protocol = https
+  protocol = https
+
 [alias]
-	conflicts = !git ls-files -u | cut -f 2 | sort -u
-[heroku]
-	account = oven
+  conflicts = !git ls-files -u | cut -f 2 | sort -u
 
 [filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+
 [push]
-	default = simple
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  default = simple
+
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
+  clean = git lfs clean %f
+  smudge = git lfs smudge %f
+  required = true
