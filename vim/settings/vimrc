@@ -24,6 +24,7 @@
     Plug 'tpope/vim-commentary'             " Easy code commenting
     Plug 'vim-airline/vim-airline'          " Show a nice statusline
     Plug 'vim-airline/vim-airline-themes'   " Themes for airline
+    Plug 'Yggdroot/indentLine'              " Indentation guides
 
   " Plugins that can be lazy-loaded ---------------------------------------------------------------
 
@@ -217,6 +218,14 @@
   " Keymappings -----------------------------------------------------------------------------------
 
   nmap <Leader>gg :GitGutterToggle<CR>
+
+"= IndentLine =====================================================================================
+
+  let g:indentLine_enabled = 0            " Disable by default
+  let g:indentLine_char = ''             " Use a fancy character to indicate an indent level
+  let g:indentLine_concealcursor = 'vc'   " Don't show indent guides for current line
+
+  nmap <Leader>ig :IndentLinesToggle<CR>
 
 "= NERDTree =======================================================================================
 
