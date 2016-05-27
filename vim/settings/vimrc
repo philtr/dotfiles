@@ -208,7 +208,7 @@
 
 "= RSpec.vim ======================================================================================
 
-  let g:rspec_command = 'VimuxRunCommand "bundle exec rspec {spec}"'
+  let g:rspec_command = 'VimuxRunCommand "bundle exec rspec --fail-fast {spec}"'
 
   map <Leader>ss :call RunCurrentSpecFile()<CR>
   map <Leader>sn :call RunNearestSpec()<CR>
