@@ -61,7 +61,7 @@
     filetype plugin on           " enable loading plugins for filetypes
     filetype indent on           " enable loading 'indent files' for filetypes
 
-    set cursorline               " highlight line under cursor
+    set nocursorline             " don't highlight line under cursor
     set synmaxcol=200            " no syntax highlighting for lines longer than 100 cols
     set laststatus=2             " show status bar
     set number                   " display line numbers
@@ -73,11 +73,13 @@
 
     set autoread                    " automatically reload unmodified buffers when edited externally
     set ttyfast                     " improve screen refresh for terminal vim
+    set lazyredraw                  " screen not redrawn during command execution
     set scrolloff=3                 " start scrolling 3 lines from bottom
     set sidescrolloff=6             " start scrolling 6 lines from right
     set mouse=a                     " allow mouse usage
     set clipboard=unnamed           " use the system clipboard
     set backspace=indent,eol,start  " Make backspace behave as expected
+    set re=1                        " Use old RegEx engine because vim-ruby doesn't like it
 
   " Wrapping --------------------------------------------------------------------------------------
 
@@ -216,6 +218,10 @@
   map <Leader>sa :call RunAllSpecs()<CR>
 
   map <F8> :VimuxRunLastCommand<CR>
+
+"= Ruby ===========================================================================================
+
+  " Ruby appreciates the old regex processor, especially with cursorline
 
 "= Syntastic ======================================================================================
 
