@@ -29,7 +29,6 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'osx' \
   'tmux' \
-  'rails' \
   'syntax-highlighting' \
   'history-substring-search' \
   'git' \
