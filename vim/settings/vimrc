@@ -27,22 +27,21 @@
 
   " Language/Filetype plugins ---------------------------------------------------------------------
 
-    Plug 'othree/html5.vim'       " HTML5 syntax highlighting
-    Plug 'slim-template/vim-slim' " Slim syntax support
-    Plug 'thoughtbot/vim-rspec'   " Run RSpec tests with simple commands
-    Plug 'tpope/vim-bundler'      " Bundler syntax & utilities
-    Plug 'tpope/vim-haml'         " HAML syntax highlighting
-    Plug 'tpope/vim-markdown'     " Markdown syntax highlighting (incl. fenced code blocks)
-    Plug 'tpope/vim-rake'         " Rake syntax & utilities
-    Plug 'tpope/vim-rails'        " Rails syntax & utilities
-    Plug 'vim-ruby/vim-ruby'      " Ruby syntax highlighting and more
+    Plug 'othree/html5.vim'                 " HTML5 syntax highlighting
+    Plug 'slim-template/vim-slim'           " Slim syntax support
+    Plug 'thoughtbot/vim-rspec'             " Run RSpec tests with simple commands
+    Plug 'tpope/vim-bundler'                " Bundler syntax & utilities
+    Plug 'tpope/vim-haml'                   " HAML syntax highlighting
+    Plug 'tpope/vim-markdown'               " Markdown syntax highlighting (incl. fenced code blocks)
+    Plug 'tpope/vim-rake'                   " Rake syntax & utilities
+    Plug 'tpope/vim-rails'                  " Rails syntax & utilities
+    Plug 'vim-ruby/vim-ruby'                " Ruby syntax highlighting and more
 
   " Appearance plugins ----------------------------------------------------------------------------
 
-    " Plug 'chriskempson/base16-vim'        " Base16 color scheme for vim
-    Plug 'snooc/base16-vim'                 "   ↑ Forked with updated themes
+    Plug 'chriskempson/base16-vim'          " Base16 color scheme for vim
     Plug 'airblade/vim-gitgutter'           " Display git status information in the gutter
-    Plug 'lilydjwg/colorizer'               " Colorize colo strings, e.g. #aabbcc
+    Plug 'lilydjwg/colorizer'               " Colorize color strings, e.g. #aabbcc
     Plug 'scrooloose/nerdtree'              " Handy folder tree
     Plug 'vim-airline/vim-airline'          " Show a nice statusline
     Plug 'vim-airline/vim-airline-themes'   " Themes for airline
@@ -56,17 +55,17 @@
 
   " Appearance ------------------------------------------------------------------------------------
 
-    syntax on                    " turn on syntax highilghting
+    syntax on                       " turn on syntax highilghting
 
-    filetype plugin on           " enable loading plugins for filetypes
-    filetype indent on           " enable loading 'indent files' for filetypes
+    filetype plugin on              " enable loading plugins for filetypes
+    filetype indent on              " enable loading 'indent files' for filetypes
 
-    set nocursorline             " don't highlight line under cursor
-    set synmaxcol=200            " no syntax highlighting for lines longer than 100 cols
-    set laststatus=2             " show status bar
-    set number                   " display line numbers
-    set visualbell               " use visual bell
-    set t_ut=                    " disable background color erase
+    set nocursorline                " don't highlight line under cursor
+    set synmaxcol=200               " no syntax highlighting for lines longer than 100 cols
+    set laststatus=2                " show status bar
+    set number                      " display line numbers
+    set visualbell                  " use visual bell
+    set t_ut=                       " disable background color erase
 
   " Interaction -----------------------------------------------------------------------------------
     let loaded_match_paren = 1      " highlight matching parens
@@ -83,31 +82,32 @@
 
   " Wrapping --------------------------------------------------------------------------------------
 
-    set nowrap                   " don't softwrap text
-    set formatoptions-=t         " don't automatically hardwrap text (use 'gq' to reflow text)
-    set textwidth=80             " wrap at column 80
-    set wrapmargin=0             " don't wrap based on terminal size
+    set nowrap                      " don't softwrap text
+    set formatoptions-=t            " don't automatically hardwrap text (use 'gq' to reflow text)
+    set textwidth=80                " wrap at column 80
+    set wrapmargin=0                " don't wrap based on terminal size
 
   " Indentation -----------------------------------------------------------------------------------
 
-    set autoindent               " indent next line to same level as current line
-    set smartindent              "   ↑ but do it smartly
-    set smarttab                 " <Tab> in front of a line inserts 'shiftwidth' blanks
-    set shiftwidth=2             "   ↑ use 2 blanks for above
-    set tabstop=2                " display a <Tab> as 2 spaces
-    set softtabstop=2            " use 2 spaces for a <Tab>
-    set expandtab                "   ↑ insert spaces when <Tab> key is ressed
+    set autoindent                  " indent next line to same level as current line
+    set smartindent                 "   ↑ but do it smartly
+    set smarttab                    " <Tab> in front of a line inserts 'shiftwidth' blanks
+    set shiftwidth=2                "   ↑ use 2 blanks for above
+    set tabstop=2                   " display a <Tab> as 2 spaces
+    set softtabstop=2               " use 2 spaces for a <Tab>
+    set expandtab                   "   ↑ insert spaces when <Tab> key is ressed
 
 "= Utilities ======================================================================================
 
-  set nobackup                 " don't create backup files
-  set nowb                     " don't make a backup before overwriting a file
-  set directory=~/.vim/swap//  " put swap files in ~/.vim/undo/pat%to$file.ext.swp
-  set undodir=~/.vim/undo//    " put undo files in ~/.vim/undo/path%to$file.ext
+  set nobackup                      " don't create backup files
+  set nowb                          " don't make a backup before overwriting a file
+  set directory=~/.vim/swap//       " put swap files in ~/.vim/undo/pat%to$file.ext.swp
+  set undodir=~/.vim/undo//         " put undo files in ~/.vim/undo/path%to$file.ext
 
 "= Keys ===========================================================================================
 
-  let mapleader = ','                     " Fearless leader!
+  " Fearless leader! 
+  let mapleader = ','
 
   " Tab Navigation
   nmap <Leader>l :tabnext<CR>
@@ -144,16 +144,17 @@
 
 "= Airline ========================================================================================
 
-  let g:airline_powerline_fonts = 1                   " Use powerline fonts for fancy icons
+  let g:airline_powerline_fonts = 1                   " Use powerline fonts
   let g:airline#extensions#tabline#enabled = 1        " Use the tabline extension
-  let g:airline#extensions#tabline#show_buffers = 0   " Show buffers on the tabline
+  let g:airline#extensions#tabline#show_buffers = 1   " Don't show buffers on the tabline
+  let g:airline#extensions#tabline#show_splits = 0    " Don't show buffers on the tabline
   let g:airline_theme='base16'                        " Use the base16 theme using terminal colors
 
 "= CtrlP ==========================================================================================
 
-  let g:ctrlp_use_caching = 1           " Use caching
+  let g:ctrlp_use_caching = 1           " Remember the files in the current project
   let g:ctrlp_clear_cache_on_exit = 0   " Persist cache across sessions
-  let g:ctrlp_show_hidden = 1           " Show hidden files
+  let g:ctrlp_show_hidden = 1           " Show hidden files (starting with '.')
 
   " Ignore specific files and folders
   let g:ctrlp_custom_ignore = {
@@ -210,7 +211,7 @@
 
 "= RSpec.vim ======================================================================================
 
-  let g:rspec_command = 'VimuxRunCommand "bundle exec rspec --fail-fast {spec}"'
+  let g:rspec_command = 'VimuxRunCommand "bin/rspec --fail-fast {spec}"'
 
   map <Leader>ss :call RunCurrentSpecFile()<CR>
   map <Leader>sn :call RunNearestSpec()<CR>
@@ -218,10 +219,6 @@
   map <Leader>sa :call RunAllSpecs()<CR>
 
   map <F8> :VimuxRunLastCommand<CR>
-
-"= Ruby ===========================================================================================
-
-  " Ruby appreciates the old regex processor, especially with cursorline
 
 "= Syntastic ======================================================================================
 
