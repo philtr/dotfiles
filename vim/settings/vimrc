@@ -20,6 +20,7 @@
     Plug 'benmills/vimux'                   " Run commands in a tmux split
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
     Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
+    Plug 'scrooloose/nerdtree'              " Handy folder tree
     Plug 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
     Plug 'tpope/vim-commentary'             " Easy code commenting
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
@@ -27,12 +28,14 @@
 
   " Language/Filetype plugins ---------------------------------------------------------------------
 
+    Plug 'davidoc/taskpaper.vim'            " Taskpaper support
+    Plug 'hallison/vim-rdoc'                " RDoc syntax
     Plug 'othree/html5.vim'                 " HTML5 syntax highlighting
     Plug 'slim-template/vim-slim'           " Slim syntax support
     Plug 'thoughtbot/vim-rspec'             " Run RSpec tests with simple commands
     Plug 'tpope/vim-bundler'                " Bundler syntax & utilities
     Plug 'tpope/vim-haml'                   " HAML syntax highlighting
-    Plug 'tpope/vim-markdown'               " Markdown syntax highlighting (incl. fenced code blocks)
+    Plug 'tpope/vim-markdown'               " Markdown syntax highlighting (w/ fenced code blocks)
     Plug 'tpope/vim-rake'                   " Rake syntax & utilities
     Plug 'tpope/vim-rails'                  " Rails syntax & utilities
     Plug 'vim-ruby/vim-ruby'                " Ruby syntax highlighting and more
@@ -232,5 +235,10 @@
 
   nmap <Leader>sx :SyntasticCheck<CR>
   nmap <Leader>sxt :SyntasticToggleMode<CR>
+
+"= Taskpaper ======================================================================================
+
+  au BufRead,BufNewFile *.taskpaper set nolist
+  au BufRead,BufNewFile *.taskpaper set nosmarttab
 
 "==================================================================================================

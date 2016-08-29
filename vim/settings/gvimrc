@@ -9,5 +9,5 @@
   set guifont=SauceCodePro\ Nerd\ Font:h12
   set antialias
 
-  colorscheme base16-hopscotch
+  colorscheme base16-phd
 
