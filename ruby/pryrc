@@ -2,7 +2,7 @@
 Pry.config.theme = "solarized"
 
 # Use MacVim as an interactive editor
-Pry.config.editor = "mvim"
+Pry.config.editor = "vim"
 
 if defined?(Rails)
   # Use the current rails app name for the pry prompt
