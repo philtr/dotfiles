@@ -6,3 +6,7 @@ alias gcb="git rev-parse --abbrev-ref HEAD"
 alias ggpush="git push origin \`gcb\`"
 alias gd="git difftool"
 
+function gneb {
+  git checkout --orphan $1
+  git reset --hard
+}

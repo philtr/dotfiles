@@ -9,6 +9,7 @@ source "$HOME/.zsh/components/zshrc/ruby.zsh"
 source "$HOME/.zsh/components/zshrc/git.zsh"
 # source "$HOME/.zsh/components/zshrc/travis.zsh"
 source "$HOME/.zsh/components/zshrc/k.zsh"
+source "$HOME/.zsh/components/zshrc/tag.zsh"
 
 # Keybindings
 bindkey -M vicmd '/' history-incremental-search-backward
@@ -17,6 +18,10 @@ bindkey -M vicmd '/' history-incremental-search-backward
 unsetopt correct
 alias scotty_joke_funny="ruby -e 'puts %(#scottyjoke is #{ [true,false,false,false,false].sample ? nil : %(not ) }funny.)'"
 
+function t {
+  vim ~/Dropbox\ \(Personal\)/Phillip/Sync/TaskPaper/$1
+}
+compdef '_files -W ~/.tasks' t
 
 # added by travis gem
 [ -f /Users/philtr/.travis/travis.sh ] && source /Users/philtr/.travis/travis.sh
