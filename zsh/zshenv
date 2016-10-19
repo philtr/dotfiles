@@ -128,14 +128,6 @@ fi
 # source /usr/local/bin/virtualenvwrapper.sh
 
 #
-# RBEnv
-#
-if (( $+commands[rbenv] )) ; then
-  eval "$(rbenv init --no-rehash -)"
-  (rbenv rehash &) 2> /dev/null
-fi
-
-#
 # NVM - Node Version Manager
 #
 export NVM_DIR="$HOME/.nvm"
