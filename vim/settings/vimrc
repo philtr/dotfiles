@@ -29,6 +29,7 @@
   " Language/Filetype plugins ---------------------------------------------------------------------
 
     Plug 'davidoc/taskpaper.vim'            " Taskpaper support
+    Plug 'elixir-lang/vim-elixir'           " Elixir support for vim
     Plug 'hallison/vim-rdoc'                " RDoc syntax
     Plug 'othree/html5.vim'                 " HTML5 syntax highlighting
     Plug 'slim-template/vim-slim'           " Slim syntax support
