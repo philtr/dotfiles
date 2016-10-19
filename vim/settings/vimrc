@@ -143,8 +143,9 @@
 "= File Types =====================================================================================
 
   au BufRead,BufNewFile *.brs setf vb           " Use VBScript for BrightScript files
+  au BufRead,BufNewFile *.es6 setf javascript   " Use JavaScript for ECMAScript 6 files
+  au BufRead,BufNewFile *.jbuilder setf ruby    " Use Ruby for .jbuilder file
   au BufRead,BufNewFile *.md  setf markdown     " Use Markdown for .md files
-  au BufRead,BufNewFile *.jbuilder setf ruby    " Use Ruby for .jbuilder files
 
 "= Airline ========================================================================================
 
