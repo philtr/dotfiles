@@ -129,6 +129,9 @@
   " Transpose character(s) under the cursor one position to the left
   nmap <Leader>X xhP
 
+  " Pry
+  nmap <Leader>pry Irequire "pry"; binding.pry;<CR><Esc>
+
 "= Theme ==========================================================================================
 
   set background=dark
