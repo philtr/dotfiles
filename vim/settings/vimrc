@@ -236,7 +236,7 @@
   let g:check_on_open = 0                         " Don't check syntax when opening a file
   let g:syntastic_loc_list_height = 5             " Smaller location list
 
-  let g:syntastic_ruby_checkers = ['rubocop', 'mri']  " Enable RuboCop for Ruby
+  " let g:syntastic_ruby_checkers = ['rubocop', 'mri']  " Enable RuboCop for Ruby
 
   nmap <Leader>sx :SyntasticCheck<CR>
   nmap <Leader>sxt :SyntasticToggleMode<CR>
