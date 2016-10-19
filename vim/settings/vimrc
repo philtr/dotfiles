@@ -154,8 +154,8 @@
 
   let g:airline_powerline_fonts = 1                   " Use powerline fonts
   let g:airline#extensions#tabline#enabled = 1        " Use the tabline extension
-  let g:airline#extensions#tabline#show_buffers = 1   " Don't show buffers on the tabline
-  let g:airline#extensions#tabline#show_splits = 0    " Don't show buffers on the tabline
+  let g:airline#extensions#tabline#show_buffers = 0   " Don't show buffers on the tabline
+  let g:airline#extensions#tabline#show_splits = 0    " Don't show splits on the tabline
   let g:airline_theme='base16'                        " Use the base16 theme using terminal colors
 
 "= CtrlP ==========================================================================================
