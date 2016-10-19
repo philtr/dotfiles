@@ -25,3 +25,6 @@ compdef '_files -W ~/.tasks' t
 
 # added by travis gem
 [ -f /Users/philtr/.travis/travis.sh ] && source /Users/philtr/.travis/travis.sh
+
+# I DONT LIKE THIS BUT IT'S MY ONLY OPTION
+export GPG_TTY=$(tty)
