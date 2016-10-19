@@ -110,7 +110,7 @@
 
 "= Keys ===========================================================================================
 
-  " Fearless leader! 
+  " Fearless leader!
   let mapleader = ','
 
   " Tab Navigation
