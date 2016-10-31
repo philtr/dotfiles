@@ -15,12 +15,14 @@
 
   call plug#begin()
 
-  " General purpose plugins that should always be loaded ------------------------------------------
+  " General purpose plugins that should (almost) always be loaded ---------------------------------
 
     Plug 'benmills/vimux'                   " Run commands in a tmux split
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
     Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
-    Plug 'scrooloose/nerdtree'              " Handy folder tree
+          \ { 'on': ['CtrlP',
+          \          'CtrlPClearAllCaches',
+          \          'CtrlPBuffer'] }
     Plug 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
     Plug 'tpope/vim-commentary'             " Easy code commenting
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
@@ -46,10 +48,12 @@
     Plug 'chriskempson/base16-vim'          " Base16 color scheme for vim
     Plug 'airblade/vim-gitgutter'           " Display git status information in the gutter
     Plug 'lilydjwg/colorizer'               " Colorize color strings, e.g. #aabbcc
-    Plug 'scrooloose/nerdtree'              " Handy folder tree
+    Plug 'scrooloose/nerdtree',             " Handy folder tree
+          \ { 'on': 'NERDTreeToggle' }
     Plug 'vim-airline/vim-airline'          " Show a nice statusline
     Plug 'vim-airline/vim-airline-themes'   " Themes for airline
     Plug 'Yggdroot/indentLine'              " Indentation guides
+          \ { 'on': 'IndentLinesToggle' }
 
     Plug 'ryanoasis/vim-devicons'           " Nerdy icons everywhere! (Always load this last)
 
