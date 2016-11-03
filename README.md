@@ -10,6 +10,10 @@
                  |/
 ```
 
+## Preview
+
+![](preview.png)
+
 ## Before installing Dotfiles
 
 ### Required Prerequisites
