@@ -76,6 +76,7 @@
     set t_ut=                       " disable background color erase
 
   " Interaction -----------------------------------------------------------------------------------
+
     let loaded_match_paren = 1      " highlight matching parens
 
     set autoread                    " automatically reload unmodified buffers when edited externally
