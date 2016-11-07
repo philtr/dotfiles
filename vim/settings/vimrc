@@ -19,14 +19,16 @@
 
     Plug 'benmills/vimux'                   " Run commands in a tmux split
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
-    Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
-          \ { 'on': ['CtrlP',
-          \          'CtrlPClearAllCaches',
-          \          'CtrlPBuffer'] }
     Plug 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
     Plug 'tpope/vim-commentary'             " Easy code commenting
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
-    Plug 'rking/ag.vim'                     " Superfast code searching
+
+    Plug 'junegunn/fzf',                    " Install fzf if we don't have it yet
+          \ {
+          \   'dir': '~/.fzf',
+          \   'do': './install --bin'
+          \ }
+    Plug 'junegunn/fzf.vim'                 " Vim mappings for fzf. Replaces CtrlP and Ag.
 
   " Language/Filetype plugins ---------------------------------------------------------------------
 
@@ -162,31 +164,26 @@
   let g:airline#extensions#tabline#show_splits = 0    " Don't show splits on the tabline
   let g:airline_theme='base16'                        " Use the base16 theme using terminal colors
 
-"= CtrlP ==========================================================================================
+"= FZF ============================================================================================
 
-  let g:ctrlp_use_caching = 1           " Remember the files in the current project
-  let g:ctrlp_clear_cache_on_exit = 0   " Persist cache across sessions
-  let g:ctrlp_show_hidden = 1           " Show hidden files (starting with '.')
+  nmap <Leader>p :GFiles<CR>
+  nmap <Leader>b :Buffers<CR>
 
-  " Ignore specific files and folders
-  let g:ctrlp_custom_ignore = {
-    \ 'dir': '(log|vendor/bundle|tmp|components/\.*/(vendor/bundle|tmp|spec/dummy|log))',
-    \ 'file': '\v\.(jpg|png|gif|db)'
-    \ }
+  " Customize fzf colors to match your color scheme
+  let g:fzf_colors =
+  \ { 'fg':      ['fg', 'Normal'],
+    \ 'bg':      ['bg', 'Normal'],
+    \ 'hl':      ['fg', 'Comment'],
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+    \ 'hl+':     ['fg', 'Statement'],
+    \ 'info':    ['fg', 'PreProc'],
+    \ 'prompt':  ['fg', 'Conditional'],
+    \ 'pointer': ['fg', 'Exception'],
+    \ 'marker':  ['fg', 'Keyword'],
+    \ 'spinner': ['fg', 'Label'],
+    \ 'header':  ['fg', 'Comment'] }
 
-  " Ignore files in `.gitignore`
-  let g:ctrlp_user_command = {
-    \ 'types': {
-      \ 1: ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'],
-      \ },
-    \ 'fallback': 'find %s -type f'
-    \ }
-
-  " Keymappings -----------------------------------------------------------------------------------
-
-    nmap <Leader>p <C-p>
-    nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
-    nmap <Leader>b :CtrlPBuffer<CR>
 
 "= GitGutter ======================================================================================
 
