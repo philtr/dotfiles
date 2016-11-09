@@ -19,10 +19,6 @@
 
     Plug 'benmills/vimux'                   " Run commands in a tmux split
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
-    Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
-          \ { 'on': ['CtrlP',
-          \          'CtrlPClearAllCaches',
-          \          'CtrlPBuffer'] }
     Plug 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
     Plug 'tpope/vim-commentary'             " Easy code commenting
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
@@ -55,7 +51,12 @@
     Plug 'Yggdroot/indentLine'              " Indentation guides
           \ { 'on': 'IndentLinesToggle' }
 
-    Plug 'ryanoasis/vim-devicons'           " Nerdy icons everywhere! (Always load this last)
+    Plug 'ryanoasis/vim-devicons'           " Nerdy icons everywhere! (Always load this last except for CtrlP)
+
+    Plug 'ctrlpvim/ctrlp.vim'              " Fuzzy file search within current directory
+          \ { 'on': ['CtrlP',
+          \          'CtrlPClearAllCaches',
+          \          'CtrlPBuffer'] }
 
   call plug#end()
 
