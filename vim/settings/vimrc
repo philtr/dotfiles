@@ -176,13 +176,7 @@
     \ 'file': '\v\.(jpg|png|gif|db)'
     \ }
 
-  " Ignore files in `.gitignore`
-  let g:ctrlp_user_command = {
-    \ 'types': {
-      \ 1: ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'],
-      \ },
-    \ 'fallback': 'find %s -type f'
-    \ }
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
   " Keymappings -----------------------------------------------------------------------------------
 
