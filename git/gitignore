@@ -5,8 +5,11 @@
 
 #= Development ====================================================================================
 
+# Git
+.git/
+
 # CTags
-tags
+/tags
 .tags
 
 # I have no idea whath these are
@@ -59,3 +62,7 @@ config/database.yml
 
 # CBRA - Component-based Rails Applications
 components/*/vendor/bundle/
+
+node_modules/
+vendor/assets/bower_components/
+*.sqlite-journal

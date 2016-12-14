@@ -1,4 +1,1 @@
-.bundle
-vendor/bundle
-components/*/vendor/bundle/
-
+../git/gitignore
