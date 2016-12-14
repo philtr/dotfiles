@@ -19,7 +19,7 @@
 
     Plug 'benmills/vimux'                   " Run commands in a tmux split
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
-    Plug 'scrooloose/syntastic'             " Check buffer for syntax errors when saving
+    Plug 'vim-syntastic/syntastic'          " Check buffer for syntax errors when saving
     Plug 'tpope/vim-commentary'             " Easy code commenting
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
     Plug 'rking/ag.vim'                     " Superfast code searching
