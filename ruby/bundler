@@ -4,5 +4,4 @@ BUNDLE_BIN: 'vendor/bundle/bin'
 BUNDLE_GEM__COC: 'false'
 BUNDLE_GEM__MIT: 'false'
 BUNDLE_GEM__TEST: 'false'
-# BUNDLE_HTTPS://BRAIN__POCKETSHOPPER__NET/GEMS/: cfdc53b3322f134d1c3d801680519025dec1ef5ac5e2acd495:x
 BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries"
