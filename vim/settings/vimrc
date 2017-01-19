@@ -230,6 +230,24 @@
 
   map <F8> :VimuxRunLastCommand<CR>
 
+"= Rails ==========================================================================================
+
+  " Search for files within specifc folders
+  map <Leader>rj :CtrlP app/assets/javascripts<CR>
+  map <Leader>rs :CtrlP app/assets/stylesheets<CR>
+  map <Leader>rc :CtrlP app/controllers<CR>
+  map <Leader>rm :CtrlP app/models<CR>
+  map <Leader>rw :CtrlP app/jobs<CR>
+  map <Leader>rx :CtrlP app/services<CR>
+  map <Leader>rv :CtrlP app/views<CR>
+
+  " Open spec or source file ("alternate") in same window
+  map <Leader>aa :A
+  " Open spec or source file in a vertical split
+  map <Leader>av :AV
+  " Open spec or source file in a horizontal split
+  map <Leader>as :AS
+
 "= Syntastic ======================================================================================
 
   let g:syntastic_always_populate_loc_list = 1    " Put syntax errors into the location list
