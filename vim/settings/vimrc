@@ -54,7 +54,7 @@
 
     Plug 'ryanoasis/vim-devicons'           " Nerdy icons everywhere! (Always load this last except for CtrlP)
 
-    Plug 'ctrlpvim/ctrlp.vim'              " Fuzzy file search within current directory
+    Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
           \ { 'on': ['CtrlP',
           \          'CtrlPClearAllCaches',
           \          'CtrlPBuffer'] }
@@ -169,14 +169,15 @@
   let g:ctrlp_use_caching = 1           " Remember the files in the current project
   let g:ctrlp_clear_cache_on_exit = 0   " Persist cache across sessions
   let g:ctrlp_show_hidden = 1           " Show hidden files (starting with '.')
+  let g:ctrlp_switch_buffer = 0         " Always open a new instance of the file.
 
   " Ignore specific files and folders
   let g:ctrlp_custom_ignore = {
-    \ 'dir': '(log|vendor/bundle|tmp|components/\.*/(vendor/bundle|tmp|spec/dummy|log))',
+    \ 'dir': '(log|vendor/bundle|tmp)',
     \ 'file': '\v\.(jpg|png|gif|db)'
     \ }
 
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+  let g:ctrlp_user_command = 'rg %s --no-ignore --hidden --files -g ""'
 
   " Keymappings -----------------------------------------------------------------------------------
 
