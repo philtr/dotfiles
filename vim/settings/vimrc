@@ -23,6 +23,7 @@
     Plug 'tpope/vim-commentary'             " Easy code commenting
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
     Plug 'rking/ag.vim'                     " Superfast code searching
+    Plug 'godlygeek/tabular'                " Tabularize data
 
   " Language/Filetype plugins ---------------------------------------------------------------------
 
