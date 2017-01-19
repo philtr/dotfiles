@@ -138,7 +138,7 @@
   nmap <Leader>X xhP
 
   " Pry
-  nmap <Leader>pry Irequire "pry"; binding.pry;<CR><Esc>
+  nmap <Leader><Leader>pry Irequire "pry"; binding.pry;<CR><Esc>
 
 "= Theme ==========================================================================================
 
