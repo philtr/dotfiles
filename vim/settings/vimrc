@@ -178,7 +178,7 @@
     \ 'file': '\v\.(jpg|png|gif|db)'
     \ }
 
-  let g:ctrlp_user_command = 'rg %s --no-ignore --hidden --files -g ""'
+  let g:ctrlp_user_command = 'rg %s --hidden --files -g ""'
 
   " Keymappings -----------------------------------------------------------------------------------
 
