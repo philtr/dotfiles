@@ -12,21 +12,33 @@
 
 ## Preview
 
-![](preview.png)
+![Preview](preview.png)
 
 ## Before installing Dotfiles
 
 ### Required Prerequisites
 
-  * Git
-  * ZShell
+  * [Git][git]
+  * [ZShell][zsh]
+
+  [git]: https://git-scm.com
+  [zsh]: http://www.zsh.org
 
 ### Recommended Prerequisites
 
-  * [iTerm2](https://iterm2.com)
-  * TMux
-  * Vim
-  * RBEnv with Ruby-Build and a recent Ruby version
+  * [iTerm2][iterm2]
+  * [TMux][tmux]
+  * [Vim][vim]
+  * [RBEnv][rbenv] with [Ruby-Build][rb-b] and a [recent Ruby version][rb]
+  * [RipGrep (rg)][rg]
+
+  [iterm2]: https://iterm2.com
+  [tmux]:   https://tmux.github.io
+  [vim]:    http://www.vim.org
+  [rbenv]:  https://github.com/rbenv/rbenv
+  [rb-b]:   https://github.com/rbenv/ruby-build
+  [rb]:     https://www.ruby-lang.org/en/news/
+  [rg]:     https://github.com/BurntSushi/ripgrep
 
 ## Installation:
 
@@ -36,8 +48,11 @@ curl https://raw.githubusercontent.com/philtr/dotfiles/master/install.sh | /bin/
 
 ## Post-installation:
 
-Follow on-screen instructions for changing your login shell to `/bin/zsh` and
-setting up iTerm2 settings.
+### iTerm 2
+
+Follow on-screen instructions for changing your login shell to `/bin/zsh` and setting up iTerm2 settings.
+
+### Vim Plugins
 
 To install Vim plugins (managed using [plug.vim](https://github.com/junegunn/vim-plug)):
 
