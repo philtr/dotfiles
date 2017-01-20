@@ -12,12 +12,6 @@
 /tags
 .tags
 
-# I have no idea whath these are
-/public/system/*
-**.orig
-rerun.txt
-pickle-email-*.html
-
 #= Ruby/Rails =====================================================================================
 
 # ENV
@@ -40,6 +34,7 @@ capybara-*.html
 /.bundle
 /vendor/bundle
 /_vendor/bundle
+vendor/bundle
 
 # Temporary/Log files
 /log/*
