@@ -7,6 +7,7 @@
 
   set nocompatible    " Backwards compatibility with Vi is not a priority
   set encoding=utf8   " use UTF-8 encoding for the win
+  set hidden          " Don't abandon buffers that are not showing
 
 "= Plug.vim =======================================================================================
 
@@ -18,47 +19,43 @@
   " General purpose plugins that should (almost) always be loaded ---------------------------------
 
     Plug 'benmills/vimux'                   " Run commands in a tmux split
-    Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
-    Plug 'vim-syntastic/syntastic'          " Check buffer for syntax errors when saving
-    Plug 'tpope/vim-commentary'             " Easy code commenting
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
-    Plug 'rking/ag.vim'                     " Superfast code searching
+    Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
     Plug 'godlygeek/tabular'                " Tabularize data
+    Plug 'rking/ag.vim'                     " Superfast code searching
+    Plug 'tpope/vim-commentary'             " Easy code commenting
+    Plug 'vim-syntastic/syntastic'          " Check buffer for syntax errors when saving
+
+    Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
+          \ { 'on': ['CtrlP',
+          \          'CtrlPClearAllCaches',
+          \          'CtrlPBuffer'] }
 
   " Language/Filetype plugins ---------------------------------------------------------------------
 
     Plug 'davidoc/taskpaper.vim'            " Taskpaper support
     Plug 'elixir-lang/vim-elixir'           " Elixir support for vim
-    Plug 'kchmck/vim-coffee-script'         " Coffescript syntax, indenting, compiling, and more
     Plug 'hallison/vim-rdoc'                " RDoc syntax
+    Plug 'kchmck/vim-coffee-script'         " Coffescript syntax, indenting, compiling, and more
     Plug 'othree/html5.vim'                 " HTML5 syntax highlighting
     Plug 'slim-template/vim-slim'           " Slim syntax support
     Plug 'thoughtbot/vim-rspec'             " Run RSpec tests with simple commands
     Plug 'tpope/vim-bundler'                " Bundler syntax & utilities
     Plug 'tpope/vim-haml'                   " HAML syntax highlighting
     Plug 'tpope/vim-markdown'               " Markdown syntax highlighting (w/ fenced code blocks)
-    Plug 'tpope/vim-rake'                   " Rake syntax & utilities
     Plug 'tpope/vim-rails'                  " Rails syntax & utilities
+    Plug 'tpope/vim-rake'                   " Rake syntax & utilities
     Plug 'vim-ruby/vim-ruby'                " Ruby syntax highlighting and more
 
   " Appearance plugins ----------------------------------------------------------------------------
 
-    Plug 'chriskempson/base16-vim'          " Base16 color scheme for vim
     Plug 'airblade/vim-gitgutter'           " Display git status information in the gutter
+    Plug 'chriskempson/base16-vim'          " Base16 color scheme for vim
     Plug 'lilydjwg/colorizer'               " Colorize color strings, e.g. #aabbcc
     Plug 'scrooloose/nerdtree',             " Handy folder tree
           \ { 'on': 'NERDTreeToggle' }
-    Plug 'vim-airline/vim-airline'          " Show a nice statusline
-    Plug 'vim-airline/vim-airline-themes'   " Themes for airline
     Plug 'Yggdroot/indentLine'              " Indentation guides
           \ { 'on': 'IndentLinesToggle' }
-
-    Plug 'ryanoasis/vim-devicons'           " Nerdy icons everywhere! (Always load this last except for CtrlP)
-
-    Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
-          \ { 'on': ['CtrlP',
-          \          'CtrlPClearAllCaches',
-          \          'CtrlPBuffer'] }
 
   call plug#end()
 
@@ -150,6 +147,8 @@
   set list listchars=tab:██,trail:∙       " Use "██" for tabs and "∙" for trailing spaces
   set fillchars+=vert:                    " set vertical fillchar to "en space" (it's there, trust
 
+  hi StatusLine ctermbg=black ctermfg=yellow
+
 "= File Types =====================================================================================
 
   au BufRead,BufNewFile *.brs setf vb           " Use VBScript for BrightScript files
@@ -157,34 +156,18 @@
   au BufRead,BufNewFile *.jbuilder setf ruby    " Use Ruby for .jbuilder file
   au BufRead,BufNewFile *.md  setf markdown     " Use Markdown for .md files
 
-"= Airline ========================================================================================
-
-  let g:airline_powerline_fonts = 1                   " Use powerline fonts
-  let g:airline#extensions#tabline#enabled = 1        " Use the tabline extension
-  let g:airline#extensions#tabline#show_buffers = 0   " Don't show buffers on the tabline
-  let g:airline#extensions#tabline#show_splits = 0    " Don't show splits on the tabline
-  let g:airline_theme='base16'                        " Use the base16 theme using terminal colors
 
 "= CtrlP ==========================================================================================
 
   let g:ctrlp_use_caching = 1           " Remember the files in the current project
   let g:ctrlp_clear_cache_on_exit = 0   " Persist cache across sessions
-  let g:ctrlp_show_hidden = 1           " Show hidden files (starting with '.')
   let g:ctrlp_switch_buffer = 0         " Always open a new instance of the file.
 
-  " Ignore specific files and folders
-  let g:ctrlp_custom_ignore = {
-    \ 'dir': '(log|vendor/bundle|tmp)',
-    \ 'file': '\v\.(jpg|png|gif|db)'
-    \ }
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-  let g:ctrlp_user_command = 'rg %s --no-ignore --hidden --files -g ""'
-
-  " Keymappings -----------------------------------------------------------------------------------
-
-    nmap <Leader>p <C-p>
-    nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
-    nmap <Leader>b :CtrlPBuffer<CR>
+  nmap <Leader>p <C-p>
+  nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
+  nmap <Leader>b :CtrlPBuffer<CR>
 
 "= GitGutter ======================================================================================
 
@@ -205,11 +188,11 @@
 "= Markdown =======================================================================================
 
   let g:markdown_fenced_languages = [
-    \ 'css',
-    \ 'haml', 'html', 'erb=eruby',
-    \ 'javascript', 'js=javascript', 'json=javascript',
-    \ 'ruby',
-    \ 'sass',
+  \ 'css',
+  \ 'haml', 'html', 'erb=eruby',
+  \ 'javascript', 'js=javascript', 'json=javascript',
+  \ 'ruby',
+  \ 'sass',
   \]
 
 "= NERDTree =======================================================================================
