@@ -6,8 +6,8 @@
 
 "= Font ===========================================================================================
 
-  set guifont=SauceCodePro\ Nerd\ Font:h12
+  set guifont=SF\ Mono\ Regular:h12
   set antialias
 
-  colorscheme base16-phd
+  colorscheme base16-default-dark
 
