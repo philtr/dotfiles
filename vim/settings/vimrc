@@ -136,8 +136,6 @@
   au BufRead,BufNewFile *.brs setf vb           " Use VBScript for BrightScript files
   au BufRead,BufNewFile *.es6 setf javascript   " Use JavaScript for ECMAScript 6 files
   au BufRead,BufNewFile *.jbuilder setf ruby    " Use Ruby for .jbuilder file
-  au BufRead,BufNewFile *.md  setf markdown     " Use Markdown for .md files
-
 
 "= CtrlP ==========================================================================================
 
@@ -160,14 +158,17 @@
 
 "= Markdown =======================================================================================
 
+  let g:vim_markdown_folding_disabled = 1
+
   let g:vim_markdown_fenced_languages = [
-  \ 'css',
-  \ 'haml', 'html', 'erb=eruby',
+  \ 'css', 'sass', 'scss',
+  \ 'haml', 'html',
   \ 'javascript', 'js=javascript', 'json=javascript',
   \ 'ruby',
-  \ 'sass',
   \]
 
+  " Use markdown for *.md files
+  autocmd BufRead,BufNewFile *.md setf markdown
 
 "= RSpec.vim ======================================================================================
 
