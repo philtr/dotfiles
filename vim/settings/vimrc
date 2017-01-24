@@ -21,9 +21,13 @@
     Plug 'benmills/vimux'                   " Run commands in a tmux split
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
+    Plug 'philtr/base16-default-vim'        " Base16 color scheme (just the default) for vim
     Plug 'rking/ag.vim'                     " Superfast code searching
     Plug 'tpope/vim-commentary'             " Easy code commenting
     Plug 'vim-syntastic/syntastic'          " Check buffer for syntax errors when saving
+
+    Plug 'scroolose/nerdtree'               " Handy folder tree
+      \ { 'on': 'NERDTreeToggle' }
 
     Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
           \ { 'on': ['CtrlP',
@@ -38,12 +42,6 @@
     Plug 'tpope/vim-bundler'                " Bundler syntax & utilities
     Plug 'tpope/vim-rails'                  " Rails syntax & utilities
     Plug 'tpope/vim-rake'                   " Rake syntax & utilities
-
-  " Appearance plugins ----------------------------------------------------------------------------
-
-    Plug 'philtr/base16-default-vim'        " Base16 color scheme (just the default) for vim
-    Plug 'scrooloose/nerdtree',             " Handy folder tree
-          \ { 'on': 'NERDTreeToggle' }
 
   call plug#end()
 
