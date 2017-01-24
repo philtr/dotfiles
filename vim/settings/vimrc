@@ -16,14 +16,19 @@
 
   call plug#begin()
 
-  " General purpose plugins that should (almost) always be loaded ---------------------------------
-
     Plug 'benmills/vimux'                   " Run commands in a tmux split
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
+    Plug 'hallison/vim-rdoc'                " RDoc syntax
     Plug 'philtr/base16-default-vim'        " Base16 color scheme (just the default) for vim
+    Plug 'plasticboy/vim-markdown'          " Markdown syntax & utilities
     Plug 'rking/ag.vim'                     " Superfast code searching
+    Plug 'sheerun/vim-polyglot'             " Lazy-loading multi-language pack
+    Plug 'thoughtbot/vim-rspec'             " Run RSpec tests with simple commands
+    Plug 'tpope/vim-bundler'                " Bundler syntax & utilities
     Plug 'tpope/vim-commentary'             " Easy code commenting
+    Plug 'tpope/vim-rails'                  " Rails syntax & utilities
+    Plug 'tpope/vim-rake'                   " Rake syntax & utilities
     Plug 'vim-syntastic/syntastic'          " Check buffer for syntax errors when saving
 
     Plug 'scroolose/nerdtree'               " Handy folder tree
@@ -33,15 +38,6 @@
           \ { 'on': ['CtrlP',
           \          'CtrlPClearAllCaches',
           \          'CtrlPBuffer'] }
-
-  " Language/Filetype plugins ---------------------------------------------------------------------
-
-    Plug 'hallison/vim-rdoc'                " RDoc syntax
-    Plug 'sheerun/vim-polyglot'             " Lazy-loading multi-language pack
-    Plug 'thoughtbot/vim-rspec'             " Run RSpec tests with simple commands
-    Plug 'tpope/vim-bundler'                " Bundler syntax & utilities
-    Plug 'tpope/vim-rails'                  " Rails syntax & utilities
-    Plug 'tpope/vim-rake'                   " Rake syntax & utilities
 
   call plug#end()
 
