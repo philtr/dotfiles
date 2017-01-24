@@ -210,6 +210,7 @@
 "= Rails ==========================================================================================
 
   " Search for files within specifc folders
+  map <Leader>ra :CtrlP app<CR>
   map <Leader>rj :CtrlP app/assets/javascripts<CR>
   map <Leader>rs :CtrlP app/assets/stylesheets<CR>
   map <Leader>rc :CtrlP app/controllers<CR>
