@@ -174,12 +174,6 @@
   \ 'sass',
   \]
 
-"= NERDTree =======================================================================================
-
-  let NERDTreeQuitOnOpen = 1  " Hide NERDTree when opening a file
-  let NERDTreeShowHidden = 1  " Show hidden files
-
-  nmap <Leader>n :NERDTreeToggle<CR>
 
 "= RSpec.vim ======================================================================================
 
