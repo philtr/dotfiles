@@ -32,11 +32,8 @@
 
   " Language/Filetype plugins ---------------------------------------------------------------------
 
-    Plug 'davidoc/taskpaper.vim'            " Taskpaper support
-    Plug 'elixir-lang/vim-elixir'           " Elixir support for vim
     Plug 'hallison/vim-rdoc'                " RDoc syntax
     Plug 'sheerun/vim-polyglot'             " Lazy-loading multi-language pack
-    Plug 'slim-template/vim-slim'           " Slim syntax support
     Plug 'thoughtbot/vim-rspec'             " Run RSpec tests with simple commands
     Plug 'tpope/vim-bundler'                " Bundler syntax & utilities
     Plug 'tpope/vim-rails'                  " Rails syntax & utilities
@@ -45,11 +42,8 @@
   " Appearance plugins ----------------------------------------------------------------------------
 
     Plug 'philtr/base16-default-vim'        " Base16 color scheme (just the default) for vim
-    Plug 'lilydjwg/colorizer'               " Colorize color strings, e.g. #aabbcc
     Plug 'scrooloose/nerdtree',             " Handy folder tree
           \ { 'on': 'NERDTreeToggle' }
-    Plug 'Yggdroot/indentLine'              " Indentation guides
-          \ { 'on': 'IndentLinesToggle' }
 
   call plug#end()
 
@@ -162,14 +156,6 @@
   nmap <Leader>p <C-p>
   nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
   nmap <Leader>b :CtrlPBuffer<CR>
-
-"= GitGutter ======================================================================================
-
-  let g:gitgutter_enabled = 0           " Disable by default
-  let g:gitgutter_map_keys = 0          " Don't use built-in key mappings
-  let g:gitgutter_highlight_lines = 1   " Highlight lines that are part of the diff
-
-  nmap <Leader>gg :GitGutterToggle<CR>
 
 "= IndentLine =====================================================================================
 
