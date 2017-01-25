@@ -93,6 +93,8 @@
   set nobackup                      " don't create backup files
   set nowb                          " don't make a backup before overwriting a file
   set directory=~/.vim/swap//       " put swap files in ~/.vim/undo/pat%to$file.ext.swp
+
+  set undofile                      " save undo history a file to persist across sessions
   set undodir=~/.vim/undo//         " put undo files in ~/.vim/undo/path%to$file.ext
 
 "= Keys ===========================================================================================
