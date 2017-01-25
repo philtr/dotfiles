@@ -116,6 +116,9 @@
   " Transpose character(s) under the cursor one position to the left
   nmap <Leader>X xhP
 
+  " Load folder tree in current buffer
+  nnoremap <Leader>n :e .<CR>
+
   " Pry
   nmap <Leader><Leader>pry Irequire "pry"; binding.pry;<CR><Esc>
 
