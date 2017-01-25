@@ -148,7 +148,10 @@
   let g:ctrlp_clear_cache_on_exit = 0   " Persist cache across sessions
   let g:ctrlp_switch_buffer = 0         " Always open a new instance of the file.
 
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+  " Use the Silver Searcher for globbing files if installed
+  if executable("ag")
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g "" '
+  end
 
   nmap <Leader>p :CtrlP<CR>
   nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
