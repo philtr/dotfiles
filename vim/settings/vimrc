@@ -157,12 +157,7 @@
   nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
   nmap <Leader>b :CtrlPBuffer<CR>
 
-"= IndentLine =====================================================================================
 
-  let g:indentLine_enabled = 0            " Disable by default
-  let g:indentLine_char = '⎜'             " Use a fancy character to indicate an indent level
-
-  nmap <Leader>ig :IndentLinesToggle<CR>
 
 "= Markdown =======================================================================================
 
