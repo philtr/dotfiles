@@ -124,6 +124,9 @@
   " Pry
   nmap <Leader><Leader>pry Irequire "pry"; binding.pry;<CR><Esc>
 
+  " Paste in REPLACE mode
+  nmap <Leader>rp R<C-r>"<Esc>
+
 "= Theme ==========================================================================================
 
   colorscheme base16-default-dark
