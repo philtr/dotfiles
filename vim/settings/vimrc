@@ -31,7 +31,7 @@
     Plug 'tpope/vim-rake'                   " Rake syntax & utilities
     Plug 'vim-syntastic/syntastic'          " Check buffer for syntax errors when saving
 
-    Plug 'scroolose/nerdtree'               " Handy folder tree
+    Plug 'scrooloose/nerdtree'               " Handy folder tree
       \ { 'on': 'NERDTreeToggle' }
 
     Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
