@@ -118,9 +118,6 @@
   " Transpose character(s) under the cursor one position to the left
   nmap <Leader>X xhP
 
-  " Load folder tree in current buffer
-  nnoremap <Leader>n :e .<CR>
-
   " Pry
   nmap <Leader><Leader>pry Irequire "pry"; binding.pry;<CR><Esc>
 
@@ -157,6 +154,15 @@
 "= JavaScript =====================================================================================
 
   au BufRead,BufNewFile *.es6 setf javascript           " Use JavaScript for ECMAScript 6 files
+
+"= NERDTree =======================================================================================
+
+  let NERDTreeMinimalUI=1
+  let NERDTreeQuitOnOpen=1
+  let NERDTreeAutoDeleteBuffer=1
+  let NERDTreeStatusline=' '
+
+  nnoremap <Leader>n :NERDTreeToggle<CR>
 
 "= Markdown =======================================================================================
 
