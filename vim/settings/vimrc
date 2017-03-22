@@ -203,11 +203,11 @@
   map <Leader>rv :CtrlP app/views<CR>
 
   " Open spec or source file ("alternate") in same window
-  map <Leader>aa :A
+  map <Leader>aa :A<CR>
   " Open spec or source file in a vertical split
-  map <Leader>av :AV
+  map <Leader>av :AV<CR>
   " Open spec or source file in a horizontal split
-  map <Leader>as :AS
+  map <Leader>as :AS<CR>
 
   au BufRead,BufNewFile *.jbuilder setf ruby            " Use Ruby for .jbuilder files
   au BufRead,BufNewFile *.env.local,*.env.test setf sh  " Use Shell for .env override files
