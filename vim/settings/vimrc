@@ -190,7 +190,7 @@
 
   map <F8> :VimuxRunLastCommand<CR>
 
-"= Rails ==========================================================================================
+"= Ruby/Rails =====================================================================================
 
   " Search for files within specifc folders
   map <Leader>ra :CtrlP app<CR>
@@ -208,6 +208,9 @@
   map <Leader>av :AV<CR>
   " Open spec or source file in a horizontal split
   map <Leader>as :AS<CR>
+
+  " Fold the ruby method under the cursor (works sometimes)
+  nmap <Leader>fm V]Mzf
 
   au BufRead,BufNewFile *.jbuilder setf ruby            " Use Ruby for .jbuilder files
   au BufRead,BufNewFile *.env.local,*.env.test setf sh  " Use Shell for .env override files
