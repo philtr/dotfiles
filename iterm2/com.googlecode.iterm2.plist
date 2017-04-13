@@ -3915,23 +3915,23 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>1071 228 256 253 0 0 1680 1027 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>609 373 970 334 0 0 2560 1417 </string>
+	<string>930 203 970 200 0 0 2560 1440 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>162 721 606 456 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>640 691 400 129 0 0 1680 1050 </string>
+	<string>1128 1077 400 129 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>970 769 620 392 0 0 2560 1417 </string>
+	<string>970 787 620 392 0 0 2560 1440 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>0 135 606 456 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1465 1036 918 381 0 0 2560 1417 </string>
+	<string>1242 569 918 416 0 0 2560 1440 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>230 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 2560 1440 0 0 2560 1417 </string>
+	<string>242 136 1462 1002 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>771 432 780 507 0 0 2560 1417 </string>
+	<string>771 431 780 507 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>461 170 780 435 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -4600,7 +4600,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SFMono-Light 12</string>
+			<string>AnonymicePowerline 11</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -6587,7 +6587,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-03-12T05:33:41Z</date>
+	<date>2017-04-12T04:01:30Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -6666,7 +6666,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.20170311-nightly</string>
+	<string>3.1.20170410-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
