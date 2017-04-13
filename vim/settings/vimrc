@@ -162,6 +162,7 @@
   let NERDTreeAutoDeleteBuffer=1
   let NERDTreeStatusline=' '
 
+  nnoremap <Leader>. :NERDTreeToggle<CR>
   nnoremap <Leader>n :NERDTreeToggle<CR>
 
 "= Markdown =======================================================================================
