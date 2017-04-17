@@ -1,3 +1,4 @@
+bitbar/shared/env.sh
 vim/plugged/*
 vim/autoload/plug.vim.old
 
