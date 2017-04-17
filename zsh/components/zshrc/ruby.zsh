@@ -11,3 +11,6 @@ alias rais=rails
 
 alias timestamp="ruby -e 'puts Time.now.to_i'"
 alias migration_timestamp="ruby -e 'puts Time.now.strftime(%(%Y%m%d%H%M%S))'"
+
+alias pd="puma-dev"
+alias pdl="puma-dev link"
