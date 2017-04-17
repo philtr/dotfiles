@@ -1,7 +1,7 @@
 ---
-BUNDLE_PATH: 'vendor/bundle'
-BUNDLE_BIN: 'vendor/bundle/bin'
-BUNDLE_GEM__COC: 'false'
-BUNDLE_GEM__MIT: 'false'
-BUNDLE_GEM__TEST: 'false'
+BUNDLE_PATH: "vendor/bundle"
+BUNDLE_BIN: "vendor/bundle/bin"
+BUNDLE_GEM__COC: "false"
+BUNDLE_GEM__MIT: "false"
+BUNDLE_GEM__TEST: "false"
 BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries"
