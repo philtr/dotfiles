@@ -1,1 +1,2 @@
-../git/gitignore
+spec/vcr-cassettes/*.yml
+doc/api/*.json
