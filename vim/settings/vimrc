@@ -234,4 +234,8 @@
   au BufRead,BufNewFile *.taskpaper set nolist
   au BufRead,BufNewFile *.taskpaper set nosmarttab
 
+"= Vimux ==========================================================================================
+
+  map <Leader>vx :VimuxRunCommand "
+
 "==================================================================================================
