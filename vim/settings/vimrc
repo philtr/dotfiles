@@ -16,11 +16,11 @@
 
   call plug#begin()
 
+    Plug 'arcticicestudio/nord-vim'         " Pretty blue color scheme
     Plug 'benmills/vimux'                   " Run commands in a tmux split
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
     Plug 'hallison/vim-rdoc'                " RDoc syntax
-    Plug 'philtr/base16-default-vim'        " Base16 color scheme (just the default) for vim
     Plug 'plasticboy/vim-markdown'          " Markdown syntax & utilities
     Plug 'rking/ag.vim'                     " Superfast code searching
     Plug 'sheerun/vim-polyglot'             " Lazy-loading multi-language pack
@@ -126,7 +126,7 @@
 
 "= Theme ==========================================================================================
 
-  colorscheme base16-default-dark
+  colorscheme nord
 
   set hlsearch                            " highlight all search matches
   set colorcolumn=80,100,120              " visual indicator at columns 80, 100, 120
