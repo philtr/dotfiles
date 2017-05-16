@@ -16,11 +16,10 @@
 
   call plug#begin()
 
-    Plug 'arcticicestudio/nord-vim'         " Pretty blue color scheme
     Plug 'benmills/vimux'                   " Run commands in a tmux split
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
-    Plug 'hallison/vim-rdoc'                " RDoc syntax
+    Plug 'philtr/base16-default-vim'        " Base16 default theme for vim
     Plug 'plasticboy/vim-markdown'          " Markdown syntax & utilities
     Plug 'rking/ag.vim'                     " Superfast code searching
     Plug 'sheerun/vim-polyglot'             " Lazy-loading multi-language pack
@@ -126,7 +125,7 @@
 
 "= Theme ==========================================================================================
 
-  colorscheme nord
+  colorscheme base16-default-dark
 
   set hlsearch                            " highlight all search matches
   set colorcolumn=80,100,120              " visual indicator at columns 80, 100, 120
@@ -163,7 +162,8 @@
   let NERDTreeStatusline=' '
 
   nnoremap <Leader>. :NERDTreeToggle<CR>
-  nnoremap <Leader>n :NERDTreeToggle<CR>
+  " Turning this off to build muscle memory
+  " nnoremap <Leader>n :NERDTreeToggle<CR>
 
 "= Markdown =======================================================================================
 
