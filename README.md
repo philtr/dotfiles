@@ -30,7 +30,7 @@
   * [TMux][tmux]
   * [Vim][vim]
   * [RBEnv][rbenv] with [Ruby-Build][rb-b] and a [recent Ruby version][rb]
-  * [RipGrep (rg)][rg]
+  * [The Silver Searcher (Ag)][ag]
 
   [iterm2]: https://iterm2.com
   [tmux]:   https://tmux.github.io
@@ -38,7 +38,7 @@
   [rbenv]:  https://github.com/rbenv/rbenv
   [rb-b]:   https://github.com/rbenv/ruby-build
   [rb]:     https://www.ruby-lang.org/en/news/
-  [rg]:     https://github.com/BurntSushi/ripgrep
+  [ag]:     https://github.com/ggreer/the_silver_searcher
 
 ## Installation:
 
