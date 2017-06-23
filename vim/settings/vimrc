@@ -155,6 +155,7 @@
   nmap <Leader>p :CtrlP<CR>
   nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
   nmap <Leader>b :CtrlPBuffer<CR>
+  nmap <Leader>m :CtrlPMRUFiles<CR>
 
 "= JavaScript =====================================================================================
 
