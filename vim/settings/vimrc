@@ -19,9 +19,9 @@
     Plug 'benmills/vimux'                   " Run commands in a tmux split
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
+    Plug 'mileszs/ack.vim'                  " Frontend for ack-compatible search tools
     Plug 'philtr/base16-default-vim'        " Base16 default theme for vim
     Plug 'plasticboy/vim-markdown'          " Markdown syntax & utilities
-    Plug 'rking/ag.vim'                     " Superfast code searching
     Plug 'sheerun/vim-polyglot'             " Lazy-loading multi-language pack
     Plug 'thoughtbot/vim-rspec'             " Run RSpec tests with simple commands
     Plug 'tpope/vim-bundler'                " Bundler syntax & utilities
@@ -134,6 +134,12 @@
   set fillchars+=vert:                    " set vertical fillchar to "en space" (it's there, trust
 
   hi StatusLine ctermbg=black ctermfg=yellow
+
+"= Ack ============================================================================================
+
+  if executable("ag")
+    let g:ackprg = 'ag --vimgrep'
+  endif
 
 "= CtrlP ==========================================================================================
 
