@@ -1,7 +1,5 @@
-# Start TMUX for all sessions
-if [[ -z "$TMUX" && -z "$EMACS" && -z "$VIM" ]]; then
-
-  tmux_session='#root'
+function txs() {
+  tmux_session=$1
 
   if ! tmux has-session -t "$tmux_session" 2> /dev/null; then
     # Ensure that tmux server is started.
@@ -11,7 +9,5 @@ if [[ -z "$TMUX" && -z "$EMACS" && -z "$VIM" ]]; then
     tmux new-session -d -s "$tmux_session"
   fi
 
-  exec tmux new-session -t "$tmux_session"
-
-fi
-
+  exec tmux attach-session -t "$tmux_session"
+}
