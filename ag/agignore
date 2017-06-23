@@ -1,2 +1,6 @@
-spec/vcr-cassettes/*.yml
-doc/api/*.json
+/spec/vcr-cassettes/**.yml
+/spec/vcr-cassettes/*.yml
+/spec/vcr-cassettes
+/doc/api/**.json
+/doc/api/*.json
+/doc/api
