@@ -19,6 +19,7 @@
     Plug 'benmills/vimux'                   " Run commands in a tmux split
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
+    Plug 'dracula/vim'                      " A dark theme for Vim and 40+ apps
     Plug 'mileszs/ack.vim'                  " Frontend for ack-compatible search tools
     Plug 'philtr/base16-default-vim'        " Base16 default theme for vim
     Plug 'plasticboy/vim-markdown'          " Markdown syntax & utilities
@@ -125,7 +126,7 @@
 
 "= Theme ==========================================================================================
 
-  colorscheme base16-default-dark
+  colorscheme dracula
 
   set hlsearch                            " highlight all search matches
   set colorcolumn=80,100,120              " visual indicator at columns 80, 100, 120
