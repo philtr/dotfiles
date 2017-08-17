@@ -80,10 +80,10 @@ ln -s $DOTS/git/gitconfig         $HOMEDIR/.gitconfig
 ln -s $DOTS/git/gitignore         $HOMEDIR/.gitignore
 
 # Link Silver Searcher (Ag) configuration files
-echo "Linking Git configuration files..."
-rm -f $HOMEDIR/.agignore
+echo "Linking Silver Searcher configuration files..."
+rm -f $HOMEDIR/.ignore
 
-ln -s $DOTS/ag/agignore           $HOMEDIR/.agignore
+ln -s $DOTS/ag/ignore           $HOMEDIR/.ignore
 
 
 # Link ruby configuration
