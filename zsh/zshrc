@@ -11,6 +11,7 @@ source "$HOME/.zsh/components/zshrc/tmux.zsh"
 # source "$HOME/.zsh/components/zshrc/travis.zsh"
 source "$HOME/.zsh/components/zshrc/k.zsh"
 source "$HOME/.zsh/components/zshrc/tag.zsh"
+source "$HOME/.zsh/components/zshrc/weather.zsh"
 
 # Keybindings
 bindkey -M vicmd '/' history-incremental-search-backward
