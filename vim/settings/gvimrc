@@ -4,6 +4,10 @@
   set guioptions-=r      " disable right scrollbar
   set guioptions-=L      " disable left scrollbar
 
+"= Color ==========================================================================================
+
+  colorscheme dracula
+
 "= Font ===========================================================================================
 
   set guifont=Monaco:h12
