@@ -10,6 +10,6 @@
 
 "= Font ===========================================================================================
 
-  set guifont=Monaco:h12
-  set antialias
+  set guifont=Profont\ IIx:h9
+  set noantialias
 
