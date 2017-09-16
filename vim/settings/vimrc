@@ -29,6 +29,7 @@
     Plug 'tpope/vim-commentary'             " Easy code commenting
     Plug 'tpope/vim-rails'                  " Rails syntax & utilities
     Plug 'tpope/vim-rake'                   " Rake syntax & utilities
+    Plug 'tpope/vim-surround'               " Provides mappings to create/modify surroundings
     Plug 'w0rp/ale'                         " Asynchronous Lint Engine
 
     Plug 'scrooloose/nerdtree'               " Handy folder tree
