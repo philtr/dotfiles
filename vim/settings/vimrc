@@ -27,8 +27,10 @@
     Plug 'thoughtbot/vim-rspec'             " Run RSpec tests with simple commands
     Plug 'tpope/vim-bundler'                " Bundler syntax & utilities
     Plug 'tpope/vim-commentary'             " Easy code commenting
+    Plug 'tpope/vim-fugitive'               " A Git wrapper so awesome, it should be illegal
     Plug 'tpope/vim-rails'                  " Rails syntax & utilities
     Plug 'tpope/vim-rake'                   " Rake syntax & utilities
+    Plug 'tpope/vim-rhubarb'                " GitHub extension for fugitive.vim
     Plug 'tpope/vim-surround'               " Provides mappings to create/modify surroundings
     Plug 'w0rp/ale'                         " Asynchronous Lint Engine
 
