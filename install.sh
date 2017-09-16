@@ -110,7 +110,6 @@ rm  -rf $HOMEDIR/.vim     \
 ln -s $DOTS/vim                   $HOMEDIR/.vim
 ln -s $DOTS/vim/settings/vimrc    $HOMEDIR/.vimrc
 ln -s $DOTS/vim/settings/gvimrc   $HOMEDIR/.gvimrc
-ln -s $DOTS/vim/settings/vimr_rc  $HOMEDIR/.vimr_rc
 
 # Link tmux configuration
 echo "Linking tmux configuration files..."
