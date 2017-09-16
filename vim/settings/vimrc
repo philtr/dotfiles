@@ -154,7 +154,7 @@
 
   " Use the Silver Searcher for globbing files if installed
   if executable("ag")
-    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g "" '
+    let g:ctrlp_user_command = 'ag --path-to-ignore ~/.ignore %s -l --nocolor --hidden -g "" '
   end
 
   nmap <Leader>p :CtrlP<CR>
