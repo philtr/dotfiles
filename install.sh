@@ -91,11 +91,15 @@ echo "Linking Ruby-related configurations..."
 mkdir -p  $HOMEDIR/.bundle
 rm  -rf   $HOMEDIR/.bundle/config \
           $HOMEDIR/.gemrc         \
-          $HOMEDIR/.pryrc
+          $HOMEDIR/.pryrc         \
+          $HOMEDIR/.rubocop.yml   \
+          $HOMEDIR/.reek
 
 ln -s $DOTS/ruby/bundler          $HOMEDIR/.bundle/config
 ln -s $DOTS/ruby/gemrc            $HOMEDIR/.gemrc
 ln -s $DOTS/ruby/pryrc            $HOMEDIR/.pryrc
+ln -s $DOTS/ruby/rubocop.yml      $HOMEDIR/.rubocop.yml
+ln -s $DOTS/ruby/reek.yml         $HOMEDIR/.reek
 
 # Link vim configuration
 echo "Linking vim configuration files..."

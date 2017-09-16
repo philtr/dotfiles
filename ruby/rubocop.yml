@@ -1,0 +1,5 @@
+Metrics/LineLength:
+  Max: 150
+
+Style/StringLiterals:
+  EnforcedStyle: dobule_quotes
