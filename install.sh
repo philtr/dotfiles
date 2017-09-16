@@ -117,6 +117,7 @@ rm -rf $HOMEDIR/.tmux.conf
 ln -s  $DOTS/tmux/tmux.conf $HOMEDIR/.tmux.conf
 
 # Link karabiner configuration
+echo "Linking Karabiner configuration files..."
 rm -rf $HOMEDIR/.config/karabiner
 mkdir -p $HOMEDIR/.config
 ln -s  $DOTS/karabiner $HOMEDIR/.config/karabiner
