@@ -35,5 +35,9 @@
   clean = git lfs clean %f
   smudge = git lfs smudge %f
   required = true
+
 [commit]
-	; gpgsign = true
+  ; gpgsign = true
+
+[rerere]
+  enabled = 1
