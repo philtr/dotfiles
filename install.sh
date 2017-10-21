@@ -124,7 +124,7 @@ ln -s  $DOTS/karabiner $HOMEDIR/.config/karabiner
 
 # BitBar shared env
 echo "Setting up BitBar..."
-if [[ -Z $DOTS/bitbar/shared/env.sh ]]
+if [[ ! -a $DOTS/bitbar/shared/env.sh ]]
 then
   echo "  - Copying example environment file into place"
   cp $DOTS/bitbar/shared/env.sh.example $DOTS/bitbar/shored/env.sh
