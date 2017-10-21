@@ -45,7 +45,7 @@ fi
 if [[ ! -d $HOMEDIR/.zprezto ]]
 then
   echo "Installing Prezto (https://github.com/zsh-users/prezto)..."
-  git clone --recursive git://github.com/zsh-users/prezto.git "$HOMEDIR/.zprezto"
+  git clone --recursive git://github.com/sorin-ionescu/prezto.git "$HOMEDIR/.zprezto"
 else
   cd $HOMEDIR/.zprezto
   git reset --hard
