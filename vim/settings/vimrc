@@ -147,7 +147,7 @@
 
 "= Asynchronous Lint Engine (ALE) =================================================================
 
-  " let g:ale_sign_column_always = 1
+  let g:ale_lint_delay = 1000           " Don't lint until there's at least 1 second without typing
 
 "= CtrlP ==========================================================================================
 
