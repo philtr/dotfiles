@@ -127,6 +127,10 @@
   " Paste in REPLACE mode
   nmap <Leader>rp R<C-r>"<Esc>
 
+  " Squeeze fancy tabular alignment on current line
+  nmap g$ :s/\([\>,:)}]\)\s\+/\1 /g<CR>
+  nmap ga$ :%s/\([\>,:)}]\)\s\+/\1 /g<CR>
+
 "= Theme ==========================================================================================
 
   colorscheme base16-default-dark
