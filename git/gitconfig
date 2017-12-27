@@ -8,7 +8,7 @@
   ; email = phillip+nathaniel@ovenbits.com
 
   ; GPG Signiing Key ID
-  signingkey = 5BF03898
+  signingkey = CD07CFFEF3DFFE58
 
 [core]
   excludesfile = ~/.gitignore
@@ -37,7 +37,9 @@
   required = true
 
 [commit]
-  ; gpgsign = true
+  gpgsign = true
 
 [rerere]
   enabled = 1
+[gpg]
+  program = /usr/local/bin/gpg
