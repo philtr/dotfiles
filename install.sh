@@ -40,6 +40,14 @@ else
   cd $HOMEDIR
 fi
 
+# Install Homebrew and Brews
+if ! type "brew" > /dev/null; then
+  echo "Installing Homebrew..."
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+echo "Brewing applications..."
+brew bundle --file=$DOTS/homebrew/Brewfile
 
 # First install Prezto
 if [[ ! -d $HOMEDIR/.zprezto ]]
@@ -110,6 +118,9 @@ rm  -rf $HOMEDIR/.vim     \
 ln -s $DOTS/vim                   $HOMEDIR/.vim
 ln -s $DOTS/vim/settings/vimrc    $HOMEDIR/.vimrc
 ln -s $DOTS/vim/settings/gvimrc   $HOMEDIR/.gvimrc
+
+echo "Installing Vim plugins..."
+vim +PlugInstall +qall
 
 # Link tmux configuration
 echo "Linking tmux configuration files..."
