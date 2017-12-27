@@ -1,6 +1,7 @@
 cask_args appdir: "/Applications"
 
 tap "caskroom/cask"
+tap "puma/puma"
 
 brew "fasd"
 brew "git"
@@ -11,7 +12,7 @@ brew "mas"
 brew "puma-dev"
 brew "rbenv"
 brew "ruby-build"
-brew "the_silversearcher"
+brew "the_silver_searcher"
 brew "tmux"
 brew "tree"
 brew "vim"
@@ -21,8 +22,8 @@ cask "1password"
 cask "1password-cli"
 cask "adobe-creative-cloud"
 cask "alfred"
-cask "bartender"
 cask "appcleaner"
+cask "bartender"
 cask "boom-3d"
 cask "fork"
 cask "fromscratch"
@@ -35,7 +36,6 @@ cask "spectacle"
 cask "spotify"
 cask "textmate"
 
-mas "Bear", id: 1091189122
-mas "Things3", id: 904280696
-mas "Shush", id: 496437906
-
+mas "Bear",     id: 1_091_189_122
+mas "Things3",  id:   904_280_696
+mas "Shush",    id:   496_437_906
