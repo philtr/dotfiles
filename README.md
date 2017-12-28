@@ -17,7 +17,7 @@
 ## Installation:
 
 ```sh
-curl https://raw.githubusercontent.com/philtr/dotfiles/master/install.sh | /bin/zsh
+curl https://raw.githubusercontent.com/philtr/dotfiles/master/bin/install | /bin/zsh
 ```
 
 ## Post-installation:
