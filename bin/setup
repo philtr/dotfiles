@@ -32,13 +32,13 @@ then
   mkdir -p $DOTS
   git clone --recursive git://github.com/philtr/dotfiles.git "$DOTS"
 else
-  # cd $DOTS
-  # git add -u .
-  # git stash
-  # git pull --recurse-submodules --rebase origin master
-  # git push origin master
-  # git stash pop
-  # cd $HOMEDIR
+  cd $DOTS
+  git add -u .
+  git stash
+  git pull --recurse-submodules --rebase origin master
+  git push origin master
+  git stash pop
+  cd $HOMEDIR
 fi
 
 # Install Homebrew and Brews
