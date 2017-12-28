@@ -41,5 +41,6 @@
 
 [rerere]
   enabled = 1
+
 [gpg]
   program = /usr/local/bin/gpg
