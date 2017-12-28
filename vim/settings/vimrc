@@ -20,6 +20,7 @@
     Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
     Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
     Plug 'dracula/vim'                      " A dark theme for Vim and 40+ apps
+    Plug 'johngrib/vim-game-snake'          " Classic snake to pass the time
     Plug 'metakirby5/codi.vim'              " Interactive scratchpad like Soulver or Numi
     Plug 'mileszs/ack.vim'                  " Frontend for ack-compatible search tools
     Plug 'philtr/base16-default-vim'        " Base16 default theme for vim
@@ -134,7 +135,7 @@
 
 "= Theme ==========================================================================================
 
-  colorscheme base16-default-dark
+  colorscheme base16-default-light
 
   set hlsearch                            " highlight all search matches
   set colorcolumn=80,100,120              " visual indicator at columns 80, 100, 120
@@ -202,7 +203,7 @@
 "= RSpec.vim ======================================================================================
 
   " let g:rspec_command = 'VimuxRunCommand "bin/rspec --fail-fast --color {spec}"'
-  let g:rspec_command = 'VimuxRunCommand "bundle exec rspec --color --fail-fast {spec}"'
+  let g:rspec_command = 'VimuxRunCommand "bundle exec rspec --color --fail-fast {spec}; terminal-notifier -message \"Test Run Complete\""'
 
   map <Leader>ss :call RunCurrentSpecFile()<CR>
   map <Leader>sn :call RunNearestSpec()<CR>
@@ -233,8 +234,8 @@
   " Fold the ruby method under the cursor (works sometimes)
   nmap <Leader>fm V]Mzf
 
-  au BufRead,BufNewFile *.jbuilder setf ruby            " Use Ruby for .jbuilder files
-  au BufRead,BufNewFile *.env.local,*.env.test setf sh  " Use Shell for .env override files
+  au BufRead,BufNewFile *.jbuilder setf ruby    " Use Ruby for .jbuilder files
+  au BufRead,BufNewFile .env.local,.env.development,.env.test setf sh   " Use Shell for .env files
 
 "= Taskpaper ======================================================================================
 
@@ -246,3 +247,42 @@
   map <Leader>vx :VimuxRunCommand "
 
 "==================================================================================================
+"
+"
+" Committing
+" =========
+"
+" BufRead seems more appropriate here but for some reason the final `wincmd p` doesn't work if we do that.
+autocmd VimEnter COMMIT_EDITMSG call OpenCommitMessageDiff()
+function OpenCommitMessageDiff()
+  " Save the contents of the z register
+  let old_z = getreg("z")
+  let old_z_type = getregtype("z")
+
+  try
+    call cursor(1, 0)
+    let diff_start = search("^diff --git")
+    if diff_start == 0
+      " There's no diff in the commit message; generate our own.
+      let @z = system("git diff --cached -M -C")
+    else
+      " Yank diff from the bottom of the commit message into the z register
+      :.,$yank z
+      call cursor(1, 0)
+    endif
+
+    " Paste into a new buffer
+    vnew
+    normal! V"zP
+  finally
+    " Restore the z register
+    call setreg("z", old_z, old_z_type)
+  endtry
+
+  " Configure the buffer
+  set filetype=diff noswapfile nomodified readonly
+  silent file [Changes\ to\ be\ committed]
+
+  " Get back to the commit message
+  wincmd p
+endfunction"
