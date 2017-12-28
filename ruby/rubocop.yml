@@ -1,5 +1,12 @@
 Metrics/LineLength:
-  Max: 150
+  Max: 120
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
 
 Style/StringLiterals:
-  EnforcedStyle: dobule_quotes
+  EnforcedStyle: double_quotes
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyle: comma
+
