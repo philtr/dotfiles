@@ -29,12 +29,12 @@ fi
 if [[ ! -d $DOTDIR ]]
 then
   echo "Cloning dotfiles..."
-  mkdir -p $DOTS
-  git clone --recursive git://github.com/philtr/dotfiles.git "$DOTS"
+  mkdir -p $DOTDIR
+  git clone --recursive git://github.com/philtr/dotfiles.git "$DOTDIR"
 else
   if [[ -z $SKIP_DOTFILES_UPDATE ]]
   then
-    cd $DOTS
+    cd $DOTDIR
     git add -u .
     git stash
     git pull --recurse-submodules --rebase origin master
