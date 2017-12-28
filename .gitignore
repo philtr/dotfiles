@@ -1,6 +1,6 @@
-bitbar/shared/env.sh
-vim/plugged/*
-vim/autoload/plug.vim.old
+config/bitbar/shared/env.sh
+config/vim/plugged/*
+config/vim/autoload/plug.vim.old
 
 *.un~
 tags

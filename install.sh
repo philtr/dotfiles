@@ -22,22 +22,23 @@ fi
 
 if [[ -z $DOTS ]]
 then
-  export DOTS="$HOMEDIR/.dotfiles"
+  export DOTDIR="$HOMEDIR/.dotfiles"
+  export DOTS="$DOTDIR/config"
 fi
 
-if [[ ! -d $DOTS ]]
+if [[ ! -d $DOTDIR ]]
 then
   echo "Cloning dotfiles..."
   mkdir -p $DOTS
   git clone --recursive git://github.com/philtr/dotfiles.git "$DOTS"
 else
-  cd $DOTS
-  git add -u .
-  git stash
-  git pull --recurse-submodules --rebase origin master
-  git push origin master
-  git stash pop
-  cd $HOMEDIR
+  # cd $DOTS
+  # git add -u .
+  # git stash
+  # git pull --recurse-submodules --rebase origin master
+  # git push origin master
+  # git stash pop
+  # cd $HOMEDIR
 fi
 
 # Install Homebrew and Brews
