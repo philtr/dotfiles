@@ -65,6 +65,11 @@ else
   cd $HOMEDIR
 fi
 
+# Link self to ~/.bin/dotup
+echo "Linking dotup to $HOMEDIR/.bin/..."
+rm -f $HOMEDIR/.bin/dotup
+ln -s $DOTDIR/bin/dotup $HOMEDIR/.bin/dotup
+
 # Link zsh configuration files
 echo "Linking ZSH configuration files..."
 rm -f $HOMEDIR/.zlogin    \

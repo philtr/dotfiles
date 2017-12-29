@@ -17,7 +17,7 @@
 ## Installation:
 
 ```sh
-curl https://raw.githubusercontent.com/philtr/dotfiles/master/bin/setup | /bin/zsh
+curl https://raw.githubusercontent.com/philtr/dotfiles/master/bin/dotup | /bin/zsh
 ```
 
 ## Post-installation:
@@ -34,3 +34,6 @@ Follow on-screen instructions for changing your login shell to `/bin/zsh` and se
   - Check "Load preferences from a user-defined folder or URL"
   - Put in `$HOMEDIR/.dotfiles/iterm2`
 
+## Keeping up to date
+
+Just run `dotup` from your terminal anywhere and it will update everything!
