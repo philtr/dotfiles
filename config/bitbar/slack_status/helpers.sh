@@ -1,2 +1,2 @@
-source ~/.dotfiles/bitbar/shared/env.sh
+source $DOTS/bitbar/shared/env.sh
 

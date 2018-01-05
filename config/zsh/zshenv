@@ -7,6 +7,13 @@
 #
 
 #
+# Dotfile Directories
+#
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export DOTDIR="$CURRENT_DIR/../.."
+export DOTS="$DOTDIR/config"
+
+#
 # Browser
 #
 
@@ -106,7 +113,7 @@ unset path_file
 #
 # Function Paths
 #
-export ZSH_HOME="$HOME/.dotfiles/zsh"
+export ZSH_HOME="$DOTS/zsh"
 fpath=(
   $ZSH_HOME/themes
   $ZSH_HOME/functions

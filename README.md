@@ -32,7 +32,7 @@ Follow on-screen instructions for changing your login shell to `/bin/zsh` and se
 * Set iTerm configuration to load config
   - Open iTerm preferences
   - Check "Load preferences from a user-defined folder or URL"
-  - Put in `$HOMEDIR/.dotfiles/iterm2`
+  - Put in `$DOTS/iterm2`
 
 ## Keeping up to date
 

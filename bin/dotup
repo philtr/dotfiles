@@ -177,5 +177,5 @@ echo "    - type '/bin/zsh' at the prompt"
 echo "  * Set iTerm configuration to load config"
 echo "    - Open iTerm preferences"
 echo "    - Check \"Load preferences from a user-defined folder or URL\""
-echo "    - Put in $HOMEDIR/.dotfiles/iterm2"
+echo "    - Put in $DOTS/iterm2"
 
