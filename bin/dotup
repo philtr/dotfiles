@@ -51,6 +51,7 @@ if ! type "brew" > /dev/null; then
 fi
 
 echo "Brewing applications..."
+brew update
 brew bundle --file=$DOTS/homebrew/Brewfile
 
 # Unifont
