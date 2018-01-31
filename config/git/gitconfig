@@ -40,3 +40,5 @@
 
 [gpg]
   program = /usr/local/bin/gpg
+[diff]
+	tool = vimdiff
