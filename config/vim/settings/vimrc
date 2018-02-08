@@ -130,6 +130,7 @@
 
   " Squeeze fancy tabular alignment on current line
   nmap g$ :s/\([\>,:)}]\)\s\+/\1 /g<CR>
+  " Squeeze fancy tabular alignment in current file
   nmap ga$ :%s/\([\>,:)}]\)\s\+/\1 /g<CR>
 
 "= Theme ==========================================================================================
