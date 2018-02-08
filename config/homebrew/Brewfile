@@ -1,8 +1,10 @@
 cask_args appdir: "/Applications"
 
 tap "caskroom/cask"
+tap "codeclimate/formulae"
 tap "puma/puma"
 
+brew "codeclimate"
 brew "crystal-lang"
 brew "ctags"
 brew "fasd"
