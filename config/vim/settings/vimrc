@@ -16,33 +16,32 @@
 
   call plug#begin()
 
-    Plug 'benmills/vimux'                   " Run commands in a tmux split
-    Plug 'chrisbra/NrrwRgn'                 " Open a new buffer with the current visual block
-    Plug 'christoomey/vim-tmux-navigator'   " Navigate seamlessly between vim and tmux splits
-    Plug 'dracula/vim'                      " A dark theme for Vim and 40+ apps
-    Plug 'johngrib/vim-game-snake'          " Classic snake to pass the time
-    Plug 'metakirby5/codi.vim'              " Interactive scratchpad like Soulver or Numi
-    Plug 'mileszs/ack.vim'                  " Frontend for ack-compatible search tools
-    Plug 'philtr/base16-default-vim'        " Base16 default theme for vim
-    Plug 'plasticboy/vim-markdown'          " Markdown syntax & utilities
-    Plug 'sheerun/vim-polyglot'             " Lazy-loading multi-language pack
-    Plug 'thoughtbot/vim-rspec'             " Run RSpec tests with simple commands
-    Plug 'tpope/vim-bundler'                " Bundler syntax & utilities
-    Plug 'tpope/vim-commentary'             " Easy code commenting
-    Plug 'tpope/vim-fugitive'               " A Git wrapper so awesome, it should be illegal
-    Plug 'tpope/vim-rails'                  " Rails syntax & utilities
-    Plug 'tpope/vim-rake'                   " Rake syntax & utilities
-    Plug 'tpope/vim-rhubarb'                " GitHub extension for fugitive.vim
-    Plug 'tpope/vim-surround'               " Provides mappings to create/modify surroundings
-    Plug 'w0rp/ale'                         " Asynchronous Lint Engine
-
-    Plug 'scrooloose/nerdtree'               " Handy folder tree
-      \ { 'on': 'NERDTreeToggle' }
-
-    Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file search within current directory
+    Plug 'benmills/vimux'                         " Run commands in a tmux split
+         \ { 'on': ['VimuxRunCommand',
+         \          'VimuxRunLastCommand'] }
+    Plug 'chrisbra/NrrwRgn'                       " Open a new buffer with the current visual block
+          \ { 'on': 'NarrowRegion' }
+    Plug 'christoomey/vim-tmux-navigator'         " Navigate seamlessly between vim and tmux splits
+    Plug 'ctrlpvim/ctrlp.vim'                     " Fuzzy file search within current directory
           \ { 'on': ['CtrlP',
           \          'CtrlPClearAllCaches',
           \          'CtrlPBuffer'] }
+    Plug 'mileszs/ack.vim'                        " Frontend for ack-compatible search tools
+          \ { 'on': 'Ack' }
+    Plug 'philtr/base16-default-vim'              " Base16 default theme for vim
+    Plug 'plasticboy/vim-markdown'                " Markdown syntax & utilities
+    Plug 'scrooloose/nerdtree'                    " Handy folder tree
+          \ { 'on': 'NERDTreeToggle' }
+    Plug 'sheerun/vim-polyglot'                   " Lazy-loading multi-language pack
+    Plug 'thoughtbot/vim-rspec'                   " Run RSpec tests with simple commands
+          \ { 'on': ['call RunCurrentSpecFile()',
+          \          'call RunNearestSpec()'
+          \          'call RunLastSpec()'
+          \          'call RunAllSpecs()'] }
+    Plug 'tpope/vim-commentary'                   " Easy code commenting
+          \ { 'on': 'Commentary' }
+    Plug 'w0rp/ale'                               " Asynchronous Lint Engine
+
 
   call plug#end()
 
@@ -135,7 +134,7 @@
 
 "= Theme ==========================================================================================
 
-  colorscheme base16-default-light
+  colorscheme base16-default-dark
 
   set hlsearch                            " highlight all search matches
   set colorcolumn=80,100,120              " visual indicator at columns 80, 100, 120
@@ -183,8 +182,6 @@
   let NERDTreeStatusline=' '
 
   nnoremap <Leader>. :NERDTreeToggle<CR>
-  " Turning this off to build muscle memory
-  " nnoremap <Leader>n :NERDTreeToggle<CR>
 
 "= Markdown =======================================================================================
 
@@ -224,13 +221,6 @@
   map <Leader>rx :CtrlP app/services<CR>
   map <Leader>rv :CtrlP app/views<CR>
 
-  " Open spec or source file ("alternate") in same window
-  map <Leader>aa :A<CR>
-  " Open spec or source file in a vertical split
-  map <Leader>av :AV<CR>
-  " Open spec or source file in a horizontal split
-  map <Leader>as :AS<CR>
-
   " Fold the ruby method under the cursor (works sometimes)
   nmap <Leader>fm V]Mzf
 
@@ -246,43 +236,3 @@
 
   map <Leader>vx :VimuxRunCommand "
 
-"==================================================================================================
-"
-"
-" Committing
-" =========
-"
-" BufRead seems more appropriate here but for some reason the final `wincmd p` doesn't work if we do that.
-autocmd VimEnter COMMIT_EDITMSG call OpenCommitMessageDiff()
-function OpenCommitMessageDiff()
-  " Save the contents of the z register
-  let old_z = getreg("z")
-  let old_z_type = getregtype("z")
-
-  try
-    call cursor(1, 0)
-    let diff_start = search("^diff --git")
-    if diff_start == 0
-      " There's no diff in the commit message; generate our own.
-      let @z = system("git diff --cached -M -C")
-    else
-      " Yank diff from the bottom of the commit message into the z register
-      :.,$yank z
-      call cursor(1, 0)
-    endif
-
-    " Paste into a new buffer
-    vnew
-    normal! V"zP
-  finally
-    " Restore the z register
-    call setreg("z", old_z, old_z_type)
-  endtry
-
-  " Configure the buffer
-  set filetype=diff noswapfile nomodified readonly
-  silent file [Changes\ to\ be\ committed]
-
-  " Get back to the commit message
-  wincmd p
-endfunction"
