@@ -1,4 +1,5 @@
 config/bitbar/shared/env.sh
+config/homebrew/Brewfile.local
 config/vim/plugged/*
 config/vim/autoload/plug.vim.old
 

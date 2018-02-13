@@ -53,6 +53,10 @@ fi
 echo "Brewing applications..."
 brew update
 brew bundle --file=$DOTS/homebrew/Brewfile
+if [[ -a $DOTS/homebrew/Brewfile.local ]]
+then
+  brew bundle --file=$DOTS/homebrew/Brewfile.local
+fi
 
 # Unifont
 export UNIFONT_VERSION="10.0.07"
