@@ -7,6 +7,9 @@ Style/FrozenStringLiteralComment:
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyle: comma
+
+Style/TrailingCommaInHashLiteral:
   EnforcedStyle: comma
 
