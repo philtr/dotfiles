@@ -201,8 +201,7 @@
 
 "= RSpec.vim ======================================================================================
 
-  " let g:rspec_command = 'VimuxRunCommand "bin/rspec --fail-fast --color {spec}"'
-  let g:rspec_command = 'VimuxRunCommand "bundle exec rspec --color --fail-fast {spec}; terminal-notifier -message \"Test Run Complete\""'
+  let g:rspec_command = 'VimuxRunCommand "bin/rspec --fail-fast --color {spec}"'
 
   map <Leader>ss :call RunCurrentSpecFile()<CR>
   map <Leader>sn :call RunNearestSpec()<CR>
