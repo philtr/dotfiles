@@ -146,7 +146,9 @@
 
 "= Ack ============================================================================================
 
-  if executable("ag")
+  if executable("rg")
+    let g:ackprg = 'rg --vimgrep --no-heading --no-messages'
+  elseif executable("ag")
     let g:ackprg = 'ag --vimgrep'
   endif
 
@@ -160,8 +162,11 @@
   let g:ctrlp_switch_buffer = 0         " Always open a new instance of the file.
   let g:ctrlp_working_path_mode = 'rw'  " Use root from cwd rather than file
 
-  " Use the Silver Searcher for globbing files if installed
-  if executable("ag")
+  if executable("rg")
+    " Use the RipGrep for globbing files if installed
+    let g:ctrlp_user_command = 'rg --files'
+  elseif executable("ag")
+    " Use the Silver Searcher for globbing files if installed
     let g:ctrlp_user_command = 'ag --path-to-ignore ~/.ignore %s -l --nocolor --hidden -g "" '
   end
 

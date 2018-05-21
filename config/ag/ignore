@@ -1,6 +1,10 @@
-/spec/vcr-cassettes/**.yml
-/spec/vcr-cassettes/*.yml
-/spec/vcr-cassettes
-/doc/api/**.json
-/doc/api/*.json
-/doc/api
+# No VCR cassettes
+Code/*/*/spec/vcr-cassettes/*
+/spec/vcr-cassettes/*
+spec/vcr-cassettes/*
+
+# No API documentation
+Code/*/*/doc/api/*
+/doc/api/*
+doc/api/*
+
