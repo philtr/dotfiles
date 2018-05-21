@@ -28,7 +28,7 @@
           \          'CtrlPBuffer'] }
     Plug 'mileszs/ack.vim'                        " Frontend for ack-compatible search tools
           \ { 'on': 'Ack' }
-    Plug 'philtr/base16-default-vim'              " Base16 default theme for vim
+    Plug 'philtr/base16-default-vim'              " Just the default base16 color schemes
     Plug 'plasticboy/vim-markdown'                " Markdown syntax & utilities
     Plug 'scrooloose/nerdtree'                    " Handy folder tree
           \ { 'on': 'NERDTreeToggle' }
