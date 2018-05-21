@@ -38,6 +38,8 @@
           \          'call RunNearestSpec()'
           \          'call RunLastSpec()'
           \          'call RunAllSpecs()'] }
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-commentary'                   " Easy code commenting
           \ { 'on': 'Commentary' }
     Plug 'w0rp/ale'                               " Asynchronous Lint Engine
