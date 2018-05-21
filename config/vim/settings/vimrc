@@ -30,8 +30,6 @@
           \ { 'on': 'Ack' }
     Plug 'philtr/base16-default-vim'              " Just the default base16 color schemes
     Plug 'plasticboy/vim-markdown'                " Markdown syntax & utilities
-    Plug 'scrooloose/nerdtree'                    " Handy folder tree
-          \ { 'on': 'NERDTreeToggle' }
     Plug 'sheerun/vim-polyglot'                   " Lazy-loading multi-language pack
     Plug 'thoughtbot/vim-rspec'                   " Run RSpec tests with simple commands
           \ { 'on': ['call RunCurrentSpecFile()',
@@ -42,6 +40,7 @@
     Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-commentary'                   " Easy code commenting
           \ { 'on': 'Commentary' }
+    Plug 'tpope/vim-vinegar'                      " enhances netrw
     Plug 'w0rp/ale'                               " Asynchronous Lint Engine
 
 
@@ -177,15 +176,6 @@
 
   au BufRead,BufNewFile *.es6 setf javascript           " Use JavaScript for ECMAScript 6 files
 
-"= NERDTree =======================================================================================
-
-  let NERDTreeMinimalUI=1
-  let NERDTreeQuitOnOpen=1
-  let NERDTreeAutoDeleteBuffer=1
-  let NERDTreeStatusline=' '
-
-  nnoremap <Leader>. :NERDTreeToggle<CR>
-
 "= Markdown =======================================================================================
 
   let g:vim_markdown_folding_disabled = 1
@@ -199,6 +189,15 @@
 
   " Use markdown for *.md files
   autocmd BufRead,BufNewFile *.md setf markdown
+
+"= Netrw ==========================================================================================
+
+  " nmap <expr> <Leader>. exists(":Rexplore") ? ':Rexplore<CR>':':Explore<CR>'
+  nmap <Leader>. :Explore<CR>
+  nmap <Leader>c :Rexplore<CR>
+
+  let g:netrw_liststyle = 3
+  let g:netrw_winsize = 23
 
 "= RSpec.vim ======================================================================================
 
