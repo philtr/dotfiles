@@ -16,9 +16,6 @@
 
   call plug#begin()
 
-    Plug 'benmills/vimux'                         " Run commands in a tmux split
-         \ { 'on': ['VimuxRunCommand',
-         \          'VimuxRunLastCommand'] }
     Plug 'chrisbra/NrrwRgn'                       " Open a new buffer with the current visual block
           \ { 'on': 'NarrowRegion' }
     Plug 'christoomey/vim-tmux-navigator'         " Navigate seamlessly between vim and tmux splits
@@ -105,6 +102,11 @@
 
   " Fearless leader!
   let mapleader = ','
+
+  tnoremap <silent> <C-h> <C-w><C-h>
+  tnoremap <silent> <C-j> <C-w><C-j>
+  tnoremap <silent> <C-k> <C-w><C-k>
+  tnoremap <silent> <C-l> <C-w><C-l>
 
   " Tab Navigation
   nmap <Leader>l :tabnext<CR>
@@ -195,7 +197,7 @@
 
 "= RSpec.vim ======================================================================================
 
-  let g:rspec_command = 'VimuxRunCommand "bin/rspec --fail-fast --color {spec}"'
+  let g:rspec_command = 'terminal rspec --fail-fast --color {spec}'
 
   map <Leader>ss :call RunCurrentSpecFile()<CR>
   map <Leader>sn :call RunNearestSpec()<CR>
