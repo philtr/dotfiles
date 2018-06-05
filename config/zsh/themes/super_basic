@@ -1,0 +1,1 @@
+export PROMPT="%~ %F{green}%%%f "

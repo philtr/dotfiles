@@ -71,18 +71,6 @@ then
   curl $UNIFONT_UPPER_URL --output $FONTDIR/unifont_upper-$UNIFONT_VERSION.ttf
 fi
 
-# First install Prezto
-if [[ ! -d $HOMEDIR/.zprezto ]]
-then
-  echo "Installing Prezto (https://github.com/zsh-users/prezto)..."
-  git clone --recursive git://github.com/sorin-ionescu/prezto.git "$HOMEDIR/.zprezto"
-else
-  cd $HOMEDIR/.zprezto
-  git reset --hard
-  git pull origin master -f
-  cd $HOMEDIR
-fi
-
 # Link self to ~/.bin/dotup
 echo "Linking dotup to $HOMEDIR/.bin/..."
 mkdir -p $HOMEDIR/.bin
@@ -93,7 +81,6 @@ ln -s $DOTDIR/bin/dotup $HOMEDIR/.bin/dotup
 echo "Linking ZSH configuration files..."
 rm -f $HOMEDIR/.zlogin    \
       $HOMEDIR/.zlogout   \
-      $HOMEDIR/.zpreztorc \
       $HOMEDIR/.zprofile  \
       $HOMEDIR/.zshenv    \
       $HOMEDIR/.zshrc     \
@@ -101,7 +88,6 @@ rm -f $HOMEDIR/.zlogin    \
 
 ln -s $DOTS/zsh/zlogin            $HOMEDIR/.zlogin
 ln -s $DOTS/zsh/zlogout           $HOMEDIR/.zlogout
-ln -s $DOTS/zsh/zpreztorc         $HOMEDIR/.zpreztorc
 ln -s $DOTS/zsh/zprofile          $HOMEDIR/.zprofile
 ln -s $DOTS/zsh/zshenv            $HOMEDIR/.zshenv
 ln -s $DOTS/zsh/zshrc             $HOMEDIR/.zshrc

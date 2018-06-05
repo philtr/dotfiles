@@ -1,6 +1,9 @@
 # Executes commands at the start of an interactive session.
 
-source "$HOME/.zsh/components/zshrc/prezto.zsh"
+# Use a super basic prompt configuration
+source "$HOME/.zsh/themes/super_basic"
+
+# Other components
 source "$HOME/.zsh/components/zshrc/vi-mode.zsh"
 # source "$HOME/.zsh/components/zshrc/motd.zsh"
 source "$HOME/.zsh/components/zshrc/fasd.zsh"
