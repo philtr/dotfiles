@@ -199,6 +199,9 @@
   \ 'ruby',
   \]
 
+  " Use 2 spaces for list item indents
+  let g:vim_markdown_new_list_item_indent = 2
+
   augroup Markdown
     " Use markdown for *.md files
     autocmd BufRead,BufNewFile *.md setf markdown
