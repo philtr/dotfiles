@@ -5,7 +5,6 @@
 "                 \_/ |_|_| |_| |_|       | .__/|_| |_|_|_|\__|_|
 "= Initial setup =========================|_|======================================================
 
-  set nocompatible    " Backwards compatibility with Vi is not a priority
   set encoding=utf8   " use UTF-8 encoding for the win
   set hidden          " Don't abandon buffers that are not showing
 
@@ -82,7 +81,6 @@
   " Indentation -----------------------------------------------------------------------------------
 
     set autoindent                  " indent next line to same level as current line
-    set smartindent                 "   ↑ but do it smartly
     set smarttab                    " <Tab> in front of a line inserts 'shiftwidth' blanks
     set shiftwidth=2                "   ↑ use 2 blanks for above
     set tabstop=2                   " display a <Tab> as 2 spaces
