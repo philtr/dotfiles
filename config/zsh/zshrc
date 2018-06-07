@@ -1,7 +1,7 @@
 # Executes commands at the start of an interactive session.
 
 # Use a super basic prompt configuration
-source "$HOME/.zsh/themes/super_basic"
+source "$HOME/.zsh/themes/super_basic.zsh"
 
 # Other components
 source "$HOME/.zsh/components/zshrc/vi-mode.zsh"
