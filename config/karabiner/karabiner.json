@@ -39,6 +39,27 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "description": "Change f19 to command+control+option+shift.",
+                                "from": {
+                                    "key_code": "f19"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
