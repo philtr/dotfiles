@@ -15,26 +15,26 @@
 
   call plug#begin()
 
-    Plug 'chrisbra/NrrwRgn'                       " Open a new buffer with the current visual block
+    Plug 'chrisbra/NrrwRgn',                      " Open a new buffer with the current visual block
           \ { 'on': 'NarrowRegion' }
     Plug 'christoomey/vim-tmux-navigator'         " Navigate seamlessly between vim and tmux splits
-    Plug 'ctrlpvim/ctrlp.vim'                     " Fuzzy file search within current directory
+    Plug 'ctrlpvim/ctrlp.vim',                    " Fuzzy file search within current directory
           \ { 'on': ['CtrlP',
           \          'CtrlPClearAllCaches',
           \          'CtrlPBuffer'] }
-    Plug 'mileszs/ack.vim'                        " Frontend for ack-compatible search tools
+    Plug 'mileszs/ack.vim',                       " Frontend for ack-compatible search tools
           \ { 'on': 'Ack' }
     Plug 'philtr/base16-default-vim'              " Just the default base16 color schemes
     Plug 'plasticboy/vim-markdown'                " Markdown syntax & utilities
     Plug 'sheerun/vim-polyglot'                   " Lazy-loading multi-language pack
-    Plug 'thoughtbot/vim-rspec'                   " Run RSpec tests with simple commands
+    Plug 'thoughtbot/vim-rspec',                  " Run RSpec tests with simple commands
           \ { 'on': ['call RunCurrentSpecFile()',
           \          'call RunNearestSpec()'
           \          'call RunLastSpec()'
           \          'call RunAllSpecs()'] }
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
-    Plug 'tpope/vim-commentary'                   " Easy code commenting
+    Plug 'tpope/vim-commentary',                  " Easy code commenting
           \ { 'on': 'Commentary' }
     Plug 'vimwiki/vimwiki',                       " Local personal wiki
           \ { 'branch': 'dev' }
