@@ -36,6 +36,8 @@
     Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-commentary'                   " Easy code commenting
           \ { 'on': 'Commentary' }
+    Plug 'vimwiki/vimwiki',                       " Local personal wiki
+          \ { 'branch': 'dev' }
     Plug 'w0rp/ale'                               " Asynchronous Lint Engine
 
 
