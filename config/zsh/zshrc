@@ -18,7 +18,3 @@ source "$HOME/.zsh/components/zshrc/weather.zsh"
 if [[ -r "$HOME/.zshlc" ]]; then
   source "$HOME/.zshlc"
 fi
-
-# Misc
-alias scotty_joke_funny="ruby -e 'puts %(#scottyjoke is #{ [true,false,false,false,false].sample ? nil : %(not ) }funny.)'"
-
