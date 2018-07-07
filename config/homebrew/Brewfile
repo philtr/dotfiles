@@ -1,10 +1,8 @@
 cask_args appdir: "/Applications"
 
 tap "caskroom/cask"
-tap "codeclimate/formulae"
 tap "puma/puma"
 
-brew "codeclimate"
 brew "crystal-lang"
 brew "ctags"
 brew "fasd"
@@ -46,7 +44,6 @@ cask "google-chrome"
 cask "iterm2"
 cask "karabiner-elements"
 cask "keybase"
-cask "mater"
 cask "postico"
 brew "ranger"
 cask "slack"
