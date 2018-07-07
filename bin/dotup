@@ -152,7 +152,7 @@ echo "Setting up BitBar..."
 if [[ ! -a $DOTS/bitbar/shared/env.sh ]]
 then
   echo "  - Copying example environment file into place"
-  cp $DOTS/bitbar/shared/env.sh.example $DOTS/bitbar/shored/env.sh
+  cp $DOTS/bitbar/shared/env.sh.example $DOTS/bitbar/shared/env.sh
 fi
 
 # Print Manual Instructions
