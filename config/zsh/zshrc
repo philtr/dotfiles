@@ -12,7 +12,6 @@ source "$HOME/.zsh/components/zshrc/git.zsh"
 source "$HOME/.zsh/components/zshrc/history.zsh"
 source "$HOME/.zsh/components/zshrc/tmux.zsh"
 source "$HOME/.zsh/components/zshrc/k.zsh"
-source "$HOME/.zsh/components/zshrc/tag.zsh"
 source "$HOME/.zsh/components/zshrc/weather.zsh"
 
 # Local customizations, secrets, etc.
@@ -20,12 +19,6 @@ if [[ -r "$HOME/.zshlc" ]]; then
   source "$HOME/.zshlc"
 fi
 
-# Keybindings
-bindkey -M vicmd '/' history-incremental-search-backward
-
 # Misc
-unsetopt correct
 alias scotty_joke_funny="ruby -e 'puts %(#scottyjoke is #{ [true,false,false,false,false].sample ? nil : %(not ) }funny.)'"
 
-# I DONT LIKE THIS BUT IT'S MY ONLY OPTION
-export GPG_TTY=$(tty)
