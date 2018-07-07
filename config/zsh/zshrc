@@ -15,6 +15,11 @@ source "$HOME/.zsh/components/zshrc/k.zsh"
 source "$HOME/.zsh/components/zshrc/tag.zsh"
 source "$HOME/.zsh/components/zshrc/weather.zsh"
 
+# Local customizations, secrets, etc.
+if [[ -r "$HOME/.zshlc" ]]; then
+  source "$HOME/.zshlc"
+fi
+
 # Keybindings
 bindkey -M vicmd '/' history-incremental-search-backward
 
