@@ -251,3 +251,10 @@
 
   map <Leader>vx :VimuxRunCommand ""<Left>
 
+"= ~/.vimrc.local ==============================================================================
+
+  " load ~/.vimrc.local if the file exists for customizing per machine
+  if filereadable(glob("~/.vimrc.local")) 
+    source ~/.vimrc.local
+  endif
+
