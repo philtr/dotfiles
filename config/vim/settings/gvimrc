@@ -7,5 +7,5 @@
 
 "= Font ===========================================================================================
 
-  set guifont=SF\ Mono\ Semibold:h16
+  set guifont=Source\ Code\ Pro:h16
 
