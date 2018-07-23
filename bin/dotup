@@ -99,7 +99,12 @@ rm -f $HOMEDIR/.gitconfig \
       $HOMEDIR/.gitignore
 
 ln -s $DOTS/git/gitconfig         $HOMEDIR/.gitconfig
-ln -s $DOTS/git/gitignore         $HOMEDIR/.gitignore
+ln -s $DOTS/git/gitignore         $HOMEDIR/.gitignoreo
+
+# Link tigrc
+echo "Linking tigrc..."
+rm -rf $HOMEDIR/.tigrc
+ln -s $DOTS/tig/tigrc             $HOMEDIR/.tigrc
 
 # Link Silver Searcher (Ag) configuration files
 echo "Linking Silver Searcher configuration files..."

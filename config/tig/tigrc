@@ -1,0 +1,17 @@
+# Options ======================================================================
+
+  # Use fancy UTF-8 characters to display line graph
+  set line-graphics = utf-8
+
+# Main View ====================================================================
+
+  # Show commit id
+  set main-view-id-display = yes
+
+  # Custom date format.
+  #
+  # Example:
+  #   2015 Feb 24 11:02 -0600
+  #
+  set main-view-date = custom
+  set main-view-date-format = "%Y %b %d %H:%m %Z"
