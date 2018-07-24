@@ -220,8 +220,6 @@
   map <Leader>sl :call RunLastSpec()<CR>
   map <Leader>sa :call RunAllSpecs()<CR>
 
-  map <F8> :VimuxRunLastCommand<CR>
-
 "= Ruby/Rails =====================================================================================
 
   augroup Rails
@@ -235,10 +233,6 @@
     au BufRead,BufNewFile *.taskpaper set nolist
     au BufRead,BufNewFile *.taskpaper set nosmarttab
   augroup END
-
-"= Vimux ==========================================================================================
-
-  map <Leader>vx :VimuxRunCommand ""<Left>
 
 "= ~/.vimrc.local ==============================================================================
 
