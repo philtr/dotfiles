@@ -44,18 +44,22 @@ else
   fi
 fi
 
-# Install Homebrew and Brews
-if ! type "brew" > /dev/null; then
-  echo "Installing Homebrew..."
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
 
-echo "Brewing applications..."
-brew update
-brew bundle --file=$DOTS/homebrew/Brewfile
-if [[ -a $DOTS/homebrew/Brewfile.local ]]
+# Install Homebrew and Brew Bundle
+if [[ -z $SKIP_HOMEBREW ]]
 then
-  brew bundle --file=$DOTS/homebrew/Brewfile.local
+  if ! type "brew" > /dev/null; then
+    echo "Installing Homebrew..."
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  echo "Brewing applications..."
+  brew update
+  brew bundle --file=$DOTS/homebrew/Brewfile
+  if [[ -a $DOTS/homebrew/Brewfile.local ]]
+  then
+    brew bundle --file=$DOTS/homebrew/Brewfile.local
+  fi
 fi
 
 # Unifont
