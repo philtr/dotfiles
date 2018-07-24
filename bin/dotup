@@ -62,17 +62,6 @@ then
   fi
 fi
 
-# Unifont
-export UNIFONT_VERSION="11.0.01"
-export FONTDIR="$HOMEDIR/Library/Fonts"
-if [[ -d $FONTDIR ]] && [[ ! -a $HOMEDIR/Library/Fonts/unifont-$UNIFONT_VERSION.ttf ]]
-then
-  echo "Installing Unifont..."
-  export UNIFONT_URL="http://unifoundry.com/pub/unifont-$UNIFONT_VERSION/font-builds/unifont-$UNIFONT_VERSION.ttf"
-  rm -rf $FONTDIR/unifont-*.ttf
-  curl $UNIFONT_URL --output $FONTDIR/unifont-$UNIFONT_VERSION.ttf
-fi
-
 # Link self to ~/.bin/dotup
 echo "Linking dotup to $HOMEDIR/.bin/..."
 mkdir -p $HOMEDIR/.bin
