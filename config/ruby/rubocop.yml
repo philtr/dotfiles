@@ -13,3 +13,5 @@ Style/TrailingCommaInArrayLiteral:
 Style/TrailingCommaInHashLiteral:
   EnforcedStyle: comma
 
+Style/Documentation:
+  Enabled: false
