@@ -69,7 +69,7 @@
     set nocursorline                " don't highlight line under cursor
     set synmaxcol=800               " no syntax highlighting for lines longer than 100 cols
     set laststatus=2                " always show status bar
-    set nonumber                    " don't display line numbers
+    set number                      " display line numbers
     set visualbell                  " use visual bell
     set t_ut=                       " disable background color erase
 
