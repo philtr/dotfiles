@@ -90,7 +90,7 @@ rm -f $HOMEDIR/.gitconfig \
       $HOMEDIR/.gitignore
 
 ln -s $DOTS/git/gitconfig         $HOMEDIR/.gitconfig
-ln -s $DOTS/git/gitignore         $HOMEDIR/.gitignoreo
+ln -s $DOTS/git/gitignore         $HOMEDIR/.gitignore
 
 # Link tigrc
 echo "Linking tigrc..."
