@@ -17,7 +17,7 @@
   protocol = https
 
 [alias]
-  conflicts = !git ls-files -u | cut -f 2 | sort -u
+  conflicts = diff --name-only --diff-filter=U
 
 [filter "media"]
   required = true
