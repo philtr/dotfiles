@@ -1,7 +1,7 @@
 # Executes commands at the start of an interactive session.
 
 # Use a super basic prompt configuration
-export PROMPT="%F{green}⠏⠞⠗%f "
+export PROMPT="%F{green}%%%f "
 
 # Other components
 source "$HOME/.zsh/components/zshrc/vi-mode.zsh"
