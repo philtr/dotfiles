@@ -1,17 +1,24 @@
 Metrics/LineLength:
   Max: 120
 
+Style/Documentation:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
+Style/SymbolArray:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
 Style/TrailingCommaInArrayLiteral:
-  EnforcedStyle: comma
+  EnforcedStyleForMultiline: comma
 
 Style/TrailingCommaInHashLiteral:
-  EnforcedStyle: comma
+  EnforcedStyleForMultiline: comma
 
-Style/Documentation:
-  Enabled: false
