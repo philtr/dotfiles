@@ -17,97 +17,88 @@
 
     Plug 'chrisbra/NrrwRgn',                      " Open a new buffer with the current visual block
           \ { 'on': 'NarrowRegion' }
-
     Plug 'christoomey/vim-tmux-navigator'         " Navigate seamlessly between vim and tmux splits
-
     Plug 'ctrlpvim/ctrlp.vim',                    " Fuzzy file search within current directory
           \ { 'on': ['CtrlP',
           \          'CtrlPClearAllCaches',
           \          'CtrlPBuffer'] }
-
     Plug 'junegunn/goyo.vim',                     " Distraction-free writing in Vim
           \ { 'on': 'Goyo' }
-
     Plug 'mileszs/ack.vim',                       " Frontend for ack-compatible search tools
           \ { 'on': 'Ack' }
-
-    Plug 'philtr/base16-default-vim'              " Just the default base16 color schemes
-
     Plug 'plasticboy/vim-markdown'                " Markdown syntax & utilities
-
+    Plug 'ruby-formatter/rufo-vim'                " Opinionated autoformatter for Ruby, like gofmt
     Plug 'sheerun/vim-polyglot'                   " Lazy-loading multi-language pack
-
     Plug 'thoughtbot/vim-rspec',                  " Run RSpec tests with simple commands
           \ { 'on': ['call RunCurrentSpecFile()',
           \          'call RunNearestSpec()'
           \          'call RunLastSpec()'
           \          'call RunAllSpecs()'] }
-
     Plug 'tpope/vim-fugitive'                     " A Git wrapper so awesome, it should be illegal
     Plug 'tpope/vim-rhubarb'                      " GitHub extension for fugitive.vim
-
     Plug 'tpope/vim-commentary',                  " Easy code commenting
           \ { 'on': 'Commentary' }
-
-    Plug 'vimwiki/vimwiki',                       " Local personal wiki
-          \ { 'branch': 'dev' }
-
+    Plug 'benmills/vimux'                         " Easily interact with tmux from vim.
     Plug 'w0rp/ale'                               " Asynchronous Lint Engine
-
 
   call plug#end()
 
-"= Interface ======================================================================================
 
-  " Appearance ------------------------------------------------------------------------------------
+"= Appearance ===================================================================================
 
-    syntax on                       " turn on syntax highilghting
+  colorscheme blue
 
-    filetype plugin on              " enable loading plugins for filetypes
-    filetype indent on              " enable loading 'indent files' for filetypes
+  syntax on                           " turn on syntax highilghting
 
-    set nocursorline                " don't highlight line under cursor
-    set synmaxcol=800               " no syntax highlighting for lines longer than 100 cols
-    set laststatus=2                " always show status bar
-    set number                      " display line numbers
-    set visualbell                  " use visual bell
-    set t_ut=                       " disable background color erase
+  filetype plugin on                  " enable loading plugins for filetypes
+  filetype indent on                  " enable loading 'indent files' for filetypes
 
-  " Interaction -----------------------------------------------------------------------------------
+  set nocursorline                    " don't highlight line under cursor
+  set synmaxcol=800                   " no syntax highlighting for lines longer than 100 cols
+  set laststatus=2                    " always show status bar
+  set number                          " display line numbers
+  set visualbell                      " use visual bell
+  set t_ut=                           " disable background color erase
+  set hlsearch                        " highlight all search matches
 
-    let loaded_match_paren = 1      " highlight matching parens
+  set list listchars=tab:██,trail:∙   " Use "██" for tabs and "∙" for trailing spaces
+  set fillchars+=vert:                " set vertical fillchar to "en space"
 
-    set autoread                    " automatically reload unmodified buffers when edited externally
-    set ttyfast                     " improve screen refresh for terminal vim
-    set lazyredraw                  " screen not redrawn during command execution
-    set scrolloff=3                 " start scrolling 3 lines from bottom
-    set sidescrolloff=6             " start scrolling 6 lines from right
-    set mouse=a                     " allow mouse usage
-    set clipboard=unnamed           " use the system clipboard
-    set backspace=indent,eol,start  " Make backspace behave as expected
-    set re=1                        " Use old RegEx engine because vim-ruby doesn't like it
 
-  " Wrapping --------------------------------------------------------------------------------------
+"= Interaction ==================================================================================
 
-    set nowrap                      " don't softwrap text
-    set formatoptions-=t            " don't automatically hardwrap text (use 'gq' to reflow text)
-    set textwidth=80                " wrap at column 80
-    set wrapmargin=0                " don't wrap based on terminal size
+  let loaded_match_paren = 1      " highlight matching parens
 
-  " Indentation -----------------------------------------------------------------------------------
+  set autoread                    " automatically reload unmodified buffers when edited externally
+  set ttyfast                     " improve screen refresh for terminal vim
+  set lazyredraw                  " screen not redrawn during command execution
+  set scrolloff=3                 " start scrolling 3 lines from bottom
+  set sidescrolloff=6             " start scrolling 6 lines from right
+  set mouse=a                     " allow mouse usage
+  set clipboard=unnamed           " use the system clipboard
+  set backspace=indent,eol,start  " Make backspace behave as expected
 
-    set autoindent                  " indent next line to same level as current line
-    set smarttab                    " <Tab> in front of a line inserts 'shiftwidth' blanks
-    set shiftwidth=2                "   ↑ use 2 blanks for above
-    set tabstop=2                   " display a <Tab> as 2 spaces
-    set softtabstop=2               " use 2 spaces for a <Tab>
-    set expandtab                   "   ↑ insert spaces when <Tab> key is ressed
+"= Wrapping =====================================================================================
+
+  set nowrap                      " don't softwrap text
+  set formatoptions-=t            " don't automatically hardwrap text (use 'gq' to reflow text)
+  set textwidth=80                " wrap at column 80
+  set wrapmargin=0                " don't wrap based on terminal size
+
+"= Indentation ==================================================================================
+
+  set autoindent                  " indent next line to same level as current line
+  set smarttab                    " <Tab> in front of a line inserts 'shiftwidth' blanks
+  set shiftwidth=2                "   ↑ use 2 blanks for above
+  set tabstop=2                   " display a <Tab> as 2 spaces
+  set softtabstop=2               " use 2 spaces for a <Tab>
+  set expandtab                   "   ↑ insert spaces when <Tab> key is ressed
 
 "= Utilities ======================================================================================
 
   set nobackup                      " don't create backup files
   set nowb                          " don't make a backup before overwriting a file
-  set directory=~/.vim/swap//       " put swap files in ~/.vim/undo/pat%to$file.ext.swp
+  set noswapfile                    " don't use swap files
 
   set undofile                      " save undo history a file to persist across sessions
   set undodir=~/.vim/undo//         " put undo files in ~/.vim/undo/path%to$file.ext
@@ -133,9 +124,6 @@
   nmap <Leader>l :tabnext<CR>
   nmap <Leader>h :tabprevious<CR>
 
-  " Folding
-  nmap <Leader>F :set foldmethod=syntax<CR>
-
   " Transpose the line(s) under the cursor one line down
   nmap <Leader>k ddp
   " Transpose the line(s) under the cursor one line up
@@ -145,25 +133,6 @@
   " Transpose character(s) under the cursor one position to the left
   nmap <Leader>X xhP
 
-  " Pry
-  nmap <Leader><Leader>pry Irequire "pry"; binding.pry;<CR><Esc>
-
-  " Paste in REPLACE mode
-  nmap <Leader>rp R<C-r>"<Esc>
-
-  " Squeeze fancy tabular alignment on current line
-  nmap g$ :s/\([\>,:)}]\)\s\+/\1 /g<CR>
-  " Squeeze fancy tabular alignment in current file
-  nmap ga$ :%s/\([\>,:)}]\)\s\+/\1 /g<CR>
-
-"= Theme ==========================================================================================
-
-  colorscheme base16-default-dark
-
-  set hlsearch                            " highlight all search matches
-
-  set list listchars=tab:██,trail:∙       " Use "██" for tabs and "∙" for trailing spaces
-  set fillchars+=vert:                    " set vertical fillchar to "en space"
 
 "= Ack ============================================================================================
 
@@ -176,6 +145,7 @@
 "= Asynchronous Lint Engine (ALE) =================================================================
 
   let g:ale_lint_delay = 1000           " Don't lint until there's at least 1 second without typing
+  let g:ale_set_highlights = 'off'      " Don't highlight offending code inline
 
 "= CtrlP ==========================================================================================
 
@@ -197,12 +167,6 @@
   nmap <Leader>b :CtrlPBuffer<CR>
   nmap <Leader>m :CtrlPMRUFiles<CR>
 
-"= JavaScript =====================================================================================
-
-  augroup JavaScript
-    au BufRead,BufNewFile *.es6 setf javascript           " Use JavaScript for ECMAScript 6 files
-  augroup END
-
 "= Markdown =======================================================================================
 
   let g:vim_markdown_folding_disabled = 1
@@ -222,28 +186,22 @@
     autocmd BufRead,BufNewFile *.md setf markdown
   augroup END
 
-"= RSpec.vim ======================================================================================
+"= Ruby/Rails =====================================================================================
 
-  let g:rspec_command = 'terminal rspec --fail-fast --color {spec}'
+  let g:rspec_command = 'VimuxRunCommand "rspec --fail-fast --color {spec}"'
 
   map <Leader>ss :call RunCurrentSpecFile()<CR>
   map <Leader>sn :call RunNearestSpec()<CR>
   map <Leader>sl :call RunLastSpec()<CR>
   map <Leader>sa :call RunAllSpecs()<CR>
 
-"= Ruby/Rails =====================================================================================
-
   augroup Rails
     au BufRead,BufNewFile *.jbuilder setf ruby    " Use Ruby for .jbuilder files
     au BufRead,BufNewFile .env.local,.env.development,.env.test setf sh   " Use Shell for .env files
   augroup END
 
-"= Taskpaper ======================================================================================
-
-  augroup Taskpaper
-    au BufRead,BufNewFile *.taskpaper set nolist
-    au BufRead,BufNewFile *.taskpaper set nosmarttab
-  augroup END
+  " Pry
+  nmap <Leader><Leader>pry Irequire "pry"; binding.pry;<CR><Esc>
 
 "= ~/.vimrc.local ==============================================================================
 
