@@ -67,8 +67,6 @@
 
 "= Interaction ==================================================================================
 
-  let loaded_match_paren = 1      " highlight matching parens
-
   set autoread                    " automatically reload unmodified buffers when edited externally
   set ttyfast                     " improve screen refresh for terminal vim
   set lazyredraw                  " screen not redrawn during command execution
