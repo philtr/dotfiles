@@ -62,11 +62,10 @@ then
   fi
 fi
 
-# Link self to ~/.bin/dotup
-echo "Linking dotup to $HOMEDIR/.bin/..."
-mkdir -p $HOMEDIR/.bin
-rm -f $HOMEDIR/.bin/dotup
-ln -s $DOTDIR/bin/dotup $HOMEDIR/.bin/dotup
+# Link bin/ to ~/.bin
+echo "Linking bin/ to $HOMEDIR/.bin/..."
+rm -rf $HOMEDIR/.bin
+ln -s $DOTDIR/bin $HOMEDIR/.bin
 
 # Link zsh configuration files
 echo "Linking ZSH configuration files..."
