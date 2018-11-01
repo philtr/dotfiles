@@ -187,6 +187,8 @@
 
 "= Ruby/Rails =====================================================================================
 
+  let g:ruby_path = $HOME.'/.rbenv/shims'
+
   let g:rspec_command = 'VimuxRunCommand "rspec --fail-fast --color {spec}"'
 
   map <Leader>ss :call RunCurrentSpecFile()<CR>
@@ -201,11 +203,3 @@
 
   " Pry
   nmap <Leader><Leader>pry Irequire "pry"; binding.pry;<CR><Esc>
-
-"= ~/.vimrc.local ==============================================================================
-
-  " load ~/.vimrc.local if the file exists for customizing per machine
-  if filereadable(glob("~/.vimrc.local")) 
-    source ~/.vimrc.local
-  endif
-
