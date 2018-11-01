@@ -1,0 +1,4 @@
+#!/bin/sh
+
+git checkout --orphan "$1"
+git reset --hard
