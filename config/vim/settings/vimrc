@@ -35,8 +35,6 @@
           \          'call RunNearestSpec()'
           \          'call RunLastSpec()'
           \          'call RunAllSpecs()'] }
-    Plug 'tpope/vim-fugitive'                     " A Git wrapper so awesome, it should be illegal
-    Plug 'tpope/vim-rhubarb'                      " GitHub extension for fugitive.vim
     Plug 'tpope/vim-commentary',                  " Easy code commenting
           \ { 'on': 'Commentary' }
     Plug 'benmills/vimux',                        " Easily interact with tmux from vim.
