@@ -27,7 +27,8 @@
     Plug 'mileszs/ack.vim',                       " Frontend for ack-compatible search tools
           \ { 'on': 'Ack' }
     Plug 'plasticboy/vim-markdown'                " Markdown syntax & utilities
-    Plug 'ruby-formatter/rufo-vim'                " Opinionated autoformatter for Ruby, like gofmt
+    Plug 'ruby-formatter/rufo-vim',               " Opinionated autoformatter for Ruby, like gofmt
+          \ { 'on': 'Rufo' }
     Plug 'sheerun/vim-polyglot'                   " Lazy-loading multi-language pack
     Plug 'thoughtbot/vim-rspec',                  " Run RSpec tests with simple commands
           \ { 'on': ['call RunCurrentSpecFile()',
@@ -38,7 +39,8 @@
     Plug 'tpope/vim-rhubarb'                      " GitHub extension for fugitive.vim
     Plug 'tpope/vim-commentary',                  " Easy code commenting
           \ { 'on': 'Commentary' }
-    Plug 'benmills/vimux'                         " Easily interact with tmux from vim.
+    Plug 'benmills/vimux',                        " Easily interact with tmux from vim.
+          \ { 'on': 'VimuxRunCommand' }
     Plug 'w0rp/ale'                               " Asynchronous Lint Engine
 
   call plug#end()
@@ -63,7 +65,6 @@
 
   set list listchars=tab:██,trail:∙   " Use "██" for tabs and "∙" for trailing spaces
   set fillchars+=vert:                " set vertical fillchar to "en space"
-
 
 "= Interaction ==================================================================================
 
