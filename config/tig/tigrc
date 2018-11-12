@@ -15,3 +15,8 @@
   #
   set main-view-date = custom
   set main-view-date-format = "%Y %b %d %H:%m %Z"
+
+# Status View ==================================================================
+
+  # Use the 'a' key to amend the previous commit
+  bind status a !git commit --amend
