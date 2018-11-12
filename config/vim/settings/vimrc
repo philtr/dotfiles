@@ -48,7 +48,7 @@
 
 "= Appearance ===================================================================================
 
-  colorscheme blue
+  colorscheme default
 
   syntax on                           " turn on syntax highilghting
 
