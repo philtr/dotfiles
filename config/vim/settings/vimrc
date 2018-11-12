@@ -24,6 +24,8 @@
           \          'CtrlPBuffer'] }
     Plug 'junegunn/goyo.vim',                     " Distraction-free writing in Vim
           \ { 'on': 'Goyo' }
+    Plug 'metakirby5/codi.vim',                   " Interactive scratchpad like Soulver or Numi
+          \ { 'on': 'Codi' }
     Plug 'mileszs/ack.vim',                       " Frontend for ack-compatible search tools
           \ { 'on': 'Ack' }
     Plug 'plasticboy/vim-markdown'                " Markdown syntax & utilities
