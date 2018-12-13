@@ -48,7 +48,7 @@
 
 "= Appearance ===================================================================================
 
-  colorscheme default
+  colorscheme peachpuff
 
   syntax on                           " turn on syntax highilghting
 
