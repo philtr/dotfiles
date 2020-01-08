@@ -4,6 +4,7 @@ tap "caskroom/cask"
 tap "puma/puma"
 
 brew "crystal-lang"
+brew "diff-so-fancy"
 brew "elinks"
 brew "fasd"
 brew "git"
