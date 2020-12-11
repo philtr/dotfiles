@@ -42,6 +42,7 @@
     Plug 'tpope/vim-commentary',                  " Easy code commenting
           \ { 'on': 'Commentary' }
     Plug 'w0rp/ale'                               " Asynchronous Lint Engine
+    Plug 'zxqfl/tabnine-vim'                      " AWESOME completion
 
   call plug#end()
 
