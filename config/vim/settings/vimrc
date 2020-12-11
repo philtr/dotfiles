@@ -191,7 +191,7 @@
 
   let g:ruby_path = $HOME.'/.rbenv/shims'
 
-  let g:rspec_command = 'VimuxRunCommand "rspec --fail-fast --color {spec}"'
+  let g:rspec_command = ':wa | VimuxRunCommand "bundle exec rspec --fail-fast {spec}"'
 
   map <Leader>ss :call RunCurrentSpecFile()<CR>
   map <Leader>sn :call RunNearestSpec()<CR>
