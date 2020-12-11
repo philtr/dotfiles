@@ -151,7 +151,7 @@
 "= CtrlP ==========================================================================================
 
   let g:ctrlp_use_caching = 0           " Don't cache; RipGrep and the Sliver Searcher are super-fast
-  let g:ctrlp_switch_buffer = 0         " Always open a new instance of the file.
+  let g:ctrlp_switch_buffer = 1         " Switch to the open file if there's already a buffer
   let g:ctrlp_working_path_mode = 'rw'  " Use root from cwd rather than file
 
   if executable("rg")
