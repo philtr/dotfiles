@@ -3,6 +3,8 @@ config/homebrew/Brewfile.local
 config/vim/plugged/*
 config/vim/autoload/plug.vim.old
 
+config/karabiner/automatic_backups/*
+
 *.un~
 tags
 *.swp
