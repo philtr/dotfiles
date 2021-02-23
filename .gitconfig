@@ -4,3 +4,5 @@
 	signingkey = CD07CFFEF3DFFE58
 [commit]
 	gpgsign = true
+[pull]
+	ff = only
