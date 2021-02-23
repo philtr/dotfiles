@@ -1,0 +1,6 @@
+[user]
+	name = Phillip Ridlen
+	email = p@rdln.net
+	signingkey = CD07CFFEF3DFFE58
+[commit]
+	gpgsign = true
