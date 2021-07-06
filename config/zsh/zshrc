@@ -1,7 +1,8 @@
 # Executes commands at the start of an interactive session.
 
 # Use a super basic prompt configuration
-export PROMPT="%1~ %F{green}▸%f "
+export PROMPT="%F{white}%1~ %F{green}%%%f "
+export RPROMPT="%F{black}%T"
 
 # Other components
 source "$HOME/.zsh/components/zshrc/vi-mode.zsh"
