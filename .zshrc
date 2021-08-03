@@ -16,6 +16,13 @@ else
   compinit -C -i
 fi
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 zmodload -i zsh/complist
 
 HISTFILE=$HOME/.zsh_history
