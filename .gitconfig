@@ -8,3 +8,5 @@
 	ff = only
 [init]
 	defaultBranch = main
+[core]
+	excludesfile = ~/.gitignore.global
