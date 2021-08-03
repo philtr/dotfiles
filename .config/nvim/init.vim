@@ -24,6 +24,7 @@
           \ { 'on': ['CtrlP',
           \          'CtrlPClearAllCaches',
           \          'CtrlPBuffer'] }
+    Plug 'joshdick/onedark.vim'
     Plug 'junegunn/goyo.vim',                     " Distraction-free writing in Vim
           \ { 'on': 'Goyo' }
     Plug 'metakirby5/codi.vim',                   " Interactive scratchpad like Soulver or Numi
@@ -46,7 +47,8 @@
 
 "= Appearance ===================================================================================
 
-  colorscheme peachpuff
+  let g:onedark_termcolors=16
+  colorscheme onedark
 
   syntax on                           " turn on syntax highilghting
 
