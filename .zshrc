@@ -7,6 +7,11 @@ alias vim=nvim
 export PROMPT="%F{white}%1~ %F{green}%%%f "
 export RPROMPT="%F{black}%T"
 
+# Zoxide (fast cd)
+if (( $+commands[zoxide] )) ; then
+  eval "$(zoxide init zsh)"
+fi
+
 # Completions
 autoload -Uz compinit
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
