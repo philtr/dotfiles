@@ -1,20 +1,208 @@
+"//////////////////////////////////////////////////////////////////////////////////////////////////
+"               __   _(_)_ __ ___          _ __ | |__ (_) | |_ _ __
+"               \ \ / / | '_ ` _ \  _____ | '_ \| '_ \| | | __| '__|
+"                \ V /| | | | | | | _____ | |_) | | | | | | |_| |
+"                 \_/ |_|_| |_| |_|       | .__/|_| |_|_|_|\__|_|
+"= Initial setup =========================|_|======================================================
 
-call plug#begin()
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sensible'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'mileszs/ack.vim'
-call plug#end()
+  set encoding=utf8   " use UTF-8 encoding for the win
+  set hidden          " Don't abandon buffers that are not showing
 
-colors industry
+"= Plug.vim =======================================================================================
 
-set nowrap
+  " A minimalist Vim plugin manager.
+  " See https://github.com/junegunn/vim-plug for more information
 
-let mapleader=","
+  call plug#begin()
 
-nmap <Leader>p :CtrlP<CR>
-nmap <Leader>b :CtrlPBuffer<CR>
+    Plug 'benmills/vimux',                        " Easily interact with tmux from vim.
+          \ { 'on': 'VimuxRunCommand' }
+    Plug 'chrisbra/NrrwRgn',                      " Open a new buffer with the current visual block
+          \ { 'on': 'NarrowRegion' }
+    Plug 'christoomey/vim-tmux-navigator'         " Navigate seamlessly between vim and tmux splits
+    Plug 'ctrlpvim/ctrlp.vim',                    " Fuzzy file search within current directory
+          \ { 'on': ['CtrlP',
+          \          'CtrlPClearAllCaches',
+          \          'CtrlPBuffer'] }
+    Plug 'junegunn/goyo.vim',                     " Distraction-free writing in Vim
+          \ { 'on': 'Goyo' }
+    Plug 'metakirby5/codi.vim',                   " Interactive scratchpad like Soulver or Numi
+          \ { 'on': 'Codi' }
+    Plug 'mileszs/ack.vim',                       " Frontend for ack-compatible search tools
+          \ { 'on': 'Ack' }
+    Plug 'plasticboy/vim-markdown'                " Markdown syntax & utilities
+    Plug 'sheerun/vim-polyglot'                   " Lazy-loading multi-language pack
+    Plug 'thoughtbot/vim-rspec',                  " Run RSpec tests with simple commands
+          \ { 'on': ['call RunCurrentSpecFile()',
+          \          'call RunNearestSpec()'
+          \          'call RunLastSpec()'
+          \          'call RunAllSpecs()'] }
+    Plug 'tpope/vim-commentary',                  " Easy code commenting
+          \ { 'on': 'Commentary' }
+    Plug 'w0rp/ale'                               " Asynchronous Lint Engine
 
-let g:ctrlp_use_caching = 0
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+  call plug#end()
+
+
+"= Appearance ===================================================================================
+
+  colorscheme peachpuff
+
+  syntax on                           " turn on syntax highilghting
+
+  filetype plugin on                  " enable loading plugins for filetypes
+  filetype indent on                  " enable loading 'indent files' for filetypes
+
+  set nocursorline                    " don't highlight line under cursor
+  set synmaxcol=800                   " no syntax highlighting for lines longer than 100 cols
+  set laststatus=2                    " always show status bar
+  set nonumber                        " don't display line numbers
+  set visualbell                      " use visual bell
+  set t_ut=                           " disable background color erase
+  set hlsearch                        " highlight all search matches
+
+  set list listchars=tab:██,trail:∙   " Use "██" for tabs and "∙" for trailing spaces
+  set fillchars+=vert:                " set vertical fillchar to "en space"
+
+"= Interaction ==================================================================================
+
+  set autoread                    " automatically reload unmodified buffers when edited externally
+  set ttyfast                     " improve screen refresh for terminal vim
+  set lazyredraw                  " screen not redrawn during command execution
+  set scrolloff=3                 " start scrolling 3 lines from bottom
+  set sidescrolloff=6             " start scrolling 6 lines from right
+  set mouse=a                     " allow mouse usage
+  set clipboard=unnamed           " use the system clipboard
+  set backspace=indent,eol,start  " Make backspace behave as expected
+  set re=1                        " Use old RegEx engine because vim-ruby doesn't like it
+
+"= Wrapping =====================================================================================
+
+  set nowrap                      " don't softwrap text
+  set formatoptions-=t            " don't automatically hardwrap text (use 'gq' to reflow text)
+  set textwidth=80                " wrap at column 80
+  set wrapmargin=0                " don't wrap based on terminal size
+
+"= Indentation ==================================================================================
+
+  set autoindent                  " indent next line to same level as current line
+  set smarttab                    " <Tab> in front of a line inserts 'shiftwidth' blanks
+  set shiftwidth=2                "   ↑ use 2 blanks for above
+  set tabstop=2                   " display a <Tab> as 2 spaces
+  set softtabstop=2               " use 2 spaces for a <Tab>
+  set expandtab                   "   ↑ insert spaces when <Tab> key is ressed
+
+"= Utilities ======================================================================================
+
+  set nobackup                      " don't create backup files
+  set nowb                          " don't make a backup before overwriting a file
+  set noswapfile                    " don't use swap files
+
+  set undofile                      " save undo history a file to persist across sessions
+  set undodir=~/.vim/undo/          " put undo files in ~/.vim/undo/path%to$file.ext
+
+"= Keys ===========================================================================================
+
+  " Fearless leader!
+  let mapleader = ','
+
+  " Use same pane navigation shortcuts in terminal split
+  tnoremap <silent> <C-h> <C-w><C-h>
+  tnoremap <silent> <C-j> <C-w><C-j>
+  tnoremap <silent> <C-k> <C-w><C-k>
+  tnoremap <silent> <C-l> <C-w><C-l>
+
+  " Use arrow keys to resize windows
+  noremap <up>    <C-W>+
+  noremap <down>  <C-W>-
+  noremap <left>  3<C-W><
+  noremap <right> 3<C-W>>
+
+  " Tab Navigation
+  nmap <Leader>l :tabnext<CR>
+  nmap <Leader>h :tabprevious<CR>
+
+  " Transpose the line(s) under the cursor one line down
+  nmap <Leader>k ddp
+  " Transpose the line(s) under the cursor one line up
+  nmap <Leader>K ddkP
+  " Transpose character(s) under the cursor one position to the right
+  nmap <Leader>x xp
+  " Transpose character(s) under the cursor one position to the left
+  nmap <Leader>X xhP
+
+
+"= Ack ============================================================================================
+
+  if executable("rg")
+    let g:ackprg = 'rg --vimgrep --no-heading --no-messages'
+  elseif executable("ag")
+    let g:ackprg = 'ag --vimgrep'
+  endif
+
+"= Asynchronous Lint Engine (ALE) =================================================================
+
+  let g:ale_enabled = 0
+  let g:ale_lint_delay = 1000           " Don't lint until there's at least 1 second without typing
+
+  let g:ale_fixers = {
+  \   'ruby': ['standardrb']
+  \}
+
+"= CtrlP ==========================================================================================
+
+  let g:ctrlp_use_caching = 0           " Don't cache; RipGrep and the Sliver Searcher are super-fast
+  let g:ctrlp_switch_buffer = 1         " Switch to the open file if there's already a buffer
+  let g:ctrlp_working_path_mode = 'rw'  " Use root from cwd rather than file
+
+  if executable("rg")
+    " Use the RipGrep for globbing files if installed
+    let g:ctrlp_user_command = 'rg --files'
+  elseif executable("ag")
+    " Use the Silver Searcher for globbing files if installed
+    let g:ctrlp_user_command = 'ag --path-to-ignore ~/.ignore %s -l --nocolor --hidden -g "" '
+  end
+
+  nmap <Leader>p :CtrlP<CR>
+  nmap <Leader>. <Leader>p
+  nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
+  nmap <Leader>b :CtrlPBuffer<CR>
+  nmap <Leader>m :CtrlPMRUFiles<CR>
+
+"= Markdown =======================================================================================
+
+  let g:vim_markdown_folding_disabled = 1
+
+  let g:vim_markdown_fenced_languages = [
+  \ 'css', 'sass', 'scss',
+  \ 'haml', 'html',
+  \ 'javascript', 'js=javascript', 'json=javascript',
+  \ 'ruby',
+  \]
+
+  " Use 2 spaces for list item indents
+  let g:vim_markdown_new_list_item_indent = 2
+
+  augroup Markdown
+    " Use markdown for *.md files
+    autocmd BufRead,BufNewFile *.md setf markdown
+  augroup END
+
+"= Ruby/Rails =====================================================================================
+
+  let g:ruby_path = $HOME.'/.rbenv/shims'
+
+  let g:rspec_command = ':wa | VimuxRunCommand "bundle exec rspec --fail-fast {spec}"'
+
+  map <Leader>ss :call RunCurrentSpecFile()<CR>
+  map <Leader>sn :call RunNearestSpec()<CR>
+  map <Leader>sl :call RunLastSpec()<CR>
+  map <Leader>sa :call RunAllSpecs()<CR>
+
+  augroup Rails
+    au BufRead,BufNewFile *.jbuilder setf ruby    " Use Ruby for .jbuilder files
+    au BufRead,BufNewFile .env.local,.env.development,.env.test setf sh   " Use Shell for .env files
+  augroup END
+
+  " Pry
+  nmap <Leader><Leader>pry Irequire "pry"; binding.pry;<CR><Esc>
