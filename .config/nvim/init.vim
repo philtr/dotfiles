@@ -40,7 +40,7 @@
           \          'call RunAllSpecs()'] }
     Plug 'tpope/vim-commentary',                  " Easy code commenting
           \ { 'on': 'Commentary' }
-    Plug 'w0rp/ale'                               " Asynchronous Lint Engine
+    Plug 'dense-analysis/ale'                     " Asynchronous Lint Engine
 
   call plug#end()
 
@@ -144,12 +144,11 @@
 
 "= Asynchronous Lint Engine (ALE) =================================================================
 
-  let g:ale_enabled = 0
-  let g:ale_lint_delay = 1000           " Don't lint until there's at least 1 second without typing
-
+  let g:ale_fix_on_save = 1
   let g:ale_fixers = {
-  \   'ruby': ['standardrb']
-  \}
+        \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+        \ 'ruby': ['rubocop']
+        \ }
 
 "= CtrlP ==========================================================================================
 
