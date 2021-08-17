@@ -4,6 +4,9 @@ alias dots='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
 
 alias vim=nvim
 
+# Use vim keys
+bindkey -v
+
 # Use a super basic prompt configuration
 export PROMPT="%F{white}%1~ %F{green}%%%f "
 export RPROMPT="%F{black}%T"
