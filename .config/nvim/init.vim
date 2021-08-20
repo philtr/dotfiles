@@ -24,6 +24,7 @@
           \ { 'on': ['CtrlP',
           \          'CtrlPClearAllCaches',
           \          'CtrlPBuffer'] }
+    Plug 'dense-analysis/ale'                     " Asynchronous Lint Engine
     Plug 'joshdick/onedark.vim'
     Plug 'junegunn/goyo.vim',                     " Distraction-free writing in Vim
           \ { 'on': 'Goyo' }
@@ -40,7 +41,6 @@
           \          'call RunAllSpecs()'] }
     Plug 'tpope/vim-commentary',                  " Easy code commenting
           \ { 'on': 'Commentary' }
-    Plug 'dense-analysis/ale'                     " Asynchronous Lint Engine
 
   call plug#end()
 
@@ -145,10 +145,13 @@
 "= Asynchronous Lint Engine (ALE) =================================================================
 
   let g:ale_fix_on_save = 1
+  let g:ale_ruby_rubocop_executable = "bundle"
+  let g:ale_ruby_rubocop_options = "--cache true"
   let g:ale_fixers = {
         \ '*': ['remove_trailing_lines', 'trim_whitespace'],
         \ 'ruby': ['rubocop']
         \ }
+  let g:ale_linters = { 'ruby': ['rubocop'] }
 
 "= CtrlP ==========================================================================================
 
