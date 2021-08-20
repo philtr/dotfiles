@@ -41,6 +41,7 @@
           \          'call RunAllSpecs()'] }
     Plug 'tpope/vim-commentary',                  " Easy code commenting
           \ { 'on': 'Commentary' }
+    Plug 'tpope/vim-rails'                        " Ruby on Rails power tools
 
   call plug#end()
 
