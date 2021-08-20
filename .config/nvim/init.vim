@@ -32,6 +32,8 @@
           \ { 'on': 'Codi' }
     Plug 'mileszs/ack.vim',                       " Frontend for ack-compatible search tools
           \ { 'on': 'Ack' }
+    Plug 'neoclide/coc.nvim',                     " Nodejs extension host for vim
+          \ { 'branch': 'release' }
     Plug 'plasticboy/vim-markdown'                " Markdown syntax & utilities
     Plug 'sheerun/vim-polyglot'                   " Lazy-loading multi-language pack
     Plug 'thoughtbot/vim-rspec',                  " Run RSpec tests with simple commands
@@ -153,6 +155,22 @@
         \ 'ruby': ['rubocop']
         \ }
   let g:ale_linters = { 'ruby': ['rubocop'] }
+
+"= CoC.nvim =======================================================================================
+
+  " Use tab for trigger completion with characters ahead and navigate.
+  " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+  " other plugin before putting this into your config.
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
 
 "= CtrlP ==========================================================================================
 
