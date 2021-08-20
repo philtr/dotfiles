@@ -36,11 +36,6 @@ $ dots config --local status.showUntrackedFiles no
 
 ## Post-installation:
 
-* Set ZSH as the login shell
-  - run \`chsh\`
-  - enter your password
-  - type '/bin/zsh' at the prompt
-
 * Set iTerm configuration to load config
   - Open iTerm preferences
   - Check "Load preferences from a user-defined folder or URL"
