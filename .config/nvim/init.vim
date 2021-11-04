@@ -20,12 +20,13 @@
     Plug 'chrisbra/NrrwRgn',                      " Open a new buffer with the current visual block
           \ { 'on': 'NarrowRegion' }
     Plug 'christoomey/vim-tmux-navigator'         " Navigate seamlessly between vim and tmux splits
-    Plug 'ctrlpvim/ctrlp.vim',                    " Fuzzy file search within current directory
-          \ { 'on': ['CtrlP',
-          \          'CtrlPClearAllCaches',
-          \          'CtrlPBuffer'] }
     Plug 'dense-analysis/ale'                     " Asynchronous Lint Engine
     Plug 'joshdick/onedark.vim'
+    Plug 'junegunn/fzf',
+          \ {
+          \   'do': { -> fzf#install() }
+          \ }
+    Plug 'junegunn/fzf.vim'
     Plug 'junegunn/goyo.vim',                     " Distraction-free writing in Vim
           \ { 'on': 'Goyo' }
     Plug 'metakirby5/codi.vim',                   " Interactive scratchpad like Soulver or Numi
@@ -172,25 +173,10 @@
     return !col || getline('.')[col - 1]  =~# '\s'
   endfunction
 
-"= CtrlP ==========================================================================================
+"= FZF ============================================================================================
 
-  let g:ctrlp_use_caching = 0           " Don't cache; RipGrep and the Sliver Searcher are super-fast
-  let g:ctrlp_switch_buffer = 1         " Switch to the open file if there's already a buffer
-  let g:ctrlp_working_path_mode = 'rw'  " Use root from cwd rather than file
-
-  if executable("rg")
-    " Use the RipGrep for globbing files if installed
-    let g:ctrlp_user_command = 'rg --files'
-  elseif executable("ag")
-    " Use the Silver Searcher for globbing files if installed
-    let g:ctrlp_user_command = 'ag --path-to-ignore ~/.ignore %s -l --nocolor --hidden -g "" '
-  end
-
-  nmap <Leader>p :CtrlP<CR>
-  nmap <Leader>. <Leader>p
-  nmap <Leader>P :CtrlPClearAllCaches<CR><C-p>
-  nmap <Leader>b :CtrlPBuffer<CR>
-  nmap <Leader>m :CtrlPMRUFiles<CR>
+  nmap <Leader>p :Files<CR>
+  nmap <Leader>b :Buffers<CR>
 
 "= Markdown =======================================================================================
 
