@@ -20,7 +20,7 @@
     Plug 'chrisbra/NrrwRgn',                      " Open a new buffer with the current visual block
           \ { 'on': 'NarrowRegion' }
     Plug 'christoomey/vim-tmux-navigator'         " Navigate seamlessly between vim and tmux splits
-    Plug 'dense-analysis/ale'                     " Asynchronous Lint Engine
+    Plug 'dense-analysis/ale'                     " Asynchronous Lint Engine (ALE)
     Plug 'joshdick/onedark.vim'
     Plug 'junegunn/fzf',
           \ {
@@ -159,6 +159,10 @@
 
 "= CoC.nvim =======================================================================================
 
+  nnoremap gd :call CocAction('jumpDefinition')<CR>
+  nnoremap <C-]> :call CocAction('jumpDefinition')<CR>
+  nnoremap <C-t> <C-o>
+
   " Use tab for trigger completion with characters ahead and navigate.
   " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
   " other plugin before putting this into your config.
@@ -199,7 +203,8 @@
 
 "= Ruby/Rails =====================================================================================
 
-  let g:ruby_path = $HOME.'/.rbenv/shims'
+  let g:ruby_path = $HOME.'/.asdf/shims/ruby'
+  let g:ruby_indent_assignment_style = 'variable'
 
   let g:rspec_command = ':wa | VimuxRunCommand "bundle exec rspec --fail-fast {spec}"'
 
