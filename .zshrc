@@ -63,4 +63,7 @@ zstyle ':completion:*' menu select # select completions with arrow keys
 zstyle ':completion:*' group-name '' # group results by category
 zstyle ':completion:::::' completer _expand _complete _ignored _approximate # enable approximate matches for completion
 
-export PATH="$PATH:$HOME/.bin"
+export BAT_THEME="base16"
+export FZF_DEFAULT_OPTS="--color=16"
+
+export PATH="/opt/homebrew/bin:$PATH:$HOME/.bin"
