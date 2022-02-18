@@ -6,6 +6,7 @@ alias vim=nvim
 
 # Use vim keys
 bindkey -v
+bindkey "^R" history-incremental-search-backward
 
 # Use a super basic prompt configuration
 export PROMPT="%F{white}%1~ %F{green}%%%f "
