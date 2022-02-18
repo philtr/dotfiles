@@ -1,5 +1,10 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": [
+    "elixir",
+    "eelixir"
+  ],
+
   "solargraph.diagnostics": false,
   "solargraph.autoformat": false,
-  "solargraph.formatting": false,
+  "solargraph.formatting": false
 }
