@@ -21,7 +21,6 @@
           \ { 'on': 'NarrowRegion' }
     Plug 'christoomey/vim-tmux-navigator'         " Navigate seamlessly between vim and tmux splits
     Plug 'dense-analysis/ale'                     " Asynchronous Lint Engine (ALE)
-    Plug 'joshdick/onedark.vim'
     Plug 'junegunn/goyo.vim',                     " Distraction-free writing in Vim
           \ { 'on': 'Goyo' }
     Plug 'metakirby5/codi.vim',                   " Interactive scratchpad like Soulver or Numi
@@ -51,7 +50,7 @@
 "= Appearance ===================================================================================
 
   let g:onedark_termcolors=16
-  colorscheme onedark
+  colorscheme peachpuff
 
   syntax on                           " turn on syntax highilghting
 
