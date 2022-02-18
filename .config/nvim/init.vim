@@ -22,11 +22,6 @@
     Plug 'christoomey/vim-tmux-navigator'         " Navigate seamlessly between vim and tmux splits
     Plug 'dense-analysis/ale'                     " Asynchronous Lint Engine (ALE)
     Plug 'joshdick/onedark.vim'
-    Plug 'junegunn/fzf',
-          \ {
-          \   'do': { -> fzf#install() }
-          \ }
-    Plug 'junegunn/fzf.vim'
     Plug 'junegunn/goyo.vim',                     " Distraction-free writing in Vim
           \ { 'on': 'Goyo' }
     Plug 'metakirby5/codi.vim',                   " Interactive scratchpad like Soulver or Numi
@@ -35,6 +30,13 @@
           \ { 'on': 'Ack' }
     Plug 'neoclide/coc.nvim',                     " Nodejs extension host for vim
           \ { 'branch': 'release' }
+
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-file-browser.nvim'
+    Plug 'nvim-telescope/telescope-frecency.nvim'
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
     Plug 'plasticboy/vim-markdown'                " Markdown syntax & utilities
     Plug 'sheerun/vim-polyglot'                   " Lazy-loading multi-language pack
     Plug 'thoughtbot/vim-rspec',                  " Run RSpec tests with simple commands
@@ -42,6 +44,7 @@
           \          'call RunNearestSpec()'
           \          'call RunLastSpec()'
           \          'call RunAllSpecs()'] }
+    Plug 'tami5/sqlite.lua'
     Plug 'tpope/vim-commentary',                  " Easy code commenting
           \ { 'on': 'Commentary' }
     Plug 'tpope/vim-rails'                        " Ruby on Rails power tools
@@ -177,11 +180,6 @@
     return !col || getline('.')[col - 1]  =~# '\s'
   endfunction
 
-"= FZF ============================================================================================
-
-  nmap <Leader>p :Files<CR>
-  nmap <Leader>b :Buffers<CR>
-
 "= Markdown =======================================================================================
 
   let g:vim_markdown_folding_disabled = 1
@@ -220,3 +218,60 @@
 
   " Pry
   nmap <Leader><Leader>pry Irequire "pry"; binding.pry;<CR><Esc>
+
+"= Telescope ======================================================================================
+
+lua << EOF
+
+    require('telescope').setup{
+      defaults = {
+        -- Default configuration for telescope goes here:
+        -- config_key = value,
+        mappings = {
+          i = {
+            -- map actions.which_key to <C-h> (default: <C-/>)
+            -- actions.which_key shows the mappings for your picker,
+            -- e.g. git_{create, delete, ...}_branch for the git_branches picker
+            ["<C-h>"] = "which_key"
+          }
+        }
+      },
+      pickers = {
+        -- Default configuration for builtin pickers goes here:
+        -- picker_name = {
+        --   picker_config_key = value,
+        --   ...
+        -- }
+        -- Now the picker_config_key will be applied every time you call this
+        -- builtin picker
+      },
+      extensions = {
+        -- Your extension configuration goes here:
+        -- extension_name = {
+        --   extension_config_key = value,
+        -- }
+        -- please take a look at the readme of the extension you want to configure
+        file_browser = {
+          dir_icon = "▶"
+        },
+        fzf = {
+          fuzzy = true,                    -- false will only do exact matching
+          override_generic_sorter = true,  -- override the generic sorter
+          override_file_sorter = true,     -- override the file sorter
+          case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                           -- the default case_mode is "smart_case"
+        }
+      }
+    }
+
+    require("telescope").load_extension("file_browser")
+    require("telescope").load_extension("frecency")
+    require("telescope").load_extension("fzf")
+
+EOF
+
+  nnoremap <Leader>p <cmd>Telescope find_files<CR>
+  nnoremap <Leader>m <cmd>Telescope frecency<CR>
+  nnoremap <Leader>b <cmd>Telescope buffers<CR>
+  nnoremap <Leader>gr <cmd>Telescope live_grep<CR>
+  nnoremap <Leader>tt <cmd>Telescope file_browser<CR>
