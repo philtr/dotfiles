@@ -39,15 +39,11 @@
 
     Plug 'plasticboy/vim-markdown'                " Markdown syntax & utilities
     Plug 'sheerun/vim-polyglot'                   " Lazy-loading multi-language pack
-    Plug 'thoughtbot/vim-rspec',                  " Run RSpec tests with simple commands
-          \ { 'on': ['call RunCurrentSpecFile()',
-          \          'call RunNearestSpec()'
-          \          'call RunLastSpec()'
-          \          'call RunAllSpecs()'] }
     Plug 'tami5/sqlite.lua'
     Plug 'tpope/vim-commentary',                  " Easy code commenting
           \ { 'on': 'Commentary' }
     Plug 'tpope/vim-rails'                        " Ruby on Rails power tools
+    Plug 'vim-test/vim-test'                      " Run your tests at the speed of thought
 
   call plug#end()
 
@@ -204,13 +200,6 @@
   let g:ruby_path = $HOME.'/.asdf/shims/ruby'
   let g:ruby_indent_assignment_style = 'variable'
 
-  let g:rspec_command = ':wa | VimuxRunCommand "bundle exec rspec --fail-fast {spec}"'
-
-  map <Leader>ss :call RunCurrentSpecFile()<CR>
-  map <Leader>sn :call RunNearestSpec()<CR>
-  map <Leader>sl :call RunLastSpec()<CR>
-  map <Leader>sa :call RunAllSpecs()<CR>
-
   augroup Rails
     au BufRead,BufNewFile *.jbuilder setf ruby    " Use Ruby for .jbuilder files
     au BufRead,BufNewFile .env.local,.env.development,.env.test setf sh   " Use Shell for .env files
@@ -275,3 +264,12 @@ EOF
   nnoremap <Leader>b <cmd>Telescope buffers<CR>
   nnoremap <Leader>gr <cmd>Telescope live_grep<CR>
   nnoremap <Leader>tt <cmd>Telescope file_browser<CR>
+
+"= Testing ========================================================================================
+
+  let test#strategy="vimux"
+
+  map <Leader>ss :TestFile<CR>
+  map <Leader>sn :TestNearest<CR>
+  map <Leader>sl :TestLast<CR>
+  map <Leader>sa :TestSuite<CR>
