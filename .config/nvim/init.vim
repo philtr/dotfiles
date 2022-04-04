@@ -31,6 +31,7 @@
           \ { 'branch': 'release' }
 
     Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
     Plug 'nvim-telescope/telescope-frecency.nvim'
@@ -174,6 +175,33 @@
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
   endfunction
+
+"= Lualine ========================================================================================
+
+lua << END
+  require('lualine').setup {
+    options = {
+      icons_enabled = false,
+      theme = '16color'
+    },
+    sections = {
+      lualine_a = {''},
+      lualine_b = {'filename'},
+      lualine_c = {'diff', 'diagnostics'},
+      lualine_x = {},
+      lualine_y = {'branch'},
+      lualine_z = {'mode'},
+    },
+    inactive_sections = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = {'filename'},
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {'branch'},
+    }
+  }
+END
 
 "= Markdown =======================================================================================
 
