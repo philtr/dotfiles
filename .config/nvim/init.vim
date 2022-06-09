@@ -303,3 +303,12 @@ EOF
   map <Leader>sn :TestNearest<CR>
   map <Leader>sl :TestLast<CR>
   map <Leader>sa :TestSuite<CR>
+
+"= Vimux ==========================================================================================
+
+  let g:VimuxHeight = "20"
+
+  map <Leader>vr :VimuxRunCommand ""<Left>
+  map <Leader>vv :VimuxRunLastCommand<CR>
+  map <Leader>vt :VimuxTogglePane<CR>
+
