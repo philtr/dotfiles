@@ -1,4 +1,5 @@
 alias dots='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
+alias dotstig='GIT_DIR="$HOME/.dotfiles.git" GIT_WORK_TREE="$HOME" tig'
 
 alias vim=nvim
 
