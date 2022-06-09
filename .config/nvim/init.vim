@@ -82,7 +82,7 @@
   set mouse=a                     " allow mouse usage
   set clipboard=unnamed           " use the system clipboard
   set backspace=indent,eol,start  " Make backspace behave as expected
-  set re=1                        " Use old RegEx engine because vim-ruby doesn't like it
+  set re=0                        " Let vim decide which regexpengine to use
 
 "= Wrapping =====================================================================================
 
