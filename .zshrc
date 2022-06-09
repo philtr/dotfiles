@@ -67,3 +67,5 @@ export BAT_THEME="base16"
 export FZF_DEFAULT_OPTS="--color=16"
 
 export PATH="/opt/homebrew/bin:$PATH:$HOME/.bin"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
