@@ -50,8 +50,10 @@
 
 "= Appearance ===================================================================================
 
-  let g:onedark_termcolors=16
+  set background=dark
   colorscheme peachpuff
+  highlight LineNr ctermfg=black
+  highlight CocFloating ctermbg=black ctermfg=white
 
   syntax on                           " turn on syntax highilghting
 
