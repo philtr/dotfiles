@@ -42,6 +42,7 @@
     Plug 'tami5/sqlite.lua'
     Plug 'tpope/vim-commentary',                  " Easy code commenting
           \ { 'on': 'Commentary' }
+    Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rails'                        " Ruby on Rails power tools
     Plug 'vim-test/vim-test'                      " Run your tests at the speed of thought
 
