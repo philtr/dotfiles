@@ -68,4 +68,6 @@ export FZF_DEFAULT_OPTS="--color=16"
 
 export PATH="/opt/homebrew/bin:$PATH:$HOME/.bin"
 
+eval "$(direnv hook zsh)"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
