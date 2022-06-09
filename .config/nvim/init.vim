@@ -31,6 +31,7 @@
           \ { 'branch': 'release' }
 
     Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
     Plug 'nvim-telescope/telescope-frecency.nvim'
@@ -41,6 +42,7 @@
     Plug 'tami5/sqlite.lua'
     Plug 'tpope/vim-commentary',                  " Easy code commenting
           \ { 'on': 'Commentary' }
+    Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rails'                        " Ruby on Rails power tools
     Plug 'vim-test/vim-test'                      " Run your tests at the speed of thought
 
@@ -49,8 +51,10 @@
 
 "= Appearance ===================================================================================
 
-  let g:onedark_termcolors=16
+  set background=dark
   colorscheme peachpuff
+  highlight LineNr ctermfg=black
+  highlight CocFloating ctermbg=black ctermfg=white
 
   syntax on                           " turn on syntax highilghting
 
@@ -78,7 +82,7 @@
   set mouse=a                     " allow mouse usage
   set clipboard=unnamed           " use the system clipboard
   set backspace=indent,eol,start  " Make backspace behave as expected
-  set re=1                        " Use old RegEx engine because vim-ruby doesn't like it
+  set re=0                        " Let vim decide which regexpengine to use
 
 "= Wrapping =====================================================================================
 
@@ -102,8 +106,8 @@
   set nowb                          " don't make a backup before overwriting a file
   set noswapfile                    " don't use swap files
 
-  set undofile                      " save undo history a file to persist across sessions
-  set undodir=~/.vim/undo/          " put undo files in ~/.vim/undo/path%to$file.ext
+  set undofile                            " save undo history a file to persist across sessions
+  set undodir=~/.local/share/nvim/undo/   " save undo files here
 
 "= Keys ===========================================================================================
 
@@ -174,6 +178,33 @@
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
   endfunction
+
+"= Lualine ========================================================================================
+
+lua << END
+  require('lualine').setup {
+    options = {
+      icons_enabled = false,
+      theme = '16color'
+    },
+    sections = {
+      lualine_a = {''},
+      lualine_b = {'filename'},
+      lualine_c = {'diff', 'diagnostics'},
+      lualine_x = {},
+      lualine_y = {'branch'},
+      lualine_z = {'mode'},
+    },
+    inactive_sections = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = {'filename'},
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {'branch'},
+    }
+  }
+END
 
 "= Markdown =======================================================================================
 
@@ -272,3 +303,12 @@ EOF
   map <Leader>sn :TestNearest<CR>
   map <Leader>sl :TestLast<CR>
   map <Leader>sa :TestSuite<CR>
+
+"= Vimux ==========================================================================================
+
+  let g:VimuxHeight = "20"
+
+  map <Leader>vr :VimuxRunCommand ""<Left>
+  map <Leader>vv :VimuxRunLastCommand<CR>
+  map <Leader>vt :VimuxTogglePane<CR>
+

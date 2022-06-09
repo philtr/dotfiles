@@ -1,6 +1,5 @@
 alias dots='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
-
-. "$(brew --prefix asdf)/asdf.sh"
+alias dotstig='GIT_DIR="$HOME/.dotfiles.git" GIT_WORK_TREE="$HOME" tig'
 
 alias vim=nvim
 
@@ -68,3 +67,7 @@ export BAT_THEME="base16"
 export FZF_DEFAULT_OPTS="--color=16"
 
 export PATH="/opt/homebrew/bin:$PATH:$HOME/.bin"
+
+eval "$(direnv hook zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
