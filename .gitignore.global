@@ -1,3 +1,4 @@
 tags
 .yardoc
 .DS_Store
+.elixir_ls
