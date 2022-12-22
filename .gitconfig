@@ -6,6 +6,10 @@
 	gpgsign = true
 [pull]
 	ff = only
+	rebase = true
+	autostash = true
+[rebase]
+	autostash = true
 [init]
 	defaultBranch = main
 [core]
