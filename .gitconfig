@@ -19,3 +19,5 @@
 	diffFilter = diff-so-fancy --patch
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[includeIf "gitdir:~/Code/Divvy/"]
+	path = ~/.gitconfig-dv
