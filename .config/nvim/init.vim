@@ -20,18 +20,16 @@
     Plug 'chrisbra/NrrwRgn',                      " Open a new buffer with the current visual block
           \ { 'on': 'NarrowRegion' }
     Plug 'christoomey/vim-tmux-navigator'         " Navigate seamlessly between vim and tmux splits
-    Plug 'dense-analysis/ale'                     " Asynchronous Lint Engine (ALE)
-    Plug 'junegunn/goyo.vim',                     " Distraction-free writing in Vim
-          \ { 'on': 'Goyo' }
-    Plug 'metakirby5/codi.vim',                   " Interactive scratchpad like Soulver or Numi
-          \ { 'on': 'Codi' }
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'jeffkreeftmeijer/vim-dim'               " ANSI 16color default vim theme
+    Plug 'mhanberg/elixir.nvim'
     Plug 'mileszs/ack.vim',                       " Frontend for ack-compatible search tools
           \ { 'on': 'Ack' }
-    Plug 'neoclide/coc.nvim',                     " Nodejs extension host for vim
-          \ { 'branch': 'release' }
+    " Plug 'neoclide/coc.nvim',                     " Nodejs extension host for vim
+    "       \ { 'branch': 'release' }
 
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-lualine/lualine.nvim'
+    " Plug 'nvim-lualine/lualine.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
     Plug 'nvim-telescope/telescope-frecency.nvim'
@@ -52,9 +50,10 @@
 "= Appearance ===================================================================================
 
   set background=dark
-  colorscheme peachpuff
-  highlight LineNr ctermfg=black
-  highlight CocFloating ctermbg=black ctermfg=white
+  colorscheme dim
+  " highlight LineNr ctermfg=black
+  " highlight CocFloating ctermbg=black ctermfg=white
+  highlight Comment cterm=italic gui=italic
 
   syntax on                           " turn on syntax highilghting
 
@@ -63,8 +62,8 @@
 
   set nocursorline                    " don't highlight line under cursor
   set synmaxcol=800                   " no syntax highlighting for lines longer than 100 cols
-  set laststatus=2                    " always show status bar
-  set number                          " display line numbers
+  set laststatus=0                    " don't show status bar
+  set nonumber                        " don't display line numbers
   set visualbell                      " use visual bell
   set t_ut=                           " disable background color erase
   set hlsearch                        " highlight all search matches
@@ -159,52 +158,57 @@
         \ }
   let g:ale_linters = { 'ruby': ['rubocop'] }
 
-"= CoC.nvim =======================================================================================
+""= CoC.nvim =======================================================================================
 
-  nnoremap gd :call CocAction('jumpDefinition')<CR>
-  nnoremap <C-]> :call CocAction('jumpDefinition')<CR>
-  nnoremap <C-t> <C-o>
+"  nnoremap gd :call CocAction('jumpDefinition')<CR>
+"  nnoremap <C-]> :call CocAction('jumpDefinition')<CR>
+"  nnoremap <C-t> <C-o>
 
-  " Use tab for trigger completion with characters ahead and navigate.
-  " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-  " other plugin before putting this into your config.
-  inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"  " To make <cr> select the first completion item and confirm the completion when no item has been selected:
+"  inoremap <silent><expr> <Leader><cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+"  inoremap <Leader><Leader> ,
 
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
+  " " Use arrows for trigger completion with characters ahead and navigate.
+  " " Insert <tab> when previous text is space, refresh completion if not.
+  " function! s:check_back_space() abort
+  "   let col = col('.') - 1
+  "   return !col || getline('.')[col - 1]  =~ '\s'
+  " endfunction
+
+  " inoremap <silent><expr> <Down>
+  " \ coc#pum#visible() ? coc#pum#next(1):
+  " \ <SID>check_back_space() ? "\<Tab>" :
+  " \ coc#refresh()
+  " inoremap <expr><Up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 "= Lualine ========================================================================================
 
-lua << END
-  require('lualine').setup {
-    options = {
-      icons_enabled = false,
-      theme = '16color'
-    },
-    sections = {
-      lualine_a = {''},
-      lualine_b = {'filename'},
-      lualine_c = {'diff', 'diagnostics'},
-      lualine_x = {},
-      lualine_y = {'branch'},
-      lualine_z = {'mode'},
-    },
-    inactive_sections = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = {'filename'},
-      lualine_x = {},
-      lualine_y = {},
-      lualine_z = {'branch'},
-    }
-  }
-END
+" lua << END
+"   require('lualine').setup {
+"     options = {
+"       icons_enabled = false,
+"       theme = '16color',
+"       component_separators = { left = '', right = '' },
+"       section_separators = { left = '', right = '' },
+"     },
+"     sections = {
+"       lualine_a = {''},
+"       lualine_b = {'filename'},
+"       lualine_c = {'diff', 'diagnostics'},
+"       lualine_x = {'location'},
+"       lualine_y = {'branch'},
+"       lualine_z = {'mode'},
+"     },
+"     inactive_sections = {
+"       lualine_a = {},
+"       lualine_b = {},
+"       lualine_c = {'filename'},
+"       lualine_x = {},
+"       lualine_y = {},
+"       lualine_z = {'branch'},
+"     }
+"   }
+" END
 
 "= Markdown =======================================================================================
 
@@ -215,6 +219,7 @@ END
   \ 'haml', 'html',
   \ 'javascript', 'js=javascript', 'json=javascript',
   \ 'ruby',
+  \ 'elixir'
   \]
 
   " Use 2 spaces for list item indents
@@ -253,7 +258,8 @@ lua << EOF
             -- e.g. git_{create, delete, ...}_branch for the git_branches picker
             ["<C-h>"] = "which_key"
           }
-        }
+        },
+        theme = "dropdown",
       },
       pickers = {
         -- Default configuration for builtin pickers goes here:
@@ -312,3 +318,7 @@ EOF
   map <Leader>vv :VimuxRunLastCommand<CR>
   map <Leader>vt :VimuxTogglePane<CR>
 
+"= Project-specific things (don't commit) =========================================================
+
+  " Generate the UserAPI GraphQL schema from juno
+  nmap <Leader>vg :VimuxRunCommand "clear; mix absinthe.federation.schema.sdl --schema=UserAPI.Schema && bat schema.graphql"<CR>
