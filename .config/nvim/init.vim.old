@@ -8,51 +8,52 @@
   set encoding=utf8   " use UTF-8 encoding for the win
   set hidden          " Don't abandon buffers that are not showing
 
-"= Plug.vim =======================================================================================
-
-  " A minimalist Vim plugin manager.
-  " See https://github.com/junegunn/vim-plug for more information
+"= Plugins =======================================================================================
 
   call plug#begin()
 
-    Plug 'benmills/vimux',                        " Easily interact with tmux from vim.
-          \ { 'on': 'VimuxRunCommand' }
-    Plug 'chrisbra/NrrwRgn',                      " Open a new buffer with the current visual block
-          \ { 'on': 'NarrowRegion' }
-    Plug 'christoomey/vim-tmux-navigator'         " Navigate seamlessly between vim and tmux splits
-    Plug 'hrsh7th/nvim-cmp'
-    Plug 'jeffkreeftmeijer/vim-dim'               " ANSI 16color default vim theme
-    Plug 'mhanberg/elixir.nvim'
-    Plug 'mileszs/ack.vim',                       " Frontend for ack-compatible search tools
-          \ { 'on': 'Ack' }
-    " Plug 'neoclide/coc.nvim',                     " Nodejs extension host for vim
-    "       \ { 'branch': 'release' }
+    "== UI and themes
+      Plug 'jeffkreeftmeijer/vim-dim'
 
-    Plug 'nvim-lua/plenary.nvim'
-    " Plug 'nvim-lualine/lualine.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    Plug 'nvim-telescope/telescope-file-browser.nvim'
-    Plug 'nvim-telescope/telescope-frecency.nvim'
-    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+    "== Utilities
+      Plug 'benmills/vimux'
+      Plug 'chrisbra/NrrwRgn'
+      Plug 'christoomey/vim-tmux-navigator'
+      Plug 'tpope/vim-commentary'
+      Plug 'vim-test/vim-test'
+      Plug 'mileszs/ack.vim'
+      Plug 'tpope/vim-fugitive'
 
-    Plug 'plasticboy/vim-markdown'                " Markdown syntax & utilities
-    Plug 'sheerun/vim-polyglot'                   " Lazy-loading multi-language pack
-    Plug 'tami5/sqlite.lua'
-    Plug 'tpope/vim-commentary',                  " Easy code commenting
-          \ { 'on': 'Commentary' }
-    Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-rails'                        " Ruby on Rails power tools
-    Plug 'vim-test/vim-test'                      " Run your tests at the speed of thought
+      " Telescope
+      " Plug 'nvim-telescope/telescope.nvim' | Plug 'nvim-lua/plenary.nvim'
+      " Plug 'nvim-telescope/telescope-file-browser.nvim'
+      " Plug 'nvim-telescope/telescope-frecency.nvim' | Plug 'tami5/sqlite.lua'
+      " Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
+
+    "== LSP/Autocomplete/Syntax
+      " Plug 'neovim/nvim-lspconfig'
+
+      " Plug 'hrsh7th/nvim-cmp'
+      " Plug 'hrsh7th/cmp-nvim-lsp'
+      " Plug 'hrsh7th/cmp-buffer'
+      " Plug 'hrsh7th/cmp-path'
+      " Plug 'hrsh7th/cmp-cmdline'
+      " Plug 'hrsh7th/vim-vsnip'
+
+      " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+      " Plug 'mhanberg/elixir.nvim'
+
+      " Plug 'tpope/vim-rails'
+      " Plug 'sheerun/vim-polyglot'
+      " Plug 'plasticboy/vim-markdown'
 
   call plug#end()
-
 
 "= Appearance ===================================================================================
 
   set background=dark
   colorscheme dim
-  " highlight LineNr ctermfg=black
-  " highlight CocFloating ctermbg=black ctermfg=white
   highlight Comment cterm=italic gui=italic
 
   syntax on                           " turn on syntax highilghting
@@ -147,69 +148,6 @@
     let g:ackprg = 'ag --vimgrep'
   endif
 
-"= Asynchronous Lint Engine (ALE) =================================================================
-
-  let g:ale_fix_on_save = 1
-  let g:ale_ruby_rubocop_executable = "bundle"
-  let g:ale_ruby_rubocop_options = "--cache true"
-  let g:ale_fixers = {
-        \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-        \ 'ruby': ['rubocop']
-        \ }
-  let g:ale_linters = { 'ruby': ['rubocop'] }
-
-""= CoC.nvim =======================================================================================
-
-"  nnoremap gd :call CocAction('jumpDefinition')<CR>
-"  nnoremap <C-]> :call CocAction('jumpDefinition')<CR>
-"  nnoremap <C-t> <C-o>
-
-"  " To make <cr> select the first completion item and confirm the completion when no item has been selected:
-"  inoremap <silent><expr> <Leader><cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-"  inoremap <Leader><Leader> ,
-
-  " " Use arrows for trigger completion with characters ahead and navigate.
-  " " Insert <tab> when previous text is space, refresh completion if not.
-  " function! s:check_back_space() abort
-  "   let col = col('.') - 1
-  "   return !col || getline('.')[col - 1]  =~ '\s'
-  " endfunction
-
-  " inoremap <silent><expr> <Down>
-  " \ coc#pum#visible() ? coc#pum#next(1):
-  " \ <SID>check_back_space() ? "\<Tab>" :
-  " \ coc#refresh()
-  " inoremap <expr><Up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-"= Lualine ========================================================================================
-
-" lua << END
-"   require('lualine').setup {
-"     options = {
-"       icons_enabled = false,
-"       theme = '16color',
-"       component_separators = { left = '', right = '' },
-"       section_separators = { left = '', right = '' },
-"     },
-"     sections = {
-"       lualine_a = {''},
-"       lualine_b = {'filename'},
-"       lualine_c = {'diff', 'diagnostics'},
-"       lualine_x = {'location'},
-"       lualine_y = {'branch'},
-"       lualine_z = {'mode'},
-"     },
-"     inactive_sections = {
-"       lualine_a = {},
-"       lualine_b = {},
-"       lualine_c = {'filename'},
-"       lualine_x = {},
-"       lualine_y = {},
-"       lualine_z = {'branch'},
-"     }
-"   }
-" END
-
 "= Markdown =======================================================================================
 
   let g:vim_markdown_folding_disabled = 1
@@ -240,67 +178,6 @@
     au BufRead,BufNewFile .env.local,.env.development,.env.test setf sh   " Use Shell for .env files
   augroup END
 
-  " Pry
-  nmap <Leader><Leader>pry Irequire "pry"; binding.pry;<CR><Esc>
-
-"= Telescope ======================================================================================
-
-lua << EOF
-
-    require('telescope').setup{
-      defaults = {
-        -- Default configuration for telescope goes here:
-        -- config_key = value,
-        mappings = {
-          i = {
-            -- map actions.which_key to <C-h> (default: <C-/>)
-            -- actions.which_key shows the mappings for your picker,
-            -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-            ["<C-h>"] = "which_key"
-          }
-        },
-        theme = "dropdown",
-      },
-      pickers = {
-        -- Default configuration for builtin pickers goes here:
-        -- picker_name = {
-        --   picker_config_key = value,
-        --   ...
-        -- }
-        -- Now the picker_config_key will be applied every time you call this
-        -- builtin picker
-      },
-      extensions = {
-        -- Your extension configuration goes here:
-        -- extension_name = {
-        --   extension_config_key = value,
-        -- }
-        -- please take a look at the readme of the extension you want to configure
-        file_browser = {
-          dir_icon = "▶"
-        },
-        fzf = {
-          fuzzy = true,                    -- false will only do exact matching
-          override_generic_sorter = true,  -- override the generic sorter
-          override_file_sorter = true,     -- override the file sorter
-          case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                           -- the default case_mode is "smart_case"
-        }
-      }
-    }
-
-    require("telescope").load_extension("file_browser")
-    require("telescope").load_extension("frecency")
-    require("telescope").load_extension("fzf")
-
-EOF
-
-  nnoremap <Leader>p <cmd>Telescope find_files<CR>
-  nnoremap <Leader>m <cmd>Telescope frecency<CR>
-  nnoremap <Leader>b <cmd>Telescope buffers<CR>
-  nnoremap <Leader>gr <cmd>Telescope live_grep<CR>
-  nnoremap <Leader>tt <cmd>Telescope file_browser<CR>
-
 "= Testing ========================================================================================
 
   let test#strategy="vimux"
@@ -318,7 +195,111 @@ EOF
   map <Leader>vv :VimuxRunLastCommand<CR>
   map <Leader>vt :VimuxTogglePane<CR>
 
-"= Project-specific things (don't commit) =========================================================
+"= Lua Config =====================================================================================
 
-  " Generate the UserAPI GraphQL schema from juno
-  nmap <Leader>vg :VimuxRunCommand "clear; mix absinthe.federation.schema.sdl --schema=UserAPI.Schema && bat schema.graphql"<CR>
+" lua << EOF
+" require('elixir').setup()
+" -- Mappings.
+" -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+" local opts = { noremap=true, silent=true }
+" vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+" vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+" vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+" vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+" 
+" -- Use an on_attach function to only map the following keys
+" -- after the language server attaches to the current buffer
+" local on_attach = function(client, bufnr)
+"   -- Enable completion triggered by <c-x><c-o>
+"   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+" 
+"   -- Mappings.
+"   -- See `:help vim.lsp.*` for documentation on any of the below functions
+"   local bufopts = { noremap=true, silent=true, buffer=bufnr }
+"   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+"   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+"   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+"   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+"   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+"   vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+"   vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+"   vim.keymap.set('n', '<space>wl', function()
+"     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+"   end, bufopts)
+"   vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+"   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+"   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+"   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+"   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+" end
+" 
+" local lsp_flags = {
+"   -- This is the default in Nvim 0.7+
+"   debounce_text_changes = 150,
+" }
+" 
+" require('lspconfig')['elixir'].setup{
+"     on_attach = on_attach,
+"     flags = lsp_flags,
+" }
+" 
+" require('nvim-treesitter.configs').setup {
+"   ensure_installed = { "ruby", "elixir", "javascript" },
+"   auto_install = true,
+"   highlight = {
+"     enable = true
+"   }
+" }
+" 
+" require('telescope').setup{
+"   defaults = {
+"     -- Default configuration for telescope goes here:
+"     -- config_key = value,
+"     mappings = {
+"       i = {
+"         -- map actions.which_key to <C-h> (default: <C-/>)
+"         -- actions.which_key shows the mappings for your picker,
+"         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
+"         ["<C-h>"] = "which_key"
+"       }
+"     },
+"   },
+"   pickers = {
+"     -- Default configuration for builtin pickers goes here:
+"     -- picker_name = {
+"     --   picker_config_key = value,
+"     --   ...
+"     -- }
+"     -- Now the picker_config_key will be applied every time you call this
+"     -- builtin picker
+"   },
+"   extensions = {
+"     -- Your extension configuration goes here:
+"     -- extension_name = {
+"     --   extension_config_key = value,
+"     -- }
+"     -- please take a look at the readme of the extension you want to configure
+"     file_browser = {
+"       dir_icon = "▶"
+"     },
+"     fzf = {
+"       fuzzy = true,                    -- false will only do exact matching
+"       override_generic_sorter = true,  -- override the generic sorter
+"       override_file_sorter = true,     -- override the file sorter
+"       case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+"                                        -- the default case_mode is "smart_case"
+"     }
+"   }
+" }
+" 
+" require("telescope").load_extension("file_browser")
+" require("telescope").load_extension("frecency")
+" require("telescope").load_extension("fzf")
+" 
+" vim.keymap.set('n', '<Leader>p', '<cmd>Telescope find_files<CR>')
+" vim.keymap.set('n', '<Leader>m', '<cmd>Telescope frecency<CR>')
+" vim.keymap.set('n', '<Leader>b', '<cmd>Telescope buffers<CR>')
+" vim.keymap.set('n', '<Leader>gr', '<cmd>Telescope live_grep<CR>')
+" vim.keymap.set('n', '<Leader>tt', '<cmd>Telescope file_browser<CR>')
+" 
+" EOF

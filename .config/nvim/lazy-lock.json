@@ -1,0 +1,11 @@
+{
+  "ack.vim": { "branch": "master", "commit": "36e40f9ec91bdbf6f1adf408522a73a6925c3042" },
+  "lazy.nvim": { "branch": "main", "commit": "a973c2edc2167012d4721a784a0da46906cf005c" },
+  "plenary.nvim": { "branch": "master", "commit": "4b7e52044bbb84242158d977a50c4cbcd85070c7" },
+  "telescope-file-browser.nvim": { "branch": "master", "commit": "dcba9a2a385b95b831159ea35d633b488fd73290" },
+  "telescope-fzf-native.nvim": { "branch": "main", "commit": "fab3e2212e206f4f8b3bbaa656e129443c9b802e" },
+  "telescope.nvim": { "branch": "master", "commit": "e960efa60e97df58e089b00270f09d60f27202c8" },
+  "vim-commentary": { "branch": "master", "commit": "e87cd90dc09c2a203e13af9704bd0ef79303d755" },
+  "vim-dim": { "branch": "main", "commit": "8320a40f12cf89295afc4f13eb10159f29c43777" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "41ea9d23b814014c8d8daf8b44fa0cd827a0e5f4" }
+}
