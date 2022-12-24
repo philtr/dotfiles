@@ -24,3 +24,6 @@ vim.o.undodir = vim.fn.expand("$HOME/.local/share/nvim/undo/")
 vim.o.backup = false
 vim.o.wb = false
 vim.o.swapfile = false
+
+-- use system clipboard
+vim.o.clipboard = 'unnamed'

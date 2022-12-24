@@ -1,8 +1,38 @@
 return {
   "christoomey/vim-tmux-navigator",
   "jeffkreeftmeijer/vim-dim",
-  "mileszs/ack.vim",
   "tpope/vim-commentary",
+  "neovim/nvim-lspconfig",
+
+  {
+    "mileszs/ack.vim",
+    init = function()
+      vim.cmd [[
+        if executable("rg")
+          let g:ackprg = 'rg --vimgrep --no-heading --no-messages'
+        elseif executable("ag")
+          let g:ackprg = 'ag --vimgrep'
+        endif
+      ]]
+    end,
+  },
+
+  {
+    "mhanberg/elixir.nvim",
+    ft = {"elixir", "eelixir"},
+    init = function()
+      local elixir = require("elixir")
+
+      elixir.setup({
+        settings = elixir.settings({
+          dialyzerEnabled = true,
+          fetchDeps = true,
+          enableTestLenses = true,
+          suggestSpecs = true,
+        }),
+      })
+    end,
+  },
 
   {
     "nvim-telescope/telescope.nvim",
@@ -66,6 +96,54 @@ return {
       vim.keymap.set('n', '<Leader>b', '<cmd>Telescope buffers<CR>')
       vim.keymap.set('n', '<Leader>gr', '<cmd>Telescope live_grep<CR>')
       vim.keymap.set('n', '<Leader>tt', '<cmd>Telescope file_browser<CR>')
+    end,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-emoji",
+      "hrsh7th/cmp-cmdline",
+      "dmitmel/cmp-cmdline-history",
+      "hrsh7th/cmp-path",
+      "hrsh7th/vim-vsnip",
+      "hrsh7th/cmp-vsnip",
+    },
+    init = function()
+      local cmp = require("cmp")
+
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+          end
+        },
+        mapping = {
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        },
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "vsnip" },
+          { name = "buffer" },
+        })
+      })
+    end,
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    init = function()
+      require('nvim-treesitter.configs').setup({
+        ensure_installed = { "ruby", "elixir", "javascript" },
+        auto_install = true,
+        highlight = {
+          enable = true
+        }
+      })
     end,
   },
 }
