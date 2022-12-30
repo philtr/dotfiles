@@ -6,6 +6,10 @@
 	gpgsign = true
 [pull]
 	ff = only
+	rebase = true
+	autostash = true
+[rebase]
+	autostash = true
 [init]
 	defaultBranch = main
 [core]
@@ -15,3 +19,5 @@
 	diffFilter = diff-so-fancy --patch
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[includeIf "gitdir:~/Code/Divvy/"]
+	path = ~/.gitconfig-dv

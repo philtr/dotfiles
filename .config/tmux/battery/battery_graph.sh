@@ -7,16 +7,26 @@ source "$CURRENT_DIR/helpers.sh"
 print_graph() {
   if [ -z "$1" ]; then
     echo ""
+  elif [ "$1" -lt "10" ]; then
+    echo ""
   elif [ "$1" -lt "20" ]; then
-    echo "▁"
+    echo ""
+  elif [ "$1" -lt "30" ]; then
+    echo ""
   elif [ "$1" -lt "40" ]; then
-    echo "▂"
+    echo ""
+  elif [ "$1" -lt "50" ]; then
+    echo ""
   elif [ "$1" -lt "60" ]; then
-    echo "▃"
+    echo ""
+  elif [ "$1" -lt "70" ]; then
+    echo ""
   elif [ "$1" -lt "80" ]; then
-    echo "▅"
+    echo ""
+  elif [ "$1" -lt "90" ]; then
+    echo ""
   else
-    echo "▇"
+    echo ""
   fi
 }
 

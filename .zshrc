@@ -1,4 +1,5 @@
 alias dots='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
+alias dotsh='env GIT_DIR=$HOME/.dotfiles.git GIT_WORK_TREE=$HOME RPROMPT="%K{red}%F{white} dotfiles %F{reset}%K{reset}" `which zsh`'
 alias dotstig='GIT_DIR="$HOME/.dotfiles.git" GIT_WORK_TREE="$HOME" tig'
 
 alias vim=nvim
@@ -8,8 +9,12 @@ bindkey -v
 bindkey "^R" history-incremental-search-backward
 
 # Use a super basic prompt configuration
-export PROMPT="%F{white}%1~ %F{green}%%%f "
-export RPROMPT="%F{black}%T"
+export PROMPT="%F{green} %F{white}%1~%f "
+# export RPROMPT="%F{black}%T"
+
+# asdf
+. $HOME/.asdf/asdf.sh
+fpath=(${ASDF_DIR}/completions $fpath)
 
 # Zoxide (fast cd)
 if (( $+commands[zoxide] )) ; then
@@ -63,11 +68,7 @@ zstyle ':completion:*' menu select # select completions with arrow keys
 zstyle ':completion:*' group-name '' # group results by category
 zstyle ':completion:::::' completer _expand _complete _ignored _approximate # enable approximate matches for completion
 
-export BAT_THEME="base16"
-export FZF_DEFAULT_OPTS="--color=16"
-
-export PATH="/opt/homebrew/bin:$PATH:$HOME/.bin"
-
-eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
