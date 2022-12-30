@@ -20,13 +20,17 @@ function M.config()
       dag.erb_lint,
       fmt.erb_lint,
 
+      -- Shell
+      dag.zsh,
+      fmt.beautysh,
+
       -- Lua
       fmt.stylua,
     },
   }
 
   require("mason-null-ls").setup {
-    ensure_installed = nil,
+    ensure_installed = {},
     automatic_setup = true,
     automatic_installation = true,
   }
