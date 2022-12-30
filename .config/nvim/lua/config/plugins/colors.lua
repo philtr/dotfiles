@@ -8,7 +8,7 @@ function M.config()
   local tokyonight = require "tokyonight"
 
   tokyonight.setup {
-    style = "storm",
+    style = "moon",
 
     styles = {
       floats = "transparent",
