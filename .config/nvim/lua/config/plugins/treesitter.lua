@@ -2,18 +2,22 @@ return {
   "nvim-treesitter/nvim-treesitter",
 
   build = ":TSUpdate",
+  event = "BufReadPost",
 
-  init = function()
-    require('nvim-treesitter.configs').setup({
+  config = function()
+    require("nvim-treesitter.configs").setup {
       ensure_installed = {
+        "eex",
+        "elixir",
+        "heex",
+        "javascript",
         "ruby",
-        "elixir", "heex",
-        "javascript"
       },
+
       auto_install = true,
-      highlight = {
-        enable = true
-      }
-    })
+
+      highlight = { enable = true },
+      indent = { enable = true },
+    }
   end,
 }

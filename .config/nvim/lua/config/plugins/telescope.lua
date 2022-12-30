@@ -1,40 +1,36 @@
-return {
+local M = {
   "nvim-telescope/telescope.nvim",
-  cmd = { "Telescope" },
 
   dependencies = {
-    { "nvim-lua/plenary.nvim" },
-    { "nvim-telescope/telescope-file-browser.nvim" },
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope-file-browser.nvim",
+    "natecraddock/telescope-zf-native.nvim",
   },
-
-  config = function()
-    require('telescope').setup {
-      defaults = {
-        theme = ivy
-      },
-      extensions = {
-        file_browser = {
-          dir_icon = "▶"
-        },
-        fzf = {
-          fuzzy = true,                    -- false will only do exact matching
-          override_generic_sorter = true,  -- override the generic sorter
-          override_file_sorter = true,     -- override the file sorter
-          case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-        }
-      }
-    }
-
-    require("telescope").load_extension("file_browser")
-    require("telescope").load_extension("fzf")
-  end,
-
-  init = function()
-    vim.keymap.set('n', '<Leader>p', '<cmd>Telescope find_files<CR>')
-    vim.keymap.set('n', '<Leader>m', '<cmd>Telescope frecency<CR>')
-    vim.keymap.set('n', '<Leader>b', '<cmd>Telescope buffers<CR>')
-    vim.keymap.set('n', '<Leader>gr', '<cmd>Telescope live_grep<CR>')
-    vim.keymap.set('n', '<Leader>tt', '<cmd>Telescope file_browser<CR>')
-  end,
 }
+
+local function mappings()
+  local bind = vim.keymap.set
+
+  bind("n", "<Leader>p", "<cmd>Telescope find_files theme=ivy<CR>")
+  bind("n", "<Leader>b", "<cmd>Telescope buffers theme=ivy<CR>")
+  bind("n", "<Leader>gr", "<cmd>Telescope live_grep theme=ivy<CR>")
+  bind("n", "<Leader>tt", "<cmd>Telescope file_browser theme=ivy<CR>")
+end
+
+local options = {
+  extensions = {
+    file_browser = {
+      dir_icon = "▶",
+    },
+  },
+}
+
+function M.config()
+  require("telescope").setup(options)
+  require("telescope").load_extension "file_browser"
+  require("telescope").load_extension "zf-native"
+
+  mappings()
+end
+
+return M
