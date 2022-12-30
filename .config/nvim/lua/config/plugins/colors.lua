@@ -11,7 +11,7 @@ function M.config()
     style = "moon",
 
     styles = {
-      floats = "transparent",
+      floats = "dark",
     },
 
     dim_inactive = false,

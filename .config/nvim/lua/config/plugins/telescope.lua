@@ -11,24 +11,37 @@ local M = {
 local function mappings()
   local bind = vim.keymap.set
 
-  bind("n", "<Leader>p", "<cmd>Telescope find_files theme=ivy<CR>")
-  bind("n", "<Leader>b", "<cmd>Telescope buffers theme=ivy<CR>")
-  bind("n", "<Leader>gr", "<cmd>Telescope live_grep theme=ivy<CR>")
-  bind("n", "<Leader>tt", "<cmd>Telescope file_browser theme=ivy<CR>")
+  bind("n", "<Leader>p", "<cmd>Telescope find_files<CR>")
+  bind("n", "<Leader>b", "<cmd>Telescope buffers<CR>")
+  bind("n", "<Leader>gr", "<cmd>Telescope live_grep<CR>")
+  bind("n", "<Leader>tt", "<cmd>Telescope file_browser<CR>")
 end
 
-local options = {
-  extensions = {
-    file_browser = {
-      dir_icon = "▶",
-    },
-  },
-}
-
 function M.config()
-  require("telescope").setup(options)
-  require("telescope").load_extension "file_browser"
-  require("telescope").load_extension "zf-native"
+  local telescope = require "telescope"
+  local themes = require "telescope.themes"
+
+  telescope.setup {
+    defaults = themes.get_ivy {
+      layout_config = {
+        height = 15,
+      },
+    },
+
+    pickers = {
+      live_grep = { layout_config = { height = 30 } },
+    },
+
+    extensions = {
+      file_browser = {
+        dir_icon = "",
+        layout_config = { height = 100 },
+      },
+    },
+  }
+
+  telescope.load_extension "zf-native"
+  telescope.load_extension "file_browser"
 
   mappings()
 end
