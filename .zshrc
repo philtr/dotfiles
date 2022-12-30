@@ -12,6 +12,10 @@ bindkey "^R" history-incremental-search-backward
 export PROMPT="%F{white}%1~ %F{green}%%%f "
 # export RPROMPT="%F{black}%T"
 
+# asdf
+. $HOME/.asdf/asdf.sh
+fpath=(${ASDF_DIR}/completions $fpath)
+
 # Zoxide (fast cd)
 if (( $+commands[zoxide] )) ; then
   eval "$(zoxide init zsh)"
@@ -64,9 +68,6 @@ zstyle ':completion:*' menu select # select completions with arrow keys
 zstyle ':completion:*' group-name '' # group results by category
 zstyle ':completion:::::' completer _expand _complete _ignored _approximate # enable approximate matches for completion
 
-# asdf
-. $HOME/.asdf/asdf.sh
-fpath=(${ASDF_DIR}/completions $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
