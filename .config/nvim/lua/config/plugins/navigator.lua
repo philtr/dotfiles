@@ -2,7 +2,7 @@ local M = {
   "christoomey/vim-tmux-navigator",
 }
 
-function M.config()
+function M.init()
   local bind = vim.keymap.set
 
   bind({ "t", "n" }, "<C-h>", "<C-w><C-h>", { silent = true })
