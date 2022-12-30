@@ -15,6 +15,8 @@ local M = {
     "hrsh7th/nvim-cmp",
     "saadparwaiz1/cmp_luasnip",
     "hrsh7th/cmp-emoji",
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/cmp-nvim-lsp-document-symbol",
 
     -- Snippets
     "L3MON4D3/LuaSnip",
@@ -38,6 +40,7 @@ function M.config()
   require("config.plugins.lsp.mason").config()
   require("config.plugins.lsp.zero").config(servers)
   require("config.plugins.lsp.null-ls").config()
+  require("config.plugins.lsp.formatting").config()
 end
 
 return M

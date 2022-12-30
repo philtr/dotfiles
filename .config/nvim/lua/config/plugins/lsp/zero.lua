@@ -28,6 +28,8 @@ function M.config(servers)
   require("config.plugins.lsp.completion").config(lsp)
 
   lsp.setup()
+
+  require("config.plugins.lsp.completion").cmdline()
 end
 
 return M

@@ -34,4 +34,26 @@ function M.config(lsp)
   }
 end
 
+function M.cmdline()
+  -- Completions for '/' search
+  cmp.setup.cmdline({ "/", "?" }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = "nvim_lsp_document_symbol" },
+    }, {
+      { name = "buffer" },
+    }),
+  })
+
+  -- Completions for command mode.
+  cmp.setup.cmdline(":", {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = "path" },
+    }, {
+      { name = "cmdline" },
+    }),
+  })
+end
+
 return M
