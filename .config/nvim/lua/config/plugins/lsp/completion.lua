@@ -12,6 +12,17 @@ local sources = {
   { name = "emoji" },
 }
 
+local function with_defaults(options)
+  local defaults = {
+    preselect = cmp.PreselectMode.None,
+    completion = {
+      completeopt = "menu,menuone,noinsert,noselect",
+    },
+  }
+
+  return vim.tbl_extend("force", defaults, options)
+end
+
 local function snipjump(distance)
   return cmp.mapping(function(fallback)
     if luasnip.jumpable(distance) then
@@ -28,32 +39,38 @@ local mappings = {
 }
 
 function M.config(lsp)
-  lsp.setup_nvim_cmp {
+  lsp.setup_nvim_cmp(with_defaults {
     sources = sources,
     mapping = lsp.defaults.cmp_mappings(mappings),
-  }
+  })
 end
 
 function M.cmdline()
   -- Completions for '/' search
-  cmp.setup.cmdline({ "/", "?" }, {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-      { name = "nvim_lsp_document_symbol" },
-    }, {
-      { name = "buffer" },
-    }),
-  })
+  cmp.setup.cmdline(
+    { "/", "?" },
+    with_defaults {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = "nvim_lsp_document_symbol" },
+      }, {
+        { name = "buffer" },
+      }),
+    }
+  )
 
   -- Completions for command mode.
-  cmp.setup.cmdline(":", {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-      { name = "path" },
-    }, {
-      { name = "cmdline" },
-    }),
-  })
+  cmp.setup.cmdline(
+    ":",
+    with_defaults {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = "path" },
+      }, {
+        { name = "cmdline" },
+      }),
+    }
+  )
 end
 
 return M
