@@ -16,7 +16,7 @@ local function with_defaults(options)
   local defaults = {
     preselect = cmp.PreselectMode.None,
     completion = {
-      completeopt = "menu,menuone,noinsert,noselect",
+      completeopt = "menu,menuone,noselect",
     },
   }
 
