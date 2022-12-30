@@ -9,7 +9,7 @@ bindkey -v
 bindkey "^R" history-incremental-search-backward
 
 # Use a super basic prompt configuration
-export PROMPT="%F{white}%1~ %F{green}%%%f "
+export PROMPT="%F{green} %F{white}%1~%f "
 # export RPROMPT="%F{black}%T"
 
 # asdf
