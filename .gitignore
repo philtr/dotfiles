@@ -1,3 +1,4 @@
 .config/iterm2/AppSupport
 .config/karabiner/automatic_backups
 .config/raycast/extensions
+.local/dotfiles/.dotfiles.git

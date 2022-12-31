@@ -6,33 +6,27 @@
 These dotfiles use the bare repo method described in [this Atlassian blog
 post][blog post]. This has the advantage of not requiring symlinks for all the
 files, everything is right where they belong. Git commands are accessed through
-an function (`dots` in my case) that specifies a different git dir.
+an function (`dot` in my case) that specifies a different git dir.
 
 [blog post]: https://www.atlassian.com/git/tutorials/dotfiles
 
 ## Installation:
 
-First, make a bare clone of this repo:
+**:warning: Don't run scripts downloaded from the internet sight unseen!**
+Take a look at [the install script] and understand what it is going to do
+before you run it.
 
-```sh
-$ git clone --bare git@github.com:philtr/dotfiles.git $HOME/.dotfiles.git
+To run the installer, paste the following command into a zsh terminal:
+
+```zsh
+eval "$(curl -L https://philtr.dev/dotfiles.zsh)"
 ```
 
-Then, make a temporary alias to be able to checkout these dotfiles:
+If `dot::install::checkout` fails due to existing files, backup and remove the
+conflicting files and run `dot::install::checkout` again (or use
+`dot::install::checkout -f`)
 
-```sh
-$ alias dots='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
-$ dots checkout
-```
-
-If `dots checkout` fails due to existing files, backup and remove the
-conflicting files and run the `dots checkout` again.
-
-Finally, set the local git config to hide untracked files:
-
-```sh
-$ dots config --local status.showUntrackedFiles no
-```
+[the install script]: .local/dotfiles/lib/dot.zsh#L70-L107
 
 ## Post-installation:
 
@@ -44,5 +38,5 @@ $ dots config --local status.showUntrackedFiles no
 
 ## Using
 
-Keeping things committed is easy. Simply use the `dots` command from the home
+Keeping things committed is easy. Simply use the `dot` command from the home
 directory to add, commit, and pull changes.

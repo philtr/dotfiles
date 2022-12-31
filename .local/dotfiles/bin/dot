@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+source $DOTFILES_LIB/dot.zsh
+
+dot::cmd "$@"

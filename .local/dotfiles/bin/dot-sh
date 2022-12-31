@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+bg="red"
+fg="black"
+flag="%F{$bg}%K{$bg}%F{$fg}%B DOTFILES %b%K{reset}%F{$bg}%F{reset}"
+dot env PROMPT_ICON_COLOR="red" PROMPT_ICON="" RPROMPT="$flag" zsh $@
