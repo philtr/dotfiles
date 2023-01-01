@@ -22,14 +22,21 @@ if (( $+commands[zoxide] )) ; then
 fi
 
 # Git
-alias gc="git commit"
-alias gcb="git rev-parse --abbrev-ref HEAD"
-alias gco="git checkout"
-alias gd="git difftool"
-alias gglg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
-alias ggpush="git push origin \`gcb\`"
-alias ggpushf="ggpush --force-with-lease"
-alias gst="git status -sb"
+function deprecated() {
+  print -P "\n%F{red}DEPRECATED: use \`$2\` instead"
+  read -s -k '?Press any key to continue...'
+  print -P "%F{reset}\n\n"
+  eval ${1}
+  return 1
+}
+alias gc="deprecated 'git commit' 'git c'"
+alias gcb="deprecated 'git rev-parse --abbrev-ref HEAD' 'git cb'"
+alias gco="deprecated 'git checkout' 'g co'"
+alias gd="deprecated 'git difftool' 'g dt'"
+alias gglg=$'deprecated "git log --graph --pretty=format:\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\' --abbrev-commit --" "git lg"'
+alias ggpush="deprecated 'git push origin \`gcb\`' 'git cb'"
+alias ggpushf="deprecated 'ggpush --force-with-lease' 'git pf'"
+alias gst="deprecated 'git status -sb' 'git st'"
 
 # Completions
 autoload -Uz compinit
