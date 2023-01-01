@@ -34,8 +34,8 @@ alias gcb="deprecated 'git rev-parse --abbrev-ref HEAD' 'git cb'"
 alias gco="deprecated 'git checkout' 'g co'"
 alias gd="deprecated 'git difftool' 'g dt'"
 alias gglg=$'deprecated "git log --graph --pretty=format:\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\' --abbrev-commit --" "git lg"'
-alias ggpush="deprecated 'git push origin \`gcb\`' 'git cb'"
-alias ggpushf="deprecated 'ggpush --force-with-lease' 'git pf'"
+alias ggpush="deprecated 'git push origin \`git rev-parse --abbrev-ref HEAD\`' 'git pcb'"
+alias ggpushf="deprecated '\`git push origin \`git rev-parse --abbrev-ref HEAD\`\` --force-with-lease' 'git pf'"
 alias gst="deprecated 'git status -sb' 'git st'"
 
 # Completions
