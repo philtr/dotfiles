@@ -7,6 +7,9 @@ function M.setup(lsp)
         diagnostics = {
           globals = { "vim" },
         },
+        format = {
+          enable = false,
+        }
       },
     },
   })
