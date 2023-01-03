@@ -26,7 +26,7 @@ If `dot::install::checkout` fails due to existing files, backup and remove the
 conflicting files and run `dot::install::checkout` again (or use
 `dot::install::checkout -f`)
 
-[the install script]: .local/dotfiles/lib/dot.zsh#L70-L107
+[the install script]: .local/dotfiles/lib/dot.zsh
 
 ## Post-installation:
 
