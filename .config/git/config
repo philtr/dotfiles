@@ -21,6 +21,7 @@
 	cb="rev-parse --abbrev-ref HEAD"
 	co="checkout"
 	dt="difftool"
+	fixup="commit --amend --no-edit"
 	lg="log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 	pcb="!git push origin `git cb`"
 	pf="push --force-with-lease"
