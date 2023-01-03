@@ -1,3 +1,6 @@
+# These are ignores for the dotfiles repo
+#
+# You can find the global ignore file at .config/git/ignore
 .config/iterm2/AppSupport
 .config/karabiner/automatic_backups
 .config/raycast/extensions

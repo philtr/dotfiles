@@ -13,19 +13,18 @@
 [init]
 	defaultBranch = main
 [core]
-	excludesfile = ~/.gitignore.global
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [interactive]
-  diffFilter = diff-so-fancy --patch
+	diffFilter = diff-so-fancy --patch
 [alias]
-  c="commit"
-  cb="rev-parse --abbrev-ref HEAD"
-  co="checkout"
-  dt="difftool"
-  lg="log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
-  pcb="!git push origin `git cb`"
-  pf="push --force-with-lease"
-  st="status -sb"
+	c="commit"
+	cb="rev-parse --abbrev-ref HEAD"
+	co="checkout"
+	dt="difftool"
+	lg="log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+	pcb="!git push origin `git cb`"
+	pf="push --force-with-lease"
+	st="status -sb"
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [includeIf "gitdir:~/Code/Divvy/"]
