@@ -10,5 +10,5 @@ jobs:
         with:
           path: "dotfiles-files"
       - name: Run install script
-        run: eval "$(cat ./dotfiles-files/.local/dotfiles/lib/dot.zsh)"
-        shell: /bin/zsh -c {0}
+        run: "source ./dotfiles-files/.local/dotfiles/lib/dot.zsh && dot::install"
+        shell: zsh -c {0}
