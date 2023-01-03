@@ -1,0 +1,13 @@
+name: Installation Smoke Test
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          path: "dotfiles-files"
+      - name: Run install script
+        run: eval "$(cat ./dotfiles-files/.local/dotfiles/lib/dot.zsh)"
