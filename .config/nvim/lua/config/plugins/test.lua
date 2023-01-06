@@ -1,5 +1,9 @@
 local M = {
   "vim-test/vim-test",
+
+  dependencies = {
+    "preservim/vimux",
+  },
 }
 
 local function mappings()
@@ -10,6 +14,10 @@ local function mappings()
   bind("n", "<Leader>sn", ":TestNearest<CR>", keyopts)
   bind("n", "<Leader>sl", ":TestLast<CR>", keyopts)
   bind("n", "<Leader>sa", ":TestSuit<CR>", keyopts)
+
+  if vim.g["test#strategy"] == "vimux" then
+    bind("n", "<Leader>s-", ":VimuxCloseRunner<CR>", keyopts)
+  end
 end
 
 local function setup(options, prefix)
@@ -18,6 +26,10 @@ local function setup(options, prefix)
     if type(value) == "table" then
       setup(value, prefix .. setting)
     else
+      if type(value) == "function" then
+        value = value()
+      end
+
       vim.g[prefix .. setting] = value
     end
   end
@@ -25,17 +37,29 @@ end
 
 function M.config()
   setup {
+    strategy = function()
+      -- use vimux if tmux is running, otherwise open a neovim terminal
+      if os.getenv "TMUX" == nil then
+        return "neovim"
+      else
+        return "vimux"
+      end
+    end,
+
     -- Runs test commands with :terminal in a split window.
-    strategy = "neovim",
     neovim = {
       -- Start :terminal in normal mode
       start_normal = 1,
       -- Open the :terminal 20 lines tall across the bottom
       term_position = "botright 20",
     },
-    -- Disallow strategies to clear the screen
-    preserve_screen = 1,
+
+    -- clear the screen with each test run
+    preserve_screen = 0,
   }
+
+  -- prefer to make a new split if unsure
+  vim.g.VimuxUseNearest = 0
 
   mappings()
 end
