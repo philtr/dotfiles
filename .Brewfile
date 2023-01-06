@@ -8,5 +8,6 @@ brew "gnupg"
 brew "libyaml"
 brew "neovim", args: ["head"]
 brew "ripgrep"
+brew "tmux"
 brew "yt-dlp"
 brew "zoxide"
