@@ -5,6 +5,7 @@ brew "direnv"
 brew "fzf"
 brew "git"
 brew "gnupg"
+brew "lazygit"
 brew "libyaml"
 brew "neovim", args: ["head"]
 brew "ripgrep"
