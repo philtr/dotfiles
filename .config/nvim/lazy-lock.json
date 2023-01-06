@@ -13,6 +13,7 @@
   "friendly-snippets": { "branch": "main", "commit": "484fb38b8f493ceeebf4e6fc499ebe41e10aae25" },
   "lazy.nvim": { "branch": "main", "commit": "2ef44e2dee112ba7b83bdfca98f6c07967d65484" },
   "lsp-zero.nvim": { "branch": "main", "commit": "072e486271c7068b6732924d47ea0ac9ec55423b" },
+  "lush.nvim": { "branch": "main", "commit": "b1e8eb1da3fee95ef31515a73c9eff9bf251088d" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "aa25b4153d2f2636c3b3a8c8360349d2b29e7ae3" },
   "mason-null-ls.nvim": { "branch": "main", "commit": "c4b4a6fe3cb8d8590b831c22b3475166dc9a894e" },
   "mason.nvim": { "branch": "main", "commit": "38f0d1e467d1d3c22724c467efab8a4671a3b7bb" },
