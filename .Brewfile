@@ -1,15 +1,11 @@
-brew "neovim", args: ["head"]
-
-# git
-brew "git"
-brew "diff-so-fancy"
-
-# asdf dependencies
 brew "coreutils"
 brew "curl"
-
-# others
+brew "diff-so-fancy"
 brew "direnv"
+brew "git"
 brew "gnupg"
+brew "libyaml"
+brew "neovim", args: ["head"]
+brew "ripgrep"
 brew "yt-dlp"
 brew "zoxide"
