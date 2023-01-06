@@ -77,18 +77,38 @@ function dot::deps() {
 
 # Maybe install and bundle Homebrew dependencies
 function dot::deps::homebrew() {
-  # Install homebrew if not already installed
-  [[ $(whence -p brew) ]] || dot::deps::homebrew::install
-
-  # Install Homebrew packages found in $HOME/.Brewfile
-  brew bundle --global --no-lock --no-upgrade
+dot::deps::homebrew::install
+dot::deps::homebrew::bundle
+dot::deps::homebrew::install_fzf
 }
 
 # Run the Homebrew installer script
 function dot::deps::homebrew::install() {
+  # Abort installation if Homebrew is already installed
+  [[ ! $(whence -p brew) ]] || return 1
+
   # Brew install URL
   url="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
   /bin/bash -c "$(curl -fsSL $url)"
+}
+
+# Install Homebrew packages found in $HOME/.Brewfile
+function dot::deps::homebrew::bundle() {
+  brew bundle --global --no-lock --no-upgrade
+}
+
+# Install and configure FZF
+function dot::deps::homebrew::install_fzf() {
+  local args=(
+    --xdg             # install shell init file to $XDG_CONFIG/fzf/fzf.zsh
+    --key-bindings    # enable setting key bindings
+    --completion      # enable completion
+    --no-update-rc    # don't modify ~/.zshrc
+    --no-bash         # don't create $XDG_CONFIG/fzf/fzf.bash
+    --no-fish         # don't create $XDG_CONFIG/fzf/fzf.fish
+  )
+
+  /opt/homebrew/opt/fzf/install "${args[@]}"
 }
 
 # Maybe install asdf and ensure plugins and versions are up-to-date
