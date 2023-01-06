@@ -19,17 +19,17 @@ function M.config(servers)
 
   lsp.ensure_installed(servers)
 
-  require("config.plugins.lsp.elixirls").setup(lsp)
-  require("config.plugins.lsp.ruby_ls").setup(lsp)
-  require("config.plugins.lsp.sumneko_lua").setup(lsp)
+  require("plugins.lsp.elixirls").setup(lsp)
+  require("plugins.lsp.ruby_ls").setup(lsp)
+  require("plugins.lsp.sumneko_lua").setup(lsp)
 
   lsp.nvim_workspace()
 
-  require("config.plugins.lsp.completion").config(lsp)
+  require("plugins.lsp.completion").config(lsp)
 
   lsp.setup()
 
-  require("config.plugins.lsp.completion").cmdline()
+  require("plugins.lsp.completion").cmdline()
 end
 
 return M

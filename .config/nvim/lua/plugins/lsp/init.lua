@@ -37,10 +37,10 @@ local servers = {
 function M.config()
   vim.opt.signcolumn = "yes"
 
-  require("config.plugins.lsp.mason").config()
-  require("config.plugins.lsp.zero").config(servers)
-  require("config.plugins.lsp.null-ls").config()
-  require("config.plugins.lsp.formatting").config()
+  require("plugins.lsp.mason").config()
+  require("plugins.lsp.zero").config(servers)
+  require("plugins.lsp.null-ls").config()
+  require("plugins.lsp.formatting").config()
 end
 
 return M
