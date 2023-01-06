@@ -15,7 +15,7 @@ local function mappings()
   bind("n", "<Leader>g", "<cmd>Telescope git_files<CR>")
   bind("n", "<Leader>b", "<cmd>Telescope buffers<CR>")
   bind("n", "<Leader>gr", "<cmd>Telescope live_grep<CR>")
-  bind("n", "<Leader>tt", "<cmd>Telescope file_browser<CR>")
+  bind("n", "<Leader>fb", "<cmd>Telescope file_browser<CR>")
 end
 
 function M.config()
