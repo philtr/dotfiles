@@ -6,6 +6,12 @@ function M.config()
   local cmp = require("null-ls.builtins").completion
 
   require("null-ls").setup {
+    -- uncomment the followinng lines to enable debug output
+    -- debug = true,
+    -- log_level = "trace",
+
+    default_timeout = 20000,
+
     sources = {
       -- Completions
       cmp.luasnip,
