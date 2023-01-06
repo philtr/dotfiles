@@ -9,5 +9,8 @@ brew "libyaml"
 brew "neovim", args: ["head"]
 brew "ripgrep"
 brew "tmux"
+brew "yq"
 brew "yt-dlp"
 brew "zoxide"
+
+cask "alacritty"

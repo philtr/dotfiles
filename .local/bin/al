@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh
+
+
+local cfg=$DOTFILES_HOME/.config/alacritty/alacritty.yml
+
+function __alacritty::yq() {
+  yq -i $@ $cfg
+}
+
+function __alacritty::shortcut() {
+  case $1 in
+    fs) echo ".font.size"
+      ;;
+
+    *) echo ".$1"
+      ;;
+  esac
+}
+
+function __alacritty::set() {
+  __alacritty::yq "$(__alacritty::shortcut $1) = $2"
+}
+
+__alacritty::set $@
