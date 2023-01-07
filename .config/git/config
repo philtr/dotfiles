@@ -28,7 +28,7 @@
 	st="status -sb"
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-[includeIf "gitdir:~/Code/Divvy/"]
-	path = ~/.gitconfig-dv
+[include]
+	path = ~/.config/git/local
 [push]
 	autoSetupRemote = true
