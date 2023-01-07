@@ -5,6 +5,7 @@ local M = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
     "natecraddock/telescope-zf-native.nvim",
+    "nvim-telescope/telescope-ui-select.nvim",
   },
 }
 
@@ -43,6 +44,7 @@ function M.config()
 
   telescope.load_extension "zf-native"
   telescope.load_extension "file_browser"
+  telescope.load_extension "ui-select"
 
   mappings()
 end

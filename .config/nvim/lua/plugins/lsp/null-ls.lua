@@ -1,9 +1,10 @@
 local M = {}
 
 function M.config()
+  local act = require("null-ls.builtins").code_actions
+  local cmp = require("null-ls.builtins").completion
   local dag = require("null-ls.builtins").diagnostics
   local fmt = require("null-ls.builtins").formatting
-  local cmp = require("null-ls.builtins").completion
 
   require("null-ls").setup {
     -- uncomment the followinng lines to enable debug output
@@ -15,6 +16,10 @@ function M.config()
     sources = {
       -- Completions
       cmp.luasnip,
+
+      -- General
+      dag.cspell.with { filetypes = { "markdown" } },
+      act.cspell,
 
       -- Elixir
       dag.credo,
