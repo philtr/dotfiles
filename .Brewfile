@@ -1,17 +1,14 @@
-brew "coreutils"
-brew "curl"
-brew "diff-so-fancy"
-brew "direnv"
-brew "fzf"
-brew "git"
-brew "gnupg"
-brew "lazygit"
-brew "libyaml"
-brew "neovim", args: ["head"]
-brew "ripgrep"
-brew "tmux"
-brew "yq"
-brew "yt-dlp"
-brew "zoxide"
+home = ENV["DOTFILES_HOME"] || ENV["HOME"]
+xdgc = ENV["XDG_CONFIG"] || "#{home}/.config"
 
-cask "alacritty"
+def brewfile(filename)
+  eval(IO.read(filename), binding)
+end
+
+# first load the main Brewfile
+brewfile("#{xdgc}/homebrew/Brewfile")
+
+# then load additional Brewfiles
+Dir.glob("#{xdgc}/homebrew/Brewfile.*").each do |brewfile|
+  brewfile(brewfile)
+end
