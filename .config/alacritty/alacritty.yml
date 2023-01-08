@@ -151,13 +151,14 @@ font:
   # spacing.
   # offset:
   #   x: 0
-  #   y: 0
-# Glyph offset determines the locations of the glyphs within their cells with
-# the default being at the bottom. Increasing `x` moves the glyph to the
-# # right, increasing `y` moves the glyph upward.
-# glyph_offset:
-#   x: 0
-#   y: 0
+  #   y: 5
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increasing `x` moves the glyph to the
+  # # right, increasing `y` moves the glyph upward.
+  # glyph_offset:
+  #   x: 0
+  #   y: 5
 
 # Use built-in font for box drawing characters.
 #
