@@ -5,7 +5,7 @@ function M.setup(lsp)
     settings = {
       elixirLS = {
         dialyzerEnabled = true,
-        fetchDeps = true,
+        fetchDeps = false,
         enableTestLenses = false,
         suggestSpecs = false,
       },
