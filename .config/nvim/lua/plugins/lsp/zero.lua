@@ -1,8 +1,6 @@
 local M = {}
 
-function M.config(servers)
-  servers = servers or {}
-
+function M.config(ensure_installed)
   local lsp = require "lsp-zero"
 
   -- Use the "recommended" preset:
@@ -17,13 +15,11 @@ function M.config(servers)
   --    definition or rename variable.
   lsp.preset "recommended"
 
-  lsp.ensure_installed(servers)
+  lsp.ensure_installed(ensure_installed or {})
 
   require("plugins.lsp.elixirls").setup(lsp)
   require("plugins.lsp.ruby_ls").setup(lsp)
   require("plugins.lsp.sumneko_lua").setup(lsp)
-
-  lsp.nvim_workspace()
 
   require("plugins.lsp.completion").config(lsp)
 

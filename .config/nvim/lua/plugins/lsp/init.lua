@@ -34,7 +34,7 @@ local M = {
   },
 }
 
-local servers = {
+local ensure_installed = {
   "elixirls",
   "sumneko_lua",
   "ruby_ls",
@@ -44,7 +44,7 @@ function M.config()
   vim.opt.signcolumn = "yes"
 
   require("plugins.lsp.mason").config()
-  require("plugins.lsp.zero").config(servers)
+  require("plugins.lsp.zero").config(ensure_installed)
   require("plugins.lsp.null-ls").config()
   require("plugins.lsp.formatting").config()
 end
