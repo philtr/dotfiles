@@ -1,6 +1,8 @@
 local M = {
   "mileszs/ack.vim",
 
+  cmd = "Ack",
+
   dependencies = {
     "trouble.nvim",
   },

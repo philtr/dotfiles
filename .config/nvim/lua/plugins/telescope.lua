@@ -1,6 +1,8 @@
 local M = {
   "nvim-telescope/telescope.nvim",
 
+  cmd = "Telescope",
+
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
@@ -9,7 +11,7 @@ local M = {
   },
 }
 
-local function mappings()
+function M.init()
   local bind = vim.keymap.set
 
   bind("n", "<Leader>p", "<cmd>Telescope find_files<CR>")
@@ -45,8 +47,6 @@ function M.config()
   telescope.load_extension "zf-native"
   telescope.load_extension "file_browser"
   telescope.load_extension "ui-select"
-
-  mappings()
 end
 
 return M

@@ -1,6 +1,8 @@
 local M = {
   "folke/trouble.nvim",
 
+  cmd = { "Trouble", "TroubleToggle" },
+
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
@@ -18,9 +20,12 @@ local function mappings()
   bind("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
 end
 
+function M.init()
+  mappings()
+end
+
 function M.config()
   require("trouble").setup()
-  mappings()
 end
 
 return M

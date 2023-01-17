@@ -1,5 +1,8 @@
 local M = {
   "VonHeikemen/lsp-zero.nvim",
+
+  event = "BufReadPost",
+
   dependencies = {
     -- LSP
     "neovim/nvim-lspconfig",
@@ -25,6 +28,9 @@ local M = {
     -- Inject non-LSP info into neovim
     "jose-elias-alvarez/null-ls.nvim",
     "jay-babu/mason-null-ls.nvim",
+
+    -- Neovim setup with full signature help, docs and completion for the nvim lua API.
+    { "folke/neodev.nvim", config = true },
   },
 }
 
