@@ -30,5 +30,7 @@
 	insteadOf = https://github.com/
 [include]
 	path = ~/.config/git/local
+[includeIf "gitdir:~/.local/dotfiles/.dotfiles.git"]
+	path = ~/.config/git/dotfiles
 [push]
 	autoSetupRemote = true
