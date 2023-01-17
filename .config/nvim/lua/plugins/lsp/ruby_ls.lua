@@ -2,16 +2,13 @@ local M = {}
 
 function M.setup(lsp)
   lsp.configure("ruby_ls", {
-    settings = {
-      rubyLsp = {
-        enabledFeatures = {
-          "codeActions",
-          "diagnostics",
-          "documentHighlights",
-          "documentSymbols",
-          "formatting",
-          "inlayHint",
-        },
+    init_options = {
+      enabledFeatures = {
+        "codeActions",
+        "diagnostics",
+        "documentHighlights",
+        "documentSymbols",
+        "inlayHint",
       },
     },
   })
