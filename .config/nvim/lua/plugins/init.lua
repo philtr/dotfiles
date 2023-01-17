@@ -5,7 +5,7 @@ return {
   -- Seamless navigation between tmux panes and vim splits
   {
     "christoomey/vim-tmux-navigator",
-    
+
     lazy = false,
 
     init = function()
