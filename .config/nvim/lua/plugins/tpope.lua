@@ -1,4 +1,6 @@
 local M = {
+  -- Classic vim plugins from the infamous Tim Pope
+
   { -- Comment stuff out.
     "tpope/vim-commentary",
     event = "BufReadPost",

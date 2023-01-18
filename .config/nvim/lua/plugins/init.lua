@@ -2,9 +2,9 @@ return {
   -- In addition to the plugin specs below, lazy.nvim will merge any lua file in
   -- plugins/*.lua into the main plugin spec
 
-  -- Seamless navigation between tmux panes and vim splits
   {
     "christoomey/vim-tmux-navigator",
+    -- Seamless navigation between tmux panes and vim splits
 
     lazy = false,
 
@@ -18,6 +18,18 @@ return {
     end,
   },
 
-  -- Neovim setup with full signature help, docs and completion for the nvim lua API.
-  { "folke/neodev.nvim", config = true },
+  {
+    "folke/neodev.nvim",
+    -- Neovim setup with full signature help, docs and completion for the nvim lua API.
+
+    ft = "lua",
+    config = true,
+  },
+
+  {
+    "metakirby5/codi.vim",
+    -- The interactive scratchpad for hackers.
+
+    cmd = "Codi",
+  },
 }
