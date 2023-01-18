@@ -38,23 +38,6 @@ alias ggpush="deprecated 'git push origin \`git rev-parse --abbrev-ref HEAD\`' '
 alias ggpushf="deprecated '\`git push origin \`git rev-parse --abbrev-ref HEAD\`\` --force-with-lease' 'git pf'"
 alias gst="deprecated 'git status -sb' 'git st'"
 
-# Completions
-autoload -Uz compinit
-typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
-if [ $(date +'%j') != $updated_at ]; then
-  compinit -i
-else
-  compinit -C -i
-fi
-
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
-
-zmodload -i zsh/complist
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
@@ -78,3 +61,17 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate # en
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+zmodload -i zsh/complist
+
+# Completions
+if type brew &>/dev/null; then
+  fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fi
+
+autoload -Uz compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
