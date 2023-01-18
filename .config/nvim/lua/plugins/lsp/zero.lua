@@ -21,6 +21,8 @@ function M.config(ensure_installed)
   require("plugins.lsp.ruby_ls").setup(lsp)
   require("plugins.lsp.sumneko_lua").setup(lsp)
 
+  lsp.nvim_workspace()
+
   require("plugins.lsp.completion").config(lsp)
 
   lsp.setup()

@@ -1,10 +1,12 @@
 local M = {
-  "VonHeikemen/lsp-zero.nvim",
+  name = "philtr/lsp",
+  dir = ".",
 
   event = "BufReadPost",
 
   dependencies = {
     -- LSP
+    "VonHeikemen/lsp-zero.nvim",
     "neovim/nvim-lspconfig",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -34,17 +36,11 @@ local M = {
   },
 }
 
-local ensure_installed = {
-  "elixirls",
-  "sumneko_lua",
-  "ruby_ls",
-}
-
 function M.config()
   vim.opt.signcolumn = "yes"
 
   require("plugins.lsp.mason").config()
-  require("plugins.lsp.zero").config(ensure_installed)
+  require("plugins.lsp.zero").config()
   require("plugins.lsp.null-ls").config()
   require("plugins.lsp.formatting").config()
 end
