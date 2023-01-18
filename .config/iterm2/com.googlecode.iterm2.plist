@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ActiveUpdateCadence</key>
+	<real>60</real>
 	<key>AllowClipboardAccess</key>
 	<true/>
 	<key>CheckTestRelease</key>
@@ -4575,6 +4577,10 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>AF10865A-8786-4233-B45F-8A48345BCD21</string>
+	<key>DisableAdaptiveFrameRateInInteractiveApps</key>
+	<true/>
+	<key>DismemberScrollView</key>
+	<true/>
 	<key>EnableDivisionView</key>
 	<false/>
 	<key>HapticFeedbackForEsc</key>
@@ -4584,7 +4590,9 @@
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>IRMemory</key>
-	<integer>4</integer>
+	<integer>128</integer>
+	<key>MetalRedrawPeriod</key>
+	<real>0.5</real>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -7403,6 +7411,8 @@
 	<integer>30</integer>
 	<key>TerminalVMargin</key>
 	<integer>30</integer>
+	<key>UseAdaptiveFrameRate</key>
+	<true/>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
@@ -7411,11 +7421,19 @@
 	<false/>
 	<key>WindowNumber</key>
 	<false/>
+	<key>disableMetalInLowPowerMode</key>
+	<true/>
+	<key>disableMetalWhenUnplugged</key>
+	<true/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
+	<key>metalMaximizeThroughput</key>
+	<false/>
+	<key>preferIntegratedGPU</key>
 	<false/>
 </dict>
 </plist>
