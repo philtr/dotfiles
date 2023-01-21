@@ -10,7 +10,7 @@ local M = {
     -- Git plugin for Vim? Either way, it's "so awesome, it should be illegal".
     -- That's why it's called Fugitive.
     "tpope/vim-fugitive",
-    cmd = "Git",
+    lazy = false,
   },
 
   { -- Surround.vim is all about "surroundings": parentheses, brackets, quotes,
