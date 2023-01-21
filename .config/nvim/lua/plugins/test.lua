@@ -1,6 +1,8 @@
 local M = {
   "vim-test/vim-test",
 
+  event = "BufReadPost",
+
   dependencies = {
     "preservim/vimux",
   },
