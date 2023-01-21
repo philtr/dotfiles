@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+clear
+
+figlet \
+  -w $(tput cols) \
+  -d /opt/homebrew/Cellar/toilet/0.3/share/figlet \
+  -f mono12 \
+  -c brb.
+
+echo "\n\n"
+echo "   I've been gone since `date` ( = 10 seconds)"
+echo -n " "
+
+while true; do
+  sleep 10 
+  echo -n " "
+done
