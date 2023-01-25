@@ -24,7 +24,8 @@
 	fixup="commit --amend --no-edit"
 	lg="log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 	pcb="!git push origin `git cb`"
-	pf="push --force-with-lease"
+	pushf="push --force-with-lease"
+	pf="pushf"
 	st="status -sb"
 [url "git@github.com:"]
 	insteadOf = https://github.com/
