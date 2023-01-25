@@ -1,6 +1,5 @@
 local M = {
-  name = "philtr/lsp",
-  dir = ".",
+  dir = "~",
 
   event = "BufReadPost",
 
