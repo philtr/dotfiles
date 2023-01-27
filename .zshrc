@@ -6,6 +6,11 @@ alias e="${EDITOR:-"vim"}"
 bindkey -v
 bindkey "^R" history-incremental-search-backward
 
+# edit command line in vim
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # Use a super basic prompt configuration
 export PROMPT_ICON=${PROMPT_ICON:-""}
 export PROMPT_ICON_COLOR=${PROMPT_ICON_COLOR:-"magenta"}
