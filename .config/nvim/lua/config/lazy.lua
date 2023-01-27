@@ -18,6 +18,6 @@ require("lazy").setup("plugins", {
   },
   install = {
     missing = true,
-    colorscheme = { "tokyonight-moon" },
+    colorscheme = { "tokyonight-storm" },
   },
 })

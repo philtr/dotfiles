@@ -60,7 +60,7 @@ local tokyonight = {
     local tokyonight = require "tokyonight"
 
     tokyonight.setup {
-      style = "moon",
+      style = "storm",
 
       styles = {
         floats = "dark",
