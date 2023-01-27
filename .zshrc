@@ -14,7 +14,7 @@ bindkey -M vicmd v edit-command-line
 # Use a super basic prompt configuration
 export PROMPT_ICON=${PROMPT_ICON:-""}
 export PROMPT_ICON_COLOR=${PROMPT_ICON_COLOR:-"magenta"}
-export PROMPT="%F{$PROMPT_ICON_COLOR}$PROMPT_ICON %F{gray}%1~ %F{green}%%%f "
+export PROMPT="%F{$PROMPT_ICON_COLOR}$PROMPT_ICON  %F{gray}%1~ %F{green}%%%f "
 # export RPROMPT="%F{#166775} %F{white}%T%f"
 
 # asdf
