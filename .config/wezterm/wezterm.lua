@@ -4,8 +4,9 @@ return {
 	-- tab bar
 	enable_tab_bar = false,
 
-	-- use mapped keybinding (because Dvorak - <cmd>QWERTY)
-	key_map_preference = "Mapped",
+	-- use physical keybinding (because Dvorak - <cmd>QWERTY)
+	-- NOTE: this seems backwards to me, but this is what works 🤷
+	key_map_preference = "Physical",
 
 	color_scheme = "tokyonight-moon",
 	color_schemes = {
