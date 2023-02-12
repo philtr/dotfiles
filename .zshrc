@@ -1,6 +1,6 @@
 alias dots='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
 
-. "$(brew --prefix asdf)/asdf.sh"
+. $HOME/.asdf/asdf.sh
 
 alias vim=nvim
 
@@ -27,7 +27,9 @@ alias ggpushf="ggpush --force-with-lease"
 alias gst="git status -sb"
 
 # Completions
+fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit
+
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
 if [ $(date +'%j') != $updated_at ]; then
   compinit -i
