@@ -9,12 +9,9 @@ end
 config(require("colors"))
 config(require("fonts"))
 config(require("window"))
+config(require("keys"))
 
 config({
-	-- use physical keybinding (because Dvorak - <cmd>QWERTY)
-	-- NOTE: this seems backwards to me, but this is what works 🤷
-	key_map_preference = "Physical",
-
 	-- use Core OpenGL Metal API
 	prefer_egl = false,
 })
