@@ -3,10 +3,9 @@ local base16 = {
   enabled = false,
   lazy = false,
   priority = 999,
-
   config = function()
     vim.cmd [[
-      colorscheme base16-atelier-sulphurpool
+      colorscheme base16-default-light
     ]]
   end,
 }
@@ -15,7 +14,6 @@ local calvera = {
   "hoppercomplex/calvera-dark.nvim",
   enabled = false,
   lazy = false,
-
   config = function()
     vim.g.calvera_italic_comments = true
     vim.g.calvera_italic_keywords = true
@@ -37,7 +35,6 @@ local nord = {
   enabled = false,
   lazy = false,
   priority = 999,
-
   config = function()
     vim.g.nord_borders = true
     -- vim.g.nord_disable_background = true
@@ -55,12 +52,11 @@ local tokyonight = {
   enabled = true,
   lazy = false,
   priority = 999,
-
   config = function()
     local tokyonight = require "tokyonight"
 
     tokyonight.setup {
-      style = "storm",
+      style = "moon",
 
       styles = {
         floats = "dark",

@@ -27,6 +27,19 @@ return {
   },
 
   {
+    "folke/which-key.nvim",
+    -- displays a popup with possible keybindings of the command you started typing.
+
+    lazy = false,
+
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup()
+    end,
+  },
+
+  {
     "metakirby5/codi.vim",
     -- The interactive scratchpad for hackers.
 

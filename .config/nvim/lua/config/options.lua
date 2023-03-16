@@ -8,6 +8,7 @@ set.wrap = false
 set.tabstop = 2
 set.shiftwidth = 2
 set.expandtab = true
+set.number = true
 
 -- use the system clipboard
 vim.cmd [[set clipboard+=unnamedplus]]
