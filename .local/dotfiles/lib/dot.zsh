@@ -136,12 +136,30 @@ function dot::deps::asdf::install() {
   autoload -Uz compinit && compinit
 }
 
+# Install extras
+function dot::install::extras() {
+  echo "Installing Extras..."
+  dot::install::fonts
+}
+
+# Copy fonts into FONT_INSTALL_DIR (default ~/Library/Fonts)
+function dot::install::fonts() {
+  local font_source_dir=${FONT_SOURCE_DIR:-$DOTFILES_HOME/.local/share/fonts}
+  local font_install_dir=${FONT_INSTALL_DIR:-$DOTFILES_HOME/Library/Fonts}
+  echo "Copying fonts from $font_source_dir to $font_install_dir..."
+  cp $font_source_dir/**/*.{ttf,otf} $font_install_dir
+}
+
 # install these dotfiles on a new machine
 function dot::install() {
   dot::init
   dot::install::clone
   dot::install::checkout
   dot::deps::install
+
+  if [[ SKIP_EXTRAS != "yes" ]]; then
+    dot::install::extras
+  fi
 }
 
 # the repo and branch we plan to clone
