@@ -18,9 +18,7 @@ return {
     -- Tabline lua plugin for neovim
 
     lazy = false,
-
     dependencies = { "nvim-tree/nvim-web-devicons" },
-
     config = function()
       require("luatab").setup {}
     end,
@@ -31,7 +29,6 @@ return {
     -- A blazing fast and easy to configure statusline plugin
 
     lazy = false,
-
     config = function()
       require("lualine").setup {
         options = {
@@ -40,12 +37,20 @@ return {
       }
     end,
   },
+  {
+    "b0o/incline.nvim",
+    -- 🎈 Floating statuslines for Neovim
+
+    lazy = false,
+    config = function()
+      vim.o.laststatus = 3
+      require("incline").setup()
+    end
+  },
 
   {
     "lukas-reineke/indent-blankline.nvim",
-
     event = { "BufReadPost", "BufNewFile" },
-
     opts = {
       -- char = "▏",
       char = "│",
@@ -61,9 +66,7 @@ return {
 
     enabled = false,
     lazy = false,
-
     dependencies = { "rcarriga/nvim-notify", "MunifTanjim/nui.nvim" },
-
     opts = {
       lsp = {
         override = {
@@ -119,7 +122,6 @@ return {
     -- shows your current code context in winbar/statusline
 
     lazy = false,
-
     opts = {
       separator = " ",
       highlight = true,
@@ -132,7 +134,6 @@ return {
     -- Git integration for buffers
 
     event = { "BufReadPre", "BufNewFile" },
-
     opts = {
       signs = {
         add = { text = "▎" },
