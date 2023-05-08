@@ -4,7 +4,7 @@ local M = {
 
 function M.config()
   require("trim").setup {
-    disable = {
+    ft_blocklist = {
       "markdown",
     },
 
