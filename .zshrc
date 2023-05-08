@@ -26,23 +26,6 @@ if (( $+commands[zoxide] )) ; then
   eval "$(zoxide init zsh)"
 fi
 
-# Git
-function deprecated() {
-  print -P "\n%F{red}DEPRECATED: use \`$2\` instead"
-  read -s -k '?Press any key to continue...'
-  print -P "%F{reset}\n\n"
-  eval ${1}
-  return 1
-}
-alias gc="deprecated 'git commit' 'git c'"
-alias gcb="deprecated 'git rev-parse --abbrev-ref HEAD' 'git cb'"
-alias gco="deprecated 'git checkout' 'g co'"
-alias gd="deprecated 'git difftool' 'g dt'"
-alias gglg=$'deprecated "git log --graph --pretty=format:\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\' --abbrev-commit --" "git lg"'
-alias ggpush="deprecated 'git push origin \`git rev-parse --abbrev-ref HEAD\`' 'git pcb'"
-alias ggpushf="deprecated '\`git push origin \`git rev-parse --abbrev-ref HEAD\`\` --force-with-lease' 'git pf'"
-alias gst="deprecated 'git status -sb' 'git st'"
-
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
