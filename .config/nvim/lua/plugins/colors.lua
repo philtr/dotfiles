@@ -5,7 +5,7 @@ local base16 = {
   priority = 999,
   config = function()
     vim.cmd [[
-      colorscheme base16-default-light
+      colorscheme base16-darkmoss
     ]]
   end,
 }
