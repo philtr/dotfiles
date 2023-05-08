@@ -3,9 +3,8 @@ local M = {
   branch = 'v2.x',
   dependencies = {
     -- LSP Support
-    { 'neovim/nvim-lspconfig' }, -- Required
+    { 'neovim/nvim-lspconfig' },
     {
-                               -- Optional
       'williamboman/mason.nvim',
       build = function()
         pcall(vim.cmd, 'MasonUpdate')
@@ -14,9 +13,9 @@ local M = {
     { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
     -- Autocompletion
-    { 'hrsh7th/nvim-cmp' },   -- Required
+    { 'hrsh7th/nvim-cmp' },     -- Required
     { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-    { 'L3MON4D3/LuaSnip' },   -- Required
+    { 'L3MON4D3/LuaSnip' },     -- Required
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-nvim-lsp-signature-help" },
     { "hrsh7th/cmp-nvim-lua" },
@@ -58,6 +57,8 @@ function M.config_cmp()
       { name = 'nvim_lsp' },
       { name = 'buffer',  keyword_length = 3 },
       { name = 'luasnip', keyword_length = 2 },
+      { name = 'emoji',   keyword_length = 2 },
+      { name = 'cmdline' },
     },
     mapping = {
       ['<C-f>'] = cmp_action.luasnip_jump_forward(),
