@@ -1,4 +1,4 @@
 return {
 	-- color_scheme = "tokyonight-storm",
-	color_scheme = "Everblush",
+	color_scheme = "nord",
 }

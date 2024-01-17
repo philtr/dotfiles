@@ -13,7 +13,6 @@ export LIBRARY_PATH="$(brew --prefix)/lib:$LIBRARY_PATH"
 export XDG_CONFIG_HOME=$HOME/.config
 export K9SCONFIG=$XDG_CONFIG_HOME/k9s
 
-export BAT_THEME="base16"
 export FZF_DEFAULT_OPTS="--color=16"
 
 # Enables history in IEx

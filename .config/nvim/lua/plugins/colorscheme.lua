@@ -1,8 +1,13 @@
 return {
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
-  { "mhartington/oceanic-next" },
-  { "jsit/disco.vim" },
+  {
+    "shaunsingh/nord.nvim",
+    config = function()
+      vim.g.nord_bold = true
+      vim.g.nord_italic = true
+
+      require("nord").set()
+    end,
+  },
   {
     "Everblush/nvim",
     name = "everblush",
@@ -15,18 +20,11 @@ return {
       },
     },
   },
-  {
-    "letorbi/vim-colors-modern-borland",
-    config = function()
-      vim.g.BorlandStyle = "classic"
-    end,
-  },
-
   -- Select colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "everblush",
+      colorscheme = "nord",
     },
   },
 }
