@@ -23,3 +23,5 @@ export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 export KERL_BUILD_DOCS="yes"
 
 eval "$(direnv hook zsh)"
+
+[ -f ~/.zprofile.local ] && source ~/.zprofile.local
