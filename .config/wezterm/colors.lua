@@ -1,4 +1,3 @@
 return {
-	-- color_scheme = "tokyonight-storm",
-	color_scheme = "nord",
+	color_scheme = "tokyonight_moon",
 }
