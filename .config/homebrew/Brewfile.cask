@@ -1,2 +1,2 @@
 cask "1password-cli"
-cask "wezterm"
+cask "wezterm-nightly"
