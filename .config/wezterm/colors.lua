@@ -1,3 +1,3 @@
 return {
-	color_scheme = "tokyonight_moon",
+	color_scheme = "OneDark (base16)",
 }

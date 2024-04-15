@@ -3,7 +3,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "onedark",
     },
   },
   {
@@ -25,6 +25,16 @@ return {
       override = {
         TelescopeSelection = { bg = "TelescopeBorder" },
         NotifyBackground = { bg = "Background" },
+      },
+    },
+  },
+  {
+    "navarasu/onedark.nvim",
+    opts = {
+      style = "light",
+      code_style = {
+        keywords = "italic",
+        strings = "italic",
       },
     },
   },
