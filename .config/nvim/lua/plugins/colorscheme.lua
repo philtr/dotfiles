@@ -31,7 +31,9 @@ return {
   {
     "navarasu/onedark.nvim",
     opts = {
-      style = "light",
+      style = "deep",
+      term_colors = true,
+      lualine = { transparent = true },
       code_style = {
         keywords = "italic",
         strings = "italic",
