@@ -14,8 +14,8 @@ zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
 # Use a super basic prompt configuration
-export PROMPT_ICON=${PROMPT_ICON:-"  "}
-export PROMPT_ICON_COLOR=${PROMPT_ICON_COLOR:-"cyan"}
+export PROMPT_ICON=${PROMPT_ICON:-"  "}
+export PROMPT_ICON_COLOR=${PROMPT_ICON_COLOR:-"green"}
 export PROMPT="%F{$PROMPT_ICON_COLOR}$PROMPT_ICON%F{gray}%1~ %F{blue}%%%f "
 # export RPROMPT="%F{#166775} %F{white}%T%f"
 
@@ -27,7 +27,6 @@ fpath=(${ASDF_DIR}/completions $fpath)
 if (( $+commands[zoxide] )) ; then
   eval "$(zoxide init zsh)"
 fi
-
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
