@@ -36,6 +36,6 @@ return {
 	color_scheme = "OneDark (base16)",
 	colors = {
 		background = palettes.one_dark.deep.bg0,
-		foregroound = palettes.one_dark.deep.fg,
+		foreground = palettes.one_dark.deep.fg,
 	},
 }
