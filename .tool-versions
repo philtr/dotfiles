@@ -1,6 +1,6 @@
-awscli 2.15.13
-elixir 1.16.0-otp-26
-erlang 26.2.1
+awscli 2.15.38
+elixir 1.16.2-otp-26
+erlang 26.2.4
 neovim stable
 nodejs 21.6.1
 php 8.3.2
