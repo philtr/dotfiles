@@ -1,8 +1,9 @@
-awscli 2.9.10
-elixir 1.14.3-otp-25
-erlang 25.2.1
+awscli 2.15.13
+elixir 1.16.0-otp-26
+erlang 26.2.1
 neovim stable
-nodejs 18.0.0
-python 3.10.2
-ruby 3.2.0
-rust 1.60.0
+nodejs 21.6.1
+php 8.3.2
+python 3.12.1
+ruby 3.3.0
+rust 1.75.0
