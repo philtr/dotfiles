@@ -1,9 +1,11 @@
 [user]
 	name = Phillip Ridlen
 	email = p@rdln.net
-	signingkey = CD07CFFEF3DFFE58
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID7aEsr4y4U6yw4PJ8hcpnzE3PeB5qfTDhT8D0p+IXYX
 [commit]
-	gpgsign = true
+  gpgsign = true
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [pull]
 	ff = only
 	rebase = true
