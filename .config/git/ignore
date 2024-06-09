@@ -3,3 +3,4 @@ tags
 .DS_Store
 .elixir_ls
 .tool-versions
+.solargraph.yml
