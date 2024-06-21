@@ -1,6 +1,7 @@
-tags
-.yardoc
 .DS_Store
 .elixir_ls
-.tool-versions
 .solargraph.yml
+.tool-versions
+.yardoc
+Procfile.philtr
+tags
