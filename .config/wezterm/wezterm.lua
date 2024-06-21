@@ -11,9 +11,4 @@ config(require("fonts"))
 config(require("window"))
 config(require("keys"))
 
-config({
-	-- use Core OpenGL Metal API
-	prefer_egl = false,
-})
-
 return options
