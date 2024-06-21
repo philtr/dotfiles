@@ -1,13 +1,36 @@
 local wezterm = require("wezterm")
 
 return {
-	font = wezterm.font("Monaspace Neon", { weight = "Medium" }),
+	font = wezterm.font({
+		-- Monaspace
+		-- An innovative superfamily of fonts for code
+		-- https://monaspace.githubnext.com/
+		family = "Monaspace Neon",
 
-	-- cell_width = 0.9,
+		weight = "Medium",
+
+		-- Enable fancy OpenType features for Monaspace
+		-- https://monaspace.githubnext.com/#code-ligatures
+		harfbuzz_features = {
+			"calt", -- Contextual Alternates
+			"clig", -- Contextual Ligatures
+			"liga", -- Standard Ligatures
+			"dlig", -- Discretionary Ligatures
+
+			-- Stylistic Sets
+			"ss01", -- Equality Symbols (==, !=, =~, etc.)
+			"ss02", -- Inequality Symbols (<=, >=)
+			"ss03", -- Arrows (->, =>, <!-- ~>, etc.)
+			"ss04", -- XML tags (</, />, </>, <>)
+			"ss05", -- [|, |], /\, \/, |>, <|
+			"ss06", -- ###, +++, &&&
+
+			-- Not yet implemented in Monaspace
+			-- "ss07", "ss08", "ss09",
+		},
+	}),
+
 	font_size = 14,
-	-- freetype_load_flags = "DEFAULT",
-	-- freetype_load_target = "Normal",
-	-- freetype_render_target = "Normal",
-	line_height = 1.3,
+	line_height = 1.4,
 	text_blink_rate = 500,
 }
