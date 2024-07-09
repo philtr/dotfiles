@@ -4,4 +4,4 @@ bg="red"
 fg="black"
 flag="%F{$bg}%K{$bg}%F{$fg}%B DOTFILES($(basename $DOTFILES)) %b%K{reset}%F{$bg}%F{reset}"
 
-dot env PROMPT_ICON_COLOR="red" PROMPT_ICON="" RPROMPT="$flag" zsh $@
+dot env PROMPT_ICON_COLOR="red" PROMPT_ICON="󱁤 " RPROMPT="$flag" zsh $@
