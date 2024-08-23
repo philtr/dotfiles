@@ -7,7 +7,7 @@ return {
 		-- https://monaspace.githubnext.com/
 		family = "Monaspace Neon",
 
-		weight = "Medium",
+		weight = "Light",
 
 		-- Enable fancy OpenType features for Monaspace
 		-- https://monaspace.githubnext.com/#code-ligatures
@@ -30,7 +30,8 @@ return {
 		},
 	}),
 
-	font_size = 14,
+	cell_width = 0.9,
+	font_size = 16,
 	line_height = 1.4,
 	text_blink_rate = 500,
 }

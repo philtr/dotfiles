@@ -32,10 +32,14 @@ local palettes = {
 }
 
 return {
-	-- color_scheme = "One Light (base16)",
-	color_scheme = "OneDark (base16)",
-	colors = {
-		background = palettes.one_dark.deep.bg0,
-		foreground = palettes.one_dark.deep.fg,
-	},
+	color_scheme = "GruvboxDarkHard",
+	-- colorscheme = "Tokyo Night",
+	-- color_scheme = "Tokyo Night Day",
+	-- color_scheme = "Tokyo Night Storm",
+	-- colorscheme = "Tokyo Night Moon",
+	-- colors = {
+	-- 	background = "#ffffff",
+	-- 	-- background = palettes.one_dark.deep.bg0,
+	-- 	-- foreground = palettes.one_dark.deep.fg,
+	-- },
 }
