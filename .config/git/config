@@ -39,3 +39,5 @@
 	path = ~/.config/git/dotfiles
 [push]
 	autoSetupRemote = true
+[github]
+	user = philtr
