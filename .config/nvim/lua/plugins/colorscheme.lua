@@ -3,7 +3,19 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onedark",
+      colorscheme = "gruvbox",
+    },
+  },
+  {
+    "folke/tokyonight.nvim",
+    opts = {
+      style = "storm",
+      transparent = true,
+      terminal_colors = true,
+      -- day_brightness = 0.7,
+      on_colors = function(colors) -- change some colors
+        colors.bg = "#ffffff"
+      end,
     },
   },
   {
@@ -31,13 +43,21 @@ return {
   {
     "navarasu/onedark.nvim",
     opts = {
-      style = "deep",
-      term_colors = true,
+      style = "light",
       lualine = { transparent = true },
       code_style = {
         keywords = "italic",
         strings = "italic",
       },
+      diagnostics = {
+        darker = false,
+      },
+    },
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
+    opts = {
+      contrast = "hard",
     },
   },
 }
