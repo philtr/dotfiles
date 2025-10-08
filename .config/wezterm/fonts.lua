@@ -30,8 +30,8 @@ return {
 		},
 	}),
 
-	cell_width = 0.9,
-	font_size = 16,
-	line_height = 1.4,
+	-- cell_width = 0.9,
+	font_size = 12,
+	-- line_height = 1.4,
 	text_blink_rate = 500,
 }

@@ -32,10 +32,10 @@ local palettes = {
 }
 
 return {
-	color_scheme = "GruvboxDarkHard",
+	-- color_scheme = "GruvboxDarkHard",
 	-- colorscheme = "Tokyo Night",
 	-- color_scheme = "Tokyo Night Day",
-	-- color_scheme = "Tokyo Night Storm",
+	color_scheme = "Tokyo Night Storm",
 	-- colorscheme = "Tokyo Night Moon",
 	-- colors = {
 	-- 	background = "#ffffff",
