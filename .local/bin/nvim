@@ -1,0 +1,117 @@
+#!/usr/bin/env bash
+# Transparent Neovim nightly wrapper
+# Save as: ~/.local/bin/nvim   (chmod +x)
+set -euo pipefail
+
+# -------- config --------
+CACHE_DIR="${HOME}/.local/share/neovim-nightly"
+STAMP_FILE="${CACHE_DIR}/.last_update"
+CURRENT_LINK="${CACHE_DIR}/current"
+# ------------------------
+
+detect_asset() {
+  local os arch asset
+  os="$(uname -s)"
+  arch="$(uname -m)"
+
+  case "$os" in
+    Linux)
+      case "$arch" in
+        x86_64|amd64)   asset="nvim-linux64.tar.gz" ;;
+        aarch64|arm64)  asset="nvim-linux-arm64.tar.gz" ;;
+        *) echo "Unsupported Linux arch: $arch" >&2; exit 1 ;;
+      esac
+      ;;
+    Darwin)
+      case "$arch" in
+        arm64)          asset="nvim-macos-arm64.tar.gz" ;;
+        x86_64)         asset="nvim-macos.tar.gz" ;;
+        *) echo "Unsupported macOS arch: $arch" >&2; exit 1 ;;
+      esac
+      ;;
+    *)
+      echo "Unsupported OS: $os" >&2
+      exit 1
+      ;;
+  esac
+
+  printf '%s\n' "$asset"
+}
+
+needs_update_today() {
+  # Update if:
+  # - current link/binary missing
+  # - stamp missing
+  # - stamp date != today (local)
+  if [[ ! -L "$CURRENT_LINK" || ! -x "$CURRENT_LINK/bin/nvim" ]]; then
+    return 0
+  fi
+  if [[ ! -f "$STAMP_FILE" ]]; then
+    return 0
+  fi
+  local today
+  today="$(date +%F)"
+  local stamped
+  stamped="$(cat "$STAMP_FILE" 2>/dev/null || true)"
+  [[ "$stamped" != "$today" ]]
+}
+
+perform_update() {
+  mkdir -p "$CACHE_DIR"
+  local asset url tmpdir extracted_dir target_dir
+  asset="$(detect_asset)"
+  url="https://github.com/neovim/neovim/releases/download/nightly/${asset}"
+  tmpdir="$(mktemp -d)"
+  trap 'rm -rf "$tmpdir"' EXIT
+
+  # Download
+  if command -v curl >/dev/null 2>&1; then
+    curl -fL --retry 3 --retry-delay 1 -o "${tmpdir}/${asset}" "$url"
+  elif command -v wget >/dev/null 2>&1; then
+    wget -O "${tmpdir}/${asset}" "$url"
+  else
+    echo "Need curl or wget to download Neovim." >&2
+    exit 1
+  fi
+
+  # Extract
+  tar -xzf "${tmpdir}/${asset}" -C "$tmpdir"
+
+  # Find extracted nvim-* dir
+  extracted_dir="$(find "$tmpdir" -maxdepth 1 -type d -name 'nvim-*' -print -quit)"
+  if [[ -z "${extracted_dir:-}" ]]; then
+    echo "Failed to locate extracted Neovim directory." >&2
+    exit 1
+  fi
+
+  # Move into cache under a unique dir, then point 'current' symlink
+  target_dir="${CACHE_DIR}/$(basename "$extracted_dir")"
+  rm -rf "$target_dir"
+  mv "$extracted_dir" "$target_dir"
+  ln -sfn "$target_dir" "$CURRENT_LINK"
+
+  # Stamp today
+  date +%F > "$STAMP_FILE"
+}
+
+main() {
+  if needs_update_today; then
+    # Try to update; if download fails, continue using existing binary if present
+    if ! perform_update 2>/dev/null; then
+      echo "Neovim nightly update failed; using existing build if available." >&2
+    fi
+  fi
+
+  # Final binary path
+  local nvim_bin="${CURRENT_LINK}/bin/nvim"
+  if [[ ! -x "$nvim_bin" ]]; then
+    echo "Neovim binary not found at ${nvim_bin}. Remove ${CACHE_DIR} and retry." >&2
+    exit 1
+  fi
+
+  # Execute transparently, preserving stdin/stdout and args/pipes
+  exec "$nvim_bin" "$@"
+}
+
+main "$@"
+
