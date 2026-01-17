@@ -1,0 +1,14 @@
+[tools]
+codex = "latest"
+colima = "latest"
+elixir = "latest"
+erlang = "latest"
+neovim = "latest"
+nodejs = "latest"
+python = "latest"
+ruby = "latest"
+rust = "latest"
+yt-dlp = "latest"
+
+[settings]
+go_download_mirror = "https://mirrors.ustc.edu.cn/golang"

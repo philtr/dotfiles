@@ -1,9 +1,0 @@
-awscli 2.15.38
-elixir 1.16.2-otp-26
-erlang 26.2.4
-neovim stable
-nodejs 21.6.1
-php 8.3.2
-python 3.12.1
-ruby 3.3.0
-rust 1.75.0

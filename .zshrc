@@ -10,14 +10,13 @@ alias e="${EDITOR:-"vim"}"
 bindkey -v
 bindkey "^R" history-incremental-search-backward
 
+# mise-en-place
+eval "$(/Users/philtr/.local/bin/mise activate zsh)"
+
 # edit command line in vim
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
-
-# asdf
-. $HOME/.asdf/asdf.sh
-fpath=(${ASDF_DIR}/completions $fpath)
 
 # Zoxide (fast cd)
 if (( $+commands[zoxide] )) ; then
