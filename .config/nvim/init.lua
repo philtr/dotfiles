@@ -125,6 +125,14 @@ require("nvim-treesitter").setup({
 
 -- File explorer.
 require("neo-tree").setup({
+	event_handlers = {
+		{
+			event = "file_opened",
+			handler = function()
+				require("neo-tree.command").execute({ action = "close" })
+			end,
+		},
+	},
 	filesystem = {
 		follow_current_file = { enabled = true },
 		hijack_netrw_behavior = "open_default",
