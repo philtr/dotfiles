@@ -23,8 +23,8 @@ vim.opt.smartcase = true
 -- Window, gutter, and scrolling ergonomics.
 vim.opt.cursorline = true
 vim.opt.laststatus = 3
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.number = false
+vim.opt.relativenumber = false
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.smoothscroll = true
