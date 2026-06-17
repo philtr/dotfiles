@@ -1,7 +1,54 @@
+-- Leader keys need to be set before plugins or mappings are configured.
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-vim.opt.clipboard = "unnamedplus"
 
+-- Core editing behavior.
+vim.opt.clipboard = "unnamedplus"
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.confirm = true
+vim.opt.expandtab = true
+vim.opt.mouse = "a"
+vim.opt.shiftround = true
+vim.opt.shiftwidth = 2
+vim.opt.smartindent = true
+vim.opt.tabstop = 2
+vim.opt.timeoutlen = 400
+vim.opt.updatetime = 250
+
+-- Search and command feedback.
+vim.opt.ignorecase = true
+vim.opt.inccommand = "split"
+vim.opt.smartcase = true
+
+-- Window, gutter, and scrolling ergonomics.
+vim.opt.cursorline = true
+vim.opt.laststatus = 3
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.smoothscroll = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.termguicolors = true
+vim.opt.virtualedit = "block"
+
+-- Text display.
+vim.opt.linebreak = true
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.showmode = false
+vim.opt.wrap = false
+
+-- Persistence and swap/write behavior.
+vim.opt.swapfile = false
+vim.opt.undofile = true
+vim.opt.writebackup = false
+
+-- Keep common startup and completion messages quiet.
+vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
+
+-- Small helpers used by formatter configuration.
 local function find_up(names, startpath)
 	return vim.fs.find(names, { upward = true, path = startpath })[1]
 end
@@ -17,6 +64,13 @@ end
 
 vim.treesitter.language.register("json", { "jsonc" })
 
+-- Native package management. Neovim installs these into its vim.pack directory
+-- and tracks exact revisions in nvim-pack-lock.json.
+local gh = function(repo)
+	return "https://github.com/" .. repo
+end
+
+-- Preserve lazy.nvim's treesitter build hook with native pack events.
 vim.api.nvim_create_autocmd("PackChanged", {
 	callback = function(ev)
 		local name = ev.data.spec.name
@@ -31,10 +85,6 @@ vim.api.nvim_create_autocmd("PackChanged", {
 		end
 	end,
 })
-
-local gh = function(repo)
-	return "https://github.com/" .. repo
-end
 
 vim.pack.add({
 	gh("nvim-treesitter/nvim-treesitter"),
@@ -51,6 +101,7 @@ vim.pack.add({
 	gh("stevearc/conform.nvim"),
 }, { confirm = false, load = true })
 
+-- Syntax highlighting and indentation.
 require("nvim-treesitter").setup({
 	ensure_installed = {
 		"bash",
@@ -72,6 +123,7 @@ require("nvim-treesitter").setup({
 	indent = { enable = true },
 })
 
+-- File explorer.
 require("neo-tree").setup({
 	filesystem = {
 		follow_current_file = { enabled = true },
@@ -80,16 +132,15 @@ require("neo-tree").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle filesystem reveal left<cr>", { desc = "Explorer" })
-
+-- Fuzzy finding.
 require("telescope").setup({})
 
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
-vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
-
+-- Lightweight editing integrations.
 require("gitsigns").setup({})
 require("Comment").setup({})
 require("nvim-surround").setup({})
+
+-- External tools used by formatters.
 require("mason").setup({})
 
 require("mason-tool-installer").setup({
@@ -106,6 +157,8 @@ require("mason-tool-installer").setup({
 	debounce_hours = 12,
 })
 
+-- Formatting. Ruby is formatted after save to avoid blocking writes in larger
+-- projects; other filetypes format before save with a short timeout.
 require("conform").setup({
 	format_on_save = function(bufnr)
 		if vim.bo[bufnr].filetype == "ruby" then
@@ -158,8 +211,14 @@ require("conform").setup({
 	},
 })
 
+-- User commands and keymaps.
 vim.api.nvim_create_user_command("Format", function()
 	require("conform").format({ async = true, lsp_format = "fallback" })
 end, { desc = "Format current buffer" })
 
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle filesystem reveal left<cr>", { desc = "Explorer" })
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
+
+-- Built-in colorscheme.
 vim.cmd("colorscheme blue")
