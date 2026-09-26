@@ -228,5 +228,4 @@ vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle filesystem reveal left<cr>
 vim.keymap.set("n", "<leader><leader>", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>/", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
 
--- Built-in colorscheme.
-vim.cmd("colorscheme blue")
+vim.cmd("colorscheme lunaperche")
