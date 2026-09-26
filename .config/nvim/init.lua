@@ -8,7 +8,6 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.confirm = true
 vim.opt.expandtab = true
 vim.opt.mouse = "a"
-vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
 vim.opt.tabstop = 2
@@ -23,18 +22,14 @@ vim.opt.smartcase = true
 -- Window, gutter, and scrolling ergonomics.
 vim.opt.cursorline = true
 vim.opt.laststatus = 3
-vim.opt.number = false
-vim.opt.relativenumber = false
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
-vim.opt.smoothscroll = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.termguicolors = true
 vim.opt.virtualedit = "block"
 
 -- Text display.
-vim.opt.linebreak = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.showmode = false
@@ -49,12 +44,11 @@ vim.opt.writebackup = false
 vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
 
 -- Small helpers used by formatter configuration.
-local function find_up(names, startpath)
-  return vim.fs.find(names, { upward = true, path = startpath })[1]
-end
-
 local function project_root(startpath)
-  local marker = find_up({ ".git", "Gemfile", "package.json", ".rubocop.yml", ".standard.yml" }, startpath)
+  local marker = vim.fs.find({ ".git", "Gemfile", "package.json", ".rubocop.yml", ".standard.yml" }, {
+    upward = true,
+    path = startpath,
+  })[1]
   return marker and vim.fs.dirname(marker) or vim.loop.cwd()
 end
 
@@ -101,28 +95,6 @@ vim.pack.add({
   gh("stevearc/conform.nvim"),
 }, { confirm = false, load = true })
 
--- Syntax highlighting and indentation.
-require("nvim-treesitter").setup({
-  ensure_installed = {
-    "bash",
-    "json",
-    "lua",
-    "luadoc",
-    "markdown",
-    "markdown_inline",
-    "query",
-    "regex",
-    "vim",
-    "vimdoc",
-  },
-  auto_install = true,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-  indent = { enable = true },
-})
-
 -- File explorer.
 require("neo-tree").setup({
   event_handlers = {
@@ -135,13 +107,9 @@ require("neo-tree").setup({
   },
   filesystem = {
     follow_current_file = { enabled = true },
-    hijack_netrw_behavior = "open_default",
     use_libuv_file_watcher = true,
   },
 })
-
--- Fuzzy finding.
-require("telescope").setup({})
 
 -- Lightweight editing integrations.
 require("gitsigns").setup({})
@@ -160,7 +128,6 @@ require("mason-tool-installer").setup({
     "shfmt",
   },
   auto_update = true,
-  run_on_start = true,
   start_delay = 3000,
   debounce_hours = 12,
 })
@@ -173,7 +140,6 @@ require("conform").setup({
       return nil
     end
     return {
-      timeout_ms = 1000,
       lsp_format = "fallback",
     }
   end,
