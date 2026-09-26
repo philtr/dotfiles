@@ -5,3 +5,7 @@
 .yardoc
 Procfile.philtr
 tags
+
+**/.DS_Store
+
+.codex
